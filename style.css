@@ -1,0 +1,161 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Spectral:wght@300;400;500;600;700&display=swap');
+:root {
+    --color-ivory: #FFFFF0;
+    --color-soft-black: #1A1A1A;
+    --color-deep-red: #8B0000;
+    --color-gold: #D4AF37;
+    --color-parchment: #F5E7D3;
+    --color-velvet: #2C041C;
+}
+body {
+    font-family: 'Spectral', serif;
+    font-weight: 300;
+    background-color: var(--color-parchment);
+    color: var(--color-velvet);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://huggingface.co/spaces/falcando/medieval-m-xico-chronicles/resolve/main/images/zisa-4.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--color-deep-red);
+}
+.bg-ivory {
+    background-color: var(--color-ivory);
+}
+
+.bg-soft-black {
+    background-color: var(--color-soft-black);
+}
+
+.bg-deep-red {
+    background-color: var(--color-deep-red);
+}
+
+.text-soft-black {
+    color: var(--color-soft-black);
+}
+
+.text-deep-red {
+    color: var(--color-deep-red);
+}
+.hero {
+    background: linear-gradient(135deg, rgba(43, 4, 28, 0.8) 0%, rgba(139, 0, 0, 0.8) 100%);
+    border: 2px solid var(--color-gold);
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://huggingface.co/spaces/falcando/medieval-m-xico-chronicles/resolve/main/images/zisa-4.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: 0;
+}
+.highlight-card {
+    background-color: var(--color-parchment);
+    border-radius: 8px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid rgba(139, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+}
+
+.highlight-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('http://static.photos/vintage/640x360/10');
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+.highlight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card h3 {
+    font-family: 'Spectral', serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin: 16px 0 8px;
+}
+
+.highlight-card p {
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.card-icon {
+    background-color: rgba(139, 0, 0, 0.1);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon i {
+    color: var(--color-deep-red);
+    width: 24px;
+    height: 24px;
+}
+
+/* Accessibility */
+a:focus, button:focus {
+    outline: 2px solid var(--color-deep-red);
+    outline-offset: 2px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--color-deep-red);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-ivory: #1A1A1A;
+        --color-soft-black: #FFFFF0;
+    }
+
+    .highlight-card {
+        background-color: #222;
+    }
+
+    .highlight-card p {
+        color: #AAA;
+    }
+}

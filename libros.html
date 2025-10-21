@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros de México Medieval - Publicaciones académicas</title>
+    <meta name="description" content="Libros y publicaciones académicas sobre historia medieval de Hervin Fernández Aceves (FRHistS)">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="bg-ivory text-soft-black">
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl md:text-4xl font-bold mb-8">Libros y Publicaciones</h1>
+        
+        <section class="mb-12">
+            <p class="text-lg mb-6">Obras académicas y divulgativas sobre historia medieval publicadas por Hervin Fernández Aceves (FRHistS).</p>
+            
+            <!-- Books Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Book 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <img src="https://brill.com/fileasset/book_cover_38771.jpg" alt="Portada del libro The County and the Shire in Norman Italy" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">The County and the Shire in Norman Italy</h3>
+                        <p class="text-gray-600 mb-4">Published by Brill</p>
+<div class="flex justify-between items-center">
+                            <span class="text-gold font-medium">2021</span>
+                            <a href="https://brill.com/display/title/38771" target="_blank" rel="noopener noreferrer" class="bg-deep-red text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition flex items-center gap-2">
+                                <i data-feather="external-link"></i>
+                                Ver en Brill
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <img src="https://media.bloomsbury.com/rep/bj/9781350133228.jpg" alt="Portada del libro County and Nobility in Norman Italy" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">County and Nobility in Norman Italy</h3>
+                        <p class="text-gray-600 mb-4">Published by Bloomsbury</p>
+<div class="flex justify-between items-center">
+                            <span class="text-gold font-medium">2020</span>
+                            <a href="https://www.bloomsbury.com/uk/county-and-nobility-in-norman-italy-9781350133228/" target="_blank" rel="noopener noreferrer" class="bg-deep-red text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition flex items-center gap-2">
+                                <i data-feather="external-link"></i>
+                                Ver en Bloomsbury
+                            </a>
+                        </div>
+                    </div>
+                </div>
+</div>
+        </section>
+        <!-- Academic Publishers Links -->
+        <section class="bg-velvet text-gold rounded-xl p-8 mb-12 relative overflow-hidden border border-gold">
+            <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('http://static.photos/books/640x360/7');"></div>
+            <div class="relative z-10">
+                <h2 class="text-2xl mb-4">Publicaciones académicas</h2>
+                <div class="flex flex-col md:flex-row gap-6 justify-between">
+                    <a href="https://brill.com/search?q=Hervin+Fernandez+Aceves" target="_blank" rel="noopener noreferrer" class="bg-gold text-velvet px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition transform hover:scale-105 flex items-center justify-center gap-2">
+                        <i data-feather="book-open"></i>
+                        Más en Brill
+                    </a>
+                    <a href="https://www.bloomsbury.com/us/search?q=Hervin+Fernandez+Aceves" target="_blank" rel="noopener noreferrer" class="bg-gold text-velvet px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition transform hover:scale-105 flex items-center justify-center gap-2">
+                        <i data-feather="book-open"></i>
+                        Más en Bloomsbury
+                    </a>
+                </div>
+            </div>
+        </section>
+</main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
