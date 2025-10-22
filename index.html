@@ -21,112 +21,122 @@
         .highlight-card > * {
             position: relative;
             z-index: 1;
+            
         }
     </style>
 </head>
-<body class="bg-ivory text-soft-black">
-    <custom-navbar></custom-navbar>
+<body class="bg-[#f9f7f3] text-gray-800">
+<custom-navbar></custom-navbar>
     
     <main class="container mx-auto px-4 py-8">
         <!-- Hero Section -->
-        <section class="hero text-white rounded-xl p-8 mb-12">
-            <div class="hero-content">
-                <h1 class="text-4xl md:text-5xl mb-4">México Medieval</h1>
-                <p class="text-xl md:text-2xl mb-6 font-light italic">Historia, investigación y divulgación desde el Sur Global. Libros, artículos, podcast y eventos.</p>
-                <p class="text-xl md:text-2xl font-light italic">Sitio web del Dr. Hervin Fernández Aceves, FRHistS</p>
+        <section class="hero bg-velvet text-white rounded-xl p-8 mb-12 hovered-element shadow-lg">
+<div class="hero-content hovered-element bg-velvet-darker padding: 2rem; border-radius: 0.75rem;">
+<h1 class="text-4xl md:text-5xl mb-4 text-white hovered-element">México Medieval</h1>
+<p class="text-xl md:text-2xl mb-6 font-light italic hovered-element">Historia, investigación y divulgación desde el Sur Global. Libros, artículos, podcast y eventos.</p>
+                <p class="text-xl md:text-2xl font-light hovered-element">Sitio web del Dr. Hervin Fernández Aceves, <span class="text-sm">FRHistS</span></p>
 <div class="flex flex-wrap gap-4 mt-8">
-                <a href="/podcast.html" class="bg-white text-velvet px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition transform hover:scale-105 flex items-center gap-2">
-                    <i data-feather="headphones"></i>
+                <a href="/podcast.html" class="bg-[#f5f0e6] border border-[#e0d6c2] text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-[#e8e0d1] transition transform hover:scale-105 flex items-center gap-2">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-headphones"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
                     Escuchar podcast
                 </a>
-
-                <a href="/libros.html" class="bg-transparent border border-gold text-gold px-6 py-3 rounded-lg font-medium hover:bg-velvet hover:text-white transition transform hover:scale-105 flex items-center gap-2">
-                    <i data-feather="book"></i>
+                <a href="/libros.html" class="bg-[#f5f0e6] border border-[#e0d6c2] text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-[#e8e0d1] transition transform hover:scale-105 flex items-center gap-2">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                     Ver libros
                 </a>
-
-                <a href="/papers.html" class="bg-transparent border border-gold text-gold px-6 py-3 rounded-lg font-medium hover:bg-velvet hover:text-white transition transform hover:scale-105 flex items-center gap-2">
-                    <i data-feather="edit-2"></i>
+                <a href="/papers.html" class="bg-[#f5f0e6] border border-[#e0d6c2] text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-[#e8e0d1] transition transform hover:scale-105 flex items-center gap-2">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
                     Próximo paper
                 </a>
 </div>
 </section>
-
         <!-- Highlights Grid -->
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <!-- Libros -->
-            <a href="/libros.html" class="highlight-card">
+            <a href="/libros.html" class="highlight-card bg-velvet">
                 <div class="card-icon">
                     <i data-feather="book"></i>
                 </div>
                 <h3>Libros</h3>
                 <p>Publicaciones académicas y divulgativas</p>
             </a>
-
             <!-- Artículos -->
-            <a href="/articulos.html" class="highlight-card">
+            <a href="/articulos.html" class="highlight-card bg-velvet">
                 <div class="card-icon">
                     <i data-feather="file-text"></i>
                 </div>
                 <h3>Artículos</h3>
                 <p>Investigaciones y publicaciones especializadas</p>
             </a>
-
             <!-- Podcast -->
-            <a href="/podcast.html" class="highlight-card">
+            <a href="/podcast.html" class="highlight-card bg-velvet">
                 <div class="card-icon">
                     <i data-feather="headphones"></i>
                 </div>
                 <h3>Podcast</h3>
                 <p>México Medieval en Spotify</p>
             </a>
-
             <!-- Videos -->
-            <a href="/videos.html" class="highlight-card">
+            <a href="/videos.html" class="highlight-card bg-velvet">
                 <div class="card-icon">
                     <i data-feather="video"></i>
                 </div>
                 <h3>Videos</h3>
                 <p>Participaciones y entrevistas</p>
             </a>
-
             <!-- Papers -->
-            <a href="/papers.html" class="highlight-card">
+            <a href="/papers.html" class="highlight-card bg-velvet">
                 <div class="card-icon">
                     <i data-feather="edit"></i>
                 </div>
                 <h3>Papers</h3>
                 <p>Próximas presentaciones y agenda</p>
             </a>
-
             <!-- Docencia -->
-            <a href="#" class="highlight-card">
+            <a href="#" class="highlight-card bg-velvet">
                 <div class="card-icon">
                     <i data-feather="book-open"></i>
                 </div>
                 <h3>Docencia</h3>
                 <p>Materiales académicos</p>
             </a>
-        </section>
+</section>
         <!-- Subscription -->
-        <section class="bg-velvet text-gold rounded-xl p-8 mb-12 relative overflow-hidden border border-gold">
-            <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://huggingface.co/spaces/falcando/medieval-m-xico-chronicles/resolve/main/images/zisa-4.jpg');"></div>
+        <section class="bg-velvet text-white rounded-xl p-8 mb-12 relative overflow-hidden shadow-lg">
 <div class="relative z-10">
                 <h2 class="text-2xl mb-4">Suscríbete a las novedades</h2>
                 <form class="flex flex-col md:flex-row gap-4">
                     <input type="email" placeholder="Tu correo electrónico" class="flex-grow px-4 py-3 rounded-lg text-soft-black bg-parchment">
-                    <button type="submit" class="bg-gold text-velvet px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition transform hover:scale-105 flex items-center justify-center gap-2">
-                        <i data-feather="mail"></i>
+                    <button type="submit" class="bg-white text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition transform hover:scale-105 flex items-center justify-center gap-2">
+<i data-feather="mail"></i>
                         Suscribirme
                     </button>
                 </form>
             </div>
         </section>
 </main>
-
-    <custom-footer></custom-footer>
-
-    <script src="components/navbar.js"></script>
+    <footer class="bg-velvet text-white py-8 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-lg">México Medieval © 2023</p>
+                    <p class="text-sm opacity-80">Historia, investigación y divulgación</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-parchment transition">
+                        <i data-feather="twitter"></i>
+                    </a>
+                    <a href="#" class="hover:text-parchment transition">
+                        <i data-feather="youtube"></i>
+                    </a>
+                    <a href="#" class="hover:text-parchment transition">
+                        <i data-feather="instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="components/navbar.js"></script>
     <script src="components/footer.js"></script>
     <script src="script.js"></script>
     <script>

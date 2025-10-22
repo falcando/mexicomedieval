@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Podcast México Medieval - Historia medieval en México</title>
+    <title>Podcasts - Edad Media y otras historias desde y para México</title>
     <meta name="description" content="Escucha el podcast México Medieval sobre historia medieval con Hervin Fernández Aceves">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,12 +13,18 @@
 </head>
 <body class="bg-ivory text-soft-black">
     <custom-navbar></custom-navbar>
-    <main class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl md:text-4xl font-bold mb-8">Podcast</h1>
-        <!-- México Medieval -->
-        <section class="mb-16">
-            <h2 class="text-2xl font-bold mb-6">México Medieval</h2>
-            <p class="text-lg mb-6">Serie de divulgación sobre historia medieval en México. Hecho con el apoyo de la Universidad de Lancaster y conducido por miembros de ARDEMAC.</p>
+    <main class="container mx-auto px-4 py-8 max-w-7xl">
+        <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center">Podcasts</h1>
+<!-- México Medieval -->
+        <section id="mexico-medieval" class="mb-16 scroll-mt-16">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold">México Medieval</h2>
+                <a href="https://podcasts.apple.com/us/podcast/m%C3%A9xico-medieval/id1571145663" target="_blank" rel="noopener noreferrer" class="text-sm flex items-center gap-1 text-blue-600 hover:underline">
+                    <i data-feather="external-link" class="w-4 h-4"></i>
+                    View all episodes
+                </a>
+            </div>
+<p class="text-lg mb-6">Serie de divulgación sobre historia medieval en México. Hecho con el apoyo de la Universidad de Lancaster y conducido por miembros de ARDEMAC.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Show Embed -->
@@ -138,12 +144,26 @@
                 </div>
             </div>
         </section>
-
-        <!-- Días con la Garra y Ale Garibay -->
+      <div>
+        <section id="como-invitado" class="mb-16 scroll-mt-16">
+<h2 class="text-2xl font-bold mb-6">Tiempos Imposibles</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Atila destruye Roma (ft. Hervin Fernández)</h3>
+                        <div class="mb-4">
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1P1Nl2MBJ2eGjugxXXgmLh" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+<!-- Días con la Garra y Ale Garibay -->
         <section class="mb-16">
             <h2 class="text-2xl font-bold mb-6">Días con la Garra y Ale Garibay</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Episode 1 -->
+<!-- Episode 1 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">ORIGEN DE LA CRIPTOMONEDA</h3>
@@ -203,25 +223,9 @@
                 </div>
 </div>
         </section>
-
-        <!-- Tiempos Imposibles -->
-        <section class="mb-16">
-            <h2 class="text-2xl font-bold mb-6">Tiempos Imposibles</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Atila destruye Roma (ft. Hervin Fernández)</h3>
-                        <div class="mb-4">
-                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1P1Nl2MBJ2eGjugxXXgmLh" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</div>
-</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Se Tenía Que Decir con El Terri Podcast -->
-        <section class="mb-16">
-            <h2 class="text-2xl font-bold mb-6">"Se Tenía Que Decir" con El Terri Podcast</h2>
+        <!-- As Guest -->
+        <section id="como-invitado" class="mb-16 scroll-mt-16">
+<h2 class="text-2xl font-bold mb-6">"Se Tenía Que Decir" con El Terri Podcast</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
@@ -238,11 +242,24 @@
     </main>
 
     <custom-footer></custom-footer>
-
     <script>
-        // This will be used later to fetch additional episodes dynamically
         document.addEventListener('DOMContentLoaded', function() {
-            // Placeholder for future API calls to fetch more episodes
+            // Add click handlers for smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Initialize tooltips for podcast platforms
+            tippy('[data-tippy-content]', {
+                placement: 'top',
+                animation: 'shift-away',
+                theme: 'light'
+            });
         });
     </script>
 <script src="components/navbar.js"></script>
