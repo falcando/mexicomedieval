@@ -58,8 +58,11 @@ jobs:
       - name: Build static site
         run: pnpm --dir "${{ github.workspace }}/landing" run build
 
-      - name: Add CNAME for custom domain
+      - name: Add CNAME and disable Jekyll on GitHub Pages
         run: |
+          # GitHub Pages runs Jekyll by default; it omits paths starting with "_",
+          # which would drop the entire _next/ asset tree. .nojekyll serves files as-is.
+          touch landing/out/.nojekyll
           if [ -f static-content/CNAME ]; then
             cp static-content/CNAME landing/out/CNAME
           elif [ -f static-html/CNAME ]; then
