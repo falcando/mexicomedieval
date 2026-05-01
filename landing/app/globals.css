@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+:root {
+  --surface-container: #f2ede3;
+  --surface-container-low: #f8f3e9;
+  --on-secondary-fixed-variant: #6b3069;
+  --inverse-surface: #32302a;
+  --inverse-primary: #f2b2e8;
+  --primary-container: #4f204c;
+  --on-surface-variant: #4e444b;
+  --tertiary-fixed-dim: #f7bd48;
+  --on-primary-fixed-variant: #663562;
+  --on-tertiary: #ffffff;
+  --on-background: #1d1c16;
+  --surface-container-lowest: #ffffff;
+  --secondary: #854882;
+  --on-surface: #1d1c16;
+  --on-error: #ffffff;
+  --surface-dim: #dedad0;
+  --primary: #360935;
+  --on-primary-fixed: #340733;
+  --secondary-fixed-dim: #f8aef0;
+  --inverse-on-surface: #f5f0e6;
+  --tertiary-container: #442f00;
+  --surface-tint: #814c7b;
+  --surface-container-highest: #e7e2d8;
+  --on-tertiary-fixed-variant: #5d4200;
+  --primary-fixed: #ffd7f5;
+  --primary-fixed-dim: #f2b2e8;
+  --tertiary: #291b00;
+  --error-container: #ffdad6;
+  --on-secondary: #ffffff;
+  --on-primary: #ffffff;
+  --secondary-fixed: #ffd6f7;
+  --on-tertiary-fixed: #271900;
+  --on-error-container: #93000a;
+  --surface-variant: #e7e2d8;
+  --on-primary-container: #c387ba;
+  --tertiary-fixed: #ffdea6;
+  --surface-container-high: #ede8de;
+  --surface: #fef9ef;
+  --outline: #80737c;
+  --on-tertiary-container: #c6921d;
+  --on-secondary-fixed: #37003a;
+  --secondary-container: #feb4f6;
+  --outline-variant: #d2c2cc;
+  --surface-bright: #fef9ef;
+  --error: #ba1a1a;
+  --background: #fef9ef;
+  --on-secondary-container: #7c4079;
+}
+
+@theme inline {
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-on-secondary-fixed-variant: var(--on-secondary-fixed-variant);
+  --color-inverse-surface: var(--inverse-surface);
+  --color-inverse-primary: var(--inverse-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-tertiary-fixed-dim: var(--tertiary-fixed-dim);
+  --color-on-primary-fixed-variant: var(--on-primary-fixed-variant);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-on-background: var(--on-background);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-secondary: var(--secondary);
+  --color-on-surface: var(--on-surface);
+  --color-on-error: var(--on-error);
+  --color-surface-dim: var(--surface-dim);
+  --color-primary: var(--primary);
+  --color-on-primary-fixed: var(--on-primary-fixed);
+  --color-secondary-fixed-dim: var(--secondary-fixed-dim);
+  --color-inverse-on-surface: var(--inverse-on-surface);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-surface-tint: var(--surface-tint);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-on-tertiary-fixed-variant: var(--on-tertiary-fixed-variant);
+  --color-primary-fixed: var(--primary-fixed);
+  --color-primary-fixed-dim: var(--primary-fixed-dim);
+  --color-tertiary: var(--tertiary);
+  --color-error-container: var(--error-container);
+  --color-on-secondary: var(--on-secondary);
+  --color-on-primary: var(--on-primary);
+  --color-secondary-fixed: var(--secondary-fixed);
+  --color-on-tertiary-fixed: var(--on-tertiary-fixed);
+  --color-on-error-container: var(--on-error-container);
+  --color-surface-variant: var(--surface-variant);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-tertiary-fixed: var(--tertiary-fixed);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface: var(--surface);
+  --color-outline: var(--outline);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-on-secondary-fixed: var(--on-secondary-fixed);
+  --color-secondary-container: var(--secondary-container);
+  --color-outline-variant: var(--outline-variant);
+  --color-surface-bright: var(--surface-bright);
+  --color-error: var(--error);
+  --color-background: var(--background);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --font-headline: var(--font-noto-serif), ui-serif, Georgia, serif;
+  --font-body: var(--font-work-sans), ui-sans, system-ui, sans-serif;
+  --font-label: var(--font-work-sans), ui-sans, system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--on-background);
+  font-family: var(--font-body);
+}
+
+.parchment-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.manuscript-divider {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--tertiary-fixed-dim) 50%,
+    transparent 100%
+  );
+}
+
+/* Papers page — divider with center fleuron (Stitch) */
+.manuscript-divider-fleuron {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--tertiary-fixed-dim) 50%,
+    transparent
+  );
+  position: relative;
+}
+.manuscript-divider-fleuron::after {
+  content: "❦";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fdf8ef;
+  padding: 0 1rem;
+  color: var(--primary);
+  font-size: 1.25rem;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 10px;
+}
+
+/* Articles / articulos page — Stitch “Artículos Curados” background */
+.articulos-dot-bg {
+  background-color: var(--background);
+  background-image: radial-gradient(var(--outline-variant) 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
+
+.articulos-parchment-main {
+  position: relative;
+  background-color: var(--background);
+}
+
+.articulos-parchment-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFe5XLEVO-pkThTP-gtEQJozX7rc0_FpB6gMdBBYMvWhw31P46hrguUkFNNfhvrJibZyAMgsBrI7hikQJb8dmfBrhW4kCuvNRpl7WhfqKKCPdYNe6lYp7O9vs8sfHzjEoIXxBLEGiORf1vGSh-zjL11SO282jJIdLVsUxVayjk2MGqJu9Q1yLFTp07zNtpMxvI2PX3U-xVgOUYaGCZpai7LMTNHzzfUbbaKzgy0s6f6SJYJmCsrTG_L29aryxBoAtuH99DtjTS8764");
+  background-size: cover;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}

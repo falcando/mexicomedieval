@@ -1,0 +1,104 @@
+{
+  "slug": "servos_otrashistorias",
+  "badge": "V Coloquio Internacional Las Otras Historias · 2025",
+  "titleLine1": "Al límite de la esclavitud:",
+  "titleLine2": "los servos y la inmovilidad social de la Cerdeña medieval (siglos XI–XII)",
+  "meta": {
+    "presenter": "Dr. Hervin Fernández Aceves",
+    "dateLabel": "2025",
+    "venue": "V Coloquio Internacional Las Otras Historias"
+  },
+  "heroImage": {
+    "src": "/images/presentation-hero-fallback.jpg",
+    "alt": "Detalle visual del archivo México Medieval"
+  },
+  "summary": "Esta presentación examina la condición de los servos y ankillas en la Cerdeña medieval durante los siglos XI y XII, analizando cómo su estatus social liminal de servidumbre cuasi-esclavista sustentó en gran medida tanto las estructuras económicas de la isla como las dinámicas restrictivas pero plurales de movilidad y control social.",
+  "summaryBullets": [
+    "Mercantilización de la persona",
+    "Condicionamiento (jurisdicción eclesiástica, licencias, inmunidades)",
+    "Resultado: inmovilidad con «barrera movible»"
+  ],
+  "presentationOrderIntro": "La exposición avanza desde el aparato fuente y el método, pasa por léxico y prácticas documentales, mercantilización y condicionamiento jurídico, y cierra con la «barrera movible», la comparación mediterránea y síntesis.",
+  "sections": [
+    {
+      "order": 1,
+      "title": "Fuentes y método",
+      "description": "Condaghi (Bonárcado, Silki, Trullas, Salvennor), carte volgari y alta diplomática latina. Método: rastrear cláusulas de alienabilidad, identificar apropiación eclesiástica y registrar agencia subordinada."
+    },
+    {
+      "order": 2,
+      "title": "Léxico y prácticas",
+      "description": "Mapeo de estatus (servu, ankilla, villanus, pastores) y legitimación («servos Dei»). Casos Silki y Trullas: reproducción patrimonial y lenguaje sacro que envuelve sujeción civil."
+    },
+    {
+      "order": 3,
+      "title": "Mercantilización",
+      "description": "La persona-bien circula en bloque con el lote: Bonárcado y Trullas muestran unidad jurídica indivisa y cambio de señor sin cambio de estatus (movilidad lateral)."
+    },
+    {
+      "order": 4,
+      "title": "Condicionamiento",
+      "description": "Libertad con lastre hacia la casa de Dios, control conyugal con licencias y penas, y sujeción exclusiva con prohibición de extracción (Homines de Sorres)."
+    },
+    {
+      "order": 5,
+      "title": "Barrera movible",
+      "description": "Formas de movilidad vertical, lateral y situacional frente a bloqueos por herencia, control conyugal, jurisdicción eclesiástica y escritura como mecanismo de retorno (Salvennor)."
+    },
+    {
+      "order": 6,
+      "title": "Comparación",
+      "description": "Contraste entre esclavitud clásica, servidumbre continental y Cerdeña (XI–XII): alienabilidad canalizada, circuito intraeclesiástico y persona-bien con lote."
+    },
+    {
+      "order": 7,
+      "title": "Conclusión",
+      "description": "Condición servil documentalizada; leer el mecanismo que devuelve el movimiento; genealogía del control por memoria que moldea categorías de súbdito."
+    }
+  ],
+  "keyPhrases": [
+    "«Si pasa el lote, pasa la gente» (Bonárcado)",
+    "«Cambio de señor, misma condición» (Trullas)",
+    "«Libertad con lastre» (Bonárcado)",
+    "Barrera movible: movimiento tolerado, reabsorción asegurada"
+  ],
+  "bibliography": [
+    {
+      "roman": "I",
+      "titleLine": "Condaghi sardi (Bonárcado, Silki, Trullas, Salvennor)",
+      "description": "Corpus monástico y laical que documenta transacciones, donaciones y transmisiones patrimoniales donde servos y ankillas circulan ligados al fundus.",
+      "linkLabel": "Versión en sitio estático",
+      "href": "https://www.mexicomedieval.org/servos_otrashistorias.html"
+    },
+    {
+      "roman": "II",
+      "titleLine": "Carte volgari y alta diplomática latina",
+      "description": "Fuentes complementarias citadas en la presentación para rastrear léxico, alienabilidad y jurisdicción en la isla entre los siglos XI y XII.",
+      "linkLabel": "México Medieval",
+      "href": "https://www.mexicomedieval.org/"
+    },
+    {
+      "roman": "III",
+      "titleLine": "Materiales de la presentación (PDF)",
+      "description": "Descarga directa del archivo «Al-limite.pdf» asociado a esta exposición en el sitio público.",
+      "linkLabel": "Descargar PDF",
+      "href": "https://www.mexicomedieval.org/Al-limite.pdf"
+    }
+  ],
+  "additionalResources": {
+    "title": "Recursos adicionales",
+    "body": "PDF de la presentación y enlaces al sitio con la versión completa en HTML, incluyendo tablas, citas documentales y frases clave.",
+    "pdf": {
+      "label": "Presentación (PDF)",
+      "href": "https://www.mexicomedieval.org/Al-limite.pdf"
+    }
+  },
+  "researcherNote": {
+    "title": "Nota para investigadores",
+    "body": "El contenido de esta ficha reproduce la estructura académica publicada en el archivo estático del proyecto. Para cita académica, verifique título, autor y URL en el documento fuente o en el PDF."
+  },
+  "seo": {
+    "title": "Al límite de la esclavitud: los servos en la Cerdeña medieval | México Medieval",
+    "description": "Presentación sobre los servos y la inmovilidad social en la Cerdeña medieval durante los siglos XI–XII (V Coloquio Las Otras Historias)."
+  }
+}

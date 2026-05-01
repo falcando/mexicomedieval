@@ -1,0 +1,49 @@
+# Runs on main so the github-pages environment allows deployment (branch protection).
+# Triggered after publish-static-from-dev.yml replaces the repo root on main.
+
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Prepare site root for Pages (exclude .git and .github)
+        run: |
+          mkdir -p "${RUNNER_TEMP}/gh-pages-upload"
+          rsync -a --exclude ".git" --exclude ".github" ./ "${RUNNER_TEMP}/gh-pages-upload/"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/gh-pages-upload
+
+  deploy:
+    needs: upload
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
