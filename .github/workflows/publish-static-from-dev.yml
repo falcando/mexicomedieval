@@ -1,0 +1,99 @@
+name: Build static site from dev and push to main
+
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-static-from-dev
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dev (Next.js source)
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          fetch-depth: 0
+
+      - name: Fetch main for later publish
+        run: git fetch origin main
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('landing/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
+      - name: Install dependencies
+        run: |
+          test -f "${{ github.workspace }}/landing/package.json"
+          test -f "${{ github.workspace }}/landing/pnpm-lock.yaml"
+          pnpm --dir "${{ github.workspace }}/landing" install --frozen-lockfile
+
+      - name: Build static site
+        run: pnpm --dir "${{ github.workspace }}/landing" run build
+
+      - name: Add CNAME for custom domain
+        run: |
+          if [ -f static-content/CNAME ]; then
+            cp static-content/CNAME landing/out/CNAME
+          elif [ -f static-html/CNAME ]; then
+            cp static-html/CNAME landing/out/CNAME
+          else
+            printf '%s\n' 'www.mexicomedieval.org' > landing/out/CNAME
+          fi
+
+      - name: Stage export outside repo
+        run: |
+          mkdir -p "${RUNNER_TEMP}/pages-export"
+          rsync -a --delete landing/out/ "${RUNNER_TEMP}/pages-export/"
+
+      - name: Backup .github from dev (keep workflows on main)
+        run: |
+          mkdir -p "${RUNNER_TEMP}/dot-github-backup"
+          if [ -d .github ]; then
+            rsync -a .github/ "${RUNNER_TEMP}/dot-github-backup/"
+          fi
+
+      - name: Replace main branch root with static export
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout main
+          find . -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+          rsync -a "${RUNNER_TEMP}/pages-export/" ./
+          mkdir -p .github
+          rsync -a "${RUNNER_TEMP}/dot-github-backup/" .github/
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes; skipping commit."
+          else
+            git commit -m "chore(pages): publish static site at repo root from landing (dev build)"
+            git pull --rebase origin main
+            git push origin main
+          fi
