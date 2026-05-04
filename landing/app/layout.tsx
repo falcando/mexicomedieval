@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { Noto_Serif, Work_Sans } from "next/font/google";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { QueryProvider } from "@/components/providers/QueryProvider";
 import { SiteNavbar } from "@/components/layout/SiteNavbar";
-import { defaultLocale } from "@/lib/i18n-config";
+import {
+  defaultLocale,
+  LOCALE_COOKIE,
+  normalizeLocale,
+} from "@/lib/i18n-config";
 import en from "@/messages/en.json";
 import es from "@/messages/es.json";
 import "./globals.css";
@@ -35,19 +40,24 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const cookieLocale = cookieStore.get(LOCALE_COOKIE)?.value;
+  const initialLocale = normalizeLocale(cookieLocale ?? defaultLocale);
+
   return (
     <html
-      lang={defaultLocale}
+      lang={initialLocale}
       className={`light ${notoSerif.variable} ${workSans.variable} h-full antialiased`}
     >
       <head>
+        {/* eslint-disable-next-line @next/next/no-page-custom-font -- Material Symbols; not bundled like next/font */}
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
           rel="stylesheet"
         />
       </head>
       <body className="min-h-full flex flex-col font-body selection:bg-tertiary-fixed-dim selection:text-on-tertiary-fixed bg-background text-on-background">
-        <LocaleProvider key={defaultLocale} initialLocale={defaultLocale}>
+        <LocaleProvider key={initialLocale} initialLocale={initialLocale}>
           <QueryProvider>
             <SiteNavbar />
             <div className="flex flex-1 flex-col">{children}</div>

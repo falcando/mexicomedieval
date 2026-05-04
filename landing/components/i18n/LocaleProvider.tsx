@@ -60,18 +60,6 @@ export function LocaleProvider({
   );
 
   useEffect(() => {
-    const match = document.cookie.match(
-      new RegExp(
-        `(?:^|; )${LOCALE_COOKIE.replace(/[$()*+.?[\\\]^{|}]/g, "\\$&")}=([^;]*)`,
-      ),
-    );
-    const raw = match?.[1];
-    const fromCookie = raw ? decodeURIComponent(raw) : null;
-    const parsed = normalizeLocale(fromCookie);
-    setLocaleState((prev) => (parsed !== prev ? parsed : prev));
-  }, []);
-
-  useEffect(() => {
     document.documentElement.lang = locale;
   }, [locale]);
 
