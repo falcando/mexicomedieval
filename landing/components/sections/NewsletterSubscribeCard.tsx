@@ -1,7 +1,8 @@
 "use client";
 
-import { FormEvent, useId } from "react";
+import { FormEvent, Suspense, useId } from "react";
 import { useTranslations } from "@/components/i18n/LocaleProvider";
+import { useNewsletterSubscriptionsEnabled } from "@/lib/feature-flags-hooks";
 import { isNewsletterSubscriptionsEnabled } from "@/lib/feature-flags";
 
 export type NewsletterSubscribeCardProps = {
@@ -96,7 +97,23 @@ function NewsletterSubscribeCardImpl({
   );
 }
 
-export function NewsletterSubscribeCard(props: NewsletterSubscribeCardProps) {
-  if (!isNewsletterSubscriptionsEnabled()) return null;
+function NewsletterSubscribeCardWithQuery(props: NewsletterSubscribeCardProps) {
+  const show = useNewsletterSubscriptionsEnabled();
+  if (!show) return null;
   return <NewsletterSubscribeCardImpl {...props} />;
+}
+
+export function NewsletterSubscribeCard(props: NewsletterSubscribeCardProps) {
+  const fallbackShow = isNewsletterSubscriptionsEnabled();
+  return (
+    <Suspense
+      fallback={
+        fallbackShow ? (
+          <NewsletterSubscribeCardImpl {...props} />
+        ) : null
+      }
+    >
+      <NewsletterSubscribeCardWithQuery {...props} />
+    </Suspense>
+  );
 }

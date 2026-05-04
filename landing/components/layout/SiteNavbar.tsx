@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 import { useTranslations } from "@/components/i18n/LocaleProvider";
+import { useNewsletterSubscriptionsEnabled } from "@/lib/feature-flags-hooks";
 import { isNewsletterSubscriptionsEnabled } from "@/lib/feature-flags";
 import { isNavItemActive, siteNavItems } from "@/lib/site-nav-config";
 
@@ -14,9 +15,10 @@ function navLinkClass(active: boolean) {
     : "text-primary-container hover:text-primary transition-colors duration-300";
 }
 
-export function SiteNavbar() {
+type SiteNavbarViewProps = { showNewsletter: boolean };
+
+function SiteNavbarView({ showNewsletter }: SiteNavbarViewProps) {
   const pathname = usePathname() ?? "";
-  const showNewsletter = isNewsletterSubscriptionsEnabled();
   const { t } = useTranslations();
   const mobileMenuRef = useRef<HTMLDetailsElement>(null);
 
@@ -104,5 +106,24 @@ export function SiteNavbar() {
         </div>
       </div>
     </nav>
+  );
+}
+
+function SiteNavbarWithQuery() {
+  const showNewsletter = useNewsletterSubscriptionsEnabled();
+  return <SiteNavbarView showNewsletter={showNewsletter} />;
+}
+
+export function SiteNavbar() {
+  return (
+    <Suspense
+      fallback={
+        <SiteNavbarView
+          showNewsletter={isNewsletterSubscriptionsEnabled()}
+        />
+      }
+    >
+      <SiteNavbarWithQuery />
+    </Suspense>
   );
 }

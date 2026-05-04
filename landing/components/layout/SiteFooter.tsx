@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { Suspense } from "react";
 import { useTranslations } from "@/components/i18n/LocaleProvider";
+import { useNewsletterSubscriptionsEnabled } from "@/lib/feature-flags-hooks";
 import { isNewsletterSubscriptionsEnabled } from "@/lib/feature-flags";
 import {
   footerExploreLinks,
@@ -15,8 +17,9 @@ const footerHeadingClass =
 const footerLinkClass =
   "text-sm text-primary-container decoration-tertiary-fixed-dim underline-offset-4 transition-colors hover:text-primary hover:underline dark:text-surface-variant/90 dark:hover:text-tertiary-fixed";
 
-export function SiteFooter() {
-  const showNewsletter = isNewsletterSubscriptionsEnabled();
+type SiteFooterViewProps = { showNewsletter: boolean };
+
+function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
   const { t } = useTranslations();
 
   return (
@@ -97,5 +100,24 @@ export function SiteFooter() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function SiteFooterWithQuery() {
+  const showNewsletter = useNewsletterSubscriptionsEnabled();
+  return <SiteFooterView showNewsletter={showNewsletter} />;
+}
+
+export function SiteFooter() {
+  return (
+    <Suspense
+      fallback={
+        <SiteFooterView
+          showNewsletter={isNewsletterSubscriptionsEnabled()}
+        />
+      }
+    >
+      <SiteFooterWithQuery />
+    </Suspense>
   );
 }
