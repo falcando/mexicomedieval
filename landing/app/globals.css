@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 :root {
+  /* Match families loaded in app/layout.tsx (avoids next/font build-time fetches for static export). */
+  --font-noto-serif: "Noto Serif", ui-serif, Georgia, serif;
+  --font-work-sans: "Work Sans", ui-sans, system-ui, sans-serif;
   --surface-container: #f2ede3;
   --surface-container-low: #f8f3e9;
   --on-secondary-fixed-variant: #6b3069;

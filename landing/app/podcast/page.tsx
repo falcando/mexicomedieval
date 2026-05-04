@@ -210,12 +210,17 @@ export default function PodcastPage() {
     const guests = mmQuery.data?.spotifyGuests ?? [];
     const groups = groupBySeries(guests);
     const baseIdx = (pageMm - 1) * ENTITY_PAGE_SIZE;
-    let linear = 0;
-    return groups.map((group) => ({
+    const episodeOffsetPerGroup: number[] = [];
+    let cumulative = 0;
+    for (const g of groups) {
+      episodeOffsetPerGroup.push(cumulative);
+      cumulative += g.episodes.length;
+    }
+    return groups.map((group, gi) => ({
       series: group.series,
-      episodes: group.episodes.map((item) => {
+      episodes: group.episodes.map((item, j) => {
+        const linear = episodeOffsetPerGroup[gi] + j;
         const artGlobal = baseIdx + linear;
-        linear += 1;
         return {
           item,
           image: CARD_IMAGES[artGlobal % CARD_IMAGES.length],

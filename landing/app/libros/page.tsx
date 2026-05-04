@@ -3,17 +3,19 @@
 import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { NewsletterSubscribeCard } from "@/components/sections/NewsletterSubscribeCard";
 import { totalPagesFromTotal } from "@/lib/pagination";
+import { isBooksFilterEnabled } from "@/lib/feature-flags";
 import { useBooksFilterEnabled } from "@/lib/feature-flags-hooks";
 import { useBooksPageQuery } from "@/lib/queries/books";
 import Image from "next/image";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 const HERO_IMG =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCelkrcQ6V5XyJL6F8omWxm6qNTfUY66OqOQleD80Ij7fWT9JyBDH4CbPy788L-vUF80MQKSJdPfJ1mG0cffnFl3ErIXE_I_Z62uBbkLf5Yw0MupV9uVilgP0kJq-Lkcu1LcAQBRZtx4bkIWQVDQH6qxGCPeX1ocvMhtYl8mpEwy7iji6x48lYjLtf2w1-y3qW9DpZq_3H8fLSujaJHITjNFyA4DevF-OB0ykU02H1fG5LkTFXzsho1nFYVmjYhM_gLARE2z6VPWbF7";
 
-export default function LibrosPage() {
+type LibrosPageBodyProps = { booksFilterEnabled: boolean };
+
+function LibrosPageBody({ booksFilterEnabled }: LibrosPageBodyProps) {
   const { t } = useTranslations();
-  const booksFilterEnabled = useBooksFilterEnabled();
   const [page, setPage] = useState(1);
   const { data, isPending, isError, isFetching } = useBooksPageQuery(page);
 
@@ -256,5 +258,22 @@ export default function LibrosPage() {
         <NewsletterSubscribeCard className="mt-20" />
       </main>
     </div>
+  );
+}
+
+function LibrosPageWithSearchParams() {
+  const booksFilterEnabled = useBooksFilterEnabled();
+  return <LibrosPageBody booksFilterEnabled={booksFilterEnabled} />;
+}
+
+export default function LibrosPage() {
+  return (
+    <Suspense
+      fallback={
+        <LibrosPageBody booksFilterEnabled={isBooksFilterEnabled()} />
+      }
+    >
+      <LibrosPageWithSearchParams />
+    </Suspense>
   );
 }

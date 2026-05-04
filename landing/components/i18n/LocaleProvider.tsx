@@ -59,6 +59,7 @@ export function LocaleProvider({
     normalizeLocale(initialLocale),
   );
 
+  // After mount, apply `mm_locale` from the client (static export has no `cookies()` in the root layout).
   useEffect(() => {
     const match = document.cookie.match(
       new RegExp(
@@ -68,6 +69,7 @@ export function LocaleProvider({
     const raw = match?.[1];
     const fromCookie = raw ? decodeURIComponent(raw) : null;
     const parsed = normalizeLocale(fromCookie);
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time cookie sync after hydration for static export
     setLocaleState((prev) => (parsed !== prev ? parsed : prev));
   }, []);
 

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Noto_Serif, Work_Sans } from "next/font/google";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { QueryProvider } from "@/components/providers/QueryProvider";
@@ -9,19 +8,6 @@ import en from "@/messages/en.json";
 import es from "@/messages/es.json";
 import "./globals.css";
 
-const notoSerif = Noto_Serif({
-  variable: "--font-noto-serif",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
-});
-
-const workSans = Work_Sans({
-  variable: "--font-work-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-});
-
 export async function generateMetadata(): Promise<Metadata> {
   const meta = defaultLocale === "es" ? es.metadata : en.metadata;
   return {
@@ -30,24 +16,28 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang={defaultLocale}
-      className={`light ${notoSerif.variable} ${workSans.variable} h-full antialiased`}
-    >
+    <html lang={defaultLocale} className="light h-full antialiased">
       <head>
+        {/* Google Fonts load at runtime (not via next/font) so `output: "export"` builds without fetching fonts. */}
+        {/* eslint-disable-next-line @next/next/no-page-custom-font -- runtime stylesheet fonts */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font -- Material Symbols */}
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
           rel="stylesheet"
         />
       </head>
       <body className="min-h-full flex flex-col font-body selection:bg-tertiary-fixed-dim selection:text-on-tertiary-fixed bg-background text-on-background">
-        <LocaleProvider key={defaultLocale} initialLocale={defaultLocale}>
+        <LocaleProvider initialLocale={defaultLocale}>
           <QueryProvider>
             <SiteNavbar />
             <div className="flex flex-1 flex-col">{children}</div>
