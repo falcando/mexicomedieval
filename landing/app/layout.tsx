@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Serif, Work_Sans } from "next/font/google";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { QueryProvider } from "@/components/providers/QueryProvider";
 import { SiteNavbar } from "@/components/layout/SiteNavbar";
 import { defaultLocale } from "@/lib/i18n-config";
 import en from "@/messages/en.json";
@@ -47,9 +48,11 @@ export default async function RootLayout({
       </head>
       <body className="min-h-full flex flex-col font-body selection:bg-tertiary-fixed-dim selection:text-on-tertiary-fixed bg-background text-on-background">
         <LocaleProvider key={defaultLocale} initialLocale={defaultLocale}>
-          <SiteNavbar />
-          <div className="flex flex-1 flex-col">{children}</div>
-          <SiteFooter />
+          <QueryProvider>
+            <SiteNavbar />
+            <div className="flex flex-1 flex-col">{children}</div>
+            <SiteFooter />
+          </QueryProvider>
         </LocaleProvider>
       </body>
     </html>

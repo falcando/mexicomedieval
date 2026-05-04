@@ -2,80 +2,77 @@
 
 import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { NewsletterSubscribeCard } from "@/components/sections/NewsletterSubscribeCard";
+import { getHighlightedPaper } from "@/lib/data/papers";
+import {
+  useAcademicPapersPageQuery,
+  usePresentationsPageQuery,
+} from "@/lib/queries/papers";
+import { totalPagesFromTotal } from "@/lib/pagination";
 import Link from "next/link";
+import { useMemo, useState } from "react";
 
-const SITE_ORIGIN = "https://www.mexicomedieval.org";
-
-type PaperEntry = {
-  year: string;
-  title: string;
-  context: string;
-  href: string;
-  documentType: "paper" | "presentation";
-  highlighted?: boolean;
-  presentationSlug?: string;
-};
-
-/** Sourced from static-html/papers.html (Paper 1–3). */
-const PAPERS: readonly PaperEntry[] = [
-  {
-    year: "2025",
-    title:
-      "Al límite de la esclavitud: los servos y la inmovilidad social de la Cerdeña medieval (siglos XI–XII)",
-    context: "Presentado en el V Coloquio Internacional Las Otras Historias",
-    href: `${SITE_ORIGIN}/servos_otrashistorias.html`,
-    documentType: "presentation",
-    highlighted: true,
-    presentationSlug: "servos_otrashistorias",
-  },
-  {
-    year: "2017",
-    title: "A Border Within Borders: The Abruzzo and the Kingdom of Sicily",
-    context: "Paper académico",
-    href: "https://www.academia.edu/36800703/A_border_within_borders_the_Abruzzo_and_the_kingdom_of_Sicily_in_the_twelfth_century",
-    documentType: "paper",
-  },
-  {
-    year: "2015",
-    title: "Counts and Counties in the Norman Mezzogiorno",
-    context: "Paper académico",
-    href: "https://www.academia.edu/14145287/Counts_and_Counties_in_the_Norman_Mezzogiorno_The_Arrangement_of_the_Nobility_under_the_Hauteville_Monarchy",
-    documentType: "paper",
-  },
-];
-
-const highlightedFromData = [...PAPERS].find(
-  (p) => "highlighted" in p && p.highlighted === true,
-);
-
-const byYearDesc = <T extends { year: string }>(items: T[]) =>
-  [...items].sort((a, b) => Number(b.year) - Number(a.year));
-
-const PAPERS_ONLY = byYearDesc(
-  [...PAPERS].filter((p) => p.documentType === "paper"),
-);
-
-const PRESENTATIONS_ONLY = byYearDesc(
-  [...PAPERS].filter((p) => p.documentType === "presentation"),
-);
-
-const HIGHLIGHTED =
-  highlightedFromData ?? PAPERS_ONLY[0] ?? PRESENTATIONS_ONLY[0];
-
-const ACADEMIC_PAPERS = PAPERS_ONLY.filter(
-  (p) =>
-    !(
-      HIGHLIGHTED?.documentType === "paper" && p.href === HIGHLIGHTED.href
-    ),
-);
-
-const SPEAKER_PRESENTATIONS = PRESENTATIONS_ONLY.filter(
-  (p) =>
-    !(
-      HIGHLIGHTED?.documentType === "presentation" &&
-      p.href === HIGHLIGHTED.href
-    ),
-);
+function PaginationFolio({
+  page,
+  totalPages,
+  isFetching,
+  onPrev,
+  onNext,
+  prevLabel,
+  nextLabel,
+  folioLabel,
+  ofLabel,
+}: {
+  page: number;
+  totalPages: number;
+  isFetching: boolean;
+  onPrev: () => void;
+  onNext: () => void;
+  prevLabel: string;
+  nextLabel: string;
+  folioLabel: string;
+  ofLabel: string;
+}) {
+  const hasPreviousPage = page > 1;
+  const hasNextPage = page < totalPages;
+  return (
+    <div className="mt-12 flex flex-col items-center gap-6">
+      <div className="manuscript-divider mb-4 w-16" />
+      <div className="flex items-center gap-12 font-label text-xs tracking-[0.4em] text-on-surface-variant uppercase">
+        <button
+          type="button"
+          disabled={!hasPreviousPage || isFetching}
+          onClick={onPrev}
+          className={`flex items-center gap-2 transition-colors ${
+            hasPreviousPage && !isFetching
+              ? "hover:text-primary"
+              : "cursor-not-allowed opacity-30"
+          }`}
+        >
+          <span className="material-symbols-outlined text-lg">chevron_left</span>
+          {prevLabel}
+        </button>
+        <span className="font-bold text-primary">
+          {folioLabel}{" "}
+          <span className="font-headline mx-2 text-lg italic">{page}</span>{" "}
+          {ofLabel} {totalPages}
+        </span>
+        <button
+          type="button"
+          disabled={!hasNextPage || isFetching}
+          onClick={onNext}
+          className={`flex items-center gap-2 transition-colors ${
+            hasNextPage && !isFetching
+              ? "hover:text-primary"
+              : "cursor-not-allowed opacity-30"
+          }`}
+        >
+          {nextLabel}
+          <span className="material-symbols-outlined text-lg">chevron_right</span>
+        </button>
+      </div>
+    </div>
+  );
+}
 
 function ExternalLink({
   href,
@@ -125,6 +122,32 @@ function PresentationDetailsLink({
 
 export default function PapersPage() {
   const { t } = useTranslations();
+  const HIGHLIGHTED = useMemo(() => getHighlightedPaper(), []);
+
+  const [pageAcademic, setPageAcademic] = useState(1);
+  const [pagePresentations, setPagePresentations] = useState(1);
+
+  const academicQuery = useAcademicPapersPageQuery(pageAcademic);
+  const presentationsQuery = usePresentationsPageQuery(pagePresentations);
+
+  const academicTotal = academicQuery.data?.pagination.total;
+  const presentationsTotal = presentationsQuery.data?.pagination.total;
+
+  const academicTotalPages =
+    academicTotal !== undefined ? totalPagesFromTotal(academicTotal) : 1;
+  const presentationsTotalPages =
+    presentationsTotal !== undefined
+      ? totalPagesFromTotal(presentationsTotal)
+      : 1;
+
+  const academicPapers = academicQuery.data?.papers ?? [];
+  const speakerPresentations = useMemo(() => {
+    const raw = presentationsQuery.data?.presentations ?? [];
+    if (HIGHLIGHTED?.documentType === "presentation") {
+      return raw.filter((p) => p.href !== HIGHLIGHTED.href);
+    }
+    return raw;
+  }, [presentationsQuery.data?.presentations, HIGHLIGHTED]);
 
   return (
     <div className="relative min-h-full bg-[#fdf8ef] font-body text-on-background selection:bg-secondary-container selection:text-on-secondary-container">
@@ -159,6 +182,17 @@ export default function PapersPage() {
             <div className="ml-8 hidden h-px min-w-0 grow bg-outline-variant/30 md:block" />
           </div>
 
+          {academicQuery.isPending && !academicQuery.data && (
+            <p className="mb-6 text-center text-on-surface-variant">
+              {t("papers.listLoading")}
+            </p>
+          )}
+          {academicQuery.isError && (
+            <p className="mb-6 text-center text-primary" role="alert">
+              {t("papers.listLoadError")}
+            </p>
+          )}
+
           <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
             {HIGHLIGHTED?.documentType === "paper" ? (
               <div className="group relative overflow-hidden border border-outline-variant/20 bg-white p-8 shadow-sm transition-shadow hover:shadow-md md:col-span-7">
@@ -187,8 +221,9 @@ export default function PapersPage() {
 
             <div
               className={`flex flex-col gap-6 ${HIGHLIGHTED?.documentType === "paper" ? "md:col-span-5" : "md:col-span-12 md:flex-row md:flex-wrap"}`}
+              aria-busy={academicQuery.isFetching}
             >
-              {ACADEMIC_PAPERS.map((item) => (
+              {academicPapers.map((item) => (
                 <div
                   key={item.href}
                   className={`border border-outline-variant/20 bg-white p-6 shadow-sm transition-colors hover:bg-surface-container-lowest ${HIGHLIGHTED?.documentType === "paper" ? "" : "md:min-w-[280px] md:flex-1"}`}
@@ -215,6 +250,21 @@ export default function PapersPage() {
               ))}
             </div>
           </div>
+          {academicTotalPages > 1 ? (
+            <PaginationFolio
+              page={pageAcademic}
+              totalPages={academicTotalPages}
+              isFetching={academicQuery.isFetching}
+              onPrev={() => setPageAcademic((p) => Math.max(1, p - 1))}
+              onNext={() =>
+                setPageAcademic((p) => Math.min(academicTotalPages, p + 1))
+              }
+              prevLabel={t("papers.prev")}
+              nextLabel={t("papers.next")}
+              folioLabel={t("papers.folio")}
+              ofLabel={t("papers.of")}
+            />
+          ) : null}
         </section>
 
         <section id="speaker-presentations" className="scroll-mt-28">
@@ -235,7 +285,18 @@ export default function PapersPage() {
             <div className="ml-8 hidden h-px min-w-0 grow bg-outline-variant/30 md:block" />
           </div>
 
-          <div className="space-y-6">
+          {presentationsQuery.isPending && !presentationsQuery.data && (
+            <p className="mb-6 text-center text-on-surface-variant">
+              {t("papers.listLoading")}
+            </p>
+          )}
+          {presentationsQuery.isError && (
+            <p className="mb-6 text-center text-primary" role="alert">
+              {t("papers.listLoadError")}
+            </p>
+          )}
+
+          <div className="space-y-6" aria-busy={presentationsQuery.isFetching}>
             {HIGHLIGHTED?.documentType === "presentation" ? (
               <div className="group flex flex-col items-center gap-8 border border-outline-variant/20 bg-white p-8 shadow-sm transition-all hover:shadow-md md:flex-row">
                 <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-tertiary-fixed/20">
@@ -276,7 +337,7 @@ export default function PapersPage() {
               </div>
             ) : null}
 
-            {SPEAKER_PRESENTATIONS.map((item) => (
+            {speakerPresentations.map((item) => (
               <div
                 key={item.href}
                 className="group flex flex-col items-center gap-8 border border-outline-variant/20 bg-white p-8 shadow-sm transition-all hover:shadow-md md:flex-row"
@@ -317,6 +378,23 @@ export default function PapersPage() {
               </div>
             ))}
           </div>
+          {presentationsTotalPages > 1 ? (
+            <PaginationFolio
+              page={pagePresentations}
+              totalPages={presentationsTotalPages}
+              isFetching={presentationsQuery.isFetching}
+              onPrev={() => setPagePresentations((p) => Math.max(1, p - 1))}
+              onNext={() =>
+                setPagePresentations((p) =>
+                  Math.min(presentationsTotalPages, p + 1),
+                )
+              }
+              prevLabel={t("papers.prev")}
+              nextLabel={t("papers.next")}
+              folioLabel={t("papers.folio")}
+              ofLabel={t("papers.of")}
+            />
+          ) : null}
         </section>
 
         <NewsletterSubscribeCard className="mt-24" />

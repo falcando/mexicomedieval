@@ -98,7 +98,9 @@
     "folio": "Folio",
     "of": "of",
     "prev": "Prev",
-    "next": "Next"
+    "next": "Next",
+    "booksLoading": "Loading volumes…",
+    "booksLoadError": "Could not load books. Please try again later."
   },
   "articulos": {
     "collectionKicker": "Scholarly Collection",
@@ -121,7 +123,13 @@
     "chapterSource": "In: The Making of Medieval Sardinia (Brill)",
     "peerReviewedBadge": "Peer-reviewed",
     "viewChapterBtn": "View Chapter",
-    "metaPeerReviewed": "Peer-reviewed"
+    "metaPeerReviewed": "Peer-reviewed",
+    "listLoading": "Loading…",
+    "listLoadError": "Could not load this section. Please try again later.",
+    "prev": "Prev",
+    "next": "Next",
+    "folio": "Folio",
+    "of": "of"
   },
   "podcastPage": {
     "cardAlt1": "Medieval knight armor and sword on velvet",
@@ -151,7 +159,13 @@
     "discoverArchive": "Discover entire archive",
     "episodesInSeries": "Episodes in this series",
     "spotifyLabel": "Spotify",
-    "openSpotify": "Open in Spotify"
+    "openSpotify": "Open in Spotify",
+    "listLoading": "Loading episodes…",
+    "listLoadError": "Could not load episodes. Please try again later.",
+    "prev": "Prev",
+    "next": "Next",
+    "folio": "Folio",
+    "of": "of"
   },
   "papers": {
     "title": "Papers & presentations",
@@ -163,7 +177,13 @@
     "speakerPresentations": "Speaker presentations",
     "colloquium": "Colloquium / conference",
     "viewDetails": "View details",
-    "paperContext": "Academic paper"
+    "paperContext": "Academic paper",
+    "listLoading": "Loading…",
+    "listLoadError": "Could not load this section. Please try again later.",
+    "prev": "Prev",
+    "next": "Next",
+    "folio": "Folio",
+    "of": "of"
   },
   "videos": {
     "kicker": "The Digital Scriptorium",
@@ -171,7 +191,13 @@
     "subtitle": "Lectures, appearances, and curated moving-image resources on medieval México and related scholarship.",
     "catalogAria": "Video catalog",
     "emptyTitle": "Nothing here yet",
-    "emptyBody": "The video archive is not published yet. This page will list talks and recordings when they are ready—no broken links, just an empty shelf for now."
+    "emptyBody": "The video archive is not published yet. This page will list talks and recordings when they are ready—no broken links, just an empty shelf for now.",
+    "listLoading": "Loading videos…",
+    "listLoadError": "Could not load videos. Please try again later.",
+    "prev": "Prev",
+    "next": "Next",
+    "folio": "Folio",
+    "of": "of"
   },
   "about": {
     "kicker": "México Medieval",
