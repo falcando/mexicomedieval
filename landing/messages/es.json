@@ -39,6 +39,11 @@
     "exploreArchive": "Explorar el archivo",
     "legalContact": "Legal y contacto"
   },
+  "contact": {
+    "kicker": "El scriptorium digital",
+    "title": "Contacto",
+    "body": "Para consultas académicas o colaboraciones, actualizaremos aquí los medios de contacto cuando estén disponibles."
+  },
   "home": {
     "heroImgAlt": "Manuscrito iluminado con pan de oro y caligrafía gótica en pergamino envejecido",
     "heroKicker": "Un archivo académico iluminado",

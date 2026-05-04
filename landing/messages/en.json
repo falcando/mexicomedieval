@@ -39,6 +39,11 @@
     "exploreArchive": "Explore the archive",
     "legalContact": "Legal and contact"
   },
+  "contact": {
+    "kicker": "The Digital Scriptorium",
+    "title": "Contact",
+    "body": "For academic inquiries or collaborations, we will publish contact channels here when they are available."
+  },
   "home": {
     "heroImgAlt": "Illuminated manuscript with gold leaf and gothic calligraphy on aged parchment",
     "heroKicker": "An Illuminated Scholarly Archive",
