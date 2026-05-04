@@ -98,7 +98,9 @@
     "folio": "Folio",
     "of": "of",
     "prev": "Prev",
-    "next": "Next"
+    "next": "Next",
+    "booksLoading": "Loading volumes…",
+    "booksLoadError": "Could not load books. Please try again later."
   },
   "articulos": {
     "collectionKicker": "Scholarly Collection",

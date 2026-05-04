@@ -98,7 +98,9 @@
     "folio": "Folio",
     "of": "de",
     "prev": "Anterior",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "booksLoading": "Cargando volúmenes…",
+    "booksLoadError": "No se pudieron cargar los libros. Inténtelo más tarde."
   },
   "articulos": {
     "collectionKicker": "Colección académica",

@@ -2,37 +2,24 @@
 
 import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { NewsletterSubscribeCard } from "@/components/sections/NewsletterSubscribeCard";
+import { booksTotalPagesFromTotal } from "@/lib/data/books";
+import { useBooksPageQuery } from "@/lib/queries/books";
 import Image from "next/image";
+import { useState } from "react";
 
 const HERO_IMG =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCelkrcQ6V5XyJL6F8omWxm6qNTfUY66OqOQleD80Ij7fWT9JyBDH4CbPy788L-vUF80MQKSJdPfJ1mG0cffnFl3ErIXE_I_Z62uBbkLf5Yw0MupV9uVilgP0kJq-Lkcu1LcAQBRZtx4bkIWQVDQH6qxGCPeX1ocvMhtYl8mpEwy7iji6x48lYjLtf2w1-y3qW9DpZq_3H8fLSujaJHITjNFyA4DevF-OB0ykU02H1fG5LkTFXzsho1nFYVmjYhM_gLARE2z6VPWbF7";
 
-/** Sourced from static-html/libros.html (Book 1, Book 2). */
-const BOOKS = [
-  {
-    image: "https://brill.com/coverimage?doc=%2Ftitle%2F38771&width=200&type=webp",
-    alt: "Portada del libro The Making of Medieval Sardinia",
-    badge: "Brill",
-    year: "2021",
-    title: "The Making of Medieval Sardinia",
-    description: "Published by Brill",
-    href: "https://brill.com/display/title/38771",
-    ctaKey: "libros.ctaBrill" as const,
-  },
-  {
-    image: "https://media.bloomsbury.com/rep/bj/9781350133228.jpg",
-    alt: "Portada del libro County and Nobility in Norman Italy",
-    badge: "Bloomsbury",
-    year: "2020",
-    title: "County and Nobility in Norman Italy",
-    description: "Published by Bloomsbury",
-    href: "https://www.bloomsbury.com/uk/county-and-nobility-in-norman-italy-9781350133228/",
-    ctaKey: "libros.ctaBloomsbury" as const,
-  },
-] as const;
-
 export default function LibrosPage() {
   const { t } = useTranslations();
+  const [page, setPage] = useState(1);
+  const { data, isPending, isError, isFetching } = useBooksPageQuery(page);
+
+  const total = data?.pagination.total;
+  const totalPages =
+    total !== undefined ? booksTotalPagesFromTotal(total) : 1;
+  const hasPreviousPage = page > 1;
+  const hasNextPage = page < totalPages;
 
   return (
     <div className="min-h-full bg-background font-body text-on-background selection:bg-tertiary-fixed-dim selection:text-tertiary">
@@ -147,8 +134,24 @@ export default function LibrosPage() {
         </section>
 
         <section className="mx-auto max-w-7xl px-8 py-20">
-          <div className="grid grid-cols-1 items-stretch gap-12 md:grid-cols-2 lg:grid-cols-3">
-            {BOOKS.map((book) => (
+          <div
+            className="grid grid-cols-1 items-stretch gap-12 md:grid-cols-2 lg:grid-cols-3"
+            aria-busy={isPending || isFetching}
+          >
+            {isPending && !data && (
+              <p className="col-span-full text-center text-on-surface-variant md:col-span-2 lg:col-span-3">
+                {t("libros.booksLoading")}
+              </p>
+            )}
+            {isError && (
+              <p
+                className="col-span-full text-center text-primary md:col-span-2 lg:col-span-3"
+                role="alert"
+              >
+                {t("libros.booksLoadError")}
+              </p>
+            )}
+            {data?.books.map((book) => (
               <article
                 key={book.title}
                 className="group flex h-full min-h-0 flex-col border-t-2 border-tertiary-fixed/30 bg-surface-container-low p-1 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
@@ -200,8 +203,13 @@ export default function LibrosPage() {
             <div className="flex items-center gap-12 font-label text-xs tracking-[0.4em] text-on-surface-variant uppercase">
               <button
                 type="button"
-                disabled
-                className="flex cursor-not-allowed items-center gap-2 opacity-30"
+                disabled={!hasPreviousPage || isFetching}
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                className={`flex items-center gap-2 transition-colors ${
+                  hasPreviousPage && !isFetching
+                    ? "hover:text-primary"
+                    : "cursor-not-allowed opacity-30"
+                }`}
               >
                 <span className="material-symbols-outlined text-lg">
                   chevron_left
@@ -210,12 +218,22 @@ export default function LibrosPage() {
               </button>
               <span className="font-bold text-primary">
                 {t("libros.folio")}{" "}
-                <span className="font-headline mx-2 text-lg italic">1</span>{" "}
-                {t("libros.of")} 12
+                <span className="font-headline mx-2 text-lg italic">
+                  {page}
+                </span>{" "}
+                {t("libros.of")} {totalPages}
               </span>
               <button
                 type="button"
-                className="flex items-center gap-2 transition-colors hover:text-primary"
+                disabled={!hasNextPage || isFetching}
+                onClick={() =>
+                  setPage((p) => Math.min(totalPages, p + 1))
+                }
+                className={`flex items-center gap-2 transition-colors ${
+                  hasNextPage && !isFetching
+                    ? "hover:text-primary"
+                    : "cursor-not-allowed opacity-30"
+                }`}
               >
                 {t("libros.next")}
                 <span className="material-symbols-outlined text-lg">
