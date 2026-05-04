@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { isNewsletterSubscriptionsEnabled } from "@/lib/feature-flags";
@@ -17,6 +18,25 @@ export function SiteNavbar() {
   const pathname = usePathname() ?? "";
   const showNewsletter = isNewsletterSubscriptionsEnabled();
   const { t } = useTranslations();
+  const mobileMenuRef = useRef<HTMLDetailsElement>(null);
+
+  function closeMobileMenu() {
+    mobileMenuRef.current?.removeAttribute("open");
+  }
+
+  useEffect(() => {
+    function handlePointerDown(event: PointerEvent) {
+      const el = mobileMenuRef.current;
+      if (!el?.open) return;
+      const target = event.target;
+      if (target instanceof Node && !el.contains(target)) {
+        closeMobileMenu();
+      }
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, []);
 
   return (
     <nav
@@ -31,7 +51,7 @@ export function SiteNavbar() {
           {t("common.siteName")}
         </Link>
 
-        <details className="relative md:hidden">
+        <details ref={mobileMenuRef} className="relative md:hidden">
           <summary className="cursor-pointer list-none rounded-lg border border-outline-variant/30 px-3 py-2 text-sm font-medium text-primary">
             {t("nav.menu")}
           </summary>
@@ -43,6 +63,7 @@ export function SiteNavbar() {
               <Link
                 key={item.href + item.labelKey}
                 href={item.href}
+                onClick={closeMobileMenu}
                 className="block px-4 py-2 text-sm text-primary-container hover:bg-surface-container-high"
               >
                 {t(item.labelKey)}
