@@ -2,121 +2,119 @@
 
 import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { NewsletterSubscribeCard } from "@/components/sections/NewsletterSubscribeCard";
+import { getHighlightedArticle } from "@/lib/data/articles";
+import {
+  useArticleChaptersPageQuery,
+  useJournalArticlesPageQuery,
+} from "@/lib/queries/articles";
+import { totalPagesFromTotal } from "@/lib/pagination";
 import Image from "next/image";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 const FEATURED_IMG =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuC36OR9bfZWebubcigMG_gSkHrqIrwGug3GKwYO587LUZVmnKxpPBAVrIN5Nsyq2_S-PwJRlpSmPmVpWbK9j3r5L1YuVIO_6X8pC6ed-sw449I49hwQ6MKjKargpx_bJp2tBRlKro2UF3beVTmwtMLbR_k8o6_1JfOZOkRddUVThvnwP-BoPQPo1bCKgyKHI4OR0u1bvjE1NrKaxgOurNYRvLcTqh1ybvSn-uvGLHbLQ0BxE-7M7dRce-I9pG8Fz73WdS5yeiSqXD3u";
 
-/** Sourced from static-html/articulos.html (Article 1–9). */
-const ARTICLES = [
-  {
-    year: "2020",
-    title:
-      "The Making of Medieval Sardinia: A Historiographical Introduction",
-    href: "https://doi.org/10.1163/9789004467545_002",
-    documentType: "article",
-    highlighted: true,
-  },
-  {
-    year: "2020",
-    title:
-      "Discovery, Invention, and Supposition: Three Case Studies from Medieval Sardinia",
-    href: "https://doi.org/10.1163/9789004467545_003",
-    documentType: "bookChapter",
-  },
-  {
-    year: "2020",
-    title: "Rome Awards, Power and Society in Medieval Sardinia",
-    href: "https://www.cambridge.org/core/journals/papers-of-the-british-school-at-rome/article/rome-awards-power-and-society-in-medieval-sardinia/A5E8FB6A67CB0CB452C1751CB0017CB1",
-    documentType: "article",
-  },
-  {
-    year: "2019",
-    title:
-      "La Cerdeña Medieval vista desde la modernidad. Un epítome historiográfico de la supuesta conectividad mediterránea",
-    href: "https://revistascientificas.uach.mx/index.php/qvadrata/article/view/114",
-    documentType: "article",
-  },
-  {
-    year: "2019",
-    title:
-      "Royal comestabuli and Military Control in the Sicilian Kingdom: A Prosopographical Contribution to the Study of Italo-Norman Aristocracy",
-    href: "https://scholarworks.wmich.edu/medpros/vol34/iss1/2/",
-    documentType: "article",
-  },
-  {
-    year: "2016",
-    title:
-      "Social Network Analysis and Narrative Structures: Measuring Communication and Influence in a Medieval Source on the Kingdom of Sicily",
-    href: "https://doi.org/10.55555/IS.14.148",
-    documentType: "article",
-  },
-  {
-    year: "2016",
-    title:
-      "The Re-Arrangement of the Nobility Under the Hauteville Monarchy: The Creation of the South Italian Counties",
-    href: "https://sites.exeter.ac.uk/exhistoria/archive/volume-8-2016/",
-    documentType: "article",
-  },
-  {
-    year: "2014",
-    title: "Social Positions in the Liber de Regno Sicilie",
-    href: "https://ams.ceu.edu/2014.htm",
-    documentType: "article",
-  },
-  {
-    year: "2009",
-    title:
-      "Modernidad política en la Edad Media: la experiencia y las instituciones normandas",
-    href: "https://agora.colmex.mx/numero-6-2/",
-    documentType: "article",
-  },
-] as const;
-
-const PEER_REVIEWED_ARTICLES = [...ARTICLES]
-  .filter((a) => a.documentType === "article")
-  .sort((a, b) => Number(b.year) - Number(a.year));
-
-const highlightedFromData = [...ARTICLES].find(
-  (a) => "highlighted" in a && a.highlighted === true,
-);
-
-const HIGHLIGHTED_ARTICLE =
-  highlightedFromData ?? PEER_REVIEWED_ARTICLES[0];
+function PaginationFolio({
+  page,
+  totalPages,
+  isFetching,
+  onPrev,
+  onNext,
+  prevLabel,
+  nextLabel,
+  folioLabel,
+  ofLabel,
+}: {
+  page: number;
+  totalPages: number;
+  isFetching: boolean;
+  onPrev: () => void;
+  onNext: () => void;
+  prevLabel: string;
+  nextLabel: string;
+  folioLabel: string;
+  ofLabel: string;
+}) {
+  const hasPreviousPage = page > 1;
+  const hasNextPage = page < totalPages;
+  return (
+    <div className="mt-12 flex flex-col items-center gap-6">
+      <div className="manuscript-divider mb-4 w-16" />
+      <div className="flex items-center gap-12 font-label text-xs tracking-[0.4em] text-on-surface-variant uppercase">
+        <button
+          type="button"
+          disabled={!hasPreviousPage || isFetching}
+          onClick={onPrev}
+          className={`flex items-center gap-2 transition-colors ${
+            hasPreviousPage && !isFetching
+              ? "hover:text-primary"
+              : "cursor-not-allowed opacity-30"
+          }`}
+        >
+          <span className="material-symbols-outlined text-lg">chevron_left</span>
+          {prevLabel}
+        </button>
+        <span className="font-bold text-primary">
+          {folioLabel}{" "}
+          <span className="font-headline mx-2 text-lg italic">{page}</span>{" "}
+          {ofLabel} {totalPages}
+        </span>
+        <button
+          type="button"
+          disabled={!hasNextPage || isFetching}
+          onClick={onNext}
+          className={`flex items-center gap-2 transition-colors ${
+            hasNextPage && !isFetching
+              ? "hover:text-primary"
+              : "cursor-not-allowed opacity-30"
+          }`}
+        >
+          {nextLabel}
+          <span className="material-symbols-outlined text-lg">chevron_right</span>
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function ArticulosPage() {
   const { t } = useTranslations();
+  const HIGHLIGHTED_ARTICLE = useMemo(() => getHighlightedArticle(), []);
 
-  const journalArticles = useMemo(() => {
+  const [pageJournal, setPageJournal] = useState(1);
+  const [pageChapters, setPageChapters] = useState(1);
+
+  const journalQuery = useJournalArticlesPageQuery(pageJournal);
+  const chaptersQuery = useArticleChaptersPageQuery(pageChapters);
+
+  const journalTotal = journalQuery.data?.pagination.total;
+  const chaptersTotal = chaptersQuery.data?.pagination.total;
+
+  const journalTotalPages =
+    journalTotal !== undefined ? totalPagesFromTotal(journalTotal) : 1;
+  const chaptersTotalPages =
+    chaptersTotal !== undefined ? totalPagesFromTotal(chaptersTotal) : 1;
+
+  const journalCards = useMemo(() => {
     const excerpt = t("articulos.journalExcerpt");
-    return PEER_REVIEWED_ARTICLES.filter(
-      (a) =>
-        !(
-          HIGHLIGHTED_ARTICLE?.documentType === "article" &&
-          a.href === HIGHLIGHTED_ARTICLE.href
-        ),
-    ).map((a) => ({
+    return (journalQuery.data?.journalArticles ?? []).map((a) => ({
       meta: `${t("articulos.metaPeerReviewed")} • ${a.year}`,
       title: a.title,
       excerpt,
       href: a.href,
     }));
-  }, [t]);
+  }, [journalQuery.data?.journalArticles, t]);
 
-  const bookChapters = useMemo(() => {
-    return [...ARTICLES]
-      .filter((a) => a.documentType === "bookChapter")
-      .sort((a, b) => Number(b.year) - Number(a.year))
-      .map((a) => ({
-        chapter: `${t("articulos.chapter")} • ${a.year}`,
-        title: a.title,
-        source: t("articulos.chapterSource"),
-        meta: t("articulos.peerReviewedBadge"),
-        bg: "low" as const,
-        href: a.href,
-      }));
-  }, [t]);
+  const chapterCards = useMemo(() => {
+    return (chaptersQuery.data?.chapters ?? []).map((a) => ({
+      chapter: `${t("articulos.chapter")} • ${a.year}`,
+      title: a.title,
+      source: t("articulos.chapterSource"),
+      meta: t("articulos.peerReviewedBadge"),
+      bg: "low" as const,
+      href: a.href,
+    }));
+  }, [chaptersQuery.data?.chapters, t]);
 
   return (
     <div className="articulos-dot-bg min-h-full font-body text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
@@ -210,8 +208,21 @@ export default function ArticulosPage() {
             </h2>
             <div className="h-px w-full bg-outline-variant/30" />
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {journalArticles.map((a) => (
+          {journalQuery.isPending && !journalQuery.data && (
+            <p className="text-center text-on-surface-variant">
+              {t("articulos.listLoading")}
+            </p>
+          )}
+          {journalQuery.isError && (
+            <p className="text-center text-primary" role="alert">
+              {t("articulos.listLoadError")}
+            </p>
+          )}
+          <div
+            className="grid grid-cols-1 gap-8 md:grid-cols-3"
+            aria-busy={journalQuery.isFetching}
+          >
+            {journalCards.map((a) => (
               <div
                 key={a.href}
                 className="flex h-full flex-col border-t-2 border-tertiary-fixed bg-surface-container-low p-8"
@@ -239,6 +250,21 @@ export default function ArticulosPage() {
               </div>
             ))}
           </div>
+          {journalTotalPages > 1 ? (
+            <PaginationFolio
+              page={pageJournal}
+              totalPages={journalTotalPages}
+              isFetching={journalQuery.isFetching}
+              onPrev={() => setPageJournal((p) => Math.max(1, p - 1))}
+              onNext={() =>
+                setPageJournal((p) => Math.min(journalTotalPages, p + 1))
+              }
+              prevLabel={t("articulos.prev")}
+              nextLabel={t("articulos.next")}
+              folioLabel={t("articulos.folio")}
+              ofLabel={t("articulos.of")}
+            />
+          ) : null}
         </section>
 
         <section className="relative z-10 mb-24">
@@ -248,8 +274,18 @@ export default function ArticulosPage() {
             </h2>
             <div className="h-px w-full bg-outline-variant/30" />
           </div>
-          <div className="space-y-6">
-            {bookChapters.map((item) => (
+          {chaptersQuery.isPending && !chaptersQuery.data && (
+            <p className="text-center text-on-surface-variant">
+              {t("articulos.listLoading")}
+            </p>
+          )}
+          {chaptersQuery.isError && (
+            <p className="text-center text-primary" role="alert">
+              {t("articulos.listLoadError")}
+            </p>
+          )}
+          <div className="space-y-6" aria-busy={chaptersQuery.isFetching}>
+            {chapterCards.map((item) => (
               <div
                 key={item.href}
                 className={`group flex flex-col items-start justify-between p-6 transition-colors md:flex-row md:items-center ${
@@ -285,6 +321,21 @@ export default function ArticulosPage() {
               </div>
             ))}
           </div>
+          {chaptersTotalPages > 1 ? (
+            <PaginationFolio
+              page={pageChapters}
+              totalPages={chaptersTotalPages}
+              isFetching={chaptersQuery.isFetching}
+              onPrev={() => setPageChapters((p) => Math.max(1, p - 1))}
+              onNext={() =>
+                setPageChapters((p) => Math.min(chaptersTotalPages, p + 1))
+              }
+              prevLabel={t("articulos.prev")}
+              nextLabel={t("articulos.next")}
+              folioLabel={t("articulos.folio")}
+              ofLabel={t("articulos.of")}
+            />
+          ) : null}
         </section>
 
         <NewsletterSubscribeCard className="mt-24" />

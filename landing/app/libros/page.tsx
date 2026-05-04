@@ -2,7 +2,7 @@
 
 import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { NewsletterSubscribeCard } from "@/components/sections/NewsletterSubscribeCard";
-import { booksTotalPagesFromTotal } from "@/lib/data/books";
+import { totalPagesFromTotal } from "@/lib/pagination";
 import { useBooksPageQuery } from "@/lib/queries/books";
 import Image from "next/image";
 import { useState } from "react";
@@ -17,7 +17,7 @@ export default function LibrosPage() {
 
   const total = data?.pagination.total;
   const totalPages =
-    total !== undefined ? booksTotalPagesFromTotal(total) : 1;
+    total !== undefined ? totalPagesFromTotal(total) : 1;
   const hasPreviousPage = page > 1;
   const hasNextPage = page < totalPages;
 
@@ -53,7 +53,7 @@ export default function LibrosPage() {
           </div>
         </section>
 
-        <section className="border-y border-outline-variant/10 bg-surface-container px-8 py-8">
+        <section className="border-y border-outline-variant/10 bg-surface-container px-8 py-8" data-testid="books-filter">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
             <div className="flex flex-wrap items-center gap-8">
               <div className="group">
@@ -198,50 +198,52 @@ export default function LibrosPage() {
             ))}
           </div>
 
-          <div className="mt-32 flex flex-col items-center gap-6">
-            <div className="manuscript-divider mb-4 w-16" />
-            <div className="flex items-center gap-12 font-label text-xs tracking-[0.4em] text-on-surface-variant uppercase">
-              <button
-                type="button"
-                disabled={!hasPreviousPage || isFetching}
-                onClick={() => setPage((p) => Math.max(1, p - 1))}
-                className={`flex items-center gap-2 transition-colors ${
-                  hasPreviousPage && !isFetching
-                    ? "hover:text-primary"
-                    : "cursor-not-allowed opacity-30"
-                }`}
-              >
-                <span className="material-symbols-outlined text-lg">
-                  chevron_left
+          {total !== undefined && totalPages > 1 ? (
+            <div className="mt-32 flex flex-col items-center gap-6">
+              <div className="manuscript-divider mb-4 w-16" />
+              <div className="flex items-center gap-12 font-label text-xs tracking-[0.4em] text-on-surface-variant uppercase">
+                <button
+                  type="button"
+                  disabled={!hasPreviousPage || isFetching}
+                  onClick={() => setPage((p) => Math.max(1, p - 1))}
+                  className={`flex items-center gap-2 transition-colors ${
+                    hasPreviousPage && !isFetching
+                      ? "hover:text-primary"
+                      : "cursor-not-allowed opacity-30"
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-lg">
+                    chevron_left
+                  </span>
+                  {t("libros.prev")}
+                </button>
+                <span className="font-bold text-primary">
+                  {t("libros.folio")}{" "}
+                  <span className="font-headline mx-2 text-lg italic">
+                    {page}
+                  </span>{" "}
+                  {t("libros.of")} {totalPages}
                 </span>
-                {t("libros.prev")}
-              </button>
-              <span className="font-bold text-primary">
-                {t("libros.folio")}{" "}
-                <span className="font-headline mx-2 text-lg italic">
-                  {page}
-                </span>{" "}
-                {t("libros.of")} {totalPages}
-              </span>
-              <button
-                type="button"
-                disabled={!hasNextPage || isFetching}
-                onClick={() =>
-                  setPage((p) => Math.min(totalPages, p + 1))
-                }
-                className={`flex items-center gap-2 transition-colors ${
-                  hasNextPage && !isFetching
-                    ? "hover:text-primary"
-                    : "cursor-not-allowed opacity-30"
-                }`}
-              >
-                {t("libros.next")}
-                <span className="material-symbols-outlined text-lg">
-                  chevron_right
-                </span>
-              </button>
+                <button
+                  type="button"
+                  disabled={!hasNextPage || isFetching}
+                  onClick={() =>
+                    setPage((p) => Math.min(totalPages, p + 1))
+                  }
+                  className={`flex items-center gap-2 transition-colors ${
+                    hasNextPage && !isFetching
+                      ? "hover:text-primary"
+                      : "cursor-not-allowed opacity-30"
+                  }`}
+                >
+                  {t("libros.next")}
+                  <span className="material-symbols-outlined text-lg">
+                    chevron_right
+                  </span>
+                </button>
+              </div>
             </div>
-          </div>
+          ) : null}
         </section>
 
         <NewsletterSubscribeCard className="mt-20" />

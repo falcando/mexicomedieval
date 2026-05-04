@@ -2,176 +2,83 @@
 
 import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { NewsletterSubscribeCard } from "@/components/sections/NewsletterSubscribeCard";
+import { APPLE_SHOW_URL } from "@/lib/data/podcast-mexico-medieval";
+import {
+  CARD_IMAGES,
+  FEATURED_IMG,
+  HERO_TEXTURE,
+  SE_TENIA_QUE_DECIR_EPISODE,
+  TIEMPOS_IMPOSIBLES,
+  cardAltKeys,
+  groupBySeries,
+} from "@/lib/data/podcast-page-static";
+import { ENTITY_PAGE_SIZE, totalPagesFromTotal } from "@/lib/pagination";
+import { useMexicoMedievalPageQuery } from "@/lib/queries/podcasts";
 import Image from "next/image";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
-const HERO_TEXTURE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuDUH7wOddMA3XCgIuP14AcwEUJOnqb91THh_CKmvG7Tj0LrBdnP8dVdw8MFax_SptBh69rcXgqxlC2RoN5YvnHymeYHQ94kIYYGULXLTVXGmn61UjKFmlXsaqy-br71iba-a62fzujdfCn01Jlhy2jk395C-rRiKLruy4bS6GhnaZwchaxF62EO3zIBQZL2Dh81xZleD2xZIo6OpFhehJ_5Qv1paCRAFXuWvYE5ISfJEyikerKCyOy7_mfa2is2NX6MSSHAUz-2z0oL";
-
-const FEATURED_IMG =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAIbz7caxEGDedMumvcfN8Ff10t-3i9cLSgg3kLgq8zLwUyP8Y4bdxiixp_CRyeQE7XmMOJfRDhxnm7V5RVBZUe7LN_sDW4G2mKnUDwqQ6YkvjkqN9Ze3kGU3VSmoER64QDGXrBtYCtLjQe2-IvnrwSPO5OeDQnrA7lkWFOVIbj2GiftrDB1bqP0GGzJXftLKloKE1MM12HA5aD_BzVvArgPhWEJGHU54FqH7LJmPhk-4OVHpFvP6gzO65HyA933fRssZXALFtfBZrC";
-
-const CARD_IMAGES = [
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCvsgoAWQcwvkJI-ciwvnu70ZvoUMBdtqISqpN5I5zDuJOCcOyEQbpmRuqPnh2eLui0y-JXeQ6-XJEnfCvjUrWEZ_t2ices3y4kxWY1rRFkKmvTORZJSmzRQAMUytOsJrpx6nBmQQAI3BHxQyLT8OaF_UidtibpehWBdrmdx0W6xCCPuCexqSZTVRzlch-t3OGsr21p5EI2wSyQDUpuyMSYCRzvPFNqQVv0DEOM9MdPDzW3hHHJ6Ayev2uOS-u6dxc73Mr44USdwix8",
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBn9KbIcZ1XA8zD1ZT2snQ7Iuz4nUUchwK_0KDAzSV6rrfO-qnM1OTvgRjpqMR-9ln3-c28Lv2JHBpcNtfuqjL_DP4w4iVl-74Mx7IRdHAeOv6awcTsHoCNd_HGYE_nZTAaLvltX-jcdVYekbuXWT0jgpWKCo182JdZTQp6WZ0S2zXZyB5-P8o48uS6yWdXac5XgeiGzY3NdVhKTju1btlY_LUPnNOnddsXYyW6Vjl2hMaJdCsZkLArlMVn4h3npN03kLtr0w0BZdfN",
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuANPayenFBMFxeARbEqcH3fSbGUSU4glYaWUGRSggODsrP3sbf-WAytM8CpOPTcEItFesn-yCOqApcu-YRDUj4lwWkJOZomiioFgK3ZAYFJXAdJIyngk34_Q5TvzVBd2nYWLQWLHVXMWtT_Nr57YHrm9OYkjUKNInSP0eXShvIjhvcbgWAYHzilFNEKmDvc_CanHch1YYIYBk4b8FfFBRYioIfV5NaZV7X-QaNCGPQJZ4wD3hXmCFs75KYnoixdfQRAG8mDwRqH73Db",
-] as const;
-
-const APPLE_SHOW_URL =
-  "https://podcasts.apple.com/us/podcast/m%C3%A9xico-medieval/id1571145663";
-
-/** Sourced from static-html/podcast.html; `listenHref` opens Apple Podcasts or Spotify (no iframes). */
-const MEXICO_MEDIEVAL_ITEMS = [
-  {
-    title: "México Medieval - Serie completa",
-    listenHref: APPLE_SHOW_URL,
-    documentType: "appleShow" as const,
-    highlighted: true,
-  },
-  {
-    title: "La leyenda de san Jorge y el dragón",
-    listenHref:
-      "https://podcasts.apple.com/us/podcast/la-leyenda-de-san-jorge-y-el-drag%C3%B3n/id1571145663?i=1000533096220",
-    documentType: "appleEpisode" as const,
-  },
-  {
-    title: "Transiciones del poder medieval",
-    listenHref:
-      "https://podcasts.apple.com/us/podcast/transiciones-del-poder-medieval/id1571145663?i=1000532381918",
-    documentType: "appleEpisode" as const,
-  },
-  {
-    title: "Derecho de conquista",
-    listenHref:
-      "https://podcasts.apple.com/us/podcast/derecho-de-conquista/id1571145663?i=1000531755209",
-    documentType: "appleEpisode" as const,
-  },
-  {
-    title: "Pastes medievales",
-    listenHref:
-      "https://podcasts.apple.com/us/podcast/pastes-medievales/id1571145663?i=1000530996373",
-    documentType: "appleEpisode" as const,
-  },
-  {
-    title: "Mujeres poderosas",
-    listenHref:
-      "https://podcasts.apple.com/us/podcast/mujeres-poderosas/id1571145663?i=1000530280407",
-    documentType: "appleEpisode" as const,
-  },
-  {
-    title: "Escudo Nacional mexicano",
-    listenHref:
-      "https://podcasts.apple.com/us/podcast/escudo-nacional-mexicano/id1571145663?i=1000529598471",
-    documentType: "appleEpisode" as const,
-  },
-  {
-    title: "Festivales Medievales en México",
-    listenHref:
-      "https://podcasts.apple.com/us/podcast/festivales-medievales-en-m%C3%A9xico/id1571145663?i=1000528855857",
-    documentType: "appleEpisode" as const,
-  },
-  {
-    title: "Ardemac y el recreacionismo histórico",
-    listenHref:
-      "https://podcasts.apple.com/us/podcast/ardemac-y-el-recreacionismo-hist%C3%B3rico/id1571145663?i=1000528152301",
-    documentType: "appleEpisode" as const,
-  },
-  {
-    title: "Videojuegos medievales",
-    listenHref:
-      "https://podcasts.apple.com/us/podcast/videojuegos-medievales/id1571145663?i=1000527414895",
-    documentType: "appleEpisode" as const,
-  },
-  {
-    title: "Armas de asedio",
-    listenHref:
-      "https://podcasts.apple.com/us/podcast/armas-de-asedio/id1571145663?i=1000526612477",
-    documentType: "appleEpisode" as const,
-  },
-] as const;
-
-const TIEMPOS_IMPOSIBLES = {
-  title: "Tiempos Imposibles",
-  episodeTitle: "Atila destruye Roma (ft. Hervin Fernández)",
-  listenHref: "https://open.spotify.com/episode/1P1Nl2MBJ2eGjugxXXgmLh",
-} as const;
-
-const SPOTIFY_GUEST_SPOTS = [
-  {
-    series: "Días con la Garra y Ale Garibay",
-    title: "ORIGEN DE LA CRIPTOMONEDA",
-    listenHref: "https://open.spotify.com/episode/3CjyRFiEny0GvSkvRdKpna",
-    documentType: "spotifyEpisode" as const,
-  },
-  {
-    series: "Días con la Garra y Ale Garibay",
-    title: "LA HISTORIA DEL CÓNCLAVE",
-    listenHref: "https://open.spotify.com/episode/4Bt9R1rGFCj3XHnZnrBzvO",
-    documentType: "spotifyEpisode" as const,
-  },
-  {
-    series: "Días con la Garra y Ale Garibay",
-    title: "LA CAÍDA DE CONSTANTINOPLA",
-    listenHref: "https://open.spotify.com/episode/2OE0hJyop1kCoHon1pzbkc",
-    documentType: "spotifyEpisode" as const,
-  },
-  {
-    series: "Días con la Garra y Ale Garibay",
-    title: "EL TEQUILA",
-    listenHref: "https://open.spotify.com/episode/3PLCmjykGbWvCWiL95tKZu",
-    documentType: "spotifyEpisode" as const,
-  },
-  {
-    series: "Días con la Garra y Ale Garibay",
-    title:
-      "EL FLAUTISTA DE HAMELIN: ENTRE PESTE, CASTIGO Y LEYENDA",
-    listenHref: "https://open.spotify.com/episode/1CP1xskhp6El9zS2VEoOkK",
-    documentType: "spotifyEpisode" as const,
-  },
-  {
-    series: "Días con la Garra y Ale Garibay",
-    title:
-      "PEREGRINACIÓN MEXICA Y SÍMBOLOS ESPAÑOLES: La historia detrás del Escudo Nacional",
-    listenHref: "https://open.spotify.com/episode/0Aw1CdAhP8W2KUYcS3kcdr",
-    documentType: "spotifyEpisode" as const,
-  },
-  {
-    series: '"Se Tenía Que Decir" con El Terri Podcast',
-    title:
-      "Hervin Fernández, historiador, medievalista e investigador",
-    listenHref: "https://open.spotify.com/episode/7uyMnMNWmC5ZOKnCDKAC43",
-    documentType: "spotifyEpisode" as const,
-  },
-] as const;
-
-const SE_TENIA_QUE_DECIR_EPISODE = SPOTIFY_GUEST_SPOTS.find((s) =>
-  s.series.includes("Terri"),
-)!;
-
-function groupBySeries<T extends { series: string }>(
-  items: readonly T[],
-): { series: string; episodes: T[] }[] {
-  const order: string[] = [];
-  const seen = new Set<string>();
-  for (const item of items) {
-    if (!seen.has(item.series)) {
-      seen.add(item.series);
-      order.push(item.series);
-    }
-  }
-  return order.map((series) => ({
-    series,
-    episodes: items.filter((i) => i.series === series),
-  }));
+function PaginationFolio({
+  page,
+  totalPages,
+  isFetching,
+  onPrev,
+  onNext,
+  prevLabel,
+  nextLabel,
+  folioLabel,
+  ofLabel,
+}: {
+  page: number;
+  totalPages: number;
+  isFetching: boolean;
+  onPrev: () => void;
+  onNext: () => void;
+  prevLabel: string;
+  nextLabel: string;
+  folioLabel: string;
+  ofLabel: string;
+}) {
+  const hasPreviousPage = page > 1;
+  const hasNextPage = page < totalPages;
+  return (
+    <div className="mt-16 flex flex-col items-center gap-6">
+      <div className="manuscript-divider mb-4 w-16" />
+      <div className="flex items-center gap-12 font-label text-xs tracking-[0.4em] text-on-surface-variant uppercase">
+        <button
+          type="button"
+          disabled={!hasPreviousPage || isFetching}
+          onClick={onPrev}
+          className={`flex items-center gap-2 transition-colors ${
+            hasPreviousPage && !isFetching
+              ? "hover:text-primary"
+              : "cursor-not-allowed opacity-30"
+          }`}
+        >
+          <span className="material-symbols-outlined text-lg">chevron_left</span>
+          {prevLabel}
+        </button>
+        <span className="font-bold text-primary">
+          {folioLabel}{" "}
+          <span className="font-headline mx-2 text-lg italic">{page}</span>{" "}
+          {ofLabel} {totalPages}
+        </span>
+        <button
+          type="button"
+          disabled={!hasNextPage || isFetching}
+          onClick={onNext}
+          className={`flex items-center gap-2 transition-colors ${
+            hasNextPage && !isFetching
+              ? "hover:text-primary"
+              : "cursor-not-allowed opacity-30"
+          }`}
+        >
+          {nextLabel}
+          <span className="material-symbols-outlined text-lg">chevron_right</span>
+        </button>
+      </div>
+    </div>
+  );
 }
-
-const SPOTIFY_SERIES_GROUPS = groupBySeries(SPOTIFY_GUEST_SPOTS);
-
-const cardAltKeys = [
-  "podcastPage.cardAlt1",
-  "podcastPage.cardAlt2",
-  "podcastPage.cardAlt3",
-] as const;
 
 type PodcastEpisodeCardProps = {
   image: string;
@@ -287,12 +194,45 @@ function PodcastEpisodeCard({
 
 export default function PodcastPage() {
   const { t } = useTranslations();
+  const [pageMm, setPageMm] = useState(1);
+  const mmQuery = useMexicoMedievalPageQuery(pageMm);
+  const appleTotal = mmQuery.data?.pagination.appleTotal;
+  const spotifyTotal = mmQuery.data?.pagination.spotifyTotal;
+  const mmTotalPages =
+    appleTotal !== undefined && spotifyTotal !== undefined
+      ? Math.max(
+          totalPagesFromTotal(appleTotal),
+          totalPagesFromTotal(spotifyTotal),
+        )
+      : 1;
+
+  const spotifySeriesGroupsWithArt = useMemo(() => {
+    const guests = mmQuery.data?.spotifyGuests ?? [];
+    const groups = groupBySeries(guests);
+    const baseIdx = (pageMm - 1) * ENTITY_PAGE_SIZE;
+    let linear = 0;
+    return groups.map((group) => ({
+      series: group.series,
+      episodes: group.episodes.map((item) => {
+        const artGlobal = baseIdx + linear;
+        linear += 1;
+        return {
+          item,
+          image: CARD_IMAGES[artGlobal % CARD_IMAGES.length],
+          altKey: cardAltKeys[artGlobal % cardAltKeys.length],
+        };
+      }),
+    }));
+  }, [mmQuery.data?.spotifyGuests, pageMm]);
 
   const mexicoMedievalAudioCards = useMemo(() => {
     const alts = cardAltKeys.map((k) => t(k));
-    return MEXICO_MEDIEVAL_ITEMS.map((item, i) => {
-      const image = CARD_IMAGES[i % CARD_IMAGES.length];
-      const alt = alts[i % alts.length] ?? "";
+    const items = mmQuery.data?.episodes ?? [];
+    const offset = (pageMm - 1) * ENTITY_PAGE_SIZE;
+    return items.map((item, i) => {
+      const globalIndex = offset + i;
+      const image = CARD_IMAGES[globalIndex % CARD_IMAGES.length];
+      const alt = alts[globalIndex % alts.length] ?? "";
       const isShow = item.documentType === "appleShow";
       return {
         ...item,
@@ -314,7 +254,7 @@ export default function PodcastPage() {
           : t("podcastPage.listenEpisode"),
       };
     });
-  }, [t]);
+  }, [mmQuery.data?.episodes, pageMm, t]);
 
   return (
     <div className="relative flex min-h-full flex-col">
@@ -472,10 +412,23 @@ export default function PodcastPage() {
                 </a>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-              {mexicoMedievalAudioCards.map((ep) => (
+            {mmQuery.isPending && !mmQuery.data && (
+              <p className="mb-8 text-center text-on-surface-variant">
+                {t("podcastPage.listLoading")}
+              </p>
+            )}
+            {mmQuery.isError && (
+              <p className="mb-8 text-center text-primary" role="alert">
+                {t("podcastPage.listLoadError")}
+              </p>
+            )}
+            <div
+              className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3"
+              aria-busy={mmQuery.isFetching}
+            >
+              {mexicoMedievalAudioCards.map((ep, idx) => (
                 <PodcastEpisodeCard
-                  key={ep.listenHref}
+                  key={`${pageMm}-${idx}-${ep.listenHref}`}
                   image={ep.image}
                   alt={ep.alt}
                   title={ep.title}
@@ -492,6 +445,21 @@ export default function PodcastPage() {
                 />
               ))}
             </div>
+            {mmTotalPages > 1 ? (
+              <PaginationFolio
+                page={pageMm}
+                totalPages={mmTotalPages}
+                isFetching={mmQuery.isFetching}
+                onPrev={() => setPageMm((p) => Math.max(1, p - 1))}
+                onNext={() =>
+                  setPageMm((p) => Math.min(mmTotalPages, p + 1))
+                }
+                prevLabel={t("podcastPage.prev")}
+                nextLabel={t("podcastPage.next")}
+                folioLabel={t("podcastPage.folio")}
+                ofLabel={t("podcastPage.of")}
+              />
+            ) : null}
             <div className="mt-20 text-center">
               <a
                 href={APPLE_SHOW_URL}
@@ -506,9 +474,9 @@ export default function PodcastPage() {
         </section>
 
         <div className="bg-surface-container-low py-16 md:py-24">
-          {SPOTIFY_SERIES_GROUPS.map((group, groupIndex) => (
+          {spotifySeriesGroupsWithArt.map((group, groupIndex) => (
             <section
-              key={group.series}
+              key={`${group.series}-${groupIndex}`}
               id={`spotify-series-${groupIndex}`}
               className="mx-auto max-w-screen-2xl border-t border-outline-variant/15 px-8 py-16 first:border-t-0 first:pt-0 scroll-mt-24"
             >
@@ -524,30 +492,24 @@ export default function PodcastPage() {
                 </p>
               </div>
               <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-                {group.episodes.map((item, i) => {
-                  const artIdx = (groupIndex * 5 + i) % CARD_IMAGES.length;
-                  const image = CARD_IMAGES[artIdx];
-                  const alt =
-                    t(cardAltKeys[artIdx % cardAltKeys.length] ?? "podcastPage.cardAlt1");
-                  return (
-                    <PodcastEpisodeCard
-                      key={item.listenHref}
-                      image={image}
-                      alt={alt}
-                      title={item.title}
-                      volume={t("podcastPage.spotifyLabel")}
-                      date={t("podcastPage.spotifyLabel")}
-                      duration={t("podcastPage.episode")}
-                      progress={0}
-                      current="0:00"
-                      total="—"
-                      playIcon="play_arrow"
-                      listenHref={item.listenHref}
-                      detailLabel={t("podcastPage.openSpotify")}
-                      listenAria={t("podcastPage.listenAria")}
-                    />
-                  );
-                })}
+                {group.episodes.map(({ item, image, altKey }) => (
+                  <PodcastEpisodeCard
+                    key={item.listenHref}
+                    image={image}
+                    alt={t(altKey ?? "podcastPage.cardAlt1")}
+                    title={item.title}
+                    volume={t("podcastPage.spotifyLabel")}
+                    date={t("podcastPage.spotifyLabel")}
+                    duration={t("podcastPage.episode")}
+                    progress={0}
+                    current="0:00"
+                    total="—"
+                    playIcon="play_arrow"
+                    listenHref={item.listenHref}
+                    detailLabel={t("podcastPage.openSpotify")}
+                    listenAria={t("podcastPage.listenAria")}
+                  />
+                ))}
               </div>
             </section>
           ))}

@@ -1,6 +1,12 @@
 import type { Book, BooksPageResponse } from "@/lib/types/book";
+import {
+  ENTITY_PAGE_SIZE,
+  slicePage,
+  totalPagesFromListLength,
+} from "@/lib/pagination";
 
-export const BOOKS_PAGE_SIZE = 10;
+/** @deprecated Use ENTITY_PAGE_SIZE from @/lib/pagination */
+export const BOOKS_PAGE_SIZE = ENTITY_PAGE_SIZE;
 
 /** Sourced from static-html/libros.html (Book 1, Book 2). */
 export const BOOKS: Book[] = [
@@ -28,25 +34,17 @@ export const BOOKS: Book[] = [
 ];
 
 export function getBooksTotalPages(): number {
-  return Math.max(1, Math.ceil(BOOKS.length / BOOKS_PAGE_SIZE));
+  return totalPagesFromListLength(BOOKS.length);
 }
 
 /** 1-based page. Returns null if page is out of range. */
 export function getBooksPagePayload(page: number): BooksPageResponse | null {
-  if (!Number.isInteger(page) || page < 1) {
+  const books = slicePage(BOOKS, page);
+  if (books === null) {
     return null;
   }
-  const totalPages = getBooksTotalPages();
-  if (page > totalPages) {
-    return null;
-  }
-  const start = (page - 1) * BOOKS_PAGE_SIZE;
   return {
-    books: BOOKS.slice(start, start + BOOKS_PAGE_SIZE),
+    books,
     pagination: { total: BOOKS.length },
   };
-}
-
-export function booksTotalPagesFromTotal(total: number): number {
-  return Math.max(1, Math.ceil(total / BOOKS_PAGE_SIZE));
 }
