@@ -3,7 +3,9 @@
 import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import {
+  BOOKS_FILTER_QUERY_KEY,
   NEWSLETTER_SUBSCRIPTIONS_QUERY_KEY,
+  resolveBooksFilterWithQueryParam,
   resolveNewsletterSubscriptionsWithQueryParam,
 } from "@/lib/feature-flags";
 
@@ -18,4 +20,14 @@ export function useNewsletterSubscriptionsEnabled(): boolean {
     () => resolveNewsletterSubscriptionsWithQueryParam(raw),
     [raw],
   );
+}
+
+/**
+ * Books page filter UI: JSON config plus optional `?booksFilter=…` override
+ * (`true` / `false` / `1` / `0` / `yes` / `no` / `on` / `off`). Only affects this browser session / URL.
+ */
+export function useBooksFilterEnabled(): boolean {
+  const searchParams = useSearchParams();
+  const raw = searchParams.get(BOOKS_FILTER_QUERY_KEY);
+  return useMemo(() => resolveBooksFilterWithQueryParam(raw), [raw]);
 }

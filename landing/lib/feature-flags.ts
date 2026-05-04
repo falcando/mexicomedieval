@@ -2,6 +2,7 @@ import featureFlags from "../public/feature-flags.json";
 
 export type FeatureFlags = {
   newsletterSubscriptions: boolean;
+  booksFilter: boolean;
 };
 
 const flags = featureFlags as FeatureFlags;
@@ -39,4 +40,23 @@ export function resolveNewsletterSubscriptionsWithQueryParam(
   const override = parseBooleanQueryOverride(queryValue);
   if (override !== null) return override;
   return isNewsletterSubscriptionsEnabled();
+}
+
+/** Same name as the key in `public/feature-flags.json`; use as `?booksFilter=true`. */
+export const BOOKS_FILTER_QUERY_KEY = "booksFilter" as const;
+
+/**
+ * Value from `public/feature-flags.json` only (no URL override).
+ * Prefer `useBooksFilterEnabled` in client components so query params apply.
+ */
+export function isBooksFilterEnabled(): boolean {
+  return flags.booksFilter;
+}
+
+export function resolveBooksFilterWithQueryParam(
+  queryValue: string | null,
+): boolean {
+  const override = parseBooleanQueryOverride(queryValue);
+  if (override !== null) return override;
+  return isBooksFilterEnabled();
 }
