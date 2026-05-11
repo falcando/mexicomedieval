@@ -8,7 +8,7 @@ export function generateMetadata(): Metadata {
   const m = defaultLocale === "es" ? es : en;
   return {
     title: m.contact.title,
-    description: m.contact.body,
+    description: m.contact.metaDescription,
   };
 }
 

@@ -23,10 +23,19 @@ function navLinkClass(active: boolean) {
 
 type SiteNavbarViewProps = { showNewsletter: boolean };
 
+function contactCtaVisual(active: boolean) {
+  return [
+    "items-center justify-center px-5 py-2 font-label text-sm font-semibold uppercase tracking-widest shadow-sm transition-[opacity,transform] hover:opacity-95 active:scale-[0.98]",
+    "border-2 border-primary bg-tertiary-fixed-dim text-primary",
+    active ? "ring-2 ring-primary ring-offset-2 ring-offset-[#fef9ef]" : "",
+  ].join(" ");
+}
+
 function SiteNavbarView({ showNewsletter }: SiteNavbarViewProps) {
   const pathname = usePathname() ?? "";
   const { t } = useTranslations();
   const mobileMenuRef = useRef<HTMLDetailsElement>(null);
+  const contactActive = isNavItemActive(pathname, "/contacto");
 
   function closeMobileMenu() {
     mobileMenuRef.current?.removeAttribute("open");
@@ -59,26 +68,35 @@ function SiteNavbarView({ showNewsletter }: SiteNavbarViewProps) {
           <span className={`font-bold ${grenzeGotisch.className}`}>{t("common.siteName")}</span>
         </Link>
 
-        <details ref={mobileMenuRef} className="relative md:hidden">
-          <summary className="cursor-pointer list-none rounded-lg border border-outline-variant/30 px-3 py-2 text-sm font-medium text-primary">
-            {t("nav.menu")}
-          </summary>
-          <div className="absolute right-0 mt-2 w-52 rounded-lg border border-outline-variant/20 bg-surface-container-lowest py-2 shadow-lg">
-            <div className="flex justify-center border-b border-outline-variant/15 px-4 py-3">
-              <LanguageSwitcher />
+        <div className="flex items-center gap-2 md:hidden">
+          <Link
+            href="/contacto"
+            aria-current={contactActive ? "page" : undefined}
+            className={`inline-flex ${contactCtaVisual(contactActive)}`}
+          >
+            {t("nav.contactCta")}
+          </Link>
+          <details ref={mobileMenuRef} className="relative">
+            <summary className="cursor-pointer list-none rounded-lg border border-outline-variant/30 px-3 py-2 text-sm font-medium text-primary">
+              {t("nav.menu")}
+            </summary>
+            <div className="absolute right-0 mt-2 w-52 rounded-lg border border-outline-variant/20 bg-surface-container-lowest py-2 shadow-lg">
+              <div className="flex justify-center border-b border-outline-variant/15 px-4 py-3">
+                <LanguageSwitcher />
+              </div>
+              {siteNavItems.map((item) => (
+                <Link
+                  key={item.href + item.labelKey}
+                  href={item.href}
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-2 text-sm text-primary-container hover:bg-surface-container-high"
+                >
+                  {t(item.labelKey)}
+                </Link>
+              ))}
             </div>
-            {siteNavItems.map((item) => (
-              <Link
-                key={item.href + item.labelKey}
-                href={item.href}
-                onClick={closeMobileMenu}
-                className="block px-4 py-2 text-sm text-primary-container hover:bg-surface-container-high"
-              >
-                {t(item.labelKey)}
-              </Link>
-            ))}
-          </div>
-        </details>
+          </details>
+        </div>
 
         <div className="hidden items-center space-x-8 font-headline font-bold tracking-tight md:flex">
           {siteNavItems.map((item) => (
@@ -93,6 +111,13 @@ function SiteNavbarView({ showNewsletter }: SiteNavbarViewProps) {
         </div>
 
         <div className="hidden items-center gap-4 sm:flex">
+          <Link
+            href="/contacto"
+            aria-current={contactActive ? "page" : undefined}
+            className={`hidden md:inline-flex ${contactCtaVisual(contactActive)}`}
+          >
+            {t("nav.contactCta")}
+          </Link>
           <LanguageSwitcher />
           <button
             type="button"

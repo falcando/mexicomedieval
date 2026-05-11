@@ -19,6 +19,7 @@
     "menu": "Menú",
     "search": "Buscar",
     "subscribe": "Suscribirse",
+    "contactCta": "Contacto",
     "language": "Idioma",
     "localeEn": "EN",
     "localeEs": "ES"
@@ -40,9 +41,31 @@
     "legalContact": "Legal y contacto"
   },
   "contact": {
-    "kicker": "El scriptorium digital",
-    "title": "Contacto",
-    "body": "Para consultas académicas o colaboraciones, actualizaremos aquí los medios de contacto cuando estén disponibles."
+    "kicker": "Canales de contacto",
+    "title": "Contáctame",
+    "nameLine": "Hervin Fernández Aceves",
+    "intro": "Para consultas académicas, invitaciones, conferencias, entrevistas, preguntas, dudas existenciales y quejas: adelante, puedes encontrarme por estos medios.",
+    "metaDescription": "Correo institucional, perfiles académicos, redes y enlaces para contactar a Hervin Fernández Aceves (México Medieval).",
+    "body": "Para consultas académicas, invitaciones, conferencias, entrevistas, preguntas, dudas existenciales y quejas: adelante, puedes encontrarme por estos medios.",
+    "emailsHeading": "Correos electrónicos",
+    "emailLabelUp": "Universidad Panamericana",
+    "emailLabelColjal": "El Colegio de Jalisco",
+    "emailNote": "Para asuntos institucionales, académicos o de colaboración, utiliza preferentemente el correo correspondiente a la institución vinculada con la actividad.",
+    "profilesHeading": "Perfiles académicos",
+    "linkOrcid": "ORCID",
+    "linkScholar": "Google Scholar",
+    "linkScopus": "Scopus",
+    "linkInstitutional": "Perfil institucional",
+    "linkScripta": "Repositorio Académico (Scripta UP)",
+    "networksHeading": "Redes y enlaces",
+    "twitterLabel": "X / Twitter",
+    "twitterHandle": "@HervinFA",
+    "linktreeLabel": "Linktree",
+    "publicationsHeading": "Publicaciones",
+    "authorPagesTitle": "Author Pages",
+    "amazonMx": "Amazon México",
+    "amazonUs": "Amazon US",
+    "penImgAlt": "Pluma estilográfica sobre pergamino manuscrito"
   },
   "home": {
     "heroImgAlt": "Manuscrito iluminado con pan de oro y caligrafía gótica en pergamino envejecido",

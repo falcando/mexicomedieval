@@ -19,6 +19,7 @@
     "menu": "Menu",
     "search": "Search",
     "subscribe": "Subscribe",
+    "contactCta": "Contact",
     "language": "Language",
     "localeEn": "EN",
     "localeEs": "ES"
@@ -40,9 +41,31 @@
     "legalContact": "Legal and contact"
   },
   "contact": {
-    "kicker": "The Digital Scriptorium",
-    "title": "Contact",
-    "body": "For academic inquiries or collaborations, we will publish contact channels here when they are available."
+    "kicker": "Contact channels",
+    "title": "Contact me",
+    "nameLine": "Hervin Fernández Aceves",
+    "intro": "For academic inquiries, invitations, conferences, interviews, questions, existential doubts, and complaints: you can reach me through these channels.",
+    "metaDescription": "Institutional email, academic profiles, and social links to reach Hervin Fernández Aceves (México Medieval).",
+    "body": "For academic inquiries, invitations, conferences, interviews, questions, existential doubts, and complaints: you can reach me through these channels.",
+    "emailsHeading": "Email addresses",
+    "emailLabelUp": "Universidad Panamericana",
+    "emailLabelColjal": "El Colegio de Jalisco",
+    "emailNote": "For institutional, academic, or collaboration matters, please prefer the email associated with the institution tied to the activity.",
+    "profilesHeading": "Academic profiles",
+    "linkOrcid": "ORCID",
+    "linkScholar": "Google Scholar",
+    "linkScopus": "Scopus",
+    "linkInstitutional": "Institutional profile",
+    "linkScripta": "Academic repository (Scripta UP)",
+    "networksHeading": "Social and links",
+    "twitterLabel": "X / Twitter",
+    "twitterHandle": "@HervinFA",
+    "linktreeLabel": "Linktree",
+    "publicationsHeading": "Publications",
+    "authorPagesTitle": "Author Pages",
+    "amazonMx": "Amazon Mexico",
+    "amazonUs": "Amazon US",
+    "penImgAlt": "Fountain pen resting on handwritten parchment"
   },
   "home": {
     "heroImgAlt": "Illuminated manuscript with gold leaf and gothic calligraphy on aged parchment",
