@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={defaultLocale} className="light h-full antialiased">
+    <html lang={defaultLocale} className="h-full antialiased">
       <head>
         {/* Google Fonts load at runtime (not via next/font) so `output: "export"` builds without fetching fonts. */}
         {/* eslint-disable-next-line @next/next/no-page-custom-font -- runtime stylesheet fonts */}
