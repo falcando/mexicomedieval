@@ -29,10 +29,12 @@ export async function generateMetadata({
       ? es.podcastDetail.fallbackTitle
       : en.podcastDetail.fallbackTitle;
   if (!episode) {
-    return { title: fallbackTitle };
+    return {
+      title: { absolute: `México Medieval | ${fallbackTitle}` },
+    };
   }
   return {
-    title: episode.metaTitle,
+    title: { absolute: episode.metaTitle },
     description: episode.metaDescription,
   };
 }
