@@ -4,9 +4,15 @@ import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { NewsletterSubscribeCard } from "@/components/sections/NewsletterSubscribeCard";
 import Image from "next/image";
 import Link from "next/link";
+import { Grenze_Gotisch } from "next/font/google";
+
+const grenzeGotisch = Grenze_Gotisch({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 const HERO_IMG =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBtdr3QiXvLIf9Lb3XGHkLbHOR241VdP8oyjyLirDfbDSzA3YrKRtA7spnoNZjybH2CRIjaukahmS3CyW6Me8EzayBIB1jHwq0blud6TcRndQveUUs6sE2VTSKl45lfXAy4of_-p0ODgLchB7UKPuHLNTZasd6tHJ6qWAYuyaDTXA5gCotBdWDIqtXDNgAsBDp_SBuHYxcKjSMFXfNQo0hWK-fV0tQQLvZUEoZI-IryOMFAbjTFqgSw_1mSORtNXn2xkxbAmXi5w-UL";
+  "/images/hero.webp";
 
 const SPOTLIGHT_IMG =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuAGp5HYsryP3UFArni3bU8iCX9SxPqZNSoC1BYcVk2JQ7Cqrr2SnngL6CevI6QYYVWiMyNjj7TsFdjOrpWp3WrWlIDtzgNG3oYYi9mdqdVcPmY6eXTaZkmqnI0C3Bu6lMZ7DXpwCsSGyUhhCkpFllk4NrfL8ELghpqyBCvsYDX4IrkFM0OlR2qJXIfvX57Bd-q0_4TSpm_t4lcyBQKr-8WDGtxaqHuTjXi_davOcPIdJOIe1ZOHxap1HJASvgpSgVtfYYNoGkJpUkvo";
@@ -41,26 +47,12 @@ export function HomePage() {
             <span className="font-label mb-4 block uppercase tracking-[0.3em] text-tertiary-fixed-dim">
               {t("home.heroKicker")}
             </span>
-            <h1 className="font-headline mb-8 text-5xl leading-tight tracking-tight text-white md:text-8xl">
+            <h1 className={`font-headline mb-8 text-5xl leading-tight tracking-tight text-white md:text-8xl ${grenzeGotisch.className}`}>
               {t("home.heroTitle")}
             </h1>
             <p className="font-body mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-surface-container-low italic opacity-90 md:text-xl">
               {t("home.heroSub")}
             </p>
-            <div className="flex flex-col justify-center gap-6 md:flex-row">
-              <button
-                type="button"
-                className="bg-tertiary-fixed px-10 py-4 font-label text-sm font-bold uppercase tracking-widest text-on-tertiary-fixed transition-all hover:shadow-[0_0_20px_rgba(247,189,72,0.3)]"
-              >
-                {t("home.ctaResearch")}
-              </button>
-              <button
-                type="button"
-                className="border border-white/30 bg-transparent px-10 py-4 font-label text-sm uppercase tracking-widest text-white backdrop-blur-sm transition-all hover:bg-white hover:text-primary"
-              >
-                {t("home.ctaArchive")}
-              </button>
-            </div>
           </div>
         </section>
 
