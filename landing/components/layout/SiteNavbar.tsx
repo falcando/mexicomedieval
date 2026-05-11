@@ -48,13 +48,13 @@ function SiteNavbarView({ showNewsletter }: SiteNavbarViewProps) {
 
   return (
     <nav
-      className="sticky top-0 z-50 w-full border-b border-outline-variant/20 bg-[#fef9ef]/90 shadow-sm backdrop-blur-md dark:bg-[#1d1c16]/90 dark:shadow-none"
+      className="sticky top-0 z-50 w-full border-b border-outline-variant/20 bg-[#fef9ef]/90 shadow-sm backdrop-blur-md"
       aria-label={t("common.primaryNavigation")}
     >
       <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-4 py-4 md:px-8">
         <Link
           href="/"
-          className="font-headline text-2xl font-bold tracking-widest text-primary dark:text-tertiary-fixed-dim"
+          className="font-headline text-2xl font-bold tracking-widest text-primary"
         >
           <span className={`font-bold ${grenzeGotisch.className}`}>{t("common.siteName")}</span>
         </Link>
