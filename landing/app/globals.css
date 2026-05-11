@@ -163,7 +163,8 @@ body {
 }
 
 /* Articles / articulos page — Stitch “Artículos Curados” background */
-.articulos-dot-bg {
+.articulos-dot-bg,
+.page-content-dot-bg {
   background-color: var(--background);
   background-image: radial-gradient(var(--outline-variant) 0.5px, transparent 0.5px);
   background-size: 24px 24px;
