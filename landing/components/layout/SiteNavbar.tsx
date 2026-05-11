@@ -8,6 +8,12 @@ import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { useNewsletterSubscriptionsEnabled } from "@/lib/feature-flags-hooks";
 import { isNewsletterSubscriptionsEnabled } from "@/lib/feature-flags";
 import { isNavItemActive, siteNavItems } from "@/lib/site-nav-config";
+import { Grenze_Gotisch } from "next/font/google";
+
+const grenzeGotisch = Grenze_Gotisch({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 function navLinkClass(active: boolean) {
   return active
@@ -50,7 +56,7 @@ function SiteNavbarView({ showNewsletter }: SiteNavbarViewProps) {
           href="/"
           className="font-headline text-2xl font-bold tracking-widest text-primary dark:text-tertiary-fixed-dim"
         >
-          {t("common.siteName")}
+          <span className={`font-bold ${grenzeGotisch.className}`}>{t("common.siteName")}</span>
         </Link>
 
         <details ref={mobileMenuRef} className="relative md:hidden">
