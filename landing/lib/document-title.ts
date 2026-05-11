@@ -36,8 +36,8 @@ export function documentTitleForPath(
     return null;
   }
 
-  if (path === "/videos") {
-    return formatSectionTitle(m.nav.videos);
+  if (path === "/events") {
+    return formatSectionTitle(m.nav.events);
   }
   if (path === "/podcast") {
     return formatSectionTitle(m.nav.podcast);

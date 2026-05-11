@@ -128,16 +128,16 @@ export function HomePage() {
                     movie_filter
                   </span>
                   <h4 className="font-headline mb-4 text-2xl text-primary">
-                    {t("home.videosTitle")}
+                    {t("home.eventsTitle")}
                   </h4>
                   <p className="text-on-surface-variant">
-                    {t("home.videosDesc")}
+                    {t("home.eventsDesc")}
                   </p>
                 </div>
                 <div className="relative aspect-video w-full overflow-hidden bg-primary-container md:w-48">
                   <Image
                     src={VIDEO_THUMB}
-                    alt={t("home.videoThumbAlt")}
+                    alt={t("home.eventThumbAlt")}
                     fill
                     className="object-cover opacity-50"
                     sizes="(min-width: 768px) 192px, 100vw"

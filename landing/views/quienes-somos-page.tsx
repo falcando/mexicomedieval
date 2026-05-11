@@ -4,6 +4,7 @@ import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { NewsletterSubscribeCard } from "@/components/sections/NewsletterSubscribeCard";
 import Image from "next/image";
 import Link from "next/link";
+import PageContainer from "@/components/layout/PageContainer";
 
 const SIDEBAR_IMG =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuAGp5HYsryP3UFArni3bU8iCX9SxPqZNSoC1BYcVk2JQ7Cqrr2SnngL6CevI6QYYVWiMyNjj7TsFdjOrpWp3WrWlIDtzgNG3oYYi9mdqdVcPmY6eXTaZkmqnI0C3Bu6lMZ7DXpwCsSGyUhhCkpFllk4NrfL8ELghpqyBCvsYDX4IrkFM0OlR2qJXIfvX57Bd-q0_4TSpm_t4lcyBQKr-8WDGtxaqHuTjXi_davOcPIdJOIe1ZOHxap1HJASvgpSgVtfYYNoGkJpUkvo";
@@ -46,22 +47,7 @@ export function QuienesSomosPage() {
   const { t } = useTranslations();
 
   return (
-    <div className="relative min-h-full bg-[#fdf8ef] font-body text-on-background selection:bg-secondary-container selection:text-on-secondary-container">
-      <main className="relative z-10 mx-auto max-w-7xl px-6 pt-10 pb-24 md:px-12 md:pt-14">
-        <header className="mb-16 text-center">
-          <span className="font-label mb-4 inline-block text-xs font-bold tracking-widest text-tertiary-fixed-dim uppercase">
-            {t("about.kicker")}
-          </span>
-          <h1 className="font-headline mb-6 text-5xl font-bold tracking-tight text-primary md:text-7xl">
-            {t("about.title")}
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-on-surface-variant">
-            {t("about.subtitle")}
-          </p>
-          <div className="mx-auto mt-12 max-w-md">
-            <div className="manuscript-divider-fleuron w-full" />
-          </div>
-        </header>
+    <PageContainer title={t("about.title")} subtitle={t("about.subtitle")}>
 
         <section
           aria-labelledby="proyecto-heading"
@@ -192,7 +178,6 @@ export function QuienesSomosPage() {
         </section>
 
         <NewsletterSubscribeCard className="mt-24" />
-      </main>
-    </div>
+            </PageContainer>
   );
 }

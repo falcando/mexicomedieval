@@ -8,9 +8,7 @@ import { useBooksFilterEnabled } from "@/lib/feature-flags-hooks";
 import { useBooksPageQuery } from "@/lib/queries/books";
 import Image from "next/image";
 import { Suspense, useState } from "react";
-
-const HERO_IMG =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCelkrcQ6V5XyJL6F8omWxm6qNTfUY66OqOQleD80Ij7fWT9JyBDH4CbPy788L-vUF80MQKSJdPfJ1mG0cffnFl3ErIXE_I_Z62uBbkLf5Yw0MupV9uVilgP0kJq-Lkcu1LcAQBRZtx4bkIWQVDQH6qxGCPeX1ocvMhtYl8mpEwy7iji6x48lYjLtf2w1-y3qW9DpZq_3H8fLSujaJHITjNFyA4DevF-OB0ykU02H1fG5LkTFXzsho1nFYVmjYhM_gLARE2z6VPWbF7";
+import PageContainer from "@/components/layout/PageContainer";
 
 type LibrosPageBodyProps = { booksFilterEnabled: boolean };
 
@@ -26,36 +24,7 @@ function LibrosPageBody({ booksFilterEnabled }: LibrosPageBodyProps) {
   const hasNextPage = page < totalPages;
 
   return (
-    <div className="min-h-full bg-background font-body text-on-background selection:bg-tertiary-fixed-dim selection:text-tertiary">
-      <main>
-        <section className="relative flex h-[min(614px,85dvh)] items-center justify-center overflow-hidden bg-primary">
-          <div className="absolute inset-0 z-0">
-            <Image
-              src={HERO_IMG}
-              alt={t("libros.heroAlt")}
-              fill
-              priority
-              className="object-cover opacity-30 mix-blend-luminosity"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/60 to-transparent" />
-            <div className="parchment-grain absolute inset-0" aria-hidden />
-          </div>
-          <div className="relative z-10 max-w-4xl px-6 text-center">
-            <span className="font-label mb-4 block text-sm tracking-[0.3em] text-tertiary-fixed-dim uppercase">
-              {t("libros.heroKicker")}
-            </span>
-            <h1 className="font-headline mb-6 text-5xl leading-tight font-bold text-white md:text-7xl">
-              {t("libros.heroTitle")}
-            </h1>
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed font-light text-on-primary-container md:text-xl">
-              {t("libros.heroSub")}
-            </p>
-            <div className="mt-10 flex justify-center">
-              <div className="manuscript-divider w-32" />
-            </div>
-          </div>
-        </section>
+    <PageContainer title={t("libros.titleLine")} subtitle={t("libros.subtitle")}>
 
         {booksFilterEnabled ? (
           <section
@@ -256,8 +225,8 @@ function LibrosPageBody({ booksFilterEnabled }: LibrosPageBodyProps) {
         </section>
 
         <NewsletterSubscribeCard className="mt-20" />
-      </main>
-    </div>
+
+    </PageContainer>
   );
 }
 
