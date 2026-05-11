@@ -26,10 +26,14 @@ export async function generateMetadata({
       defaultLocale === "es"
         ? es.presentation.notFoundTitle
         : en.presentation.notFoundTitle;
-    return { title };
+    return { title: { absolute: `México Medieval | ${title}` } };
   }
+  const presentationTitle = [data.titleLine1, data.titleLine2]
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
   return {
-    title: data.seo.title,
+    title: { absolute: `México Medieval | ${presentationTitle}` },
     description: data.seo.description,
   };
 }

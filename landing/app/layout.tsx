@@ -11,7 +11,10 @@ import "./globals.css";
 export async function generateMetadata(): Promise<Metadata> {
   const meta = defaultLocale === "es" ? es.metadata : en.metadata;
   return {
-    title: meta.siteTitle,
+    title: {
+      default: "México Medieval",
+      template: "México Medieval | %s",
+    },
     description: meta.siteDescription,
   };
 }

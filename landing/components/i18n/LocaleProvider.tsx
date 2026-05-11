@@ -5,10 +5,13 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useState,
   type ReactNode,
 } from "react";
+import { usePathname } from "next/navigation";
+import { documentTitleForPath } from "@/lib/document-title";
 import {
   LOCALE_COOKIE,
   type Locale,
@@ -55,9 +58,17 @@ export function LocaleProvider({
   children: ReactNode;
   initialLocale: Locale;
 }) {
+  const pathname = usePathname();
   const [locale, setLocaleState] = useState<Locale>(() =>
     normalizeLocale(initialLocale),
   );
+
+  useLayoutEffect(() => {
+    const next = documentTitleForPath(pathname ?? "/", locale);
+    if (next !== null) {
+      document.title = next;
+    }
+  }, [pathname, locale]);
 
   // After mount, apply `mm_locale` from the client (static export has no `cookies()` in the root layout).
   useEffect(() => {
