@@ -16,6 +16,9 @@ export async function generateMetadata(): Promise<Metadata> {
       template: "México Medieval | %s",
     },
     description: meta.siteDescription,
+    icons: {
+      icon: "/icon.webp"
+    }
   };
 }
 
