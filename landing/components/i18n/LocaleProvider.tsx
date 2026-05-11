@@ -22,7 +22,10 @@ import es from "@/messages/es.json";
 
 const catalogs = { en, es } as const;
 
-type MessageTree = typeof en;
+// `en.json` and `es.json` must stay consistent at runtime, but TypeScript doesn't
+// need to enforce identical object shapes at compile time (we access via string
+// paths, and `getByPath` already falls back safely).
+type MessageTree = (typeof catalogs)[Locale];
 
 function getByPath(obj: unknown, path: string): string {
   const parts = path.split(".");

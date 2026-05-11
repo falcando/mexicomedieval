@@ -169,12 +169,12 @@ body {
   background-size: 24px 24px;
 }
 
-.articulos-parchment-main {
+.articulos-parchment-main, .page-content-main {
   position: relative;
   background-color: var(--background);
 }
 
-.articulos-parchment-main::before {
+.articulos-parchment-main::before, .page-content-main::before {
   content: "";
   position: absolute;
   inset: 0;

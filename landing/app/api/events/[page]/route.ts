@@ -1,12 +1,12 @@
 import {
-  getVideosPagePayload,
-  getVideosTotalPages,
-} from "@/lib/data/videos";
+  getEventsPagePayload,
+  getEventsTotalPages,
+} from "@/lib/data/events";
 
 export const dynamic = "force-static";
 
 export function generateStaticParams() {
-  const n = getVideosTotalPages();
+  const n = getEventsTotalPages();
   return Array.from({ length: n }, (_, i) => ({ page: String(i + 1) }));
 }
 
@@ -19,9 +19,12 @@ export async function GET(
   if (Number.isNaN(page)) {
     return Response.json({ error: "Invalid page" }, { status: 404 });
   }
-  const payload = getVideosPagePayload(page);
+
+  const payload = getEventsPagePayload(page);
   if (!payload) {
     return Response.json({ error: "Not found" }, { status: 404 });
   }
+
   return Response.json(payload);
 }
+

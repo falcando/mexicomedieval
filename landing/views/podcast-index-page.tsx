@@ -6,7 +6,7 @@ import { APPLE_SHOW_URL } from "@/lib/data/podcast-mexico-medieval";
 import {
   CARD_IMAGES,
   FEATURED_IMG,
-  HERO_TEXTURE,
+
   SE_TENIA_QUE_DECIR_EPISODE,
   TIEMPOS_IMPOSIBLES,
   cardAltKeys,
@@ -16,6 +16,7 @@ import { ENTITY_PAGE_SIZE, totalPagesFromTotal } from "@/lib/pagination";
 import { useMexicoMedievalPageQuery } from "@/lib/queries/podcasts";
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import PageContainer from "@/components/layout/PageContainer";
 
 function PaginationFolio({
   page,
@@ -153,7 +154,7 @@ function PodcastEpisodeCard({
           </div>
         </div>
       </div>
-      <div className="flex grow flex-col p-6">
+      <div className="flex grow flex-col p-6 group-hover:bg-surface-container-lowest bg-surface-container">
         <span className="font-label text-[10px] font-bold tracking-widest text-tertiary-fixed-dim uppercase">
           {volume}
         </span>
@@ -262,53 +263,7 @@ export function PodcastIndexPage() {
   }, [mmQuery.data?.episodes, pageMm, t]);
 
   return (
-    <div className="relative flex min-h-full flex-col">
-      <div
-        className="manuscript-grain pointer-events-none fixed inset-0 z-100"
-        aria-hidden
-      />
-
-      <main className="pb-20 pt-8 md:pt-10">
-        <section className="relative overflow-hidden bg-surface-container-low px-8 py-24 md:py-32">
-          <div className="absolute inset-0 opacity-10">
-            <Image
-              src={HERO_TEXTURE}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-          </div>
-          <div className="relative z-10 mx-auto max-w-4xl text-center">
-            <span className="font-label mb-6 block text-xs font-semibold tracking-[0.3em] text-tertiary-fixed-dim uppercase">
-              {t("podcastPage.heroKicker")}
-            </span>
-            <h1 className="font-headline mb-8 text-5xl leading-tight font-bold tracking-tight text-primary md:text-7xl">
-              {t("podcastPage.heroTitleBefore")}{" "}
-              <span className="font-normal italic">
-                {t("podcastPage.heroTitleAccent")}
-              </span>
-            </h1>
-            <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed font-light text-on-surface-variant md:text-xl">
-              {t("podcastPage.heroSub")}
-            </p>
-            <div className="flex justify-center gap-4">
-              <a
-                href="#audio-volumes"
-                className="group flex items-center gap-3 rounded-md border-b-2 border-tertiary-fixed-dim bg-primary px-8 py-4 font-label font-semibold uppercase tracking-wide text-on-primary transition-all hover:bg-primary-container"
-              >
-                <span
-                  className="material-symbols-outlined"
-                  style={{ fontVariationSettings: "'FILL' 1" }}
-                >
-                  play_arrow
-                </span>
-                {t("podcastPage.startListening")}
-              </a>
-            </div>
-          </div>
-        </section>
+    <PageContainer title={t("podcastPage.titleLine")} subtitle={t("podcastPage.subtitle")}>
 
         <section className="mx-auto max-w-screen-2xl px-8 py-32">
           <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12">
@@ -351,7 +306,7 @@ export function PodcastIndexPage() {
                 {t("podcastPage.collaborationsBody")}
               </p>
               <ul className="space-y-6">
-                <li className="flex items-start gap-4 rounded-md border-l-4 border-tertiary-fixed-dim bg-surface-container-low p-4">
+                <li className="flex items-start gap-4 rounded-md border-l-4 border-tertiary-fixed-dim  p-4">
                   <div className="font-headline text-2xl font-bold text-primary italic opacity-30">
                     01
                   </div>
@@ -369,7 +324,7 @@ export function PodcastIndexPage() {
                     </p>
                   </div>
                 </li>
-                <li className="flex items-start gap-4 rounded-md border-l-4 border-transparent p-4 transition-colors hover:bg-surface-container-low">
+                <li className="flex items-start gap-4 rounded-md border-l-4 border-transparent p-4 transition-colors">
                   <div className="font-headline text-2xl font-bold text-primary italic opacity-30">
                     02
                   </div>
@@ -394,7 +349,7 @@ export function PodcastIndexPage() {
 
         <section
           id="audio-volumes"
-          className="bg-surface-container py-32 scroll-mt-24"
+          className="py-32 scroll-mt-24"
         >
           <div className="mx-auto max-w-screen-2xl px-8">
             <div className="mb-16 flex flex-col items-end justify-between gap-6 md:flex-row">
@@ -478,7 +433,7 @@ export function PodcastIndexPage() {
           </div>
         </section>
 
-        <div className="bg-surface-container-low py-16 md:py-24">
+        <div className=" py-16 md:py-24">
           {spotifySeriesGroupsWithArt.map((group, groupIndex) => (
             <section
               key={`${group.series}-${groupIndex}`}
@@ -523,7 +478,6 @@ export function PodcastIndexPage() {
         <div className="mx-auto max-w-5xl px-8">
           <NewsletterSubscribeCard />
         </div>
-      </main>
-    </div>
+        </PageContainer>
   );
 }
