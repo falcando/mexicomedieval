@@ -8,10 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const m = defaultLocale === "es" ? es : en;
   return {
     title: m.nav.books,
-    description:
-      defaultLocale === "es"
-        ? "Archivo de libros: anales iluminados, liturgias sagradas y mapas que definieron la Nueva España."
-        : "Archive of Books: illuminated annals, sacred liturgies, and maps that defined New Spain.",
+    description: m.libros.subtitle,
   };
 }
 
