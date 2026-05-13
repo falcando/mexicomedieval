@@ -8,6 +8,7 @@ export type PageContainerProps =
     }
   | {
       children: ReactNode;
+      pretitle?: string;
       title: string;
       subtitle: string;
     };
@@ -19,7 +20,7 @@ function PageContainer(props: PageContainerProps) {
         {"customHeader" in props ? (
           props.customHeader
         ) : (
-          <PageHeader title={props.title} subtitle={props.subtitle} />
+          <PageHeader pretitle={props.pretitle} title={props.title} subtitle={props.subtitle} />
         )}
         {props.children}
       </main>

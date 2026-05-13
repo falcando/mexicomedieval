@@ -124,6 +124,7 @@ export function ArticulosPage() {
 
   return (
     <PageContainer
+      // pretitle={t("articulos.pretitle")}
       title={t("articulos.titleLine")}
       subtitle={t("articulos.subtitle")}
     >

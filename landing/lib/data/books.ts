@@ -8,8 +8,20 @@ import {
 /** @deprecated Use ENTITY_PAGE_SIZE from @/lib/pagination */
 export const BOOKS_PAGE_SIZE = ENTITY_PAGE_SIZE;
 
+// TODO: Add description for books
 /** Sourced from static-html/libros.html (Book 1, Book 2). */
 export const BOOKS: Book[] = [
+  {
+    image:
+    "/books/vernacular-documents-of-medieval-sardinia.png",
+    alt: "Portada del libro The Making of Medieval Sardinia",
+    badge: "Brill",
+    year: "2021",
+    title: "Vernacular Documents of Medieval Sardinia",
+    description: "Published by Brill",
+    href: "https://brill.com/display/title/38771",
+    ctaKey: "libros.ctaBrill",
+  },
   {
     image:
       "https://brill.com/coverimage?doc=%2Ftitle%2F38771&width=200&type=webp",

@@ -24,7 +24,7 @@ function LibrosPageBody({ booksFilterEnabled }: LibrosPageBodyProps) {
   const hasNextPage = page < totalPages;
 
   return (
-    <PageContainer title={t("libros.titleLine")} subtitle={t("libros.subtitle")}>
+    <PageContainer pretitle={t("libros.pretitle")} title={t("libros.titleLine")} subtitle={t("libros.subtitle")}>
 
         {booksFilterEnabled ? (
           <section

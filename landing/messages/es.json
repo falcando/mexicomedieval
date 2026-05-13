@@ -97,8 +97,9 @@
     "spotlightCta": "Examinar los rollos"
   },
   "libros": {
-    "titleLine": "Libros",
-    "subtitle": "Recorrido por los anales iluminados de México. De liturgias sagradas a mapas que definieron la Nueva España: tinta y espíritu de cinco siglos.",
+    "pretitle": "El scriptorium de un medievalista",
+    "titleLine": "Libros y ediciones",
+    "subtitle": "Libros escritos y coeditados por Hervin Fernández Aceves sobre historia medieval, mundos mediterráneos, poder, sociedad y cultura escrita.",
     "filterCentury": "Siglo",
     "filterCenturyAria": "Filtrar por siglo",
     "centuryAll": "Todas las eras",
@@ -130,9 +131,9 @@
   },
   "articulos": {
     "collectionKicker": "Colección académica",
-    "titleLine": "Artículos",
-    "subtitle": "Una selección curada de investigación revisada por pares, notas de revista y capítulos históricos sobre los cimientos medievales de la Nueva España.",
-    "recentResearch": "Investigación reciente",
+    "titleLine": "Artículos y capítulos de libro arbitrados",
+    "subtitle": "Investigación publicada y revisada por pares sobre historia medieval, Mediterráneo, Cerdeña, Italia meridional, manuscritos, sagas, aristocracias, poder y cultura escrita.",
+    "recentResearch": "Lo más reciente",
     "latest": "Más reciente",
     "featuredPublication": "Publicación destacada",
     "peerReviewed": "Revisado por pares",
@@ -195,6 +196,7 @@
     "of": "de"
   },
   "papers": {
+    "pretitle": "Documentos de trabajo",
     "title": "Papers y presentaciones",
     "subtitle": "Presentaciones académicas en congresos y eventos, y papers en repositorios académicos.",
     "researchPortal": "Portal de investigación",
