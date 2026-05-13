@@ -1,6 +1,6 @@
-:HL["/_next/static/chunks/02p~lm0b8dcdm.css","style"]
+:HL["/_next/static/chunks/0mj7c6kcqf0vh.css","style"]
 :HL["/_next/static/media/ae3274ea8a83d33d-s.p.0x~oh7~5mgc9~.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/chunks/0zxi6gw.8k17d.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@300;400;500;600&display=swap","style"]
 :HL["https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"quienes-somos","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"16JfOBA8itfnNOlsNWIMm"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"quienes-somos","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"-jua7cot-wgcRQLdhiNJT"}
