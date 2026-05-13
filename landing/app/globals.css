@@ -171,19 +171,11 @@ body {
 }
 
 .articulos-parchment-main, .page-content-main {
-  position: relative;
-  background-color: var(--background);
+  background-color: #faf6ed;
+  /* gradient from top to bottom */
+  background: linear-gradient(to bottom, #faf6ed, var(--background), 100%);
 }
 
-.articulos-parchment-main::before, .page-content-main::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.03;
-  pointer-events: none;
-  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFe5XLEVO-pkThTP-gtEQJozX7rc0_FpB6gMdBBYMvWhw31P46hrguUkFNNfhvrJibZyAMgsBrI7hikQJb8dmfBrhW4kCuvNRpl7WhfqKKCPdYNe6lYp7O9vs8sfHzjEoIXxBLEGiORf1vGSh-zjL11SO282jJIdLVsUxVayjk2MGqJu9Q1yLFTp07zNtpMxvI2PX3U-xVgOUYaGCZpai7LMTNHzzfUbbaKzgy0s6f6SJYJmCsrTG_L29aryxBoAtuH99DtjTS8764");
-  background-size: cover;
-}
 
 .material-symbols-outlined {
   font-family: "Material Symbols Outlined";

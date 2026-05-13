@@ -107,9 +107,7 @@ export function PresentationDetailsView({
           ) : null}
         </section>
 
-        <div className="mx-auto mb-20 max-w-3xl">
-          <div className="manuscript-divider-fleuron w-full bg-[#f9f7f2]" />
-        </div>
+            
 
         <section className="mb-24">
           <h2 className="font-headline relative mb-3 inline-block text-2xl font-bold text-primary md:text-3xl">
