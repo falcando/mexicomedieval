@@ -107,7 +107,7 @@ export function ContactoPage() {
             </div>
 
             <div
-              className="pointer-events-none relative hidden select-none justify-self-end opacity-[0.12] lg:flex lg:w-full"
+              className="pointer-events-none relative hidden select-none justify-self-end opacity-[0.6] lg:flex lg:w-full"
               aria-hidden
             >
               <Image
@@ -229,17 +229,9 @@ export function ContactoPage() {
               id="contact-publications-heading"
               className="font-headline mb-6 text-2xl font-bold text-primary"
             >
-              {t("contact.publicationsHeading")}
+                {t("contact.authorPagesTitle")}
             </h2>
             <div className="border-t-2 border-primary/80 bg-surface-container-low/90 px-5 py-5">
-              <div className="mb-4 flex items-center gap-2 text-primary">
-                <span className="material-symbols-outlined text-2xl" aria-hidden>
-                  menu_book
-                </span>
-                <span className="font-headline text-lg font-semibold">
-                  {t("contact.authorPagesTitle")}
-                </span>
-              </div>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a
                   href={CONTACT_EXTERNAL.amazonMx}

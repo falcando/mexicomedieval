@@ -79,24 +79,9 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-outline-variant/20 pt-8 md:flex-row">
           <p className="text-center text-xs uppercase tracking-widest text-primary-container/70 md:text-left">
+          {/* TODO: Add creative commons license */}
             {t("footer.copyright")}
           </p>
-          <div className="flex gap-2 text-primary">
-            <button
-              type="button"
-              className="material-symbols-outlined rounded-full p-2 transition-opacity hover:opacity-70"
-              aria-label={t("footer.share")}
-            >
-              share
-            </button>
-            <button
-              type="button"
-              className="material-symbols-outlined rounded-full p-2 transition-opacity hover:opacity-70"
-              aria-label={t("footer.library")}
-            >
-              local_library
-            </button>
-          </div>
         </div>
       </div>
     </footer>

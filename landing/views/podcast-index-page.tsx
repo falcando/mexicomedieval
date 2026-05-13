@@ -264,92 +264,9 @@ export function PodcastIndexPage() {
 
   return (
     <PageContainer title={t("podcastPage.titleLine")} subtitle={t("podcastPage.subtitle")}>
-
-        <section className="mx-auto max-w-screen-2xl px-8 py-32">
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12">
-            <div className="group relative lg:col-span-7">
-              <div className="absolute -top-6 -left-6 z-0 h-32 w-32 bg-tertiary-fixed/20" />
-              <a
-                href={TIEMPOS_IMPOSIBLES.listenHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative z-10 block overflow-hidden rounded-lg bg-surface-container-highest shadow-xl shadow-primary/5 transition-opacity hover:opacity-95"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <Image
-                    src={FEATURED_IMG}
-                    alt={t("podcastPage.featuredImgAlt")}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(min-width: 1024px) 58vw, 100vw"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-primary/80 to-transparent" />
-                  <div className="absolute bottom-0 p-10 text-on-primary">
-                    <span className="mb-4 inline-block bg-tertiary-fixed px-3 py-1 font-label text-[10px] font-bold tracking-widest text-on-tertiary-fixed uppercase">
-                      {t("podcastPage.spotify")}
-                    </span>
-                    <h3 className="font-headline mb-2 text-3xl font-bold">
-                      {TIEMPOS_IMPOSIBLES.title}
-                    </h3>
-                    <p className="max-w-lg font-light text-on-primary/80">
-                      {TIEMPOS_IMPOSIBLES.episodeTitle}
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div className="lg:col-span-5">
-              <h2 className="font-headline mb-6 text-4xl leading-tight font-bold text-primary">
-                {t("podcastPage.featuredCollaborations")}
-              </h2>
-              <p className="mb-8 leading-relaxed text-on-surface-variant">
-                {t("podcastPage.collaborationsBody")}
-              </p>
-              <ul className="space-y-6">
-                <li className="flex items-start gap-4 rounded-md border-l-4 border-tertiary-fixed-dim  p-4">
-                  <div className="font-headline text-2xl font-bold text-primary italic opacity-30">
-                    01
-                  </div>
-                  <div>
-                    <a
-                      href={TIEMPOS_IMPOSIBLES.listenHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-headline font-bold text-primary underline-offset-4 hover:underline"
-                    >
-                      {TIEMPOS_IMPOSIBLES.title}
-                    </a>
-                    <p className="mt-1 text-sm text-on-surface-variant">
-                      {TIEMPOS_IMPOSIBLES.episodeTitle}
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4 rounded-md border-l-4 border-transparent p-4 transition-colors">
-                  <div className="font-headline text-2xl font-bold text-primary italic opacity-30">
-                    02
-                  </div>
-                  <div>
-                    <a
-                      href={SE_TENIA_QUE_DECIR_EPISODE.listenHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-headline font-bold text-primary underline-offset-4 hover:underline"
-                    >
-                      {t("podcastPage.seTeniaQueDecir")}
-                    </a>
-                    <p className="mt-1 text-sm text-on-surface-variant">
-                      {SE_TENIA_QUE_DECIR_EPISODE.title}
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
         <section
           id="audio-volumes"
-          className="py-32 scroll-mt-24"
+          className="mb-32 scroll-mt-24"
         >
           <div className="mx-auto max-w-screen-2xl px-8">
             <div className="mb-16 flex flex-col items-end justify-between gap-6 md:flex-row">

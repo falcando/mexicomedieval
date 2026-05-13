@@ -11,7 +11,7 @@ const PageHeader = ({
   title,
   subtitle,
 }: {
-  pretitle: string;
+  pretitle?: string;
   title: string;
   subtitle: string;
 }) => {

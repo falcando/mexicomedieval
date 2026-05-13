@@ -119,13 +119,7 @@ function SiteNavbarView({ showNewsletter }: SiteNavbarViewProps) {
             {t("nav.contactCta")}
           </Link>
           <LanguageSwitcher />
-          <button
-            type="button"
-            className="material-symbols-outlined text-primary rounded-full p-2 transition-colors hover:bg-surface-container/50"
-            aria-label={t("nav.search")}
-          >
-            search
-          </button>
+          
           {showNewsletter ? (
             <button
               type="button"
