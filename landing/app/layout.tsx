@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: meta.siteDescription,
     icons: {
-      icon: "/icon.webp"
+      icon: "/icon.png"
     }
   };
 }

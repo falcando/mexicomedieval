@@ -78,9 +78,35 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-outline-variant/20 pt-8 md:flex-row">
-          <p className="text-center text-xs uppercase tracking-widest text-primary-container/70 md:text-left">
-          {/* TODO: Add creative commons license */}
-            {t("footer.copyright")}
+          <p className="text-center text-sm uppercase tracking-widest text-primary-container/70 md:text-left">
+            {/* TODO: Add creative commons license */}
+            This work is licensed under{" "}
+            <a
+              href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+              className="underline hover:text-primary"
+            >
+              CC BY-NC-SA 4.0
+            </a>
+            <img
+              src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+              alt=""
+              className="ml-0.5 inline max-h-[1em] max-w-[1em]"
+            />
+            <img
+              src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+              alt=""
+              className="ml-0.5 inline max-h-[1em] max-w-[1em]"
+            />
+            <img
+              src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
+              alt=""
+              className="ml-0.5 inline max-h-[1em] max-w-[1em]"
+            />
+            <img
+              src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
+              alt=""
+              className="ml-0.5 inline max-h-[1em] max-w-[1em]"
+            />
           </p>
         </div>
       </div>

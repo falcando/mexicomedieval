@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "@/components/i18n/LocaleProvider";
+import { ArchiveCard } from "@/components/sections/ArchiveCard";
 import { NewsletterSubscribeCard } from "@/components/sections/NewsletterSubscribeCard";
 import Image from "next/image";
 import Link from "next/link";
@@ -68,110 +69,86 @@ export function HomePage() {
               <div className="manuscript-divider mx-auto w-48" />
             </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-              <div className="group flex min-h-72 flex-col justify-between bg-surface-container-lowest p-10 transition-colors duration-500 hover:bg-primary-container">
-                <div>
-                  <span className="material-symbols-outlined mb-6 block text-4xl text-tertiary-fixed-dim group-hover:text-white">
-                    auto_stories
-                  </span>
-                  <h4 className="font-headline mb-4 text-2xl text-primary group-hover:text-white">
-                    {t("home.booksTitle")}
-                  </h4>
-                  <p className="text-on-surface-variant group-hover:text-surface-variant">
-                    {t("home.booksDesc")}
-                  </p>
-                </div>
-                <div className="mt-8 font-label text-xs uppercase tracking-widest text-tertiary-fixed-dim">
-                  {t("home.booksCta")}
-                </div>
-              </div>
+              <ArchiveCard
+                icon="auto_stories"
+                title={t("home.booksTitle")}
+                description={t("home.booksDesc")}
+                variant="white"
+                cta={{
+                  kind: "label",
+                  href: "/libros",
+                  text: t("home.booksCta"),
+                }}
+              />
 
-              <div className="group flex flex-col justify-between bg-surface-container-highest p-10 transition-colors duration-500 hover:bg-secondary-fixed">
-                <div>
-                  <span className="material-symbols-outlined mb-6 block text-4xl text-primary">
-                    history_edu
-                  </span>
-                  <h4 className="font-headline mb-4 text-2xl text-primary">
-                    {t("home.articlesTitle")}
-                  </h4>
-                  <p className="text-on-surface-variant">
-                    {t("home.articlesDesc")}
-                  </p>
-                </div>
-                <div className="mt-8 font-label text-xs uppercase tracking-widest text-primary/60">
-                  {t("home.articlesCta")}
-                </div>
-              </div>
+              <ArchiveCard
+                icon="history_edu"
+                title={t("home.articlesTitle")}
+                description={t("home.articlesDesc")}
+                variant="gray"
+                cta={{
+                  kind: "label",
+                  href: "/articulos",
+                  text: t("home.articlesCta"),
+                }}
+              />
 
-              <div className="flex flex-col justify-between border-t-2 border-tertiary-fixed-dim bg-surface-container-lowest p-10">
-                <div>
-                  <span className="material-symbols-outlined mb-6 block text-4xl text-primary">
-                    podcasts
-                  </span>
-                  <h4 className="font-headline mb-4 text-2xl text-primary">
-                    {t("home.podcastTitle")}
-                  </h4>
-                  <p className="text-on-surface-variant">
-                    {t("home.podcastDesc")}
-                  </p>
-                </div>
-                <Link
-                  href="/podcast"
-                  className="mt-8 flex items-center gap-2 font-label text-sm font-bold uppercase tracking-widest text-primary"
-                >
-                  {t("home.podcastCta")}
-                  <span className="material-symbols-outlined text-sm">
-                    play_arrow
-                  </span>
-                </Link>
-              </div>
+              <ArchiveCard
+                icon="podcasts"
+                title={t("home.podcastTitle")}
+                description={t("home.podcastDesc")}
+                variant="white"
+                cta={{
+                  kind: "link-row",
+                  href: "/podcast",
+                  text: t("home.podcastCta"),
+                  showPlayIcon: true,
+                }}
+              />
 
-              <div className="flex flex-col items-center gap-8 border-l-2 border-tertiary-fixed-dim bg-surface-container-highest p-10 md:col-span-2 md:flex-row">
-                <div className="flex-1">
-                  <span className="material-symbols-outlined mb-6 block text-4xl text-primary">
-                    movie_filter
-                  </span>
-                  <h4 className="font-headline mb-4 text-2xl text-primary">
-                    {t("home.eventsTitle")}
-                  </h4>
-                  <p className="text-on-surface-variant">
-                    {t("home.eventsDesc")}
-                  </p>
-                </div>
-                <div className="relative aspect-video w-full overflow-hidden bg-primary-container md:w-48">
-                  <Image
-                    src={VIDEO_THUMB}
-                    alt={t("home.eventThumbAlt")}
-                    fill
-                    className="object-cover opacity-50"
-                    sizes="(min-width: 768px) 192px, 100vw"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="material-symbols-outlined text-4xl text-white">
-                      play_circle
-                    </span>
+              <ArchiveCard
+                icon="movie_filter"
+                title={t("home.eventsTitle")}
+                description={t("home.eventsDesc")}
+                variant="gray"
+                mdColSpan={2}
+                cta={{
+                  kind: "label",
+                  href: "/events",
+                  text: t("home.eventsCta"),
+                }}
+                trailing={
+                  <div className="relative aspect-video w-full overflow-hidden bg-primary-container md:w-48">
+                    <Image
+                      src={VIDEO_THUMB}
+                      alt={t("home.eventThumbAlt")}
+                      fill
+                      className="object-cover opacity-50"
+                      sizes="(min-width: 768px) 192px, 100vw"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span
+                        className="material-symbols-outlined text-4xl text-white"
+                        aria-hidden
+                      >
+                        play_circle
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </div>
+                }
+              />
 
-              <div className="flex flex-col justify-between bg-surface-container-lowest p-10">
-                <div>
-                  <span className="material-symbols-outlined mb-6 block text-4xl text-primary">
-                    school
-                  </span>
-                  <h4 className="font-headline mb-4 text-2xl text-primary">
-                    {t("home.teachingTitle")}
-                  </h4>
-                  <p className="text-on-surface-variant">
-                    {t("home.teachingDesc")}
-                  </p>
-                </div>
-                <Link
-                  href="#"
-                  className="mt-8 font-label text-sm text-primary underline decoration-tertiary-fixed-dim decoration-2 underline-offset-4"
-                >
-                  {t("home.teachingCta")}
-                </Link>
-              </div>
+              <ArchiveCard
+                icon="article"
+                title={t("home.papersTitle")}
+                description={t("home.papersDesc")}
+                variant="white"
+                cta={{
+                  kind: "label",
+                  href: "/papers",
+                  text: t("home.papersCta"),
+                }}
+              />
             </div>
           </div>
         </section>
