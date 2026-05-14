@@ -20,7 +20,7 @@ export function EventsPage() {
   const hasNextPage = page < totalPages;
 
   return (
-    <PageContainer title={t("events.titleLine")} subtitle={t("events.subtitle")}>
+    <PageContainer pretitle={t("events.pretitle")} title={t("events.titleLine")} subtitle={t("events.subtitle")}>
       <section aria-label={t("events.catalogAria")}>
         {isPending && !data && (
           <p className="text-center text-on-surface-variant">{t("events.listLoading")}</p>
