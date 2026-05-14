@@ -7,13 +7,25 @@ export type MexicoMedievalEpisode = {
   listenHref: string;
   documentType: MexicoMedievalDocumentType;
   highlighted?: boolean;
+  series: string;
 };
 
-export type PodcastCatalogPageResponse = {
-  episodes: MexicoMedievalEpisode[];
+export const PODCAST_CATEGORY_SLUGS = [
+  "mexico-medieval",
+  "dias-con-la-garra-y-ale-garibay",
+  "others",
+] as const;
+
+export type PodcastCategorySlug = (typeof PODCAST_CATEGORY_SLUGS)[number];
+
+export function isPodcastCategorySlug(
+  value: string,
+): value is PodcastCategorySlug {
+  return (PODCAST_CATEGORY_SLUGS as readonly string[]).includes(value);
+}
+
+export type PodcastSectionResponse = {
+  category: PodcastCategorySlug;
+  appleEpisodes: MexicoMedievalEpisode[];
   spotifyGuests: SpotifyGuestSpot[];
-  pagination: {
-    appleTotal: number;
-    spotifyTotal: number;
-  };
 };
