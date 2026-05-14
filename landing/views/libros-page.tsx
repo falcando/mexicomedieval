@@ -6,9 +6,9 @@ import { totalPagesFromTotal } from "@/lib/pagination";
 import { isBooksFilterEnabled } from "@/lib/feature-flags";
 import { useBooksFilterEnabled } from "@/lib/feature-flags-hooks";
 import { useBooksPageQuery } from "@/lib/queries/books";
-import Image from "next/image";
 import { Suspense, useState } from "react";
 import PageContainer from "@/components/layout/PageContainer";
+import BookCard from "@/components/sections/BookCard";
 
 type LibrosPageBodyProps = { booksFilterEnabled: boolean };
 
@@ -111,68 +111,24 @@ function LibrosPageBody({ booksFilterEnabled }: LibrosPageBodyProps) {
           </section>
         ) : null}
 
-        <section className="mx-auto max-w-7xl px-8 py-20">
+        <section className="mx-auto max-w-7xl px-8 pb-20">
           <div
-            className="grid grid-cols-1 items-stretch gap-12 md:grid-cols-2 lg:grid-cols-3"
+            className="mx-auto flex max-w-5xl flex-col gap-16"
             aria-busy={isPending || isFetching}
           >
             {isPending && !data && (
-              <p className="col-span-full text-center text-on-surface-variant md:col-span-2 lg:col-span-3">
+              <p className="text-center text-on-surface-variant">
                 {t("libros.booksLoading")}
               </p>
             )}
             {isError && (
-              <p
-                className="col-span-full text-center text-primary md:col-span-2 lg:col-span-3"
-                role="alert"
-              >
+              <p className="text-center text-primary" role="alert">
                 {t("libros.booksLoadError")}
               </p>
             )}
-            {data?.books.map((book) => (
-              <article
-                key={book.title}
-                className="group flex h-full min-h-0 flex-col border-t-2 border-tertiary-fixed/30 bg-surface-container-low p-1 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
-              >
-                <div className="relative aspect-3/4 w-full shrink-0 overflow-hidden bg-surface-dim">
-                  <Image
-                    src={book.image}
-                    alt={book.alt}
-                    fill
-                    className="object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  />
-                  <div className="absolute top-4 right-4 bg-primary/90 px-3 py-1 font-label text-[10px] tracking-widest text-tertiary-fixed-dim uppercase">
-                    {book.badge}
-                  </div>
-                </div>
-                <div className="flex min-h-0 flex-1 flex-col p-8">
-                  <span className="font-label mb-2 shrink-0 text-xs tracking-widest text-tertiary-fixed-dim uppercase">
-                    {book.year}
-                  </span>
-                  <h3 className="font-headline mb-4 min-h-18 shrink-0 text-2xl leading-tight font-bold text-primary wrap-anywhere line-clamp-4">
-                    {book.title}
-                  </h3>
-                  <p className="min-h-12 flex-1 text-sm leading-relaxed font-light text-on-surface-variant">
-                    {book.description}
-                  </p>
-                  <div className="mt-auto shrink-0 border-t border-outline-variant/10 pt-6">
-                    <a
-                      href={book.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/btn flex w-full items-center justify-between border-b border-primary px-1 py-3 transition-all duration-300 hover:border-tertiary-fixed-dim"
-                    >
-                      <span className="font-label text-xs tracking-widest text-primary uppercase transition-colors group-hover/btn:text-tertiary-fixed-dim">
-                        {t(book.ctaKey)}
-                      </span>
-                      <span className="material-symbols-outlined text-primary transition-transform group-hover/btn:translate-x-1 group-hover/btn:text-tertiary-fixed-dim">
-                        open_in_new
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </article>
+
+            {data?.books.map((book, index) => (
+              <BookCard key={book.title} book={book} imageAlign={index % 2 === 0 ? "left" : "right"} />
             ))}
           </div>
 

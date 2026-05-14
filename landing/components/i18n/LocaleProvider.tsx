@@ -7,16 +7,22 @@ import {
   useEffect,
   useLayoutEffect,
   useMemo,
-  useState,
+  useRef,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { usePathname } from "next/navigation";
 import { documentTitleForPath } from "@/lib/document-title";
 import {
-  LOCALE_COOKIE,
   type Locale,
   normalizeLocale,
 } from "@/lib/i18n-config";
+import {
+  persistLocale,
+  readRawLocaleFromCookie,
+  subscribeLocale,
+} from "@/lib/i18n/locale-external-store";
 import en from "@/messages/en.json";
 import es from "@/messages/es.json";
 
@@ -49,11 +55,6 @@ export type I18nContextValue = {
 
 const I18nContext = createContext<I18nContextValue | null>(null);
 
-function writeLocaleCookie(locale: Locale) {
-  const maxAge = 60 * 60 * 24 * 365;
-  document.cookie = `${LOCALE_COOKIE}=${encodeURIComponent(locale)};path=/;max-age=${maxAge};SameSite=Lax`;
-}
-
 export function LocaleProvider({
   children,
   initialLocale,
@@ -61,10 +62,17 @@ export function LocaleProvider({
   children: ReactNode;
   initialLocale: Locale;
 }) {
+  const queryClient = useQueryClient();
   const pathname = usePathname();
-  const [locale, setLocaleState] = useState<Locale>(() =>
-    normalizeLocale(initialLocale),
+  const normalizedInitial = normalizeLocale(initialLocale);
+
+  const locale = useSyncExternalStore(
+    subscribeLocale,
+    () => normalizeLocale(readRawLocaleFromCookie() ?? initialLocale),
+    () => normalizedInitial,
   );
+
+  const skipLocaleChangeInvalidationRef = useRef(true);
 
   useLayoutEffect(() => {
     const next = documentTitleForPath(pathname ?? "/", locale);
@@ -73,28 +81,25 @@ export function LocaleProvider({
     }
   }, [pathname, locale]);
 
-  // After mount, apply `mm_locale` from the client (static export has no `cookies()` in the root layout).
-  useEffect(() => {
-    const match = document.cookie.match(
-      new RegExp(
-        `(?:^|; )${LOCALE_COOKIE.replace(/[$()*+.?[\\\]^{|}]/g, "\\$&")}=([^;]*)`,
-      ),
-    );
-    const raw = match?.[1];
-    const fromCookie = raw ? decodeURIComponent(raw) : null;
-    const parsed = normalizeLocale(fromCookie);
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time cookie sync after hydration for static export
-    setLocaleState((prev) => (parsed !== prev ? parsed : prev));
-  }, []);
-
   useEffect(() => {
     document.documentElement.lang = locale;
   }, [locale]);
 
+  useEffect(() => {
+    if (skipLocaleChangeInvalidationRef.current) {
+      skipLocaleChangeInvalidationRef.current = false;
+      return;
+    }
+    void queryClient.invalidateQueries({
+      predicate: (query) => {
+        const root = query.queryKey[0];
+        return root === "books" || root === "articles";
+      },
+    });
+  }, [locale, queryClient]);
+
   const setLocale = useCallback((next: Locale) => {
-    const normalized = normalizeLocale(next);
-    setLocaleState(normalized);
-    writeLocaleCookie(normalized);
+    persistLocale(next);
   }, []);
 
   const messages = catalogs[locale];
