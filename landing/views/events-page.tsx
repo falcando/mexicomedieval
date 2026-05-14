@@ -6,6 +6,7 @@ import { useEventsPageQuery } from "@/lib/queries/events";
 import { totalPagesFromTotal } from "@/lib/pagination";
 import { useState } from "react";
 import PageContainer from "@/components/layout/PageContainer";
+import { EventCard } from "@/components/sections/EventCard";
 
 export function EventsPage() {
   const { t } = useTranslations();
@@ -37,24 +38,9 @@ export function EventsPage() {
               className="grid gap-6 md:grid-cols-2"
               aria-busy={isPending || isFetching}
             >
-              {data?.events.map((event) => (
-                <li key={event.href}>
-                  <a
-                    href={event.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block border border-outline-variant/20 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-                  >
-                    {event.year ? (
-                      <span className="font-label text-xs font-bold text-on-surface-variant/60 uppercase">
-                        {event.year}
-                      </span>
-                    ) : null}
-                    <h2 className="font-headline mt-2 text-xl text-primary">
-                      {event.title}
-                    </h2>
-                    <p className="mt-2 text-sm text-on-surface-variant">{event.description}</p>
-                  </a>
+              {data?.events.map((event, index) => (
+                <li key={`${event.title}-${index}`}>
+                  <EventCard event={event} />
                 </li>
               ))}
             </ul>
