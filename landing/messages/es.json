@@ -229,7 +229,13 @@
     "prev": "Anterior",
     "next": "Siguiente",
     "folio": "Folio",
-    "of": "de"
+    "of": "de",
+    "ctaViewCourse": "Ver detalles del curso",
+    "ctaDetails": "Detalles",
+    "ctaEnter": "Entrar",
+    "ctaComingSoon": "Próximamente",
+    "comingSoonHeader": "Próximamente",
+    "comingSoonCalendarAria": "Fecha por anunciar"
   },
   "about": {
     "kicker": "México Medieval",
