@@ -1,4 +1,5 @@
 import type { Book, BooksPageResponse } from "@/lib/types/book";
+import type { Locale } from "@/lib/i18n-config";
 import {
   ENTITY_PAGE_SIZE,
   slicePage,
@@ -8,9 +9,10 @@ import {
 /** @deprecated Use ENTITY_PAGE_SIZE from @/lib/pagination */
 export const BOOKS_PAGE_SIZE = ENTITY_PAGE_SIZE;
 
-// TODO: Add description for books
+// TODO: Since this is data that the API returns, we need to handle the translations for the author and the description.
+
 /** Sourced from static-html/libros.html (Book 1, Book 2). */
-export const BOOKS: Book[] = [
+export const BOOKS: (Omit<Book, "author" | "description"> & { information: Record<Locale, { author: string; description: string }> })[] = [
   {
     image:
     "/books/vernacular-documents-of-medieval-sardinia.png",
@@ -18,8 +20,16 @@ export const BOOKS: Book[] = [
     badge: "Brill",
     year: "2026",
     title: "Vernacular Documents of Medieval Sardinia",
-    description: "Este volumen reúne, edita y traduce al inglés algunos de los documentos más importantes de la Cerdeña medieval, desde los siglos XI al XV. Incluye las Carte volgari, los condaghes de San Pietro de Silki y Santa Maria de Bonárcado, y la Carta de Logu de Arborea. El libro ofrece una ventana excepcional a la vida jurídica, social, política y lingüística de la isla, y resulta fundamental para estudiar poder, propiedad, dependencia social, cultura escrita y lenguas vernáculas en el Mediterráneo medieval.",
-    author: "Alex Metcalfe, Hervin Fernández-Aceves y Maurizio Virdis",
+    information: {
+      es: {
+        author: "Alex Metcalfe, Hervin Fernández-Aceves y Maurizio Virdis",
+        description: "Este volumen reúne, edita y traduce al inglés algunos de los documentos más importantes de la Cerdeña medieval, desde los siglos XI al XV. Incluye las Carte volgari, los condaghes de San Pietro de Silki y Santa Maria de Bonárcado, y la Carta de Logu de Arborea. El libro ofrece una ventana excepcional a la vida jurídica, social, política y lingüística de la isla, y resulta fundamental para estudiar poder, propiedad, dependencia social, cultura escrita y lenguas vernáculas en el Mediterráneo medieval.",
+      },
+      en: {
+        author: "Alex Metcalfe, Hervin Fernández-Aceves and Maurizio Virdis",
+        description: "This volume brings together, edits and translates into English some of the most important documents of medieval Sardinia, from the 11th to the 15th century. It includes the Carte volgari, the condaghes of San Pietro de Silki and Santa Maria de Bonárcado, and the Carta de Logu de Arborea. The book offers an exceptional window into the legal, social, political and linguistic life of the island, and is fundamental for studying power, property, social dependence, written culture and vernacular languages in the Mediterranean medieval.",
+      }
+    },
     urls: [
       {
         url: "https://brill.com/edcollbook/title/72357",
@@ -42,8 +52,16 @@ export const BOOKS: Book[] = [
     badge: "Brill",
     year: "2021",
     title: "The Making of Medieval Sardinia",
-    description: "Este volumen replantea la historia de la Cerdeña medieval más allá de la idea de una isla aislada o periférica. A través de estudios sobre política, religión, lengua, cultura material, documentación y conexiones mediterráneas, el libro muestra una sociedad compleja, conectada y activa dentro de los mundos bizantino, islámico y latino.",
-    author: "Edited by Alex Metcalfe, Hervin Fernández-Aceves, and Marco Muresu",
+    information: {
+      es: {
+        author: "Editado por Alex Metcalfe, Hervin Fernández-Aceves, y Marco Muresu",
+        description: "Este volumen replantea la historia de la Cerdeña medieval más allá de la idea de una isla aislada o periférica. A través de estudios sobre política, religión, lengua, cultura material, documentación y conexiones mediterráneas, el libro muestra una sociedad compleja, conectada y activa dentro de los mundos bizantino, islámico y latino.",
+      },
+      en: {
+        author: "Edited by Alex Metcalfe, Hervin Fernández-Aceves, and Marco Muresu",
+        description: "This volume rethinks the history of medieval Sardinia beyond the idea of an isolated or peripheral island. Through studies on politics, religion, language, material culture, documentation, and Mediterranean connections, the book shows a complex, connected, and active society within the Byzantine, Islamic, and Latin worlds.",
+      }
+    },
     urls: [
       {
         url: "https://www.degruyterbrill.com/document/isbn/9789004467545/html",
@@ -65,8 +83,16 @@ export const BOOKS: Book[] = [
     badge: "Bloomsbury",
     year: "2020",
     title: "County and Nobility in Norman Italy",
-    description: "Este libro revisa la imagen tradicional del reino normando de Sicilia como un Estado centralizado y administrativamente uniforme. A partir del estudio de los condes, las redes aristocráticas y la organización de los condados en Italia meridional, muestra que el poder regio dependía de negociaciones constantes con las élites locales. Los condes fueron actores políticos decisivos en la articulación del reino y del poder regional.",
-    author: "Hervin Fernández Aceves",
+    information: {  
+      es: {
+        author: "Hervin Fernández Aceves",
+        description: "Este libro revisa la imagen tradicional del reino normando de Sicilia como un Estado centralizado y administrativamente uniforme. A partir del estudio de los condes, las redes aristocráticas y la organización de los condados en Italia meridional, muestra que el poder regio dependía de negociaciones constantes con las élites locales. Los condes fueron actores políticos decisivos en la articulación del reino y del poder regional.",
+      },
+      en: {
+        author: "Hervin Fernández Aceves",
+        description: "This book revises the traditional image of the Norman kingdom of Sicily as a centralized and administratively uniform state. Through the study of counts, aristocratic networks, and the organization of counties in southern Italy, it shows that royal power depended on constant negotiations with local elites. Counts were decisive political actors in the articulation of the kingdom and the regional power.",
+      }
+    },
     urls: [
       {
         url: "https://www.bloomsbury.com/us/county-and-nobility-in-norman-italy-9781350133228/",
@@ -93,13 +119,19 @@ export function getBooksTotalPages(): number {
 }
 
 /** 1-based page. Returns null if page is out of range. */
-export function getBooksPagePayload(page: number): BooksPageResponse | null {
+export function getBooksPagePayload(page: number, language: Locale): BooksPageResponse | null {
   const books = slicePage(BOOKS, page);
   if (books === null) {
     return null;
   }
+  const booksWithInformation = books.map((book) => ({
+    ...book,
+    author: book.information[language].author,
+    description: book.information[language].description,
+  }));
+
   return {
-    books,
+    books: booksWithInformation,
     pagination: { total: BOOKS.length },
   };
 }

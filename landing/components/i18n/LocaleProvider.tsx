@@ -7,9 +7,11 @@ import {
   useEffect,
   useLayoutEffect,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { usePathname } from "next/navigation";
 import { documentTitleForPath } from "@/lib/document-title";
 import {
@@ -61,10 +63,12 @@ export function LocaleProvider({
   children: ReactNode;
   initialLocale: Locale;
 }) {
+  const queryClient = useQueryClient();
   const pathname = usePathname();
   const [locale, setLocaleState] = useState<Locale>(() =>
     normalizeLocale(initialLocale),
   );
+  const skipLocaleChangeInvalidationRef = useRef(true);
 
   useLayoutEffect(() => {
     const next = documentTitleForPath(pathname ?? "/", locale);
@@ -73,8 +77,8 @@ export function LocaleProvider({
     }
   }, [pathname, locale]);
 
-  // After mount, apply `mm_locale` from the client (static export has no `cookies()` in the root layout).
-  useEffect(() => {
+  // Before paint: apply `mm_locale` from the client (static export has no `cookies()` in the root layout).
+  useLayoutEffect(() => {
     const match = document.cookie.match(
       new RegExp(
         `(?:^|; )${LOCALE_COOKIE.replace(/[$()*+.?[\\\]^{|}]/g, "\\$&")}=([^;]*)`,
@@ -83,13 +87,26 @@ export function LocaleProvider({
     const raw = match?.[1];
     const fromCookie = raw ? decodeURIComponent(raw) : null;
     const parsed = normalizeLocale(fromCookie);
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time cookie sync after hydration for static export
+    // eslint-disable-next-line react-hooks/set-state-in-layout-effect -- sync persisted locale before first paint to avoid wrong-language chrome
     setLocaleState((prev) => (parsed !== prev ? parsed : prev));
   }, []);
 
   useEffect(() => {
     document.documentElement.lang = locale;
   }, [locale]);
+
+  useEffect(() => {
+    if (skipLocaleChangeInvalidationRef.current) {
+      skipLocaleChangeInvalidationRef.current = false;
+      return;
+    }
+    void queryClient.invalidateQueries({
+      predicate: (query) => {
+        const root = query.queryKey[0];
+        return root === "books" || root === "articles";
+      },
+    });
+  }, [locale, queryClient]);
 
   const setLocale = useCallback((next: Locale) => {
     const normalized = normalizeLocale(next);

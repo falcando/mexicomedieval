@@ -97,9 +97,11 @@
     "spotlightCta": "Examine the Scrolls"
   },
   "libros": {
+
     "heroAlt": "Ancient parchment manuscript with illuminated initials",
     "heroKicker": "The Digital Scriptorium",
     "heroTitle": "Archive of Books",
+    "pretitle": "A medievalist’s scriptorium",
     "titleLine": "Books",
     "subtitle": "Journey through the illuminated annals of México. From sacred liturgies to the maps that defined New Spain, explore the ink and spirit of five centuries.",
     "heroSub": "Journey through the illuminated annals of México. From sacred liturgies to the maps that defined New Spain, explore the ink and spirit of five centuries.",
@@ -125,6 +127,9 @@
     "listViewAria": "List view",
     "ctaBrill": "View on Brill",
     "ctaBloomsbury": "View on Bloomsbury",
+    "ctaDOI": "View on DOI",
+    "ctaGoogleBooks": "View on Google Books",
+    "ctaAmazonMX": "View on Amazon Mexico",
     "folio": "Folio",
     "of": "of",
     "prev": "Prev",

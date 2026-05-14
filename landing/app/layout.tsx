@@ -43,13 +43,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-body selection:bg-tertiary-fixed-dim selection:text-on-tertiary-fixed bg-background text-on-background">
-        <LocaleProvider initialLocale={defaultLocale}>
-          <QueryProvider>
+        <QueryProvider>
+          <LocaleProvider initialLocale={defaultLocale}>
             <SiteNavbar />
             <div className="flex flex-1 flex-col">{children}</div>
             <SiteFooter />
-          </QueryProvider>
-        </LocaleProvider>
+          </LocaleProvider>
+        </QueryProvider>
       </body>
     </html>
   );
