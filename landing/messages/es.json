@@ -161,8 +161,8 @@
     "of": "de"
   },
   "podcastPage": {
-    "titleLine": "Podcast",
-    "subtitle": "El archivo oral: series de podcast sobre el Mediterráneo medieval y las Américas tempranas.",
+    "titleLine": "Podcast, radio, y colaboraciones",
+    "subtitle": "Episodios propios y colaboraciones para acercarse a la historia, a las humanidades, y a la  Edad Media.",
     "cardAlt1": "Armadura medieval y espada sobre terciopelo",
     "cardAlt2": "Pergamino con sello de lacre sobre mesa de madera",
     "cardAlt3": "Biblioteca clásica con libros encuadernados en piel",
@@ -182,12 +182,17 @@
     "featuredImgAlt": "Mural histórico — navegación y cartografía",
     "spotify": "Spotify",
     "featuredCollaborations": "Colaboraciones destacadas",
-    "collaborationsBody": "Apariciones en otros podcasts y series: historiografía medieval y divulgación desde México.",
+    "collaborationsSubtitle": "Conversaciones en otros podcasts",
+    "collaborationsBody": "Participaciones en otros programas y podcasts sobre historia medieval, divulgación, cultura histórica y conversación pública. ",
     "seTeniaQueDecir": "Se Tenía Que Decir",
+    "sectionMexicoMedievalTitle": "México Medieval",
+    "sectionDiasGarraTitle": "Días con La Garra y Ale Garibay",
+    "sectionColaboracionesTitle": "Colaboraciones especiales",
+
     "audioVolumes": "Volúmenes de audio",
-    "appleSubtitle": "México Medieval en Apple Podcasts",
+    "appleSubtitle": "Un proyecto de conversación y divulgación histórica realizado junto con la Universidad de Lancaster y ARDEMAC.",
+    "sectionMexicoMedievalBody": "La temporada original de México Medieval reúne episodios sobre recreacionismo, armas de asedio, videojuegos, festivales medievales, comida, mujeres poderosas, derecho de conquista, transiciones del poder y leyendas medievales, pensados para redescubrir la Edad Media desde México. ",
     "viewSeries": "Ver serie",
-    "discoverArchive": "Descubrir el archivo completo",
     "episodesInSeries": "Episodios en esta serie",
     "spotifyLabel": "Spotify",
     "openSpotify": "Abrir en Spotify",
@@ -196,7 +201,9 @@
     "prev": "Anterior",
     "next": "Siguiente",
     "folio": "Folio",
-    "of": "de"
+    "of": "de",
+    "sectionDiasGarraSubtitle": "Colaboraciones recurrentes",
+    "sectionDiasGarraBody": "Conversaciones de Dr. Jabón / Hervin Fernández en Días con La Garra y Ale Garibay sobre historia, cultura, curiosidades de México y, ya entrados en gastos, de toda la humanidad."
   },
   "papers": {
     "pretitle": "Documentos de trabajo",

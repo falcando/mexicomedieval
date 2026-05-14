@@ -166,8 +166,8 @@
     "of": "of"
   },
   "podcastPage": {
-    "titleLine": "Podcast",
-    "subtitle": "Our podcast series explores the profound connections between the medieval Mediterranean and the early modern Americas. We translate scholarly rigor into narrative journeys through time.",
+    "titleLine": "Podcast, radio, and collaborations",
+    "subtitle": "Original episodes and collaborations for approaching history, the humanities, and the Middle Ages.",
     "cardAlt1": "Medieval knight armor and sword on velvet",
     "cardAlt2": "Parchment scroll with wax seal on wooden table",
     "cardAlt3": "Classical library with leather-bound books",
@@ -187,12 +187,16 @@
     "featuredImgAlt": "Historical mural — navigation and mapmaking",
     "spotify": "Spotify",
     "featuredCollaborations": "Featured Collaborations",
-    "collaborationsBody": "Appearances on other podcasts and series: medieval historiography and outreach from México.",
+      "collaborationsSubtitle": "Conversations on other podcasts",
+    "collaborationsBody": "Appearances on other shows and podcasts about medieval history, public history, historical culture, and public conversation. ",
     "seTeniaQueDecir": "Se Tenía Que Decir",
+    "sectionMexicoMedievalTitle": "Mexico Medieval",
+    "sectionDiasGarraTitle": "Días con La Garra y Ale Garibay",
+    "sectionColaboracionesTitle": "Special collaborations",
     "audioVolumes": "Audio Volumes",
-    "appleSubtitle": "México Medieval on Apple Podcasts",
+    "appleSubtitle": "A project of conversation and public history developed with Lancaster University and ARDEMAC.",
+    "sectionMexicoMedievalBody": "The original season of México Medieval brings together episodes on historical reenactment, siege weapons, video games, medieval festivals, food, powerful women, the right of conquest, transitions of power, and medieval legends, designed to rediscover the Middle Ages from Mexico.",
     "viewSeries": "View series",
-    "discoverArchive": "Discover entire archive",
     "episodesInSeries": "Episodes in this series",
     "spotifyLabel": "Spotify",
     "openSpotify": "Open in Spotify",
@@ -201,7 +205,10 @@
     "prev": "Prev",
     "next": "Next",
     "folio": "Folio",
-    "of": "of"
+    "of": "of",
+    "sectionDiasGarraSubtitle": "Recurring collaborations",
+    "sectionDiasGarraBody": "Conversations with Dr Jabón / Hervin Fernández on Días con La Garra y Ale Garibay about history, culture, curiosities from Mexico and, since we are already here, the rest of humanity."
+  
   },
   "papers": {
     "pretitle": "Work-in-progress papers",
