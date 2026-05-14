@@ -1,5 +1,10 @@
 /** Keys into messages for the book CTA label (locale-agnostic API). */
-export type BookCtaKey = "libros.ctaBrill" | "libros.ctaBloomsbury";
+export type BookCtaKey = "libros.ctaBrill" | "libros.ctaBloomsbury" | "libros.ctaDOI" | "libros.ctaGoogleBooks" | "libros.ctaAmazonMX";
+
+export type BookUrl = {
+  url: string;
+  ctaKey: BookCtaKey;
+}
 
 export type Book = {
   image: string;
@@ -8,8 +13,8 @@ export type Book = {
   year: string;
   title: string;
   description: string;
-  href: string;
-  ctaKey: BookCtaKey;
+  author: string;
+  urls: BookUrl[];
 };
 
 /** Paginated books payload; `pagination.total` is the full catalog size. */
