@@ -12,6 +12,7 @@ import { useMemo, useState } from "react";
 import PageContainer from "@/components/layout/PageContainer";
 import HighlightedArticle from "@/components/sections/HighlightedArticle";
 import ArticleCard from "@/components/sections/ArticleCard";
+import BookChapterCard from "@/components/sections/BookChapterCard";
 
 
 function PaginationFolio({
@@ -102,17 +103,6 @@ export function ArticulosPage() {
     journalTotal !== undefined ? totalPagesFromTotal(journalTotal) : 1;
   const chaptersTotalPages =
     chaptersTotal !== undefined ? totalPagesFromTotal(chaptersTotal) : 1;
-
-  const chapterCards = useMemo(() => {
-    return (chaptersQuery.data?.chapters ?? []).map((a) => ({
-      chapter: `${t("articulos.chapter")} • ${a.year}`,
-      title: a.title,
-      source: a.data.trim() ? a.data : t("articulos.chapterSource"),
-      meta: t("articulos.peerReviewedBadge"),
-      bg: "low" as const,
-      href: a.urls[0]?.href ?? "",
-    }));
-  }, [chaptersQuery.data?.chapters, t]);
 
   return (
     <PageContainer
@@ -205,40 +195,14 @@ export function ArticulosPage() {
           </p>
         )}
         <div className="space-y-6" aria-busy={chaptersQuery.isFetching}>
-          {chapterCards.map((item) => (
-            <div
-              key={item.href}
-              className={`group flex flex-col items-start justify-between p-6 transition-colors md:flex-row md:items-center ${
-                item.bg === "low"
-                  ? "bg-surface-container-low hover:bg-surface-container-high"
-                  : "bg-surface hover:bg-surface-container-high"
-              }`}
-            >
-              <div className="min-w-0 grow">
-                <span className="mb-1 block text-xs font-bold tracking-widest text-tertiary uppercase">
-                  {item.chapter}
-                </span>
-                <h5 className="font-headline text-xl font-bold text-primary">
-                  {item.title}
-                </h5>
-                <p className="mt-1 text-sm text-on-surface-variant italic">
-                  {item.source}
-                </p>
-              </div>
-              <div className="mt-4 flex items-center gap-8 md:mt-0">
-                <span className="hidden font-medium text-on-surface-variant lg:block">
-                  {item.meta}
-                </span>
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border-2 border-primary px-6 py-2 text-sm font-bold text-primary transition-all hover:bg-primary hover:text-on-primary"
-                >
-                  {t("articulos.viewChapterBtn")}
-                </a>
-              </div>
-            </div>
+          {(chaptersQuery.data?.chapters ?? []).map((article) => (
+            <BookChapterCard
+              key={
+                article.urls[0]?.href ??
+                `${article.year}-${article.title.slice(0, 48)}`
+              }
+              article={article}
+            />
           ))}
         </div>
         {chaptersTotalPages > 1 ? (
