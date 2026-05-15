@@ -90,11 +90,17 @@
     "papersTitle": "Papers",
     "papersDesc": "Conference presentations and papers in scholarly repositories.",
     "papersCta": "Explore papers",
-    "spotlightImgAlt": "Colonial monastery cloisters with sunbeams through stone arches",
-    "spotlightKicker": "Spotlight Collection",
-    "spotlightTitle": "The Forgotten Monastery of Izamal",
-    "spotlightBody": "Unearthed from the dusty shelves of the Franciscan archives, this collection chronicles the daily lives and spiritual synthesis of the Maya and the Spanish friars during the pivotal years of the 16th century.",
-    "spotlightCta": "Examine the Scrolls"
+    "spotlightKindBook": "Book",
+    "spotlightKindJournalArticle": "Peer-reviewed article",
+    "spotlightKindBookChapter": "Book chapter",
+    "spotlightKindEvent": "Event",
+    "spotlightKindPaper": "Academic paper",
+    "spotlightKindPresentation": "Presentation",
+    "spotlightKindPodcast": "Podcast",
+    "spotlightPodcastImgAlt": "México Medieval podcast artwork",
+    "spotlightPodcastBody": "Listen on Apple Podcasts or your favourite podcast app.",
+    "spotlightPodcastYearBadge": "MM",
+    "spotlightPodcastCta": "Listen"
   },
   "libros": {
 

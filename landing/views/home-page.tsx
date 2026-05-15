@@ -4,8 +4,10 @@ import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { ArchiveCard } from "@/components/sections/ArchiveCard";
 import { NewsletterSubscribeCard } from "@/components/sections/NewsletterSubscribeCard";
 import Image from "next/image";
-import Link from "next/link";
 import { Grenze_Gotisch } from "next/font/google";
+import SpotlightCard from "@/components/sections/SpotlightCard";
+import type { Locale } from "@/lib/i18n-config";
+import type { SpotlightPayload } from "@/lib/types/spotlight";
 
 const grenzeGotisch = Grenze_Gotisch({
   subsets: ["latin"],
@@ -15,14 +17,17 @@ const grenzeGotisch = Grenze_Gotisch({
 const HERO_IMG =
   "/images/hero.webp";
 
-const SPOTLIGHT_IMG =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAGp5HYsryP3UFArni3bU8iCX9SxPqZNSoC1BYcVk2JQ7Cqrr2SnngL6CevI6QYYVWiMyNjj7TsFdjOrpWp3WrWlIDtzgNG3oYYi9mdqdVcPmY6eXTaZkmqnI0C3Bu6lMZ7DXpwCsSGyUhhCkpFllk4NrfL8ELghpqyBCvsYDX4IrkFM0OlR2qJXIfvX57Bd-q0_4TSpm_t4lcyBQKr-8WDGtxaqHuTjXi_davOcPIdJOIe1ZOHxap1HJASvgpSgVtfYYNoGkJpUkvo";
 
 const VIDEO_THUMB =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuD5T0W0_Y91waqV97QE2TqD8hcrvuYoIdKMGha795My3494qfwTyrzSiFwQtdsUyAkOJKV-IZHV8cHXKzkIbDAhPwfpwuxhH66eBo9ILs8H-JfF2D68X2aaGsj66H-z4WtD_2yaTbbGosHbuZIqMGT9-81Jw2cG6hVwYqYb6teZPAcHmlkHpKaLHnF_wMopYfsxW4dBVoZpuNRB8_fkppLi7NpD1PrYX43CAkVtmvYnFL3aDmm3GIbmuYrpuV4EXQfKy5YMZpNQBL_F";
 
-export function HomePage() {
-  const { t } = useTranslations();
+export function HomePage({
+  spotlightByLocale,
+}: {
+  spotlightByLocale: Record<Locale, SpotlightPayload | null>;
+}) {
+  const { t, locale } = useTranslations();
+  const spotlight = spotlightByLocale[locale];
 
   return (
     <div className="relative flex min-h-full flex-col">
@@ -153,42 +158,11 @@ export function HomePage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-screen-2xl px-6 py-24 md:px-8">
-          <div className="grid grid-cols-1 items-center gap-16 md:grid-cols-12">
-            <div className="relative md:col-span-7">
-              <Image
-                src={SPOTLIGHT_IMG}
-                alt={t("home.spotlightImgAlt")}
-                width={1200}
-                height={900}
-                className="aspect-4/3 w-full object-cover shadow-2xl grayscale"
-                sizes="(min-width: 768px) 58vw, 100vw"
-              />
-              <div className="absolute -right-4 -bottom-4 bg-primary px-8 py-6 md:-right-8 md:-bottom-8">
-                <span className="font-headline text-3xl text-tertiary-fixed-dim">
-                  MDXXVI
-                </span>
-              </div>
-            </div>
-            <div className="md:col-span-5">
-              <h2 className="font-headline mb-4 text-sm uppercase tracking-widest text-tertiary-fixed-dim">
-                {t("home.spotlightKicker")}
-              </h2>
-              <h3 className="font-headline mb-6 text-4xl leading-tight text-primary md:text-5xl">
-                {t("home.spotlightTitle")}
-              </h3>
-              <p className="mb-8 text-lg leading-relaxed text-on-surface-variant">
-                {t("home.spotlightBody")}
-              </p>
-              <Link
-                href="/libros"
-                className="font-label text-sm font-bold uppercase tracking-widest text-primary transition-colors hover:text-secondary"
-              >
-                {t("home.spotlightCta")}
-              </Link>
-            </div>
-          </div>
-        </section>
+        {spotlight ? (
+          <section className="mx-auto max-w-screen-2xl px-6 py-24 md:px-8">
+            <SpotlightCard spotlight={spotlight} />
+          </section>
+        ) : null}
 
         <NewsletterSubscribeCard className="px-6 py-20 md:px-8" />
       </main>

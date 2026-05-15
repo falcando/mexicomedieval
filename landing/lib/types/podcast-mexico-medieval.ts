@@ -3,6 +3,7 @@ import type { SpotifyGuestSpot } from "@/lib/data/podcast-spotify-guests";
 export type MexicoMedievalDocumentType = "appleShow" | "appleEpisode";
 
 export type MexicoMedievalEpisode = {
+  catalogId?: string;
   title: string;
   listenHref: string;
   documentType: MexicoMedievalDocumentType;

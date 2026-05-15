@@ -27,6 +27,7 @@ You do **not** need to understand how the site is built behind the scenes to upd
 
 | What you want to change | Open this file (inside the `landing` folder) |
 |-------------------------|-----------------------------------------------|
+| **Home spotlight** (large feature block on the home page) | `lib/data/spotlight-config.ts` (and the matching `catalogId` on the chosen catalogue row — see below) |
 | Journal articles and book chapters | `lib/data/articles.ts` |
 | Books (volumes on the Books page) | `lib/data/books.ts` |
 | Events (courses, festivals, etc.) | `lib/data/events.ts` |
@@ -38,6 +39,23 @@ You do **not** need to understand how the site is built behind the scenes to upd
 | Button labels (e.g. “Read article”, “View on DOI”) | `messages/es.json` and `messages/en.json` |
 
 Other folders (for example `lib/types` or `app/api`) are mainly for developers. You only need them if someone asks you to change a label type or fix a technical error.
+
+---
+
+## Home spotlight (featured block on the home page)
+
+The spotlight is **not** edited in `messages/*.json` anymore. It is driven by catalogue data plus one small config file.
+
+**Featured journal article (current setup):** The home page is set to highlight the same peer-reviewed article as the Articles page feature: the row with **`highlighted: true`** in `lib/data/articles.ts`. That row must have a **`catalogId`**. After moving `highlighted: true` to another article, update **`lib/data/spotlight-config.ts`** so `kind` is `journalArticle` and **`catalogId`** matches the new article’s `catalogId`.
+
+You can instead point the spotlight at other catalogue kinds (books, events, papers, podcasts, etc.):
+
+1. Open **`lib/data/spotlight-config.ts`**. You will see **`kind`** and **`catalogId`**.
+2. Find the **`catalogId`** on the real item in the right data file (each spotlightable entry has a `catalogId` where applicable).
+3. Set **`kind`** to one of: `book`, `journalArticle`, `bookChapter`, `event`, `paper`, `presentation`, or `podcast`. It must match the item’s type (for example use `journalArticle` only for rows with `documentType: "article"` in `articles.ts`).
+4. After a production build, the same content is also available as static JSON: **`/api/spotlight/en`** and **`/api/spotlight/es`** (and under `out/api/spotlight/` when you run `pnpm run build`).
+
+If the `catalogId` does not match any row, or `kind` does not match the row, the spotlight section may disappear until the config is fixed — ask a developer if you are unsure.
 
 ---
 
@@ -54,8 +72,9 @@ Other folders (for example `lib/types` or `app/api`) are mainly for developers. 
    - **`documentType`** — use `"article"` for a journal article, or `"bookChapter"` for a chapter in a book.
    - **`urls`** — one or more links. Each link needs `href` (the full web address) and `ctaKey` (which button text to show — see below).
    - **`information`** — you need both **`es`** and **`en`**. Under each, set `authors`, `data` (where it was published), `topics` (a list of short tags), and `abstract` (summary).
+   - **`catalogId`** (optional) — a short unique id using lowercase letters and hyphens, e.g. `"my-new-article-slug"`. Add this if the entry should be selectable for the **home spotlight** (`lib/data/spotlight-config.ts`). Ask a developer if you are unsure.
 
-**“Featured” article on the Articles page:** For at most **one** journal article (not chapters), you can add a line `highlighted: true`. If none is marked, the site picks another rule for the spotlight — you can leave this to whoever maintains the site if it’s confusing.
+**“Featured” article on the Articles page:** For at most **one** journal article (not chapters), you can add a line `highlighted: true`. If none is marked, the site picks another rule for the Articles page feature — you can leave this to whoever maintains the site if it’s confusing. **If you change which article is highlighted and want the home spotlight to match**, update `lib/data/spotlight-config.ts` to use that article’s `catalogId` with `kind: "journalArticle"`.
 
 **Button text (`ctaKey`):** The value looks like `"articulos.readArticle"`. That must already exist in both `messages/es.json` and `messages/en.json` under the `articulos` section. Reuse an existing key when possible. **If you need a brand-new button label**, ask a developer to add the text in both language files first.
 
@@ -68,8 +87,9 @@ Other folders (for example `lib/types` or `app/api`) are mainly for developers. 
 **File:** `lib/data/books.ts`
 
 1. Copy an existing book block inside `BOOKS`.
-2. Update `image` (path to the cover under the `public` folder), `alt`, `badge`, `year`, `title`, and `urls`.
-3. Under **`information`**, fill **`es`** and **`en`** each with `author` and `description`.
+2. Set a unique **`catalogId`** (lowercase letters and hyphens) if this book should be eligible for the home spotlight.
+3. Update `image` (path to the cover under the `public` folder), `alt`, `badge`, `year`, `title`, and `urls`.
+4. Under **`information`**, fill **`es`** and **`en`** each with `author` and `description`.
 
 For links, each line uses `url` and `ctaKey`. Reuse existing `ctaKey` values from neighbouring books. New link types need a developer to update the code and translations.
 
@@ -80,9 +100,10 @@ For links, each line uses `url` and `ctaKey`. Reuse existing `ctaKey` values fro
 **File:** `lib/data/events.ts`
 
 1. Copy an existing event in `EVENTS`.
-2. Under **`information`**, fill **`es`** and **`en`** with at least `title`, `category`, and `description`. Optional lines: `institution`, `format`, `footerNote`.
-3. **Live event with a link:** set `active: true`, add `href` with the full URL, and set `ctaKey` (for example `events.ctaDetails` or `events.ctaEnter`). You can add `ctaIcon`: `"arrow"` or `"external"` to match other cards.
-4. **“Coming soon” card:** set `active: false`. You can leave out `href` or use an empty `ctaKey` `""` like the placeholder examples.
+2. Set a unique **`catalogId`** (lowercase letters and hyphens) if this event should be eligible for the home spotlight.
+3. Under **`information`**, fill **`es`** and **`en`** with at least `title`, `category`, and `description`. Optional lines: `institution`, `format`, `footerNote`.
+4. **Live event with a link:** set `active: true`, add `href` with the full URL, and set `ctaKey` (for example `events.ctaDetails` or `events.ctaEnter`). You can add `ctaIcon`: `"arrow"` or `"external"` to match other cards.
+5. **“Coming soon” card:** set `active: false`. You can leave out `href` or use an empty `ctaKey` `""` like the placeholder examples.
 
 ---
 
@@ -91,8 +112,9 @@ For links, each line uses `url` and `ctaKey`. Reuse existing `ctaKey` values fro
 **File:** `lib/data/papers.ts`
 
 1. Copy an existing item in `PAPERS`.
-2. Set **`documentType`** to `"paper"` or `"presentation"`.
-3. Set **`year`**, **`title`**, **`context`** (short line under the title), and **`href`** (link to the PDF, Academia.edu page, etc.).
+2. Set a unique **`catalogId`** (lowercase letters and hyphens) if this row should be eligible for the home spotlight.
+3. Set **`documentType`** to `"paper"` or `"presentation"`.
+4. Set **`year`**, **`title`**, **`context`** (short line under the title), and **`href`** (link to the PDF, Academia.edu page, etc.).
 
 Optional **`highlighted: true`** on one item can mark the highlighted row; the site has a fallback if you skip this.
 

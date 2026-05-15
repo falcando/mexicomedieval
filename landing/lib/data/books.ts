@@ -12,8 +12,12 @@ export const BOOKS_PAGE_SIZE = ENTITY_PAGE_SIZE;
 // TODO: Since this is data that the API returns, we need to handle the translations for the author and the description.
 
 /** Sourced from static-html/libros.html (Book 1, Book 2). */
-export const BOOKS: (Omit<Book, "author" | "description"> & { information: Record<Locale, { author: string; description: string }> })[] = [
+export const BOOKS: (Omit<Book, "author" | "description"> & {
+  catalogId: string;
+  information: Record<Locale, { author: string; description: string }>;
+})[] = [
   {
+    catalogId: "vernacular-documents-medieval-sardinia",
     image:
     "/books/vernacular-documents-of-medieval-sardinia.png",
     alt: "Portada del libro The Making of Medieval Sardinia",
@@ -46,6 +50,7 @@ export const BOOKS: (Omit<Book, "author" | "description"> & { information: Recor
     ],
   },
   {
+    catalogId: "the-making-of-medieval-sardinia",
     image:
       "/books/the-making-of-medieval-sardinia.png",
     alt: "Portada del libro The Making of Medieval Sardinia",
@@ -78,6 +83,7 @@ export const BOOKS: (Omit<Book, "author" | "description"> & { information: Recor
     ],
   },
   {
+    catalogId: "county-nobility-norman-italy",
     image: "/books/county-and-nobility-in-norman-italy.png",
     alt: "Portada del libro County and Nobility in Norman Italy",
     badge: "Bloomsbury",
@@ -124,11 +130,15 @@ export function getBooksPagePayload(page: number, language: Locale): BooksPageRe
   if (books === null) {
     return null;
   }
-  const booksWithInformation = books.map((book) => ({
-    ...book,
-    author: book.information[language].author,
-    description: book.information[language].description,
-  }));
+  const booksWithInformation = books.map((book) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- internal id, not part of Book API
+    const { information, catalogId, ...rest } = book;
+    return {
+      ...rest,
+      author: information[language].author,
+      description: information[language].description,
+    };
+  });
 
   return {
     books: booksWithInformation,
