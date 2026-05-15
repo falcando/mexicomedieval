@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { defaultLocale } from "@/lib/i18n-config";
+import { defaultLocale, type Locale } from "@/lib/i18n-config";
+import { getSpotlightPayload } from "@/lib/spotlight/get-spotlight-payload";
+import type { SpotlightPayload } from "@/lib/types/spotlight";
 import en from "@/messages/en.json";
 import es from "@/messages/es.json";
 import { HomePage } from "@/views/home-page";
@@ -12,5 +14,10 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <HomePage />;
+  const spotlightByLocale: Record<Locale, SpotlightPayload | null> = {
+    en: getSpotlightPayload("en"),
+    es: getSpotlightPayload("es"),
+  };
+
+  return <HomePage spotlightByLocale={spotlightByLocale} />;
 }

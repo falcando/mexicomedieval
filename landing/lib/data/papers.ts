@@ -10,6 +10,7 @@ const SITE_ORIGIN = "https://www.mexicomedieval.org";
 /** Sourced from static-html/papers.html (Paper 1–3). */
 export const PAPERS: PaperEntry[] = [
   {
+    catalogId: "al-limite-esclavitud-sardinia",
     year: "2025",
     title:
       "Al límite de la esclavitud: los servos y la inmovilidad social de la Cerdeña medieval (siglos XI–XII)",
@@ -20,6 +21,7 @@ export const PAPERS: PaperEntry[] = [
     presentationSlug: "servos_otrashistorias",
   },
   {
+    catalogId: "border-within-borders-abruzzo",
     year: "2017",
     title: "A Border Within Borders: The Abruzzo and the Kingdom of Sicily",
     context: "Paper académico",
@@ -27,6 +29,7 @@ export const PAPERS: PaperEntry[] = [
     documentType: "paper",
   },
   {
+    catalogId: "counts-counties-norman-mezzogiorno",
     year: "2015",
     title: "Counts and Counties in the Norman Mezzogiorno",
     context: "Paper académico",

@@ -26,6 +26,7 @@ function materializeArticle(
 
 export const ARTICLES: ArticleSource[] = [
   {
+    catalogId: "sigurgards-saga-stemma",
     year: "2026",
     title: "A Stemma of Sigurgarðs saga frækna, and a Case Study of Saga-Anthologization",
     documentType: "article",
@@ -73,6 +74,7 @@ export const ARTICLES: ArticleSource[] = [
   },
 
  {
+    catalogId: "royal-comestabuli-sicilian-kingdom",
     year: "2019",
     title: "Royal Comestabuli and Military Control in the Sicilian Kingdom: A Prosopographical Contribution to the Study of Italo-Norman Aristocracy",
     documentType: "article",
@@ -99,6 +101,7 @@ export const ARTICLES: ArticleSource[] = [
     ],
   },
   {
+    catalogId: "cerdena-modernidad-conectividad",
     year: "2019",
     title: "La Cerdeña medieval vista desde la modernidad: un epítome historiográfico de la supuesta conectividad mediterránea",
     documentType: "article",
@@ -123,7 +126,8 @@ export const ARTICLES: ArticleSource[] = [
       },
     ],
   },
- {
+  {
+    catalogId: "rome-awards-medieval-sardinia",
     year: "2019",
     title: "Rome Awards: Power and Society in Medieval Sardinia",
     documentType: "article",
@@ -149,6 +153,7 @@ export const ARTICLES: ArticleSource[] = [
     ],
   },
   {
+    catalogId: "social-network-analysis-sicily",
     year: "2017",
     title: "Social Network Analysis and Narrative Structures: Measuring Communication and Influence in a Medieval Source for the Kingdom of Sicily",
     documentType: "article",
@@ -173,7 +178,8 @@ export const ARTICLES: ArticleSource[] = [
       },
     ],
   },
- {
+  {
+    catalogId: "political-manoeuvring-civitate-carinola",
     year: "2016",
     title: "Political Manoeuvring in the Norman Kingdom of Sicily: Civitate and Carinola in the Development of the South-Italian County",
     documentType: "article",
@@ -200,6 +206,7 @@ export const ARTICLES: ArticleSource[] = [
     ],
   },
  {
+  catalogId: "rearrangement-nobility-hauteville",
   year: "2016",
   title: "The Re-Arrangement of the Nobility Under the Hauteville Monarchy",
   documentType: "article",
@@ -225,6 +232,7 @@ export const ARTICLES: ArticleSource[] = [
   ],
   },
   {
+    catalogId: "social-positions-liber-regno-sicilie",
     year: "2014",
     title: "Social Positions in the Liber de Regno Sicilie",
     documentType: "article",
@@ -250,6 +258,7 @@ export const ARTICLES: ArticleSource[] = [
     ],
   },
   {
+    catalogId: "modernidad-politica-instituciones-normandas",
     year: "2009",
     title: "Modernidad política en la Edad Media: la experiencia y las instituciones normandas",
     documentType: "article",
@@ -278,6 +287,7 @@ export const ARTICLES: ArticleSource[] = [
    Book chapters
    */
   {
+    catalogId: "chapter-making-medieval-sardinia-intro",
     year: "2021",
     title: "The Making of Medieval Sardinia: A Historiographical Introduction",
     documentType: "bookChapter",
@@ -303,6 +313,7 @@ export const ARTICLES: ArticleSource[] = [
     ],
   },
  {
+    catalogId: "chapter-discovery-invention-sardinia",
     year: "2021",
     title: "Discovery, Invention, and Supposition: Three Case Studies from Medieval Sardinia",
     documentType: "bookChapter",

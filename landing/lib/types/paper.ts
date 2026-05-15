@@ -1,6 +1,7 @@
 export type PaperDocumentType = "paper" | "presentation";
 
 export type PaperEntry = {
+  catalogId?: string;
   year: string;
   title: string;
   context: string;

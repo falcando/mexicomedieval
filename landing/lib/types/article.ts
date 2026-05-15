@@ -11,6 +11,8 @@ export type ArticleInformation = {
 
 /** Authoring shape: locale-keyed copy merged per request (see books). */
 export type ArticleSource = {
+  /** Stable id for home spotlight / cross-references (see `lib/data/spotlight-config.ts`). */
+  catalogId?: string;
   year: string;
   title: string;
   documentType: ArticleDocumentType;

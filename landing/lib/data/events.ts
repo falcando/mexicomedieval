@@ -16,6 +16,7 @@ type EventInformation = {
 };
 
 type EventSource = {
+  catalogId: string;
   active?: boolean;
   ctaIcon?: SiteEventCtaIcon;
   ctaKey: string;
@@ -26,6 +27,7 @@ type EventSource = {
 /** Placeholder for future event entries (talks, lectures, appearances). */
 export const EVENTS: EventSource[] = [
   {
+    catalogId: "cultura-poder-edad-media",
     active: true,
     ctaIcon: "arrow",
     information: {
@@ -52,8 +54,8 @@ export const EVENTS: EventSource[] = [
     href: "https://coljal.mx/curso-cultura-y-poder-en-la-edad-media-claves-para-una-historia-medieval-conectada/",
   },
   {
+    catalogId: "alejandro-magno-curso",
     active: true,
-    ctaIcon: "external",
     information: {
       es: {
         title: "Alejandro Magno (o de cómo se cambia el mundo)",
@@ -76,6 +78,7 @@ export const EVENTS: EventSource[] = [
     href: "https://incurso-cnci.com/course/162/alejandro-magno-o-de-como-se-cambia-el-mundo",
   },
   {
+    catalogId: "festival-libro-medieval-2026",
     active: false,
     ctaKey: "",
     information: {
@@ -111,7 +114,9 @@ export function getEventsPagePayload(
     return null;
   }
   const events: SiteEvent[] = pageItems.map((item) => {
-    const { information, active: activeFlag, ctaIcon, ...rest } = item;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- internal id, not part of SiteEvent
+    const { information, active: activeFlag, ctaIcon, catalogId, ...rest } =
+      item;
     const info = information[language];
     return {
       ...rest,

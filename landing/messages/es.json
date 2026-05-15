@@ -90,11 +90,17 @@
     "papersTitle": "Papers",
     "papersDesc": "Presentaciones en congresos y papers en repositorios académicos.",
     "papersCta": "Explorar papers",
-    "spotlightImgAlt": "Claustro colonial con rayos de sol entre arcos de piedra",
-    "spotlightKicker": "Colección destacada",
-    "spotlightTitle": "El monasterio olvidado de Izamal",
-    "spotlightBody": "Rescatado de los estantes polvorientos de los archivos franciscanos, este relato documenta la vida cotidiana y la síntesis espiritual entre mayas y frailes españoles en los años decisivos del siglo XVI.",
-    "spotlightCta": "Examinar los rollos"
+    "spotlightKindBook": "Libro",
+    "spotlightKindJournalArticle": "Artículo arbitrado",
+    "spotlightKindBookChapter": "Capítulo de libro",
+    "spotlightKindEvent": "Evento",
+    "spotlightKindPaper": "Paper académico",
+    "spotlightKindPresentation": "Presentación",
+    "spotlightKindPodcast": "Podcast",
+    "spotlightPodcastImgAlt": "Arte del podcast México Medieval",
+    "spotlightPodcastBody": "Escucha en Apple Podcasts o en tu app de podcasts favorita.",
+    "spotlightPodcastYearBadge": "MM",
+    "spotlightPodcastCta": "Escuchar"
   },
   "libros": {
     "pretitle": "El scriptorium de un medievalista",
