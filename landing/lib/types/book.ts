@@ -12,6 +12,8 @@ export type Book = {
   badge: string;
   year: string;
   title: string;
+  /** Locale-specific subtitle when present in catalog data. */
+  subtitle?: string;
   description: string;
   author: string;
   urls: BookUrl[];

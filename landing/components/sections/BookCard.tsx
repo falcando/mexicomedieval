@@ -57,9 +57,16 @@ const BookCard = ({ book, imageAlign = "right" }: BookCardProps) => {
       <span className="font-label mb-2 text-xs tracking-widest text-on-secondary-fixed-variant uppercase">
         {book.year}
       </span>
-      <h3 className="font-headline mb-4 text-2xl leading-snug font-semibold text-primary md:text-3xl">
+      <h3
+        className={`font-headline text-2xl leading-snug font-semibold text-primary md:text-3xl ${book.subtitle ? "mb-3" : "mb-4"}`}
+      >
         {book.title}
       </h3>
+      {book.subtitle ? (
+        <p className="mb-4 text-sm leading-snug text-on-surface-variant italic md:text-base">
+          {book.subtitle}
+        </p>
+      ) : null}
       <p className="font-label mb-5 text-[11px] leading-relaxed tracking-[0.12em] text-on-secondary-fixed-variant uppercase">
         {book.author}
       </p>

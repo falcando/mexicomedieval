@@ -14,7 +14,7 @@ export const BOOKS_PAGE_SIZE = ENTITY_PAGE_SIZE;
 /** Sourced from static-html/libros.html (Book 1, Book 2). */
 export const BOOKS: (Omit<Book, "author" | "description"> & {
   catalogId: string;
-  information: Record<Locale, { author: string; description: string }>;
+  information: Record<Locale, { author: string; description: string; subtitle?: string }>;
 })[] = [
   {
     catalogId: "vernacular-documents-medieval-sardinia",
@@ -28,10 +28,12 @@ export const BOOKS: (Omit<Book, "author" | "description"> & {
       es: {
         author: "Alex Metcalfe, Hervin Fernández-Aceves y Maurizio Virdis",
         description: "Este volumen reúne, edita y traduce al inglés algunos de los documentos más importantes de la Cerdeña medieval, desde los siglos XI al XV. Incluye las Carte volgari, los condaghes de San Pietro de Silki y Santa Maria de Bonárcado, y la Carta de Logu de Arborea. El libro ofrece una ventana excepcional a la vida jurídica, social, política y lingüística de la isla, y resulta fundamental para estudiar poder, propiedad, dependencia social, cultura escrita y lenguas vernáculas en el Mediterráneo medieval.",
+        subtitle: "Editions and English Translations of the Carte volgari, the Condaghes of Silki and Bonárcado, and the Carta de Logu of Arborea"
       },
       en: {
         author: "Alex Metcalfe, Hervin Fernández-Aceves and Maurizio Virdis",
-        description: "This volume brings together, edits and translates into English some of the most important documents of medieval Sardinia, from the 11th to the 15th century. It includes the Carte volgari, the condaghes of San Pietro de Silki and Santa Maria de Bonárcado, and the Carta de Logu de Arborea. The book offers an exceptional window into the legal, social, political and linguistic life of the island, and is fundamental for studying power, property, social dependence, written culture and vernacular languages in the Mediterranean medieval.",
+        description: "This volume gathers, edits, and translates into English some of the most important documents from medieval Sardinia, from the eleventh to the fifteenth centuries. It includes the Carte volgari, the condaghes of San Pietro de Silki and Santa Maria de Bonárcado, and the Carta de Logu of Arborea. The book offers an exceptional window onto the island’s legal, social, political, and linguistic life, and is essential for studying power, property, social dependency, written culture, and vernacular languages in the medieval Mediterranean.",
+        subtitle: "Editions and English Translations of the Carte volgari, the Condaghes of Silki and Bonárcado, and the Carta de Logu of Arborea"
       }
     },
     urls: [
@@ -93,10 +95,12 @@ export const BOOKS: (Omit<Book, "author" | "description"> & {
       es: {
         author: "Hervin Fernández Aceves",
         description: "Este libro revisa la imagen tradicional del reino normando de Sicilia como un Estado centralizado y administrativamente uniforme. A partir del estudio de los condes, las redes aristocráticas y la organización de los condados en Italia meridional, muestra que el poder regio dependía de negociaciones constantes con las élites locales. Los condes fueron actores políticos decisivos en la articulación del reino y del poder regional.",
+        subtitle: "Aristocratic Agency in the Kingdom of Sicily, 1130-1189"
       },
       en: {
         author: "Hervin Fernández Aceves",
         description: "This book revises the traditional image of the Norman kingdom of Sicily as a centralized and administratively uniform state. Through the study of counts, aristocratic networks, and the organization of counties in southern Italy, it shows that royal power depended on constant negotiations with local elites. Counts were decisive political actors in the articulation of the kingdom and the regional power.",
+        subtitle: "Aristocratic Agency in the Kingdom of Sicily, 1130-1189"
       }
     },
     urls: [
@@ -133,10 +137,12 @@ export function getBooksPagePayload(page: number, language: Locale): BooksPageRe
   const booksWithInformation = books.map((book) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars -- internal id, not part of Book API
     const { information, catalogId, ...rest } = book;
+    const info = information[language];
     return {
       ...rest,
-      author: information[language].author,
-      description: information[language].description,
+      author: info.author,
+      description: info.description,
+      ...(info.subtitle !== undefined ? { subtitle: info.subtitle } : {}),
     };
   });
 

@@ -90,6 +90,7 @@ If the `catalogId` does not match any row, or `kind` does not match the row, the
 2. Set a unique **`catalogId`** (lowercase letters and hyphens) if this book should be eligible for the home spotlight.
 3. Update `image` (path to the cover under the `public` folder), `alt`, `badge`, `year`, `title`, and `urls`.
 4. Under **`information`**, fill **`es`** and **`en`** each with `author` and `description`.
+5. **Optional subtitle:** If the volume has a long subtitle (often shown on the cover after the main title), add **`subtitle`** as a separate line inside **`es`** and **`en`** under `information`. Use the wording that fits that language (do not leave only one language filled unless you intentionally want the other locale to omit it). When present, it appears on the Books page card under the title and is included in the books JSON API for that language.
 
 For links, each line uses `url` and `ctaKey`. Reuse existing `ctaKey` values from neighbouring books. New link types need a developer to update the code and translations.
 
@@ -143,6 +144,7 @@ Optional **`highlighted: true`** on one item can mark the highlighted row; the s
 ## Quick checklist (every time)
 
 - [ ] Spanish (`es`) **and** English (`en`) blocks are both filled in where the template has both.
+- [ ] For books, if you add a **`subtitle`**, fill it in **both** `es` and `en` unless you deliberately want only one language to show it.
 - [ ] You copied the **commas and braces** from a working neighbour entry.
 - [ ] Any **`ctaKey`** you used already exists in both `messages/es.json` and `messages/en.json`, or a developer added new keys.
 - [ ] Run **`npm run build`** before publishing (or let CI run it) and fix any reported errors with help if needed.
@@ -152,6 +154,8 @@ Optional **`highlighted: true`** on one item can mark the highlighted row; the s
 ## Optional: technical notes (for developers)
 
 The site serves JSON from routes under `/api/...` so the pages can load lists in the browser. Data is still **authored in the repo**, not fetched from an external database at runtime. Pagination uses **10 items per page** (`lib/pagination.ts`). Route handlers live under `app/api/` and call the same lists in `lib/data/`.
+
+Book objects in **`/api/books/{language}/{page}`** mirror the Books page: each item includes `image`, `alt`, `badge`, `year`, `title`, `author`, `description`, `urls`, and **`subtitle` only when** that locale’s `information` entry defines it in `lib/data/books.ts`.
 
 Example paths (local site):
 
