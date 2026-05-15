@@ -94,16 +94,17 @@ export function getHighlightedArticle(
 
 /** Journal grid: peer-reviewed articles, excluding the featured article when it is an article. */
 export function getJournalListForPagination(): ArticleSource[] {
-  const featured = getHighlightedArticleSource();
-  const featuredPrimary = featured?.urls[0]?.href;
-  return peerReviewedSorted.filter(
-    (a) =>
-      !(
-        featured?.documentType === "article" &&
-        featuredPrimary !== undefined &&
-        a.urls[0]?.href === featuredPrimary
-      ),
-  );
+  // const featured = getHighlightedArticleSource();
+  // const featuredPrimary = featured?.urls[0]?.href;
+  // return peerReviewedSorted.filter(
+  //   (a) =>
+  //     !(
+  //       featured?.documentType === "article" &&
+  //       featuredPrimary !== undefined &&
+  //       a.urls[0]?.href === featuredPrimary
+  //     ),
+  // );
+  return peerReviewedSorted;
 }
 
 export function getChapterListForPagination(): ArticleSource[] {

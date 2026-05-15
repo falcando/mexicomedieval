@@ -11,6 +11,7 @@ import { totalPagesFromTotal } from "@/lib/pagination";
 import { useMemo, useState } from "react";
 import PageContainer from "@/components/layout/PageContainer";
 import HighlightedArticle from "@/components/sections/HighlightedArticle";
+import ArticleCard from "@/components/sections/ArticleCard";
 
 
 function PaginationFolio({
@@ -102,15 +103,6 @@ export function ArticulosPage() {
   const chaptersTotalPages =
     chaptersTotal !== undefined ? totalPagesFromTotal(chaptersTotal) : 1;
 
-  const journalCards = useMemo(() => {
-    return (journalQuery.data?.journalArticles ?? []).map((a) => ({
-      meta: `${t("articulos.publicationYear")}: ${a.year}`,
-      title: a.title,
-      excerpt: a.abstract,
-      href: a.urls[0]?.href ?? "",
-    }));
-  }, [journalQuery.data?.journalArticles, t]);
-
   const chapterCards = useMemo(() => {
     return (chaptersQuery.data?.chapters ?? []).map((a) => ({
       chapter: `${t("articulos.chapter")} • ${a.year}`,
@@ -168,32 +160,14 @@ export function ArticulosPage() {
           className="grid grid-cols-1 gap-8 md:grid-cols-3"
           aria-busy={journalQuery.isFetching}
         >
-          {journalCards.map((a) => (
-            <div
-              key={a.href}
-              className="flex h-full flex-col border-t-2 border-tertiary-fixed bg-surface-container-low p-8"
-            >
-              <div className="mb-4 text-xs font-bold tracking-tighter text-on-surface-variant/60 uppercase">
-                {a.meta}
-              </div>
-              <h4 className="font-headline mb-4 grow text-xl leading-snug font-bold text-primary">
-                {a.title}
-              </h4>
-              <p className="mb-8 line-clamp-3 text-sm text-on-surface-variant">
-                {a.excerpt}
-              </p>
-              <a
-                href={a.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm font-bold text-primary decoration-tertiary-fixed hover:underline"
-              >
-                {t("articulos.readArticle")}
-                <span className="material-symbols-outlined text-base">
-                  arrow_forward
-                </span>
-              </a>
-            </div>
+          {(journalQuery.data?.journalArticles ?? []).map((article) => (
+            <ArticleCard
+              key={
+                article.urls[0]?.href ??
+                `${article.year}-${article.title.slice(0, 48)}`
+              }
+              article={article}
+            />
           ))}
         </div>
         {journalTotalPages > 1 ? (
