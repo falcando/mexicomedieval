@@ -1,12 +1,34 @@
+import type { Locale } from "@/lib/i18n-config";
+
 export type ArticleDocumentType = "article" | "bookChapter";
 
+export type ArticleInformation = {
+  authors: string;
+  data: string;
+  topics: string[];
+  abstract: string;
+};
+
+/** Authoring shape: locale-keyed copy merged per request (see books). */
+export type ArticleSource = {
+  year: string;
+  title: string;
+  documentType: ArticleDocumentType;
+  highlighted?: boolean;
+  urls: {
+    href: string;
+    ctaKey: string;
+  }[];
+  information: Record<Locale, ArticleInformation>;
+};
+
+/** Serialized article for a chosen locale (no `information` map). */
 export type ArticleEntry = {
   year: string;
   title: string;
-  href: string;
   documentType: ArticleDocumentType;
-  highlighted?: boolean;
-};
+  urls: ArticleSource["urls"];
+} & ArticleInformation;
 
 export type JournalArticlesPageResponse = {
   journalArticles: ArticleEntry[];
