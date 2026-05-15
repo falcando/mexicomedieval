@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# México Medieval — landing
 
-## Getting Started
+Next.js site for [México Medieval](https://www.mexicomedieval.org): articles, books, papers, events, podcasts, and static marketing pages. Lists and long text for those sections live in project files under `lib/data/` (not in a separate CMS). Developers wire those files to the pages you see in the browser.
 
-First, run the development server:
+## Documentation
+
+- **[How to update the website content](docs/README.md)** — plain-language guide for contributors: which file to open, how to copy an existing entry, Spanish and English fields, and when to ask a developer. A short technical appendix describes the JSON `/api/...` routes for anyone maintaining the code.
+
+## Getting started
+
+Install dependencies and run the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|--------|-------------|
+| `npm run dev` | Development server |
+| `npm run build` | Production build (validates static params and types) |
+| `npm run start` | Serve production build |
+| `npm run lint` | ESLint |
 
-## Learn More
+## Tech stack
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org) (App Router)
+- React 19, TypeScript
+- Tailwind CSS v4
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Learn more
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Next.js documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This app is suitable for static hosting or [Vercel](https://vercel.com/new). See the [Next.js deployment guide](https://nextjs.org/docs/app/building-your-application/deploying).
