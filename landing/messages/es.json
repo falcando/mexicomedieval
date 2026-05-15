@@ -164,7 +164,9 @@
     "prev": "Anterior",
     "next": "Siguiente",
     "folio": "Folio",
-    "of": "de"
+    "of": "de",
+    "viewArticle": "Ver artículo",
+    "viewPublication": "Ver publicación"
   },
   "podcastPage": {
     "titleLine": "Podcast, radio, y colaboraciones",

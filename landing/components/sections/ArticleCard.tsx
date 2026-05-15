@@ -13,7 +13,6 @@ export default function ArticleCard({ article }: ArticleCardProps) {
   const { t } = useTranslations();
   const [detailsOpen, setDetailsOpen] = useState(false);
   const titleId = useId();
-  const primaryHref = article.urls[0]?.href ?? "";
 
   return (
     <>
@@ -35,18 +34,27 @@ export default function ArticleCard({ article }: ArticleCardProps) {
           >
             {t("articulos.readMoreDetails")}
           </button>
-          {primaryHref ? (
-            <a
-              href={primaryHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm font-bold text-primary decoration-tertiary-fixed hover:underline"
-            >
-              {t("articulos.readArticle")}
-              <span className="material-symbols-outlined text-base">
-                arrow_forward
-              </span>
-            </a>
+          {article.urls.length > 0 ? (
+            <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+              {article.urls.map((url, index) => (
+                <a
+                  key={url.href}
+                  href={url.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={
+                    index === 0
+                      ? "inline-flex items-center justify-center gap-2 bg-primary px-4 py-2.5 text-center text-sm font-semibold text-on-primary shadow-md shadow-primary/10 transition-all hover:opacity-90 sm:justify-start"
+                      : "inline-flex items-center justify-center gap-2 border-2 border-primary px-4 py-2 text-center text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-on-primary sm:justify-start"
+                  }
+                >
+                  {t(url.ctaKey)}
+                  <span className="material-symbols-outlined text-base">
+                    open_in_new
+                  </span>
+                </a>
+              ))}
+            </div>
           ) : null}
         </div>
       </div>

@@ -119,7 +119,7 @@ export const ARTICLES: ArticleSource[] = [
     urls: [
       {
         href: "https://portal.amelica.org/ameli/journal/636/6363021005/6363021005.pdf",
-        ctaKey: "articulos.viewArticle",
+        ctaKey: "articulos.readArticle",
       },
     ],
   },
@@ -169,7 +169,7 @@ export const ARTICLES: ArticleSource[] = [
     urls: [
       {
         href: "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-49642017000200121",
-        ctaKey: "articulos.viewArticle",
+        ctaKey: "articulos.readArticle",
       },
     ],
   },
@@ -195,7 +195,7 @@ export const ARTICLES: ArticleSource[] = [
     urls: [
       {
         href: "https://eprints.whiterose.ac.uk/id/eprint/112263/",
-        ctaKey: "articulos.viewArticle",
+        ctaKey: "articulos.readArticle",
       },
     ],
   },

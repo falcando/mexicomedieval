@@ -89,10 +89,13 @@ export function ArticleDetailsModal({
           <button
             type="button"
             onClick={onClose}
-            className="shrink-0 rounded-full p-2 text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-primary"
+            className="inline-flex size-10 shrink-0 items-center justify-center rounded-full text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             aria-label={t("articulos.modalClose")}
           >
-            <span className="material-symbols-outlined text-2xl" aria-hidden>
+            <span
+              className="material-symbols-outlined text-2xl leading-none select-none"
+              aria-hidden
+            >
               close
             </span>
           </button>

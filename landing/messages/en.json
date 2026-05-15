@@ -139,8 +139,8 @@
   },
   "articulos": {
     "collectionKicker": "Scholarly Collection",
-    "titleLine": "Articles",
-    "subtitle": "A curated selection of peer-reviewed research, journal entries, and historical chapters exploring the medieval foundations of New Spain.",
+    "titleLine": "Peer-reviewed articles and book chapters ",
+    "subtitle": "Published peer-reviewed research on medieval history, the Mediterranean, Sardinia, southern Italy, manuscripts, sagas, aristocracies, power, and written culture.",
     "recentResearch": "Recent Research",
     "latest": "Latest",
     "featuredPublication": "Featured Publication",
@@ -169,7 +169,9 @@
     "prev": "Prev",
     "next": "Next",
     "folio": "Folio",
-    "of": "of"
+    "of": "of",
+    "viewArticle": "View Article",
+    "viewPublication": "View Publication"
   },
   "podcastPage": {
     "titleLine": "Podcast, radio, and collaborations",
