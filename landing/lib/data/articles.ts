@@ -58,7 +58,7 @@ export const ARTICLES: ArticleSource[] = [
           "Vikings",
         ],
         abstract:
-          "This article publishes the first stemma of the manuscripts of Sigurgarðs saga frækna, Icelandic romance of the 15th century, from 58 of the 61 known testimonies. The study makes use of digital publication to offer open data and examine the postmedieval transmission of the saga. It also analyzes manuscripts produced between the 17th and 19th centuries in the Dalir region of Iceland to study how scribes constructed anthologies and how those decisions influenced subsequent compilations.",
+          "This article publishes the first stemma of the manuscripts of Sigurgarðs saga frækna, a fifteenth-century Icelandic romance, based on 58 of the 61 known witnesses. The study uses digital publication to provide open data and examine the saga’s post-medieval transmission. It also analyses manuscripts produced between the seventeenth and nineteenth centuries in the Dalir region of Iceland to study how scribes assembled anthologies and how those decisions shaped later compilations.",
       },
     },
     urls: [
@@ -116,7 +116,7 @@ export const ARTICLES: ArticleSource[] = [
         authors: "Hervin Fernández-Aceves",
         data: "Qvadrata, 1, 2019, pp. 11-29",
         topics: ["Medieval Sardinia", "Mediterranean connectivity", "Historiography"],
-        abstract: "This article reviews majorHistoriographical interpretations of medieval Sardinia and questions the idea of Mediterranean connectivity as an automatic explanation. It focuses on the Sardinian giudicati between the eleventh and thirteenth centuries and argues for the need for more robust research on the island’s social orders during the central Middle Ages.",
+        abstract: "This article reviews major historiographical interpretations of medieval Sardinia and questions the idea of Mediterranean connectivity as an automatic explanation. It focuses on the Sardinian giudicati between the eleventh and thirteenth centuries and argues for the need for more robust research on the island’s social orders during the central Middle Ages.",
       },
     },  
     urls: [
@@ -241,7 +241,7 @@ export const ARTICLES: ArticleSource[] = [
         authors: "Hervin Fernández-Aceves",
         data: "Annual of Medieval Studies at CEU, 20, 2014, pp. 42-58",
         topics: ["Pseudo-Falcando", "Sicilia medieval", "Posiciones sociales", "Análisis relacional"],
-        abstract: "El artículo analiza las posiciones sociales construidas en el Liber de Regno Sicilie mediante equivalencias estructurales y análisis relacional. A partir de las interacciones narrativas entre personajes, propone una forma de estudiar la composición, tensiones y dinámicas sociales de la corte siciliana descrita por Pseudo-Falcando.",
+        abstract: "Este artículo analiza las posiciones sociales construidas en el Liber de Regno Sicilie mediante equivalencias estructurales y análisis relacional. A partir de las interacciones narrativas entre personajes, propone una forma de estudiar la composición, tensiones y dinámicas sociales de la corte siciliana descrita por Pseudo-Falcando.",
       },
       en: {
         authors: "Hervin Fernández-Aceves",

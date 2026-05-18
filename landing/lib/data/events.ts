@@ -50,7 +50,7 @@ export const EVENTS: EventSource[] = [
         institution: "El Colegio de Jalisco",
       },
     },
-    ctaKey: "events.ctaDetails",
+    ctaKey: "events.ctaViewCourse",
     href: "https://coljal.mx/curso-cultura-y-poder-en-la-edad-media-claves-para-una-historia-medieval-conectada/",
   },
   {
@@ -74,7 +74,7 @@ export const EVENTS: EventSource[] = [
         institution: "Universidad CNCI / Incurso Platform",
       },
     },
-    ctaKey: "events.ctaEnter",
+    ctaKey: "events.ctaViewCourse",
     href: "https://incurso-cnci.com/course/162/alejandro-magno-o-de-como-se-cambia-el-mundo",
   },
   {
@@ -87,14 +87,14 @@ export const EVENTS: EventSource[] = [
         category: "Festival",
         description:
           "Entrada inicial para integrar el programa, fechas, sede y enlaces del Festival del Libro Medieval 2026 cuando estén disponibles. Esta tarjeta puede servir como espacio para anunciar actividades, presentaciones, talleres, conversaciones y encuentros vinculados con la divulgación de la Edad Media.",
-        footerNote: "CDMX — Sede por confirmar",
+        // footerNote: "CDMX — Sede por confirmar",
       },
       en: {
         title: "Medieval Book Festival 2026",
         category: "Festival",
         description:
           "Initial entry for adding the programme, dates, venue, and links for the 2026 Medieval Book Festival when they become available. This card can be used to announce activities, presentations, workshops, conversations, and gatherings linked to medieval public history.",
-        footerNote: "CDMX — Venue to be confirmed",
+        // footerNote: "CDMX — Venue to be confirmed",
       },
     },
   },

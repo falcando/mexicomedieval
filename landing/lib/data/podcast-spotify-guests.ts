@@ -82,7 +82,7 @@ export const DIAS_CON_LA_GARRA_Y_ALE_GARIBAY_SERIES_EPISODES = [
   
   {
     series: 'dias-con-la-garra-y-ale-garibay',
-    title: '097 - La Historia del Concónclave - Dr Jabón, Hervin Fernández, historiador',
+    title: '097 - La Historia del Cónclave - Dr Jabón, Hervin Fernández, historiador',
     listenHref: 'https://open.spotify.com/episode/4Bt9R1rGFCj3XHnZnrBzvO',
     documentType: 'spotifyEpisode',
   },
@@ -108,7 +108,7 @@ export const SPOTIFY_GUEST_SPOTS: SpotifyGuestSpot[] = [
   },
   {
     series: 'tiempos-imposibles',
-    title: 'Atila destruye Roma (ft. Hervin Fernández)',
+    title: 'Atila destruye Roma (ft. Hervin Fernández) | Ep. 108',
     listenHref: 'https://open.spotify.com/episode/1P1Nl2MBJ2eGjugxXXgmLh',
     documentType: 'spotifyEpisode',
   }
