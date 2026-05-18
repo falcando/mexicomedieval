@@ -34,7 +34,6 @@ export function QuienesSomosPage() {
             className="object-cover"
             sizes="(min-width: 1024px) 380px, 100vw"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-primary/50 to-transparent" />
           <p className="absolute bottom-6 left-6 right-6 font-label text-xs tracking-widest text-white/90 uppercase">
             {t("about.authorName")}
           </p>
