@@ -72,6 +72,21 @@
     "amazonUs": "Amazon US",
     "penImgAlt": "Pluma estilográfica sobre pergamino manuscrito"
   },
+  "privacyNotice": {
+    "title": "Aviso de privacidad",
+    "metaDescription": "Aviso de privacidad de México Medieval: uso de datos de contacto para el newsletter y comunicación del sitio.",
+    "p1": "México Medieval, sitio de Hervin Fernández Aceves, podrá recabar datos personales de contacto únicamente cuando una persona se suscriba al newsletter o se comunique mediante los canales indicados en este sitio.",
+    "p2": "Los datos que podrán recabarse son nombre y correo electrónico. En algunos casos, si la persona decide proporcionarlos, también podrán recabarse institución, país o mensaje de contacto.",
+    "p3": "Los datos personales serán utilizados exclusivamente para enviar el newsletter de México Medieval y, en su caso, informar sobre cursos, ferias, festivales, conferencias, publicaciones y actividades vinculadas con el sitio.",
+    "p4": "Los datos proporcionados no serán vendidos, rentados ni utilizados para fines ajenos a la comunicación solicitada.",
+    "p5": "El envío del newsletter podrá realizarse mediante una plataforma externa de gestión de correos. En ese caso, los datos serán tratados únicamente para administrar la suscripción y enviar las comunicaciones solicitadas.",
+    "p6": "La persona suscrita podrá darse de baja del newsletter en cualquier momento mediante el enlace incluido en cada correo o escribiendo a los canales de contacto indicados en este sitio.",
+    "p7Before": "Las personas interesadas podrán solicitar acceso, rectificación, cancelación u oposición respecto de sus datos personales mediante los canales de contacto indicados en la página ",
+    "contactPageLink": "Contáctame",
+    "p7After": ".",
+    "p8": "Este aviso de privacidad podrá actualizarse para reflejar cambios en el sitio, en el newsletter o en las actividades de México Medieval. Las modificaciones se publicarán en esta misma página.",
+    "lastUpdated": "Última actualización: 2026."
+  },
   "home": {
     "heroImgAlt": "Manuscrito iluminado con pan de oro y caligrafía gótica en pergamino envejecido",
     "heroTitle": "México Medieval",

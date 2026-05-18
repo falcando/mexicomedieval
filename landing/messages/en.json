@@ -72,6 +72,21 @@
     "amazonUs": "Amazon US",
     "penImgAlt": "Fountain pen resting on handwritten parchment"
   },
+  "privacyNotice": {
+    "title": "Privacy notice",
+    "metaDescription": "México Medieval privacy notice: use of contact data for the newsletter and site communications.",
+    "p1": "México Medieval, the website of Hervin Fernández Aceves, may collect contact data only when a person subscribes to the newsletter or communicates through the channels indicated on this site.",
+    "p2": "The data that may be collected are name and email address. In some cases, if the person chooses to provide them, institution, country, or contact message may also be collected.",
+    "p3": "Personal data will be used exclusively to send the México Medieval newsletter and, where applicable, to share information about courses, fairs, festivals, lectures, publications, and activities linked to the site.",
+    "p4": "The data provided will not be sold, rented, or used for purposes unrelated to the requested communication.",
+    "p5": "The newsletter may be sent through an external email management platform. In that case, the data will be processed only to manage the subscription and send the requested communications.",
+    "p6": "Subscribers may unsubscribe from the newsletter at any time through the link included in each email or by writing through the contact channels indicated on this site.",
+    "p7Before": "Interested persons may request access, rectification, cancellation, or opposition regarding their personal data through the contact channels indicated on the ",
+    "contactPageLink": "Contact me",
+    "p7After": " page.",
+    "p8": "This privacy notice may be updated to reflect changes to the site, the newsletter, or México Medieval activities. Any changes will be published on this page.",
+    "lastUpdated": "Last updated: 2026."
+  },
   "home": {
     "heroImgAlt": "Illuminated manuscript with gold leaf and gothic calligraphy on aged parchment",
     "heroTitle": "México Medieval",

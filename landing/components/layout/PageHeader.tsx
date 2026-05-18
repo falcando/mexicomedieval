@@ -13,7 +13,7 @@ const PageHeader = ({
 }: {
   pretitle?: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
 }) => {
   return (
     <>
@@ -28,9 +28,11 @@ const PageHeader = ({
             {title}
           </span>
         </h1>
-        <p className="mx-auto max-w-2xl text-lg leading-relaxed text-on-surface-variant">
-          {subtitle}
-        </p>
+        {subtitle ? (
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-on-surface-variant">
+            {subtitle}
+          </p>
+        ) : null}
       </header>
       <SectionSeparator contrast={true} />
     </>
