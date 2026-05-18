@@ -51,7 +51,7 @@ const BookCard = ({ book, imageAlign = "right" }: BookCardProps) => {
   const textBlock = (
     <div className="flex min-w-0 flex-1 flex-col justify-center px-6 py-8 lg:gap-0 lg:px-10 lg:py-12 xl:px-14">
       <span className="font-label mb-2 text-xs tracking-widest text-on-secondary-fixed-variant uppercase">
-        {t("articulos.publicationYear")}: {book.year}
+       {`${book.badge}, ${book.year}`}
       </span>
       <h3
         className={`font-headline text-2xl leading-snug font-semibold text-primary md:text-3xl ${book.subtitle ? "mb-3" : "mb-4"}`}
