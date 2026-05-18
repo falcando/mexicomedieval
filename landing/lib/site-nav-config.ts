@@ -8,7 +8,7 @@ export const siteNavItems: SiteNavItem[] = [
   { href: "/libros", labelKey: "nav.books" },
   { href: "/articulos", labelKey: "nav.articles" },
   { href: "/podcast", labelKey: "nav.podcast" },
-  { href: "/events", labelKey: "nav.events" },
+  { href: "/eventos", labelKey: "nav.events" },
   { href: "/papers", labelKey: "nav.papers" },
   { href: "/quienes-somos", labelKey: "nav.about" },
 ];
