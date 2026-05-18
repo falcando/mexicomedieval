@@ -6,6 +6,8 @@ import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { useNewsletterSubscriptionsEnabled } from "@/lib/feature-flags-hooks";
 import { isNewsletterSubscriptionsEnabled } from "@/lib/feature-flags";
 import {
+  cancundevsProjectUrl,
+  creativeCommonsLicenseUrl,
   footerExploreLinks,
   footerLegalLinks,
 } from "@/lib/site-footer-config";
@@ -54,7 +56,7 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
           </nav>
 
           <nav aria-label={t("footer.legalContact")}>
-            <h2 className={footerHeadingClass}>{t("footer.legalEthics")}</h2>
+            <h2 className={footerHeadingClass}>{t("footer.privacyNotice")}</h2>
             <ul className="space-y-3">
               {footerLegalLinks.map((item) => (
                 <li key={item.href + item.labelKey}>
@@ -77,36 +79,30 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
           ) : null}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-outline-variant/20 pt-8 md:flex-row">
+        <div
+          className="mt-12 flex flex-col gap-3 border-t border-outline-variant/20 pt-8"
+          data-testid="footer-license"
+        >
           <p className="text-center text-sm uppercase tracking-widest text-primary-container/70 md:text-left">
-            {/* TODO: Add creative commons license */}
-            This work is licensed under{" "}
+            {t("footer.licensePrefix")}{" "}
             <a
-              href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+              href={creativeCommonsLicenseUrl}
+              className="underline hover:text-primary"
+              rel="license"
+            >
+              {t("footer.licenseName")}
+            </a>
+            {t("footer.licenseNameSuffix")}
+          </p>
+          <p className="text-center text-sm text-primary-container/70 md:text-left">
+            {t("footer.cancundevsCreditsPrefix")}{" "}
+            <a
+              href="https://cancundevs.github.io/"
               className="underline hover:text-primary"
             >
-              CC BY-NC-SA 4.0
+              {t("footer.cancundevsProject")}
             </a>
-            <img
-              src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-              alt=""
-              className="ml-0.5 inline max-h-[1em] max-w-[1em]"
-            />
-            <img
-              src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
-              alt=""
-              className="ml-0.5 inline max-h-[1em] max-w-[1em]"
-            />
-            <img
-              src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
-              alt=""
-              className="ml-0.5 inline max-h-[1em] max-w-[1em]"
-            />
-            <img
-              src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
-              alt=""
-              className="ml-0.5 inline max-h-[1em] max-w-[1em]"
-            />
+            .
           </p>
         </div>
       </div>

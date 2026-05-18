@@ -25,9 +25,9 @@
     "localeEs": "ES"
   },
   "footer": {
-    "tagline": "Un archivo académico iluminado: manuscritos, podcasts e investigación sobre los mundos hispánicos medievales.",
+    "tagline": "Historia, cultura y mundos medievales para todas y todos.",
     "explore": "Explorar",
-    "legalEthics": "Legal y ética",
+    "privacyNotice": "Aviso de privacidad",
     "newsletter": "Boletín",
     "newsletterBlurb": "Novedades ocasionales sobre material digitalizado y nuevos episodios.",
     "copyright": "© MMXXIV México Medieval. Un archivo académico iluminado.",
@@ -38,7 +38,12 @@
     "scholarlyEthics": "Ética académica",
     "contactScribe": "Contactar al escriba",
     "exploreArchive": "Explorar el archivo",
-    "legalContact": "Legal y contacto"
+    "legalContact": "Legal y contacto",
+    "licensePrefix": "Hervin Fernández Aceves. Contenidos originales bajo licencia",
+    "licenseName": "CC BY-NC-SA 4.0",
+    "licenseNameSuffix": ", salvo indicación contraria.",
+    "cancundevsCreditsPrefix": "Créditos al",
+    "cancundevsProject": "proyecto cancundevs"
   },
   "contact": {
     "kicker": "Canales de contacto",

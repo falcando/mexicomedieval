@@ -25,9 +25,9 @@
     "localeEs": "ES"
   },
   "footer": {
-    "tagline": "An illuminated scholarly archive: manuscripts, podcasts, and research on medieval Hispanic worlds.",
+    "tagline": "History, culture, and medieval worlds for everyone.",
     "explore": "Explore",
-    "legalEthics": "Legal & ethics",
+    "privacyNotice": "Privacy notice",
     "newsletter": "Newsletter",
     "newsletterBlurb": "Occasional updates on new digitized material and episodes.",
     "copyright": "© MMXXIV México Medieval. An Illuminated Scholarly Archive.",
@@ -38,7 +38,12 @@
     "scholarlyEthics": "Scholarly Ethics",
     "contactScribe": "Contact the Scribe",
     "exploreArchive": "Explore the archive",
-    "legalContact": "Legal and contact"
+    "legalContact": "Legal and contact",
+    "licensePrefix": "Hervin Fernández Aceves. Original content licensed under",
+    "licenseName": "CC BY-NC-SA 4.0",
+    "licenseNameSuffix": ", unless otherwise stated.",
+    "cancundevsCreditsPrefix": "Credits to the",
+    "cancundevsProject": "cancundevs project"
   },
   "contact": {
     "kicker": "Contact channels",

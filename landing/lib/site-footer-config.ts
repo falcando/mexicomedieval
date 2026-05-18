@@ -11,8 +11,12 @@ export const footerExploreLinks: SiteFooterLink[] = siteNavItems.filter(
 );
 
 export const footerLegalLinks: SiteFooterLink[] = [
-  { href: "#", labelKey: "footer.archivistsCircle" },
-  { href: "#", labelKey: "footer.manuscriptRights" },
-  { href: "#", labelKey: "footer.scholarlyEthics" },
-  { href: "/contacto", labelKey: "footer.contactScribe" },
+  { href: "/privacy-notice", labelKey: "footer.privacyNotice" },
+  { href: "/contacto", labelKey: "nav.contactCta" },
 ];
+
+export const creativeCommonsLicenseUrl =
+  "https://creativecommons.org/licenses/by-nc-sa/4.0/";
+
+/** Placeholder until the cancundevs project URL is confirmed. */
+export const cancundevsProjectUrl = "#";
