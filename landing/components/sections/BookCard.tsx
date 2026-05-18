@@ -32,6 +32,7 @@ type BookCardProps = {
 
 const BookCard = ({ book, imageAlign = "right" }: BookCardProps) => {
   const imageFirst = imageAlign === "left";
+  const { t } = useTranslations();
 
   const imageBlock = (
     <div className="relative flex w-full shrink-0 items-center justify-center bg-primary px-8 py-12 sm:px-10 sm:py-14 lg:min-h-0 lg:w-80 lg:max-w-[40%] lg:self-stretch lg:px-8 lg:py-10 xl:max-w-sm">
@@ -44,18 +45,13 @@ const BookCard = ({ book, imageAlign = "right" }: BookCardProps) => {
           sizes="(min-width: 1024px) 17rem, (min-width: 640px) 50vw, 85vw"
         />
       </div>
-      {book.badge ? (
-        <div className="absolute top-3 right-3 bg-surface-container-lowest/95 px-2.5 py-1 font-label text-[10px] tracking-widest text-primary uppercase shadow-sm backdrop-blur-sm">
-          {book.badge}
-        </div>
-      ) : null}
     </div>
   );
 
   const textBlock = (
     <div className="flex min-w-0 flex-1 flex-col justify-center px-6 py-8 lg:gap-0 lg:px-10 lg:py-12 xl:px-14">
       <span className="font-label mb-2 text-xs tracking-widest text-on-secondary-fixed-variant uppercase">
-        {book.year}
+        {t("articulos.publicationYear")}: {book.year}
       </span>
       <h3
         className={`font-headline text-2xl leading-snug font-semibold text-primary md:text-3xl ${book.subtitle ? "mb-3" : "mb-4"}`}
