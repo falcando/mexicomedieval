@@ -99,7 +99,7 @@ export const BOOKS: (Omit<Book, "author" | "description"> & {
       },
       en: {
         author: "Hervin Fernández Aceves",
-        description: "This book revises the traditional image of the Norman kingdom of Sicily as a centralized and administratively uniform state. Through the study of counts, aristocratic networks, and the organization of counties in southern Italy, it shows that royal power depended on constant negotiations with local elites. Counts were decisive political actors in the articulation of the kingdom and the regional power.",
+        description: "This book revises the traditional image of the Norman Kingdom of Sicily as a centralized and administratively uniform state. Through the study of counts, aristocratic networks, and the organization of counties in southern Italy, it shows that royal power depended on constant negotiation with local elites. Counts were decisive political actors in articulating the kingdom and regional power.",
         subtitle: "Aristocratic Agency in the Kingdom of Sicily, 1130-1189"
       }
     },
