@@ -110,7 +110,7 @@ export function ArticulosPage() {
       title={t("articulos.titleLine")}
       subtitle={t("articulos.subtitle")}
     >
-      <section className="relative z-10 mb-24">
+      <section className="relative z-10 mb-24" data-testid="spotlight-article-section">
         <div className="mb-10 flex items-center justify-between">
           <h2 className="font-headline text-3xl font-bold text-primary">
             {t("articulos.recentResearch")}

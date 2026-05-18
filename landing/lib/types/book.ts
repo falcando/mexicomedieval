@@ -1,5 +1,5 @@
 /** Keys into messages for the book CTA label (locale-agnostic API). */
-export type BookCtaKey = "libros.ctaBrill" | "libros.ctaBloomsbury" | "libros.ctaDOI" | "libros.ctaGoogleBooks" | "libros.ctaAmazonMX";
+export type BookCtaKey = "libros.ctaBrill" | "libros.ctaBloomsbury" | "libros.ctaDOI" | "libros.ctaGoogleBooks" | "libros.ctaAmazonMX" | "libros.ctaConsulta";
 
 export type BookUrl = {
   url: string;

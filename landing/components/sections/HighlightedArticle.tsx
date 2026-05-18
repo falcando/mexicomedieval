@@ -1,6 +1,7 @@
 import { ArticleEntry } from "@/lib/types/article";
 import Image from "next/image";
 import { useTranslations } from "../i18n/LocaleProvider";
+import { LabeledTagList } from "./LabeledTagList";
 
 const FEATURED_IMG =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuC36OR9bfZWebubcigMG_gSkHrqIrwGug3GKwYO587LUZVmnKxpPBAVrIN5Nsyq2_S-PwJRlpSmPmVpWbK9j3r5L1YuVIO_6X8pC6ed-sw449I49hwQ6MKjKargpx_bJp2tBRlKro2UF3beVTmwtMLbR_k8o6_1JfOZOkRddUVThvnwP-BoPQPo1bCKgyKHI4OR0u1bvjE1NrKaxgOurNYRvLcTqh1ybvSn-uvGLHbLQ0BxE-7M7dRce-I9pG8Fz73WdS5yeiSqXD3u";
@@ -34,6 +35,10 @@ const HighlightedArticle = ({ article }: { article: ArticleEntry }) => {
         <p className="mb-6 text-sm italic text-on-surface-variant/90">
           {article.data}
         </p>
+        <LabeledTagList
+          heading={t("articulos.topicsHeading")}
+          items={article.topics}
+        />
         <div className="mb-6 text-sm font-medium text-on-surface-variant">
           {t("articulos.publicationYear")}: {article.year}
         </div>

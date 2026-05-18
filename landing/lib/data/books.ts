@@ -66,7 +66,7 @@ export const BOOKS: (Omit<Book, "author" | "description"> & {
       },
       en: {
         author: "Edited by Alex Metcalfe, Hervin Fernández-Aceves, and Marco Muresu",
-        description: "This volume rethinks the history of medieval Sardinia beyond the idea of an isolated or peripheral island. Through studies on politics, religion, language, material culture, documentation, and Mediterranean connections, the book shows a complex, connected, and active society within the Byzantine, Islamic, and Latin worlds.",
+        description: "This volume rethinks the history of medieval Sardinia beyond the idea of an isolated or peripheral island. Through studies on politics, religion, language, material culture, documentation, and Mediterranean connections, the book presents a complex, connected, and active society within the Byzantine, Islamic, and Latin worlds.",
       }
     },
     urls: [
@@ -104,6 +104,10 @@ export const BOOKS: (Omit<Book, "author" | "description"> & {
       }
     },
     urls: [
+      {
+        url: 'https://www.researchgate.net/profile/Hervin-Fernandez-Aceves/publication/344293200_County_and_Nobility_in_Norman_Italy_Aristocratic_Agency_in_the_Kingdom_of_Sicily_1130-1189/links/5f6403b092851c14bc83f337/County-and-Nobility-in-Norman-Italy-Aristocratic-Agency-in-the-Kingdom-of-Sicily-1130-1189.pdf',
+        ctaKey: "libros.ctaConsulta"
+      },
       {
         url: "https://www.bloomsbury.com/us/county-and-nobility-in-norman-italy-9781350133228/",
         ctaKey: "libros.ctaBloomsbury",

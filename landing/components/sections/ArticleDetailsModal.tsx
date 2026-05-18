@@ -8,6 +8,7 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import { useTranslations } from "../i18n/LocaleProvider";
+import { LabeledTagList } from "./LabeledTagList";
 
 type ArticleDetailsModalProps = {
   article: ArticleEntry;
@@ -110,22 +111,10 @@ export function ArticleDetailsModal({
           <p className="mb-6 text-sm italic text-on-surface-variant">
             {article.data}
           </p>
-          {article.topics.length > 0 ? (
-            <div className="mb-6">
-              <h3 className="mb-2 font-label text-[10px] font-bold tracking-widest text-on-surface-variant/70 uppercase">
-                {t("articulos.topicsHeading")}
-              </h3>
-              <ul className="flex flex-wrap gap-2">
-                {article.topics.map((topic) => (
-                  <li key={topic}>
-                    <span className="inline-block rounded-full border border-outline-variant/30 bg-surface-container-high px-3 py-1 text-xs text-on-surface-variant">
-                      {topic}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+          <LabeledTagList
+            heading={t("articulos.topicsHeading")}
+            items={article.topics}
+          />
           <h3 className="mb-2 font-label text-[10px] font-bold tracking-widest text-on-surface-variant/70 uppercase">
             {t("articulos.abstractHeading")}
           </h3>
