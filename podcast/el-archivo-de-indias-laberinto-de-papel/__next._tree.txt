@@ -1,5 +1,5 @@
-:HL["/_next/static/chunks/0zh5844r2yruf.css","style"]
+:HL["/_next/static/chunks/0u.jbcc-n8i8z.css","style"]
 :HL["/_next/static/media/ae3274ea8a83d33d-s.p.0x~oh7~5mgc9~.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@300;400;500;600&display=swap","style"]
 :HL["https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"podcast","param":null,"prefetchHints":0,"slots":{"children":{"name":"podcast-id","param":{"type":"d","key":"el-archivo-de-indias-laberinto-de-papel","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"M20h4QqVtgK1bTpuTBTJ_"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"podcast","param":null,"prefetchHints":0,"slots":{"children":{"name":"podcast-id","param":{"type":"d","key":"el-archivo-de-indias-laberinto-de-papel","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"qZJXVQiSdXNlGu_MYf1VR"}
