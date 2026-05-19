@@ -51,7 +51,7 @@ export const ARTICLES: ArticleSource[] = [
           "Alaric Hall, Sheryl McDonald, Hervin Fernández-Aceves, Katelin Marit Parsons and Ian Simpson",
         data: "Journal of Early Medieval Northwestern Europe, vol. 22, 2026. DOI: 10.5281/zenodo.18475600",
         topics: [
-          "Stemmatology",
+          "Stemmatics",
           "Icelandic sagas",
           "Manuscript transmission",
           "Anthologization",
