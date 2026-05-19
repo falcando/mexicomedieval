@@ -6,7 +6,6 @@ import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { useNewsletterSubscriptionsEnabled } from "@/lib/feature-flags-hooks";
 import { isNewsletterSubscriptionsEnabled } from "@/lib/feature-flags";
 import {
-  cancundevsProjectUrl,
   creativeCommonsLicenseUrl,
   footerExploreLinks,
   footerLegalLinks,
@@ -95,12 +94,12 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
             {t("footer.licenseNameSuffix")}
           </p>
           <p className="text-center text-sm text-primary-container/70 md:text-left">
-            {t("footer.cancundevsCreditsPrefix")}{" "}
+            {t("footer.prismadevsCreditsPrefix")}{" "}
             <a
-              href="https://cancundevs.github.io/"
+              href="https://www.prismadevs.studio"
               className="underline hover:text-primary"
             >
-              {t("footer.cancundevsProject")}
+              {t("footer.prismadevsProject")}
             </a>
             .
           </p>
