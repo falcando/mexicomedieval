@@ -11,7 +11,7 @@ export const footerExploreLinks: SiteFooterLink[] = siteNavItems.filter(
 );
 
 export const footerLegalLinks: SiteFooterLink[] = [
-  { href: "/privacy-notice", labelKey: "footer.privacyNotice" },
+  { href: "/aviso-privacidad", labelKey: "footer.privacyNotice" },
   { href: "/contacto", labelKey: "nav.contactCta" },
 ];
 

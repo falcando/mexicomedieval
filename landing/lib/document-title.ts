@@ -57,7 +57,7 @@ export function documentTitleForPath(
   if (path === "/contacto") {
     return formatSectionTitle(m.contact.title);
   }
-  if (path === "/privacy-notice") {
+  if (path === "/aviso-privacidad") {
     return formatSectionTitle(m.footer.privacyNotice);
   }
 
