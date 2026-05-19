@@ -76,11 +76,14 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/pages-export"
           rsync -a --delete landing/out/ "${RUNNER_TEMP}/pages-export/"
 
-      - name: Backup .github from dev (keep workflows on main)
+      - name: Backup .github and main README template from dev
         run: |
           mkdir -p "${RUNNER_TEMP}/dot-github-backup"
           if [ -d .github ]; then
             rsync -a .github/ "${RUNNER_TEMP}/dot-github-backup/"
+          fi
+          if [ -f static-content/README.main.md ]; then
+            cp static-content/README.main.md "${RUNNER_TEMP}/README.main.md"
           fi
 
       - name: Replace main branch root with static export
@@ -92,6 +95,9 @@ jobs:
           rsync -a "${RUNNER_TEMP}/pages-export/" ./
           mkdir -p .github
           rsync -a "${RUNNER_TEMP}/dot-github-backup/" .github/
+          if [ -f "${RUNNER_TEMP}/README.main.md" ]; then
+            cp "${RUNNER_TEMP}/README.main.md" README.md
+          fi
           git add -A
           if git diff --staged --quiet; then
             echo "No changes; skipping commit."
