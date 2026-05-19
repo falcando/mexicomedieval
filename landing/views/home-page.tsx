@@ -59,9 +59,6 @@ export function HomePage({
             <p className="font-body mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-surface-container-low italic opacity-90 md:text-xl">
               {t("home.heroSub")}
             </p>
-            <p className="font-body mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-surface-container-low italic opacity-90 md:text-xl">
-              {t("home.heroSubLineTwo")}
-            </p>
           </div>
         </section>
 

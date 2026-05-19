@@ -91,8 +91,7 @@
     "heroImgAlt": "Manuscrito iluminado con pan de oro y caligrafía gótica en pergamino envejecido",
     "heroTitle": "México Medieval",
     "heroKicker": "Historia, cultura y mundos medievales para todas y todos",
-    "heroSub": "La Edad Media desde México: nobles y campesinos, guerras y libros, santos y monstruos, leyendas, poder y vida cotidiana.",
-    "heroSubLineTwo": "Cursos, conferencias, podcasts, y encuentros para conocer y disfrutar la Edad Media dentro y fuera del aula.",
+    "heroSub": "Página del Dr. Hervin Fernández Aceves. Cursos, conferencias, podcasts, y encuentros para conocer y disfrutar la Edad Media y la Historia dentro y fuera del aula.",
     "archiveTitle": "El archivo",
     "booksTitle": "Libros",
     "booksDesc": "Textos primarios anotados y primeras ediciones raras de la imprenta novohispana.",
@@ -161,6 +160,7 @@
   },
   "articulos": {
     "collectionKicker": "Colección académica",
+    "pretitle": "Colección académica",
     "titleLine": "Artículos y capítulos de libro arbitrados",
     "subtitle": "Investigación publicada y revisada por pares sobre historia medieval, Mediterráneo, Cerdeña, Italia meridional, manuscritos, sagas, aristocracias, poder y cultura escrita.",
     "recentResearch": "Lo más reciente",
@@ -196,6 +196,7 @@
     "viewPublication": "Ver publicación"
   },
   "podcastPage": {
+    "pretitle": "El pasado en conversación",
     "titleLine": "Podcast, radio, y colaboraciones",
     "subtitle": "Episodios propios y colaboraciones para acercarse a la historia, a las humanidades, y a la  Edad Media.",
     "cardAlt1": "Armadura medieval y espada sobre terciopelo",

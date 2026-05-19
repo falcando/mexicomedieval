@@ -234,7 +234,7 @@ export function PodcastIndexPage() {
     mmQuery.isFetching || diasQuery.isFetching || othersQuery.isFetching;
 
   return (
-    <PageContainer title={t("podcastPage.titleLine")} subtitle={t("podcastPage.subtitle")}>
+    <PageContainer pretitle={t("podcastPage.pretitle")} title={t("podcastPage.titleLine")} subtitle={t("podcastPage.subtitle")}>
       <section id="podcast-mexico-medieval" className="mb-32 scroll-mt-24">
         <div className="mx-auto max-w-screen-2xl px-8">
           <div className="mb-16 flex flex-col items-end justify-between gap-6 md:flex-row">
