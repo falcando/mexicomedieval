@@ -10,7 +10,7 @@ export const CONTACT_EXTERNAL = {
   institutionalProfile:
     "https://coljal.mx/investigacion-lineas/estudios-historicos/dr-hervin-fernandez-aceves/",
   scriptaUp: "https://scripta.up.edu.mx/items/4b63e5a2-9c92-49fe-8051-74b29f5e9688",
-  researchgate: "https://www.researchgate.net/profile/Hervin-Fernandez-Aceves",
+  researchGate: "https://www.researchgate.net/profile/Hervin-Fernandez-Aceves",
   amazonMx:
     "https://www.amazon.com.mx/stores/author/B08JFMJ42H",
   amazonUs:
