@@ -17,6 +17,13 @@ type EventInformation = {
 
 type EventSource = {
   catalogId: string;
+  /**
+   * Optional image for the home spotlight block (path under `public/`, e.g. `/images/foo.webp`).
+   * When omitted, the spotlight uses the site default hero image.
+   */
+  spotlightImage?: string;
+  /** Alt text for `spotlightImage`; defaults to the event title in the active locale when omitted. */
+  spotlightImageAlt?: string;
   active?: boolean;
   ctaIcon?: SiteEventCtaIcon;
   ctaKey: string;

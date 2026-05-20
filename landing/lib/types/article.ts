@@ -13,6 +13,13 @@ export type ArticleInformation = {
 export type ArticleSource = {
   /** Stable id for home spotlight / cross-references (see `lib/data/spotlight-config.ts`). */
   catalogId?: string;
+  /**
+   * Optional image for the home spotlight block (path under `public/`, e.g. `/images/foo.webp`).
+   * When omitted, the spotlight uses the site default hero image.
+   */
+  spotlightImage?: string;
+  /** Alt text for `spotlightImage`; defaults to `title` when omitted. */
+  spotlightImageAlt?: string;
   year: string;
   title: string;
   documentType: ArticleDocumentType;

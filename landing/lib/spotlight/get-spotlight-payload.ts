@@ -13,6 +13,20 @@ const BODY_MAX = 560;
 
 const DEFAULT_VISUAL = "/images/hero.webp";
 
+type SpotlightVisualFields = {
+  spotlightImage?: string;
+  spotlightImageAlt?: string;
+};
+
+function resolveSpotlightImage(
+  row: SpotlightVisualFields,
+  titleAlt: string,
+): { src: string; alt: string } {
+  const src = row.spotlightImage?.trim() || DEFAULT_VISUAL;
+  const alt = row.spotlightImageAlt?.trim() || titleAlt;
+  return { src, alt };
+}
+
 function clipBody(text: string): string {
   const t = text.trim();
   if (t.length <= BODY_MAX) return t;
@@ -59,7 +73,7 @@ export function getSpotlightPayload(language: Locale): SpotlightPayload | null {
           ? "home.spotlightKindJournalArticle"
           : "home.spotlightKindBookChapter";
       return {
-        image: { src: DEFAULT_VISUAL, alt: row.title },
+        image: resolveSpotlightImage(row, row.title),
         kicker: messageByPath(language, kickerKey),
         title: row.title,
         body: clipBody(info.abstract),
@@ -76,7 +90,7 @@ export function getSpotlightPayload(language: Locale): SpotlightPayload | null {
       if (!row.href) return null;
       const info = row.information[language];
       return {
-        image: { src: DEFAULT_VISUAL, alt: info.title },
+        image: resolveSpotlightImage(row, info.title),
         kicker: messageByPath(language, "home.spotlightKindEvent"),
         title: info.title,
         body: clipBody(info.description),
@@ -104,7 +118,7 @@ export function getSpotlightPayload(language: Locale): SpotlightPayload | null {
           ? "papers.viewPaper"
           : "papers.viewDetails";
       return {
-        image: { src: DEFAULT_VISUAL, alt: row.title },
+        image: resolveSpotlightImage(row, row.title),
         kicker: messageByPath(language, kickerKey),
         title: row.title,
         body: clipBody(row.context),

@@ -62,6 +62,60 @@ You can instead point the spotlight at other catalogue kinds (books, events, pap
 
 If the `catalogId` does not match any row, or `kind` does not match the row, the spotlight section may disappear until the config is fixed — ask a developer if you are unsure.
 
+### Spotlight image (when the item has no cover photo)
+
+**Books** already carry an `image` and `alt` on each row in `lib/data/books.ts`; the spotlight reuses those fields.
+
+**Journal articles, book chapters, events, academic papers, and presentations** do not have a list-card cover. When one of them is selected in `spotlight-config.ts`, the large photo on the home page works like this:
+
+| Situation | What appears in the spotlight |
+|-----------|-------------------------------|
+| You add **`spotlightImage`** on that catalogue row | Your custom image |
+| You omit **`spotlightImage`** | The default site image (`/images/hero.webp`) |
+
+To use a custom image:
+
+1. **Add the file** under `landing/public/images/` (for example `public/images/cultura-poder-spotlight.webp`). Prefer **landscape** photos around a **4:3** aspect ratio; the block crops to fill the frame.
+2. **On the same catalogue row** you are featuring (not inside `spotlight-config.ts`), add:
+   - **`spotlightImage`** — path from the site root, starting with `/images/…`, e.g. `"/images/cultura-poder-spotlight.webp"`.
+   - **`spotlightImageAlt`** (optional) — short description for screen readers. If you skip it, the spotlight uses the item’s **title** (for events, the title in the visitor’s language).
+3. **Point the spotlight at that row** — `kind` and `catalogId` in `lib/data/spotlight-config.ts` must still match the entry you edited.
+
+**Which file to edit:**
+
+| Spotlight `kind` | Edit this data file |
+|------------------|---------------------|
+| `journalArticle`, `bookChapter` | `lib/data/articles.ts` |
+| `event` | `lib/data/events.ts` |
+| `paper`, `presentation` | `lib/data/papers.ts` |
+
+Example (journal article in `articles.ts`):
+
+```ts
+{
+  catalogId: "my-article-slug",
+  spotlightImage: "/images/my-article-spotlight.webp",
+  spotlightImageAlt: "Manuscript page from the study",
+  year: "2026",
+  title: "…",
+  // …rest of the entry
+},
+```
+
+Example (event in `events.ts` — `spotlightImage` sits next to `catalogId`, not inside `information`):
+
+```ts
+{
+  catalogId: "my-event-slug",
+  spotlightImage: "/images/my-event-spotlight.webp",
+  active: true,
+  information: { es: { … }, en: { … } },
+  // …
+},
+```
+
+**Podcasts** use a fixed show artwork path in code; you do not set `spotlightImage` on podcast rows. Ask a developer if that artwork needs to change.
+
 ---
 
 ## Adding a journal article or a book chapter
@@ -78,6 +132,7 @@ If the `catalogId` does not match any row, or `kind` does not match the row, the
    - **`urls`** — one or more links. Each link needs `href` (the full web address) and `ctaKey` (which button text to show — see below).
    - **`information`** — you need both **`es`** and **`en`**. Under each, set `authors`, `data` (where it was published), `topics` (a list of short tags), and `abstract` (summary).
    - **`catalogId`** (optional) — a short unique id using lowercase letters and hyphens, e.g. `"my-new-article-slug"`. Add this if the entry should be selectable for the **home spotlight** (`lib/data/spotlight-config.ts`). Ask a developer if you are unsure.
+   - **`spotlightImage`** / **`spotlightImageAlt`** (optional) — custom photo when this row is the home spotlight; see [Spotlight image](#spotlight-image-when-the-item-has-no-cover-photo) above.
 
 **“Featured” article on the Articles page:** For at most **one** journal article (not chapters), you can add a line `highlighted: true`. If none is marked, the site picks another rule for the Articles page feature — you can leave this to whoever maintains the site if it’s confusing. **If you change which article is highlighted and want the home spotlight to match**, update `lib/data/spotlight-config.ts` to use that article’s `catalogId` with `kind: "journalArticle"`.
 
@@ -110,6 +165,7 @@ For links, each line uses `url` and `ctaKey`. Reuse existing `ctaKey` values fro
 3. Under **`information`**, fill **`es`** and **`en`** with at least `title`, `category`, and `description`. Optional lines: `institution`, `format`, `footerNote`.
 4. **Live event with a link:** set `active: true`, add `href` with the full URL, and set `ctaKey` (for example `events.ctaDetails` or `events.ctaEnter`). You can add `ctaIcon`: `"arrow"` or `"external"` to match other cards.
 5. **“Coming soon” card:** set `active: false`. You can leave out `href` or use an empty `ctaKey` `""` like the placeholder examples.
+6. **Home spotlight photo (optional):** if this event may be featured on the home page, add **`spotlightImage`** (and optionally **`spotlightImageAlt`**) on the same level as `catalogId` — see [Spotlight image](#spotlight-image-when-the-item-has-no-cover-photo).
 
 ---
 
@@ -121,6 +177,7 @@ For links, each line uses `url` and `ctaKey`. Reuse existing `ctaKey` values fro
 2. Set a unique **`catalogId`** (lowercase letters and hyphens) if this row should be eligible for the home spotlight.
 3. Set **`documentType`** to `"paper"` or `"presentation"`.
 4. Set **`year`**, **`title`**, **`context`** (short line under the title), and **`href`** (link to the PDF, Academia.edu page, etc.).
+5. **Home spotlight photo (optional):** add **`spotlightImage`** and optionally **`spotlightImageAlt`** if this row may be the home spotlight — see [Spotlight image](#spotlight-image-when-the-item-has-no-cover-photo).
 
 Optional **`highlighted: true`** on one item can mark the highlighted row; the site has a fallback if you skip this.
 
