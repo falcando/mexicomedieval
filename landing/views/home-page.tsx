@@ -14,8 +14,16 @@ const grenzeGotisch = Grenze_Gotisch({
   weight: ["400", "700"],
 });
 
-const HERO_IMG =
-  "/images/hero.webp";
+const HERO_IMG = "/images/hero.webp";
+
+/**
+ * true  — full purple-to-background gradient overlay.
+ * false — no full gradient; purple tint + bottom vignette (see reference hero).
+ */
+const HERO_GRADIENT_ENABLED = true;
+
+/** true — semi-transparent purple panel behind hero sub text. */
+const HERO_SUB_PANEL_ENABLED = true;
 
 
 const VIDEO_THUMB =
@@ -47,7 +55,20 @@ export function HomePage({
               className="object-cover"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-linear-to-b from-primary/60 via-primary/40 to-background" />
+            {HERO_GRADIENT_ENABLED ? (
+              <div
+                className="absolute inset-0 bg-linear-to-b from-primary/60 via-primary/40 to-background"
+                aria-hidden
+              />
+            ) : (
+              <>
+                <div className="absolute inset-0 bg-primary/45" aria-hidden />
+                <div
+                  className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_45%,rgb(54_9_53/0.55)_72%,rgb(12_2_14/0.92)_100%)]"
+                  aria-hidden
+                />
+              </>
+            )}
           </div>
           <div className="relative z-10 max-w-4xl px-6 text-center">
             <span className="font-label mb-4 block uppercase tracking-[0.3em] bg-tertiary-fixed-dim text-black px-4 py-1">
@@ -56,7 +77,13 @@ export function HomePage({
             <h1 className={`font-headline mb-8 text-5xl leading-tight tracking-tight text-white md:text-8xl ${grenzeGotisch.className}`}>
               {t("home.heroTitle")}
             </h1>
-            <p className="font-body mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-surface-container-low italic opacity-90 md:text-xl">
+            <p
+              className={
+                HERO_SUB_PANEL_ENABLED
+                  ? "font-body mx-auto mb-12 max-w-2xl rounded-md bg-primary/55 px-5 py-4 text-lg font-medium leading-relaxed text-white italic md:text-xl"
+                  : "font-body mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-surface-container-low italic opacity-90 md:text-xl"
+              }
+            >
               {t("home.heroSub")}
             </p>
           </div>
