@@ -18,6 +18,9 @@ const footerHeadingClass =
 const footerLinkClass =
   "text-sm text-primary-container decoration-tertiary-fixed-dim underline-offset-4 transition-colors hover:text-primary hover:underline";
 
+const footerTitleLinkClass =
+  "font-headline mb-4 text-xs font-bold uppercase tracking-[0.2em] text-primary hover:underline";
+
 type SiteFooterViewProps = { showNewsletter: boolean };
 
 function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
@@ -55,11 +58,10 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
           </nav>
 
           <nav aria-label={t("footer.legalContact")}>
-            <h2 className={footerHeadingClass}>{t("footer.privacyNotice")}</h2>
             <ul className="space-y-3">
               {footerLegalLinks.map((item) => (
                 <li key={item.href + item.labelKey}>
-                  <Link href={item.href} className={footerLinkClass}>
+                  <Link href={item.href} className={item.isTitleLink ? footerTitleLinkClass : footerLinkClass}>
                     {t(item.labelKey)}
                   </Link>
                 </li>

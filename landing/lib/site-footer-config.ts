@@ -3,6 +3,7 @@ import { siteNavItems } from "@/lib/site-nav-config";
 export type SiteFooterLink = {
   href: string;
   labelKey: string;
+  isTitleLink?: boolean;
 };
 
 /** Section routes from primary nav (excludes in-page anchors such as Teaching). */
@@ -11,8 +12,7 @@ export const footerExploreLinks: SiteFooterLink[] = siteNavItems.filter(
 );
 
 export const footerLegalLinks: SiteFooterLink[] = [
-  { href: "/aviso-privacidad", labelKey: "footer.privacyNotice" },
-  { href: "/contacto", labelKey: "nav.contactCta" },
+  { href: "/aviso-privacidad", labelKey: "footer.privacyNotice", isTitleLink: true },
 ];
 
 export const creativeCommonsLicenseUrl =

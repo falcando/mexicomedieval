@@ -99,7 +99,7 @@ function SiteNavbarView({ showNewsletter }: SiteNavbarViewProps) {
         </div>
 
         <div className="hidden items-center space-x-8 font-headline font-bold tracking-tight md:flex">
-          {siteNavItems.map((item) => (
+          {siteNavItems.filter((item) => !item.isFooterLink).map((item) => (
             <Link
               key={item.href + item.labelKey}
               href={item.href}
