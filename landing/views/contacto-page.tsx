@@ -65,16 +65,16 @@ export function ContactoPage() {
     labelKey:
       | "contact.linkOrcid"
       | "contact.linkScholar"
+      | "contact.linkResearchGate"
       | "contact.linkScopus"
       | "contact.linkInstitutional"
       | "contact.linkScripta";
-      | "contact.linkResearchgate";
     fullWidth?: boolean;
   }> = [
     { href: CONTACT_EXTERNAL.orcid, labelKey: "contact.linkOrcid" },
     { href: CONTACT_EXTERNAL.googleScholar, labelKey: "contact.linkScholar" },
+    { href: CONTACT_EXTERNAL.researchGate, labelKey: "contact.linkResearchGate" },
     { href: CONTACT_EXTERNAL.scopus, labelKey: "contact.linkScopus" },
-    { href: CONTACT_EXTERNAL.researchgate, labelKey: "contact.linkResearchgate" },
     {
       href: CONTACT_EXTERNAL.institutionalProfile,
       labelKey: "contact.linkInstitutional",
@@ -231,7 +231,7 @@ export function ContactoPage() {
               id="contact-publications-heading"
               className="font-headline mb-6 text-2xl font-bold text-primary"
             >
-                {t("contact.authorPagesTitle")}
+              {t("contact.authorPagesTitle")}
             </h2>
             <div className="border-t-2 border-primary/80 bg-surface-container-low/90 px-5 py-5">
               <div className="flex flex-col gap-3 sm:flex-row">
@@ -254,7 +254,6 @@ export function ContactoPage() {
               </div>
             </div>
           </section>
-
         </aside>
       </div>
     </PageContainer>
