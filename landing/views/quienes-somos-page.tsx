@@ -45,15 +45,12 @@ export function QuienesSomosPage() {
           </span>
           <h2
             id="autor-heading"
-            className="font-headline mt-2 mb-2 text-3xl font-bold text-primary md:text-4xl"
+            className="font-headline mt-2 mb-4 text-3xl font-bold text-primary md:text-4xl"
           >
             {t("about.authorName")}
           </h2>
           <p className="font-label mb-6 text-sm tracking-widest text-on-surface-variant uppercase">
             {t("about.authorHonorific")}
-          </p>
-          <p className="mb-8 text-lg font-medium leading-relaxed text-primary">
-            {t("about.authorTagline")}
           </p>
           <div className="space-y-4 text-on-surface-variant leading-relaxed">
             <p>{t("about.authorBio1")}</p>
