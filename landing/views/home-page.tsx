@@ -50,7 +50,7 @@ export function HomePage({
             <div className="absolute inset-0 bg-linear-to-b from-primary/60 via-primary/40 to-background" />
           </div>
           <div className="relative z-10 max-w-4xl px-6 text-center">
-            <span className="font-label mb-4 block uppercase tracking-[0.3em] text-tertiary-fixed-dim">
+            <span className="font-label mb-4 block uppercase tracking-[0.3em] bg-tertiary-fixed-dim text-black px-4 py-1">
               {t("home.heroKicker")}
             </span>
             <h1 className={`font-headline mb-8 text-5xl leading-tight tracking-tight text-white md:text-8xl ${grenzeGotisch.className}`}>
