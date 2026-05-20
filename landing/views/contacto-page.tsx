@@ -73,6 +73,7 @@ export function ContactoPage() {
     { href: CONTACT_EXTERNAL.orcid, labelKey: "contact.linkOrcid" },
     { href: CONTACT_EXTERNAL.googleScholar, labelKey: "contact.linkScholar" },
     { href: CONTACT_EXTERNAL.scopus, labelKey: "contact.linkScopus" },
+    { href: CONTACT_EXTERNAL.researchgate, labelKey: "contact.linkResearchgate" },
     {
       href: CONTACT_EXTERNAL.institutionalProfile,
       labelKey: "contact.linkInstitutional",
