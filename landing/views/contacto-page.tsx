@@ -68,6 +68,7 @@ export function ContactoPage() {
       | "contact.linkScopus"
       | "contact.linkInstitutional"
       | "contact.linkScripta";
+      | "contact.linkResearchgate";
     fullWidth?: boolean;
   }> = [
     { href: CONTACT_EXTERNAL.orcid, labelKey: "contact.linkOrcid" },
