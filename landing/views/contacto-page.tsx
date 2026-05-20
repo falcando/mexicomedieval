@@ -82,7 +82,7 @@ export function ContactoPage() {
     {
       href: CONTACT_EXTERNAL.scriptaUp,
       labelKey: "contact.linkScripta",
-      fullWidth: true,
+      fullWidth: false,
     },
   ];
 
