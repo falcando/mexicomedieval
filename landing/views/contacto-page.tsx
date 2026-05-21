@@ -206,6 +206,25 @@ export function ContactoPage() {
               </a>
 
               <a
+                href={CONTACT_EXTERNAL.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 rounded-xl bg-[#0A66C2] px-4 py-4 text-white shadow-sm transition-colors hover:bg-[#004182]"
+              >
+                <span className="material-symbols-outlined shrink-0 text-2xl" aria-hidden>
+                  badge
+                </span>
+                <div className="min-w-0 flex-1 text-center sm:text-left">
+                  <div className="font-label text-[0.65rem] font-bold tracking-[0.25em] uppercase opacity-90">
+                    {t("contact.linkedinLabel")}
+                  </div>
+                  <div className="font-headline truncate text-lg font-semibold">
+                    LinkedIn
+                  </div>
+                </div>
+              </a>
+
+              <a
                 href={CONTACT_EXTERNAL.linktree}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -220,25 +239,6 @@ export function ContactoPage() {
                   </div>
                   <div className="font-headline truncate text-lg font-semibold text-primary">
                     linktr.ee/hervinFA
-                  </div>
-                </div>
-              </a>
-
-              <a
-                href={CONTACT_EXTERNAL.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 rounded-xl border border-outline-variant/30 bg-surface-container-high px-4 py-4 text-on-background shadow-sm transition-shadow hover:shadow-md"
-              >
-                <span className="material-symbols-outlined shrink-0 text-2xl text-primary" aria-hidden>
-                  badge
-                </span>
-                <div className="min-w-0 flex-1 text-center sm:text-left">
-                  <div className="font-label text-[0.65rem] font-bold tracking-[0.25em] text-on-surface-variant uppercase">
-                    {t("contact.linkedinLabel")}
-                  </div>
-                  <div className="font-headline truncate text-lg font-semibold text-primary">
-                    LinkedIn
                   </div>
                 </div>
               </a>
