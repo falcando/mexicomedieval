@@ -153,15 +153,7 @@ export function HomePage({
                       fill
                       className="object-cover opacity-70"
                       sizes="(min-width: 768px) 192px, 100vw"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span
-                        className="material-symbols-outlined text-4xl text-white"
-                        aria-hidden
-                      >
-                        play_circle
-                      </span>
-                    </div>
+                    /
                   </div>
                 }
               />
