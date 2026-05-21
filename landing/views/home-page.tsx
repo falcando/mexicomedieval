@@ -26,8 +26,7 @@ const HERO_GRADIENT_ENABLED = true;
 const HERO_SUB_PANEL_ENABLED = true;
 
 
-const VIDEO_THUMB =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuD5T0W0_Y91waqV97QE2TqD8hcrvuYoIdKMGha795My3494qfwTyrzSiFwQtdsUyAkOJKV-IZHV8cHXKzkIbDAhPwfpwuxhH66eBo9ILs8H-JfF2D68X2aaGsj66H-z4WtD_2yaTbbGosHbuZIqMGT9-81Jw2cG6hVwYqYb6teZPAcHmlkHpKaLHnF_wMopYfsxW4dBVoZpuNRB8_fkppLi7NpD1PrYX43CAkVtmvYnFL3aDmm3GIbmuYrpuV4EXQfKy5YMZpNQBL_F";
+const VIDEO_THUMB = "/images/contact_hero.png";
 
 export function HomePage({
   spotlightByLocale,
@@ -89,10 +88,10 @@ export function HomePage({
           </div>
         </section>
 
-        <section className="bg-surface-container py-24">
+        <section className="bg-primary py-24">
           <div className="mx-auto max-w-screen-2xl px-6 md:px-8">
             <div className="mb-16 text-center">
-              <h2 className="font-headline mb-4 text-4xl text-primary">
+              <h2 className="font-headline mb-4 text-4xl text-tertiary-fixed-dim">
                 {t("home.archiveTitle")}
               </h2>
               <div className="manuscript-divider mx-auto w-48" />
@@ -143,7 +142,7 @@ export function HomePage({
                 mdColSpan={2}
                 cta={{
                   kind: "label",
-                  href: "/events",
+                  href: "/eventos",
                   text: t("home.eventsCta"),
                 }}
                 trailing={
@@ -152,7 +151,7 @@ export function HomePage({
                       src={VIDEO_THUMB}
                       alt={t("home.eventThumbAlt")}
                       fill
-                      className="object-cover opacity-50"
+                      className="object-cover opacity-70"
                       sizes="(min-width: 768px) 192px, 100vw"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
