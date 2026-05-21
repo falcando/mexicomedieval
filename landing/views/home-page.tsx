@@ -79,8 +79,8 @@ export function HomePage({
             <p
               className={
                 HERO_SUB_PANEL_ENABLED
-                  ? "font-body mx-auto mb-12 max-w-lg rounded-md bg-primary/55 px-3 py-2 text-[9pt] font-medium leading-tight text-white italic md:text-[10.5pt]"
-                  : "font-body mx-auto mb-12 max-w-lg text-[9pt] leading-tight text-surface-container-low italic opacity-90 md:text-[10.5pt]"
+                  ? "font-body mx-auto mb-12 max-w-lg rounded-md bg-primary/55 px-3 py-2 text-[9pt] font-medium leading-tight text-white md:text-[10.5pt]"
+                  : "font-body mx-auto mb-12 max-w-lg text-[9pt] leading-tight text-surface-container-low opacity-90 md:text-[10.5pt]"
               }
             >
               {t("home.heroSub")}
