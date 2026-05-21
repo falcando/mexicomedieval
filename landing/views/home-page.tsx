@@ -146,13 +146,13 @@ export function HomePage({
                   text: t("home.eventsCta"),
                 }}
                 trailing={
-                  <div className="relative aspect-video w-full overflow-hidden bg-primary-container md:w-48">
+                  <div className="relative aspect-video w-full overflow-hidden bg-primary-container md:w-80">
                     <Image
                       src={EVENTS_THUMB}
                       alt={t("home.eventThumbAlt")}
                       fill
                       className="object-cover opacity-70"
-                      sizes="(min-width: 768px) 192px, 100vw"
+                      sizes="(min-width: 768px) 320px, 100vw"
                     />
                   </div>
                 }
