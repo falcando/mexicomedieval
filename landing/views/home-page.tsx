@@ -153,7 +153,7 @@ export function HomePage({
                       fill
                       className="object-cover opacity-70"
                       sizes="(min-width: 768px) 192px, 100vw"
-                    /
+                    />
                   </div>
                 }
               />
