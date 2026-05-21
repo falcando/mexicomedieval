@@ -21,6 +21,14 @@ export const PAPERS: PaperEntry[] = [
     presentationSlug: "servos_otrashistorias",
   },
   {
+    catalogId: "sociopolitical-structures-sardinian-condaghes",
+    year: "2024",
+    title: "Sociopolitical structures in the Sardinian Condaghes and Carte volgari",
+    context: "Video de ponencia en YouTube",
+    href: "https://www.youtube.com/watch?v=M18BRyEXIXc",
+    documentType: "presentation",
+  },
+  {
     catalogId: "border-within-borders-abruzzo",
     year: "2017",
     title: "A Border Within Borders: The Abruzzo and the Kingdom of Sicily",
