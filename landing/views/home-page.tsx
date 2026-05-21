@@ -69,18 +69,18 @@ export function HomePage({
               </>
             )}
           </div>
-          <div className="relative z-10 max-w-5xl px-6 text-center">
-            <span className="font-label mb-4 inline-block bg-tertiary-fixed-dim px-3 py-1 text-[9pt] uppercase tracking-[0.22em] text-black md:text-[10.5pt]">
+          <div className="relative z-10 max-w-6xl px-6 text-center">
+            <span className="font-label mb-4 inline-block bg-tertiary-fixed-dim px-3 py-0.5 text-[7.5pt] uppercase tracking-[0.18em] text-black md:text-[9pt]">
               {t("home.heroKicker")}
             </span>
-            <h1 className={`font-headline mb-7 text-[42pt] leading-tight tracking-tight text-white md:text-[82pt] ${grenzeGotisch.className}`}>
+            <h1 className={`font-headline mb-6 text-[46pt] leading-tight tracking-tight text-white md:text-[92pt] ${grenzeGotisch.className}`}>
               {t("home.heroTitle")}
             </h1>
             <p
               className={
                 HERO_SUB_PANEL_ENABLED
-                  ? "font-body mx-auto mb-12 max-w-xl rounded-md bg-primary/55 px-4 py-2 text-[10.5pt] font-medium leading-snug text-white italic md:text-[12pt]"
-                  : "font-body mx-auto mb-12 max-w-xl text-[10.5pt] leading-snug text-surface-container-low italic opacity-90 md:text-[12pt]"
+                  ? "font-body mx-auto mb-12 max-w-lg rounded-md bg-primary/55 px-3 py-2 text-[9pt] font-medium leading-tight text-white italic md:text-[10.5pt]"
+                  : "font-body mx-auto mb-12 max-w-lg text-[9pt] leading-tight text-surface-container-low italic opacity-90 md:text-[10.5pt]"
               }
             >
               {t("home.heroSub")}
