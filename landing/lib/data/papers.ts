@@ -24,9 +24,9 @@ export const PAPERS: PaperEntry[] = [
     catalogId: "sociopolitical-structures-sardinian-condaghes",
     year: "2024",
     title: "Sociopolitical structures in the Sardinian Condaghes and Carte volgari",
-    context: "Video de ponencia en YouTube",
+    context: "Seminario",
     href: "https://www.youtube.com/watch?v=M18BRyEXIXc",
-    documentType: "presentation",
+    documentType: "paper",
   },
   {
     catalogId: "border-within-borders-abruzzo",
