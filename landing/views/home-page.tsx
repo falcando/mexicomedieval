@@ -73,14 +73,14 @@ export function HomePage({
             <span className="font-label mb-4 block uppercase tracking-[0.3em] bg-tertiary-fixed-dim text-black px-4 py-1">
               {t("home.heroKicker")}
             </span>
-            <h1 className={`font-headline mb-8 text-5xl leading-tight tracking-tight text-white md:text-8xl ${grenzeGotisch.className}`}>
+            <h1 className={`font-headline mb-8 text-[38pt] leading-tight tracking-tight text-white md:text-[74pt] ${grenzeGotisch.className}`}>
               {t("home.heroTitle")}
             </h1>
             <p
               className={
                 HERO_SUB_PANEL_ENABLED
-                  ? "font-body mx-auto mb-12 max-w-2xl rounded-md bg-primary/55 px-5 py-4 text-lg font-medium leading-relaxed text-white italic md:text-xl"
-                  : "font-body mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-surface-container-low italic opacity-90 md:text-lg"
+                  ? "font-body mx-auto mb-12 max-w-2xl rounded-md bg-primary/55 px-5 py-4 text-[11.5pt] font-medium leading-relaxed text-white italic md:text-[13pt]"
+                  : "font-body mx-auto mb-12 max-w-2xl text-[11.5pt] leading-relaxed text-surface-container-low italic opacity-90 md:text-[13pt]"
               }
             >
               {t("home.heroSub")}
