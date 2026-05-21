@@ -26,7 +26,7 @@ const HERO_GRADIENT_ENABLED = true;
 const HERO_SUB_PANEL_ENABLED = true;
 
 
-const VIDEO_THUMB = "/images/contact_hero.png";
+const EVENTS_THUMB = "/images/eventos-thumb.webp";
 
 export function HomePage({
   spotlightByLocale,
@@ -148,7 +148,7 @@ export function HomePage({
                 trailing={
                   <div className="relative aspect-video w-full overflow-hidden bg-primary-container md:w-48">
                     <Image
-                      src={VIDEO_THUMB}
+                      src={EVENTS_THUMB}
                       alt={t("home.eventThumbAlt")}
                       fill
                       className="object-cover opacity-70"
