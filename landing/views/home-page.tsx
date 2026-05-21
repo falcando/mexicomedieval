@@ -69,18 +69,18 @@ export function HomePage({
               </>
             )}
           </div>
-          <div className="relative z-10 max-w-4xl px-6 text-center">
-            <span className="font-label mb-4 block uppercase tracking-[0.3em] bg-tertiary-fixed-dim text-black px-4 py-1">
+          <div className="relative z-10 max-w-5xl px-6 text-center">
+            <span className="font-label mb-4 inline-block bg-tertiary-fixed-dim px-3 py-1 text-[9pt] uppercase tracking-[0.22em] text-black md:text-[10.5pt]">
               {t("home.heroKicker")}
             </span>
-            <h1 className={`font-headline mb-8 text-[38pt] leading-tight tracking-tight text-white md:text-[74pt] ${grenzeGotisch.className}`}>
+            <h1 className={`font-headline mb-7 text-[42pt] leading-tight tracking-tight text-white md:text-[82pt] ${grenzeGotisch.className}`}>
               {t("home.heroTitle")}
             </h1>
             <p
               className={
                 HERO_SUB_PANEL_ENABLED
-                  ? "font-body mx-auto mb-12 max-w-2xl rounded-md bg-primary/55 px-5 py-4 text-[11.5pt] font-medium leading-relaxed text-white italic md:text-[13pt]"
-                  : "font-body mx-auto mb-12 max-w-2xl text-[11.5pt] leading-relaxed text-surface-container-low italic opacity-90 md:text-[13pt]"
+                  ? "font-body mx-auto mb-12 max-w-xl rounded-md bg-primary/55 px-4 py-2 text-[10.5pt] font-medium leading-snug text-white italic md:text-[12pt]"
+                  : "font-body mx-auto mb-12 max-w-xl text-[10.5pt] leading-snug text-surface-container-low italic opacity-90 md:text-[12pt]"
               }
             >
               {t("home.heroSub")}
