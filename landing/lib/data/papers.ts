@@ -21,6 +21,14 @@ export const PAPERS: PaperEntry[] = [
     presentationSlug: "servos_otrashistorias",
   },
   {
+    catalogId: "lecturas-florentinas-historias-cronicas-medievales",
+    year: "2025",
+    title: "Las lecturas florentinas de las historias y crónicas medievales",
+    context: "Conferencia magistral",
+    href: "https://www.youtube.com/watch?v=Vp8pryr6I88",
+    documentType: "paper",
+  },
+  {
     catalogId: "sociopolitical-structures-sardinian-condaghes",
     year: "2024",
     title: "Sociopolitical structures in the Sardinian Condaghes and Carte volgari",
