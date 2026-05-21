@@ -80,7 +80,7 @@ export function HomePage({
               className={
                 HERO_SUB_PANEL_ENABLED
                   ? "font-body mx-auto mb-12 max-w-2xl rounded-md bg-primary/55 px-5 py-4 text-lg font-medium leading-relaxed text-white italic md:text-xl"
-                  : "font-body mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-surface-container-low italic opacity-90 md:text-xl"
+                  : "font-body mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-surface-container-low italic opacity-90 md:text-lg"
               }
             >
               {t("home.heroSub")}
