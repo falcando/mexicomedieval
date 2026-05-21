@@ -2,6 +2,7 @@
 export const CONTACT_EXTERNAL = {
   twitter: "https://x.com/HervinFA",
   linktree: "https://linktr.ee/hervinFA",
+  linkedin: "https://www.linkedin.com/in/hervinfa",
   orcid: "https://orcid.org/0000-0002-9800-5277",
   googleScholar:
     "https://scholar.google.com/citations?hl=en&user=prPkPKMAAAAJ",
