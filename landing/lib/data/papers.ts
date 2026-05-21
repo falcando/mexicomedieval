@@ -22,7 +22,7 @@ export const PAPERS: PaperEntry[] = [
   },
   {
     catalogId: "lecturas-florentinas-historias-cronicas-medievales",
-    year: "2025",
+    year: "2021",
     title: "Las lecturas florentinas de las historias y crónicas medievales",
     context: "Conferencia magistral",
     href: "https://www.youtube.com/watch?v=Vp8pryr6I88",
