@@ -165,7 +165,7 @@ export const EVENTS: EventSource[] = [
         format: "Programa 2023",
 
         description:
-          "Registro del programa de actividades del Festival del Libro Medieval 2023, realizado del 18 al 22 de octubre en la Librería Rosario Castellanos del Fondo de Cultura Económica. Incluyó charlas, talleres, demostraciones, mesas redondas, presentaciones de libros, actividades de recreación histórica y conversaciones públicas sobre la Edad Media.",
+          "El Festival del Libro Medieval 2023 se realizó del 18 al 22 de octubre en la Librería Rosario Castellanos del Fondo de Cultura Económica. El programa reunió charlas, talleres, demostraciones, mesas redondas, presentaciones de libros, actividades de recreación histórica y conversaciones públicas sobre la Edad Media.",
 
         institution: "Fondo de Cultura Económica / Librería Rosario Castellanos",
 
@@ -180,7 +180,7 @@ export const EVENTS: EventSource[] = [
         format: "2023 programme",
 
         description:
-          "Archive entry for the programme of activities of the 2023 Medieval Book Festival, held from 18 to 22 October at the Fondo de Cultura Económica’s Librería Rosario Castellanos. The programme included talks, workshops, demonstrations, roundtables, book presentations, historical reenactment activities, and public conversations on the Middle Ages.",
+          "The 2023 Medieval Book Festival took place from 18 to 22 October at the Fondo de Cultura Económica’s Librería Rosario Castellanos. The programme brought together talks, workshops, demonstrations, roundtables, book presentations, historical reenactment activities, and public conversations on the Middle Ages.",
 
         institution: "Fondo de Cultura Económica / Librería Rosario Castellanos",
 
