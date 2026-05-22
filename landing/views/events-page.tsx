@@ -19,6 +19,47 @@ export function EventsPage() {
   const hasPreviousPage = page > 1;
   const hasNextPage = page < totalPages;
 
+  const events = data?.events ?? [];
+
+  const isCourseEvent = (event: (typeof events)[number]) => {
+    const category = event.category.toLowerCase();
+    return category.includes("curso") || category.includes("course");
+  };
+
+  const upcomingEvents = events.filter((event) => !event.active);
+
+  const courseEvents = events.filter(
+    (event) => event.active && isCourseEvent(event),
+  );
+
+  const pastEvents = events.filter(
+    (event) => event.active && !isCourseEvent(event),
+  );
+
+  const renderEventSection = (
+    title: string,
+    sectionEvents: typeof events,
+  ) => {
+    if (sectionEvents.length === 0) {
+      return null;
+    }
+
+    return (
+      <section>
+        <h2 className="font-label mb-6 text-xs font-bold tracking-[0.3em] text-tertiary-fixed-dim uppercase">
+          {title}
+        </h2>
+        <ul className="grid gap-6 md:grid-cols-2">
+          {sectionEvents.map((event, index) => (
+            <li key={`${event.title}-${index}`}>
+              <EventCard event={event} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  };
+
   return (
     <PageContainer pretitle={t("events.pretitle")} title={t("events.titleLine")} subtitle={t("events.subtitle")}>
       <section aria-label={t("events.catalogAria")}>
@@ -34,16 +75,14 @@ export function EventsPage() {
 
         {hasEvents ? (
           <>
-            <ul
-              className="grid gap-6 md:grid-cols-2"
+            <div
               aria-busy={isPending || isFetching}
+              className="space-y-16"
             >
-              {data?.events.map((event, index) => (
-                <li key={`${event.title}-${index}`}>
-                  <EventCard event={event} />
-                </li>
-              ))}
-            </ul>
+              {renderEventSection(t("events.upcomingEventsHeading"), upcomingEvents)}
+              {renderEventSection(t("events.coursesHeading"), courseEvents)}
+              {renderEventSection(t("events.pastEventsHeading"), pastEvents)}
+            </div>
 
             {totalPages > 1 ? (
               <div className="mt-16 flex flex-col items-center gap-6">
@@ -112,4 +151,3 @@ export function EventsPage() {
     </PageContainer>
   );
 }
-
