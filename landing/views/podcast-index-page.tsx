@@ -10,6 +10,7 @@ import {
 } from "@/lib/data/podcast-page-static";
 import type { SpotifyGuestSpot } from "@/lib/data/podcast-spotify-guests";
 import { usePodcastCatalogSectionsQueries } from "@/lib/queries/podcasts";
+import { ARDEMAC_FACEBOOK_URL } from "@/lib/site-partners";
 import Image from "next/image";
 import { useMemo } from "react";
 import PageContainer from "@/components/layout/PageContainer";
@@ -243,7 +244,19 @@ export function PodcastIndexPage() {
                 {t("podcastPage.sectionMexicoMedievalTitle")}
               </h2>
               <p className="mt-2 text-on-surface-variant">
-                {t("podcastPage.appleSubtitle")}
+                {t("podcastPage.appleSubtitle")}{" "}
+                <a
+                  href={ARDEMAC_FACEBOOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-tertiary-fixed-dim underline-offset-4 transition-colors hover:text-primary"
+                >
+                  {t("podcastPage.ardemacExpandedName")}
+                </a>
+                .
+              </p>
+              <p className="mt-2 text-on-surface-variant">
+                {t("podcastPage.productionCredits")}
               </p>
               <p className="mt-2 text-on-surface-variant">
                 {t("podcastPage.sectionMexicoMedievalBody")}
