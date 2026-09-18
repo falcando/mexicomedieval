@@ -33,16 +33,16 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
       className="mt-auto w-full border-t-4 border-tertiary-fixed-dim bg-[#f2ede3]"
       role="contentinfo"
     >
-      <div className="mx-auto max-w-screen-2xl px-6 py-16 md:px-12">
-        <div className="mb-12 flex flex-col items-center border-b border-outline-variant/20 pb-10 text-center">
-          <p className={`${footerHeadingClass} mb-5`}>
+      <div className="border-b-4 border-tertiary-fixed-dim bg-primary">
+        <div className="mx-auto flex max-w-screen-2xl flex-col items-center px-6 py-12 text-center md:px-12">
+          <p className="font-label mb-5 text-xs font-bold uppercase tracking-[0.2em] text-tertiary-fixed-dim">
             {t("footer.publishingPartner")}
           </p>
           <a
             href={ANABASIS_PROJECT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-5 text-primary transition-opacity hover:opacity-75"
+            className="flex items-center gap-5 text-tertiary-fixed-dim transition-opacity hover:opacity-75"
           >
             <Image
               src="/images/anabasis-project.jpeg"
@@ -57,7 +57,9 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
             </span>
           </a>
         </div>
+      </div>
 
+      <div className="mx-auto max-w-screen-2xl px-6 py-16 md:px-12">
         <div
           className={`grid gap-12 md:grid-cols-2 ${showNewsletter ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}
         >
