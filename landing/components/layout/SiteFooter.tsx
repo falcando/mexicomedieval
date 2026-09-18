@@ -57,6 +57,7 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
             </span>
           </a>
         </div>
+
         <div
           className={`grid gap-12 md:grid-cols-2 ${showNewsletter ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}
         >
