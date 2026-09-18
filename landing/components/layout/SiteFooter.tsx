@@ -82,28 +82,25 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
           ) : null}
         </div>
 
-        <div className="mt-12 flex flex-col items-center gap-4 border-t border-outline-variant/20 pt-8 sm:flex-row sm:justify-between">
-          <div className="text-center sm:text-left">
-            <p className={footerHeadingClass}>{t("footer.publishingPartner")}</p>
-            <p className="text-sm text-primary-container/80">
-              {t("footer.publishingPartnershipBlurb")}
-            </p>
-          </div>
+        <div className="mt-12 border-t border-outline-variant/20 pt-8">
+          <p className={`${footerHeadingClass} text-center sm:text-left`}>
+            {t("footer.publishingPartner")}
+          </p>
           <a
             href={ANABASIS_PROJECT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 text-primary transition-opacity hover:opacity-75"
+            className="mx-auto flex w-fit items-center gap-4 text-primary transition-opacity hover:opacity-75 sm:mx-0"
           >
             <Image
               src="/images/anabasis-project.jpeg"
               alt={t("footer.anabasisLogoAlt")}
               width={300}
               height={300}
-              className="h-14 w-14 rounded-full object-contain"
-              sizes="56px"
+              className="h-16 w-16 rounded-full object-contain"
+              sizes="64px"
             />
-            <span className="font-headline text-lg font-semibold">
+            <span className="font-headline text-xl font-semibold">
               Anabasis Project
             </span>
           </a>
