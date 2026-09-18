@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Grenze_Gotisch } from "next/font/google";
 import SpotlightCard from "@/components/sections/SpotlightCard";
 import type { Locale } from "@/lib/i18n-config";
+import { ANABASIS_PROJECT_URL } from "@/lib/site-partners";
 import type { SpotlightPayload } from "@/lib/types/spotlight";
 
 const grenzeGotisch = Grenze_Gotisch({
@@ -169,6 +170,38 @@ export function HomePage({
                   text: t("home.papersCta"),
                 }}
               />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-surface-container-low py-16">
+          <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 px-6 text-center md:flex-row md:text-left">
+            <Image
+              src="/images/anabasis-project.jpeg"
+              alt={t("home.anabasisLogoAlt")}
+              width={300}
+              height={300}
+              className="h-36 w-36 shrink-0 rounded-full object-contain"
+              sizes="144px"
+            />
+            <div className="max-w-2xl">
+              <p className="font-label mb-2 text-xs font-bold uppercase tracking-[0.2em] text-primary-container">
+                {t("home.partnershipKicker")}
+              </p>
+              <h2 className="font-headline mb-3 text-3xl text-primary">
+                Anabasis Project
+              </h2>
+              <p className="font-body mb-6 leading-relaxed text-primary-container">
+                {t("home.partnershipDescription")}
+              </p>
+              <a
+                href={ANABASIS_PROJECT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-primary px-5 py-3 font-label text-sm font-semibold uppercase tracking-widest text-on-primary transition-opacity hover:opacity-90"
+              >
+                {t("home.partnershipCta")}
+              </a>
             </div>
           </div>
         </section>
