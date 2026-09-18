@@ -34,6 +34,30 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
       role="contentinfo"
     >
       <div className="mx-auto max-w-screen-2xl px-6 py-16 md:px-12">
+        <div className="mb-12 flex flex-col items-center border-b border-outline-variant/20 pb-10 text-center">
+          <p className={`${footerHeadingClass} mb-5`}>
+            {t("footer.publishingPartner")}
+          </p>
+          <a
+            href={ANABASIS_PROJECT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-5 text-primary transition-opacity hover:opacity-75"
+          >
+            <Image
+              src="/images/anabasis-project.jpeg"
+              alt={t("footer.anabasisLogoAlt")}
+              width={300}
+              height={300}
+              className="h-20 w-20 rounded-full object-contain"
+              sizes="80px"
+            />
+            <span className="font-headline text-2xl font-semibold">
+              Anabasis Project
+            </span>
+          </a>
+        </div>
+
         <div
           className={`grid gap-12 md:grid-cols-2 ${showNewsletter ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}
         >
@@ -82,32 +106,8 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
           ) : null}
         </div>
 
-        <div className="mt-12 border-t border-outline-variant/20 pt-8">
-          <p className={`${footerHeadingClass} text-center sm:text-left`}>
-            {t("footer.publishingPartner")}
-          </p>
-          <a
-            href={ANABASIS_PROJECT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mx-auto flex w-fit items-center gap-4 text-primary transition-opacity hover:opacity-75 sm:mx-0"
-          >
-            <Image
-              src="/images/anabasis-project.jpeg"
-              alt={t("footer.anabasisLogoAlt")}
-              width={300}
-              height={300}
-              className="h-16 w-16 rounded-full object-contain"
-              sizes="64px"
-            />
-            <span className="font-headline text-xl font-semibold">
-              Anabasis Project
-            </span>
-          </a>
-        </div>
-
         <div
-          className="mt-8 flex flex-col gap-3 border-t border-outline-variant/20 pt-8"
+          className="mt-12 flex flex-col gap-3 border-t border-outline-variant/20 pt-8"
           data-testid="footer-license"
         >
           <p className="text-center text-sm uppercase tracking-widest text-primary-container/70 md:text-left">
