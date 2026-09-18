@@ -10,6 +10,8 @@ import {
   footerExploreLinks,
   footerLegalLinks,
 } from "@/lib/site-footer-config";
+import { ANABASIS_PROJECT_URL } from "@/lib/site-partners";
+import Image from "next/image";
 import { FooterNewsletterForm } from "./FooterNewsletterForm";
 
 const footerHeadingClass =
@@ -80,8 +82,35 @@ function SiteFooterView({ showNewsletter }: SiteFooterViewProps) {
           ) : null}
         </div>
 
+        <div className="mt-12 flex flex-col items-center gap-4 border-t border-outline-variant/20 pt-8 sm:flex-row sm:justify-between">
+          <div className="text-center sm:text-left">
+            <p className={footerHeadingClass}>{t("footer.publishingPartner")}</p>
+            <p className="text-sm text-primary-container/80">
+              {t("footer.publishingPartnershipBlurb")}
+            </p>
+          </div>
+          <a
+            href={ANABASIS_PROJECT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 text-primary transition-opacity hover:opacity-75"
+          >
+            <Image
+              src="/images/anabasis-project.jpeg"
+              alt={t("footer.anabasisLogoAlt")}
+              width={300}
+              height={300}
+              className="h-14 w-14 rounded-full object-contain"
+              sizes="56px"
+            />
+            <span className="font-headline text-lg font-semibold">
+              Anabasis Project
+            </span>
+          </a>
+        </div>
+
         <div
-          className="mt-12 flex flex-col gap-3 border-t border-outline-variant/20 pt-8"
+          className="mt-8 flex flex-col gap-3 border-t border-outline-variant/20 pt-8"
           data-testid="footer-license"
         >
           <p className="text-center text-sm uppercase tracking-widest text-primary-container/70 md:text-left">
