@@ -65,7 +65,7 @@ export const EVENTS: EventSource[] = [
         format: "Modalidad virtual",
 
         description:
-          "Encuentro académico organizado por la Dra. Adriana Espinoza Saucedo en El Colegio de Morelos, dedicado al estudio de redes trasatlánticas, circulación, comercio y mecanismos de poder en los siglos XVI, XVII y XVIII. Hervin Fernández Aceves participa en la sesión inaugural del 5 de octubre con la ponencia "El archivo fantasma del Cabildo de Guadalajara: reconstrucción documental y escalas de autoridad en la Nueva Galicia del siglo XVI".",
+          'Encuentro académico organizado por la Dra. Adriana Espinoza Saucedo en El Colegio de Morelos, dedicado al estudio de redes trasatlánticas, circulación, comercio y mecanismos de poder en los siglos XVI, XVII y XVIII. Hervin Fernández Aceves participa en la sesión inaugural del 5 de octubre con la ponencia "El archivo fantasma del Cabildo de Guadalajara: reconstrucción documental y escalas de autoridad en la Nueva Galicia del siglo XVI".',
 
         institution: "El Colegio de Morelos",
 
