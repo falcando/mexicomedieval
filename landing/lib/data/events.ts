@@ -33,6 +33,9 @@ type EventSource = {
 
   active?: boolean;
 
+  /** Confirmed future event: stays in "Próximamente" but uses solid styling. */
+  confirmed?: boolean;
+
   ctaIcon?: SiteEventCtaIcon;
 
   ctaKey: string;
@@ -46,6 +49,8 @@ type EventSource = {
 export const EVENTS: EventSource[] = [
   {
     catalogId: "jornadas-iberoamericanas-redes-trasatlanticas-2026",
+
+    confirmed: true,
 
     images: [
       "/images/jornadas-iberoamericanas-2026-general.webp",
