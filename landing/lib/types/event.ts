@@ -12,6 +12,8 @@ export type SiteEvent = {
   images?: string[];
   /** `false` = “coming soon” styling and footer (calendar icon, no CTA link). */
   active: boolean;
+  /** True for a confirmed future event that should keep solid styling. */
+  confirmed?: boolean;
   /** Short badge in the header (e.g. Curso, Festival). */
   category: string;
   /** Header line beside the badge when `active` (e.g. hybrid / online). Hidden when inactive (replaced by “Coming soon”). */
