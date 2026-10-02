@@ -44,11 +44,9 @@ export const EVENTS: EventSource[] = [
   {
     catalogId: "jornadas-iberoamericanas-redes-trasatlanticas-2026",
 
-    active: true,
+    active: false,
 
-    ctaIcon: "external",
-
-    information: {
+        information: {
       es: {
         title:
           "III Jornadas Iberoamericanas: S. XVI, XVII y XVIII. Redes trasatlánticas y mecanismos de poder",
@@ -82,9 +80,7 @@ export const EVENTS: EventSource[] = [
       },
     },
 
-    ctaKey: "events.ctaDetails",
-
-    href: "https://elcolegiodemorelos.edu.mx/",
+    ctaKey: "",
   },
 
   {
