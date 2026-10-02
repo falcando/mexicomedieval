@@ -42,6 +42,52 @@ type EventSource = {
 /** Placeholder for future event entries (talks, lectures, appearances). */
 export const EVENTS: EventSource[] = [
   {
+    catalogId: "jornadas-iberoamericanas-redes-trasatlanticas-2026",
+
+    active: true,
+
+    ctaIcon: "external",
+
+    information: {
+      es: {
+        title:
+          "III Jornadas Iberoamericanas: S. XVI, XVII y XVIII. Redes trasatlánticas y mecanismos de poder",
+
+        category: "Jornadas académicas",
+
+        format: "Modalidad virtual",
+
+        description:
+          "Encuentro académico organizado por la Dra. Adriana Espinoza Saucedo en El Colegio de Morelos, dedicado al estudio de redes trasatlánticas, circulación, comercio y mecanismos de poder en los siglos XVI, XVII y XVIII. Hervin Fernández Aceves participa en la sesión inaugural del 5 de octubre con la ponencia «El archivo fantasma del Cabildo de Guadalajara: reconstrucción documental y escalas de autoridad en la Nueva Galicia del siglo XVI».",
+
+        institution: "El Colegio de Morelos",
+
+        footerNote: "5 y 9 de octubre de 2026 — 11:00 h",
+      },
+
+      en: {
+        title:
+          "III Ibero-American Conference: Sixteenth, Seventeenth and Eighteenth Centuries. Transatlantic Networks and Mechanisms of Power",
+
+        category: "Academic conference",
+
+        format: "Online",
+
+        description:
+          "An academic meeting organised by Dr Adriana Espinoza Saucedo at El Colegio de Morelos, devoted to transatlantic networks, circulation, trade, and mechanisms of power in the sixteenth, seventeenth, and eighteenth centuries. Hervin Fernández Aceves will take part in the opening session on 5 October with the paper “The Phantom Archive of the Guadalajara Cabildo: Documentary Reconstruction and Scales of Authority in Sixteenth-Century Nueva Galicia”.",
+
+        institution: "El Colegio de Morelos",
+
+        footerNote: "5 and 9 October 2026 — 11:00",
+      },
+    },
+
+    ctaKey: "events.ctaDetails",
+
+    href: "https://elcolegiodemorelos.edu.mx/",
+  },
+
+  {
     catalogId: "festival-libro-medieval-2026",
 
     active: false,
