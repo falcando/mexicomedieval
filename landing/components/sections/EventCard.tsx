@@ -17,6 +17,7 @@ const dashedBorder = "border border-dashed border-[#c4b8a8]";
 export function EventCard({ event }: EventCardProps) {
   const { t } = useTranslations();
   const active = event.active;
+  const confirmedUpcoming = !active && event.confirmed === true;
   const hasHref = event.href != null && event.href !== "";
   const hasCta = event.ctaKey.trim() !== "";
   const ctaLabel = hasCta ? t(event.ctaKey) : "";
@@ -52,7 +53,7 @@ export function EventCard({ event }: EventCardProps) {
       <div className="flex flex-wrap items-center gap-2.5">
         <span
           className={`rounded-sm px-2.5 py-1 font-label text-[10px] font-bold tracking-[0.2em] uppercase ${
-            active ? badgeActive : badgeInactive
+            active || confirmedUpcoming ? badgeActive : badgeInactive
           }`}
         >
           {event.category}
@@ -60,7 +61,7 @@ export function EventCard({ event }: EventCardProps) {
         {headerSecondary ? (
           <span
             className={`font-label text-[10px] font-semibold tracking-[0.22em] uppercase ${
-              active ? headerMuted : ink
+              active ? headerMuted : confirmedUpcoming ? headerMuted : ink
             }`}
           >
             {headerSecondary}
@@ -78,7 +79,7 @@ export function EventCard({ event }: EventCardProps) {
 
       <h2
         className={`font-headline mt-3 text-xl leading-snug md:text-2xl ${
-          active ? ink : "text-[#3c1518]/60"
+          active || confirmedUpcoming ? ink : "text-[#3c1518]/60"
         }`}
       >
         {event.title}
@@ -86,7 +87,7 @@ export function EventCard({ event }: EventCardProps) {
 
       <p
         className={`mt-3 text-sm leading-relaxed md:text-base ${bodyGrey} ${
-          active ? "" : "opacity-90"
+          active || confirmedUpcoming ? "" : "opacity-90"
         }`}
       >
         {event.description}
@@ -189,8 +190,8 @@ export function EventCard({ event }: EventCardProps) {
   return (
     <article
       className={`flex h-full flex-col p-6 shadow-sm transition-shadow ${
-        active
-          ? `border border-transparent bg-white hover:shadow-md`
+        active || confirmedUpcoming
+          ? `border border-[#e5ddd3] bg-white hover:shadow-md`
           : `${cardInactiveBg} ${dashedBorder}`
       }`}
     >
