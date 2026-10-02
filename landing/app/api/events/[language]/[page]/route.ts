@@ -1,7 +1,7 @@
 import {
   getEventsPagePayload,
   getEventsTotalPages,
-} from "@/lib/data/events";
+} from "@/lib/data/events-v2";
 import { locales, normalizeLocale, type Locale } from "@/lib/i18n-config";
 
 export const dynamic = "force-static";
