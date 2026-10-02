@@ -28,6 +28,27 @@ export function EventCard({ event }: EventCardProps) {
 
   const body = (
     <>
+      {event.images?.length ? (
+        <div className="mb-5 grid grid-cols-3 gap-2" aria-label={event.title}>
+          {event.images.map((src) => (
+            <a
+              key={src}
+              href={src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="overflow-hidden rounded-sm border border-[#e5ddd3] bg-[#f5efe6] transition-opacity hover:opacity-85"
+              aria-label={event.title}
+            >
+              <img
+                src={src}
+                alt=""
+                className="h-36 w-full object-contain md:h-44"
+                loading="lazy"
+              />
+            </a>
+          ))}
+        </div>
+      ) : null}
       <div className="flex flex-wrap items-center gap-2.5">
         <span
           className={`rounded-sm px-2.5 py-1 font-label text-[10px] font-bold tracking-[0.2em] uppercase ${
@@ -141,12 +162,27 @@ export function EventCard({ event }: EventCardProps) {
       ) : (
         <span />
       )}
-      <span
-        className={`material-symbols-outlined shrink-0 text-2xl ${ink}`}
-        aria-label={t("events.comingSoonCalendarAria")}
-      >
-        event_upcoming
-      </span>
+      {hasHref ? (
+        <a
+          href={event.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inline-flex shrink-0 items-center justify-center ${ink} transition-opacity hover:opacity-70`}
+          aria-label={`${event.institution ?? event.title} — YouTube`}
+          title="YouTube"
+        >
+          <span className="material-symbols-outlined text-2xl" aria-hidden>
+            smart_display
+          </span>
+        </a>
+      ) : (
+        <span
+          className={`material-symbols-outlined shrink-0 text-2xl ${ink}`}
+          aria-label={t("events.comingSoonCalendarAria")}
+        >
+          event_upcoming
+        </span>
+      )}
     </div>
   );
 

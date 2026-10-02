@@ -28,6 +28,9 @@ type EventSource = {
   /** Alt text for `spotlightImage`; defaults to the event title in the active locale when omitted. */
   spotlightImageAlt?: string;
 
+  /** Optional event artwork/posters displayed on the catalogue card. */
+  images?: string[];
+
   active?: boolean;
 
   ctaIcon?: SiteEventCtaIcon;
@@ -44,9 +47,15 @@ export const EVENTS: EventSource[] = [
   {
     catalogId: "jornadas-iberoamericanas-redes-trasatlanticas-2026",
 
+    images: [
+      "/images/jornadas-iberoamericanas-2026-general.webp",
+      "/images/jornadas-iberoamericanas-2026-dia-5.webp",
+      "/images/jornadas-iberoamericanas-2026-dia-9.webp",
+    ],
+
     active: false,
 
-        information: {
+    information: {
       es: {
         title:
           "III Jornadas Iberoamericanas: S. XVI, XVII y XVIII. Redes trasatlánticas y mecanismos de poder",
@@ -56,7 +65,7 @@ export const EVENTS: EventSource[] = [
         format: "Modalidad virtual",
 
         description:
-          "Encuentro académico organizado por la Dra. Adriana Espinoza Saucedo en El Colegio de Morelos, dedicado al estudio de redes trasatlánticas, circulación, comercio y mecanismos de poder en los siglos XVI, XVII y XVIII. Hervin Fernández Aceves participa en la sesión inaugural del 5 de octubre con la ponencia «El archivo fantasma del Cabildo de Guadalajara: reconstrucción documental y escalas de autoridad en la Nueva Galicia del siglo XVI».",
+          "Encuentro académico organizado por la Dra. Adriana Espinoza Saucedo en El Colegio de Morelos, dedicado al estudio de redes trasatlánticas, circulación, comercio y mecanismos de poder en los siglos XVI, XVII y XVIII. Hervin Fernández Aceves participa en la sesión inaugural del 5 de octubre con la ponencia "El archivo fantasma del Cabildo de Guadalajara: reconstrucción documental y escalas de autoridad en la Nueva Galicia del siglo XVI".",
 
         institution: "El Colegio de Morelos",
 
@@ -81,6 +90,8 @@ export const EVENTS: EventSource[] = [
     },
 
     ctaKey: "",
+
+    href: "https://www.youtube.com/@ElColegiodeMorelos",
   },
 
   {

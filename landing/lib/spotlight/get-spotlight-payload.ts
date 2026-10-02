@@ -1,6 +1,6 @@
 import { ARTICLES } from "@/lib/data/articles";
 import { BOOKS } from "@/lib/data/books";
-import { EVENTS } from "@/lib/data/events-v2";
+import { EVENTS } from "@/lib/data/events";
 import { MEXICO_MEDIEVAL_ITEMS } from "@/lib/data/podcast-mexico-medieval";
 import { PAPERS } from "@/lib/data/papers";
 import { SPOTLIGHT_TARGET } from "@/lib/data/spotlight-config";

@@ -10,7 +10,7 @@ export async function fetchEventsPage(
   page: number,
   language: Locale,
 ): Promise<EventsPageResponse> {
-  const { getEventsPagePayload } = await import("@/lib/data/events-v2");
+  const { getEventsPagePayload } = await import("@/lib/data/events");
   const payload = getEventsPagePayload(page, language);
   if (!payload) {
     throw new Error("Failed to load events: not found");

@@ -8,6 +8,8 @@ export type SiteEvent = {
   title: string;
   description: string;
   institution?: string;
+  /** Optional event artwork/posters shown on the event card. */
+  images?: string[];
   /** `false` = “coming soon” styling and footer (calendar icon, no CTA link). */
   active: boolean;
   /** Short badge in the header (e.g. Curso, Festival). */
