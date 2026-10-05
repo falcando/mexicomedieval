@@ -5,7 +5,6 @@ import type {
   SiteEvent,
   SiteEventCtaIcon,
 } from "@/lib/types/event";
-
 import { slicePage, totalPagesFromListLength } from "@/lib/pagination";
 
 type EventInformation = {
@@ -38,17 +37,19 @@ export const EVENTS: EventSource[] = [
     information: {
       es: {
         title: "Las Cruzadas, 1095–1291",
-        category: "Plática de divulgación",
-        format: "Grupo particular",
-        description: "Plática para un grupo particular sobre las cruzadas medievales.",
-        footerNote: "5 de octubre de 2026",
+        category: "Charla de divulgación",
+        format: "Conversación histórica",
+        description:
+          "Una conversación en un encuentro privado para recorrer las cruzadas más allá de sus tópicos: por qué comenzaron, quiénes participaron, cómo se construyeron los estados cruzados y por qué su memoria sigue pesando sobre nuestra imagen de la Edad Media. Una tarde de mapas, crónicas y castillos para hablar de guerra, fe, política y encuentros entre mundos.",
+        footerNote: "5 de octubre de 2026 — por la tarde",
       },
       en: {
         title: "The Crusades, 1095–1291",
         category: "Public history talk",
-        format: "Private group",
-        description: "Public history talk for a private group on the medieval Crusades.",
-        footerNote: "5 October 2026",
+        format: "Historical conversation",
+        description:
+          "A conversation at a private gathering that moves beyond familiar clichés about the Crusades: why they began, who took part, how the Crusader states were built, and why their memory still shapes our image of the Middle Ages. An afternoon of maps, chronicles, and castles exploring war, faith, politics, and encounters between worlds.",
+        footerNote: "5 October 2026 — afternoon",
       },
     },
     ctaKey: "events.ctaDetails",
