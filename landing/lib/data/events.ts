@@ -14,6 +14,7 @@ type EventInformation = {
   category: string;
   format?: string;
   footerNote?: string;
+  ctaLabel?: string;
 };
 
 type EventSource = {
@@ -33,7 +34,8 @@ export const EVENTS: EventSource[] = [
   {
     catalogId: "las-cruzadas-divulgacion-2026",
     active: false,
-    ctaIcon: "external",
+    confirmed: true,
+    ctaIcon: "arrow",
     information: {
       es: {
         title: "Las Cruzadas, 1095–1291",
@@ -42,6 +44,7 @@ export const EVENTS: EventSource[] = [
         description:
           "Una conversación en un encuentro privado para recorrer las cruzadas más allá de sus tópicos: por qué comenzaron, quiénes participaron, cómo se construyeron los estados cruzados y por qué su memoria sigue pesando sobre nuestra imagen de la Edad Media. Una tarde de mapas, crónicas y castillos para hablar de guerra, fe, política y encuentros entre mundos.",
         footerNote: "5 de octubre de 2026 — por la tarde",
+        ctaLabel: "Ver presentación",
       },
       en: {
         title: "The Crusades, 1095–1291",
@@ -50,9 +53,10 @@ export const EVENTS: EventSource[] = [
         description:
           "A conversation at a private gathering that moves beyond familiar clichés about the Crusades: why they began, who took part, how the Crusader states were built, and why their memory still shapes our image of the Middle Ages. An afternoon of maps, chronicles, and castles exploring war, faith, politics, and encounters between worlds.",
         footerNote: "5 October 2026 — afternoon",
+        ctaLabel: "View presentation",
       },
     },
-    ctaKey: "events.ctaDetails",
+    ctaKey: "",
     href: "https://drive.google.com/file/d/1VHrzFdzLsXEN_BXnLKAw6ZxbU7Dqk4Ky/view",
   },
   {
@@ -194,6 +198,7 @@ export function getEventsPagePayload(
       ...rest,
       active: activeFlag !== false,
       ctaIcon,
+      ctaLabel: info.ctaLabel,
       title: info.title,
       description: info.description,
       institution: info.institution,
