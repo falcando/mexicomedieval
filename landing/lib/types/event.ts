@@ -1,26 +1,28 @@
-/** Shown next to the CTA label when `href` is set (active cards only). */
+/** Shown next to the CTA label when `href` is set. */
 export type SiteEventCtaIcon = "arrow" | "external";
 
 export type SiteEvent = {
   href?: string;
-  /** i18n key for the CTA label; inactive cards may use an empty string when the footer shows only the calendar icon. */
+  /** i18n key for the CTA label; may be empty when a card has no CTA. */
   ctaKey: string;
+  /** Optional already-localised CTA label for event-specific wording. */
+  ctaLabel?: string;
   title: string;
   description: string;
   institution?: string;
   /** Optional event artwork/posters shown on the event card. */
   images?: string[];
-  /** `false` = “coming soon” styling and footer (calendar icon, no CTA link). */
+  /** `false` places the card in the upcoming-events section. */
   active: boolean;
-  /** True for a confirmed future event that should keep solid styling. */
+  /** True for a confirmed future event that should keep solid styling and a normal CTA. */
   confirmed?: boolean;
   /** Short badge in the header (e.g. Curso, Festival). */
   category: string;
-  /** Header line beside the badge when `active` (e.g. hybrid / online). Hidden when inactive (replaced by “Coming soon”). */
+  /** Header line beside the badge (e.g. hybrid / online / historical conversation). */
   format?: string;
-  /** Optional grey uppercase line in the footer (e.g. city / venue TBC). */
+  /** Optional grey uppercase line in the footer (e.g. date / venue). */
   footerNote?: string;
-  /** When `active` and `href` is set, which icon to show after the CTA text. */
+  /** Which icon to show after the CTA text. */
   ctaIcon?: SiteEventCtaIcon;
 };
 
@@ -28,4 +30,3 @@ export type EventsPageResponse = {
   events: SiteEvent[];
   pagination: { total: number };
 };
-
