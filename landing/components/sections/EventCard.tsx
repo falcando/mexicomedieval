@@ -19,13 +19,20 @@ export function EventCard({ event }: EventCardProps) {
   const active = event.active;
   const confirmedUpcoming = !active && event.confirmed === true;
   const hasHref = event.href != null && event.href !== "";
-  const hasCta = event.ctaKey.trim() !== "";
-  const ctaLabel = hasCta ? t(event.ctaKey) : "";
+  const hasTranslatedCta = event.ctaKey.trim() !== "";
+  const hasExplicitCta = event.ctaLabel?.trim() != null && event.ctaLabel.trim() !== "";
+  const hasCta = hasTranslatedCta || hasExplicitCta;
+  const ctaLabel = hasExplicitCta
+    ? event.ctaLabel!.trim()
+    : hasTranslatedCta
+      ? t(event.ctaKey)
+      : "";
   const ctaIcon = event.ctaIcon ?? "external";
 
-  const headerSecondary = active
-    ? event.format?.trim()
-    : t("events.comingSoonHeader");
+  const headerSecondary =
+    active || confirmedUpcoming
+      ? event.format?.trim()
+      : t("events.comingSoonHeader");
 
   const body = (
     <>
@@ -61,7 +68,7 @@ export function EventCard({ event }: EventCardProps) {
         {headerSecondary ? (
           <span
             className={`font-label text-[10px] font-semibold tracking-[0.22em] uppercase ${
-              active ? headerMuted : confirmedUpcoming ? headerMuted : ink
+              active || confirmedUpcoming ? headerMuted : ink
             }`}
           >
             {headerSecondary}
@@ -114,7 +121,7 @@ export function EventCard({ event }: EventCardProps) {
       </span>
     );
 
-  const activeFooterRight =
+  const standardFooterRight =
     hasCta && hasHref ? (
       <a
         href={event.href}
@@ -131,12 +138,12 @@ export function EventCard({ event }: EventCardProps) {
       </span>
     ) : null;
 
-  const footer = active ? (
+  const footer = active || confirmedUpcoming ? (
     <div
       className={`mt-auto flex flex-wrap items-center gap-x-4 gap-y-3 border-t border-[#e5ddd3] pt-5 ${
-        event.footerNote && activeFooterRight
+        event.footerNote && standardFooterRight
           ? "justify-between"
-          : activeFooterRight
+          : standardFooterRight
             ? "justify-end"
             : event.footerNote
               ? "justify-start"
@@ -150,7 +157,7 @@ export function EventCard({ event }: EventCardProps) {
           {event.footerNote}
         </p>
       ) : null}
-      {activeFooterRight}
+      {standardFooterRight}
     </div>
   ) : (
     <div className="mt-auto flex items-center justify-between gap-4 border-t border-[#e5ddd3] pt-5">
