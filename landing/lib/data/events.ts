@@ -32,7 +32,7 @@ type EventSource = {
 export const EVENTS: EventSource[] = [
   {
     catalogId: "las-cruzadas-divulgacion-2026",
-    active: true,
+    active: false,
     ctaIcon: "external",
     information: {
       es: {
@@ -63,7 +63,7 @@ export const EVENTS: EventSource[] = [
       "/images/jornadas-iberoamericanas-2026-dia-5.webp",
       "/images/jornadas-iberoamericanas-2026-dia-9.webp",
     ],
-    active: false,
+    active: true,
     information: {
       es: {
         title: "III Jornadas Iberoamericanas: S. XVI, XVII y XVIII. Redes trasatlánticas y mecanismos de poder",
