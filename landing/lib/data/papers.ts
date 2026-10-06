@@ -16,6 +16,8 @@ export const PAPERS: PaperEntry[] = [
       "El ‘archivo fantasma’ del Cabildo de Guadalajara: reconstrucción documental y escalas de autoridad en la Nueva Galicia del siglo XVI",
     context:
       "III Jornadas Iberoamericanas: S. XVI, XVII y XVIII. Redes trasatlánticas y mecanismos de poder, El Colegio de Morelos. Reconstrucción de un archivo municipal perdido a partir de huellas documentales dispersas para examinar las escalas de autoridad en la Nueva Galicia del siglo XVI.",
+    contextEn:
+      "III Jornadas Iberoamericanas: S. XVI, XVII y XVIII. Redes trasatlánticas y mecanismos de poder, El Colegio de Morelos. The paper reconstructs a lost municipal archive from dispersed documentary traces in order to examine the scales of authority that shaped sixteenth-century Nueva Galicia.",
     href: "https://www.youtube.com/watch?v=vgSTa_wFn5g",
     documentType: "paper",
   },
