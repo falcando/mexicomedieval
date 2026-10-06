@@ -10,6 +10,16 @@ const SITE_ORIGIN = "https://www.mexicomedieval.org";
 /** Sourced from static-html/papers.html (Paper 1–3). */
 export const PAPERS: PaperEntry[] = [
   {
+    catalogId: "archivo-fantasma-cabildo-guadalajara",
+    year: "2026",
+    title:
+      "El archivo fantasma del Cabildo de Guadalajara: reconstrucción documental y escalas de autoridad en la Nueva Galicia del siglo XVI",
+    context:
+      "III Jornadas Iberoamericanas: S. XVI, XVII y XVIII. Redes trasatlánticas y mecanismos de poder, El Colegio de Morelos. Reconstrucción de un archivo municipal perdido a partir de huellas documentales dispersas para examinar las escalas de autoridad en la Nueva Galicia del siglo XVI.",
+    href: "https://www.youtube.com/@ElColegiodeMorelos/live",
+    documentType: "paper",
+  },
+  {
     catalogId: "al-limite-esclavitud-sardinia",
     year: "2025",
     title:
