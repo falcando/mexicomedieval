@@ -33,7 +33,7 @@ type EventSource = {
 export const EVENTS: EventSource[] = [
   {
     catalogId: "las-cruzadas-divulgacion-2026",
-    active: false,
+    active: true,
     confirmed: true,
     ctaIcon: "arrow",
     information: {
