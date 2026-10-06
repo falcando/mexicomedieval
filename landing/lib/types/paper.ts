@@ -12,6 +12,8 @@ export type PaperEntry = {
   year: string;
   title: string;
   context: string;
+  /** Optional English version of `context`; title remains unchanged unless separately localised. */
+  contextEn?: string;
   href: string;
   documentType: PaperDocumentType;
   highlighted?: boolean;
