@@ -129,8 +129,10 @@ function PresentationDetailsLink({
 }
 
 export function PapersPage() {
-  const { t } = useTranslations();
+  const { t, locale } = useTranslations();
   const HIGHLIGHTED = useMemo(() => getHighlightedPaper(), []);
+  const localizedContext = (item: { context: string; contextEn?: string }) =>
+    locale === "en" ? item.contextEn ?? item.context : item.context;
 
   const [pageAcademic, setPageAcademic] = useState(1);
   const [pagePresentations, setPagePresentations] = useState(1);
@@ -209,7 +211,7 @@ export function PapersPage() {
                   {HIGHLIGHTED.title}
                 </h3>
                 <p className="text-sm text-on-surface-variant">
-                  {HIGHLIGHTED.context}
+                  {localizedContext(HIGHLIGHTED)}
                 </p>
               </div>
               <div className="w-full shrink-0 md:w-auto">
@@ -252,7 +254,7 @@ export function PapersPage() {
                   {item.title}
                 </h3>
                 <p className="text-sm text-on-surface-variant">
-                  {item.context}
+                  {localizedContext(item)}
                 </p>
               </div>
               <div className="w-full shrink-0 md:w-auto">
@@ -329,7 +331,7 @@ export function PapersPage() {
                   {HIGHLIGHTED.title}
                 </h3>
                 <p className="font-body mb-8 text-sm text-on-surface-variant italic">
-                  {HIGHLIGHTED.context}
+                  {localizedContext(HIGHLIGHTED)}
                 </p>
                 <ExternalLink
                   href={HIGHLIGHTED.href}
@@ -360,7 +362,7 @@ export function PapersPage() {
                   {item.title}
                 </h3>
                 <p className="font-body mb-6 text-sm text-on-surface-variant">
-                  {item.context}
+                  {localizedContext(item)}
                 </p>
                 <ExternalLink
                   href={item.href}
