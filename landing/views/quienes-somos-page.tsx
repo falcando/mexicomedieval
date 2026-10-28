@@ -10,12 +10,25 @@ const SIDEBAR_IMG =
 
 const PILLAR_ICONS = ["menu_book", "podcasts", "database"] as const;
 
-
 const PILLAR_KEYS = [
   { titleKey: "about.pillar1Title", bodyKey: "about.pillar1Body" },
   { titleKey: "about.pillar2Title", bodyKey: "about.pillar2Body" },
   { titleKey: "about.pillar3Title", bodyKey: "about.pillar3Body" },
 ] as const;
+
+function renderInlineEmphasis(text: string) {
+  const parts = text.split(/(<em>.*?<\/em>)/g);
+
+  return parts.map((part, index) => {
+    const match = part.match(/^<em>(.*?)<\/em>$/);
+
+    if (match) {
+      return <em key={index}>{match[1]}</em>;
+    }
+
+    return part;
+  });
+}
 
 export function QuienesSomosPage() {
   const { t } = useTranslations();
@@ -55,10 +68,11 @@ export function QuienesSomosPage() {
           <div className="space-y-4 text-on-surface-variant leading-relaxed">
             <p>{t("about.authorBio1")}</p>
             <p>{t("about.authorBio2")}</p>
-            <p>{t("about.authorBio3")}</p>
+            <p>{renderInlineEmphasis(t("about.authorBio3"))}</p>
           </div>
         </div>
       </section>
+
       <section
         aria-labelledby="proyecto-heading"
         className="mb-20 border border-outline-variant/15 bg-white/90 p-8 shadow-sm md:p-12"
@@ -73,17 +87,20 @@ export function QuienesSomosPage() {
             </h2>
           </div>
         </div>
+
         <div className="space-y-4 mb-12">
-        <p className="text-lg leading-relaxed text-on-surface-variant">
-          {t("about.projectLede")}
-        </p>
-        <p className="text-lg leading-relaxed text-on-surface-variant">
-          {t("about.projectLede2")}
-        </p>
+          <p className="text-lg leading-relaxed text-on-surface-variant">
+            {t("about.projectLede")}
+          </p>
+          <p className="text-lg leading-relaxed text-on-surface-variant">
+            {t("about.projectLede2")}
+          </p>
         </div>
+
         <h3 className="font-headline mb-12 text-2xl text-primary">
-                {t("about.projectKicker")}
-              </h3>
+          {t("about.projectKicker")}
+        </h3>
+
         <ul className="grid gap-8 md:grid-cols-3">
           {PILLAR_KEYS.map((pillar, idx) => (
             <li
@@ -96,9 +113,11 @@ export function QuienesSomosPage() {
               >
                 {PILLAR_ICONS[idx]}
               </span>
+
               <h3 className="font-headline mb-2 text-xl text-primary">
                 {t(pillar.titleKey)}
               </h3>
+
               <p className="text-sm leading-relaxed text-on-surface-variant">
                 {t(pillar.bodyKey)}
               </p>
