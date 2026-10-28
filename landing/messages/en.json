@@ -1,4 +1,3 @@
-```json
 {
   "metadata": {
     "siteTitle": "México Medieval | The Digital Manuscript",
@@ -9,8 +8,7 @@
     "digitalScriptorium": "The Digital Scriptorium",
     "email": "Email",
     "primaryNavigation": "Primary"
-  },adjunc
-  
+  },
   "nav": {
     "books": "Books",
     "articles": "Articles",
@@ -366,4 +364,3 @@
     "fallbackTitle": "Podcast"
   }
 }
-```
