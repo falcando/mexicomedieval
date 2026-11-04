@@ -37,6 +37,7 @@ You do **not** need to understand how the site is built behind the scenes to upd
 | Books (volumes on the Books page) | `lib/data/books.ts` |
 | Events (courses, festivals, etc.) | `lib/data/events.ts` |
 | Academic papers and conference presentations | `lib/data/papers.ts` |
+| Research resources / recursos de investigación | `lib/data/research-resources.ts` plus the resource-specific data files under `lib/data/` |
 | México Medieval episodes (Apple Podcasts list) | `lib/data/podcast-mexico-medieval.ts` |
 | Guest appearances on other podcasts (Spotify links) | `lib/data/podcast-spotify-guests.ts` |
 | Images for podcast show cards on the podcast page | `lib/data/podcast-page-static.ts` (and image files in `public/podcasts/`) |
@@ -182,6 +183,21 @@ For links, each line uses `url` and `ctaKey`. Reuse existing `ctaKey` values fro
 Optional **`highlighted: true`** on one item can mark the highlighted row; the site has a fallback if you skip this.
 
 **Full detail page on the site for one presentation:** That needs a JSON file under `data/presentations/`, a matching `presentationSlug` on the list item, and a one-line registration in `lib/presentation-details.ts`. That step is easy to get wrong without practice — **work with a developer** the first time.
+
+---
+
+## Adding a research resource
+
+**Registry:** `lib/data/research-resources.ts`
+
+Research resources are standalone scholarly tools rather than papers or presentations. The registry controls the cards shown under **Research resources** on the Papers page.
+
+Each resource also has its own route and data files. For example, the Indian-law timeline is served at `/recursos/legislacion-indiana` and its source data live in:
+
+- `lib/data/indian-law-events.ts`
+- `lib/data/indian-law-sources.ts`
+
+Keep documentary data separate from the visual component so sources, translations, and classifications remain reusable.
 
 ---
 
