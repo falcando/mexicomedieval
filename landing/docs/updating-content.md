@@ -261,3 +261,5 @@ Contributors who only update text in `lib/data` and `messages` usually **do not*
 - **`AGENTS.md`** (in the `landing` folder) — notes for people working with the code editor and automated tools.
 
 If something in this guide is unclear, suggest an improvement to the team so the next contributor has an easier time.
+
+Research resources follow the standard `dev → main → GitHub Pages` deployment flow used by the rest of the site.
