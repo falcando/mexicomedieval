@@ -267,7 +267,11 @@
     "prev": "Anterior",
     "next": "Siguiente",
     "folio": "Folio",
-    "of": "de"
+    "of": "de",
+    "resourcesKicker": "Herramientas de investigación",
+    "resourcesTitle": "Recursos digitales",
+    "resourcesDescription": "Recursos interactivos y documentales para explorar problemas, fuentes y materiales de investigación.",
+    "exploreResource": "Explorar recurso"
   },
   "events": {
     "kicker": "El scriptorium digital",
@@ -358,5 +362,49 @@
     "relatedManuscripts": "Manuscritos relacionados",
     "viewAllArchive": "Ver todo el archivo",
     "fallbackTitle": "Podcast"
+  },
+  "resources": {
+    "indianLaw": {
+      "pretitle": "Recurso digital de investigación",
+      "title": "Legislación y cultura normativa de las Indias en el siglo XVI",
+      "subtitle": "Normas, proyectos, cedularios, recopilaciones y transmisión jurídica, 1500–1600.",
+      "metaDescription": "Línea del tiempo documental e historiográfica de la legislación indiana del siglo XVI, con fuentes primarias, compilaciones, proyectos y estudios especializados.",
+      "methodKicker": "Cómo leer el recurso",
+      "methodTitle": "No todo documento oficial tiene la misma fuerza jurídica",
+      "methodBody": "La línea del tiempo distingue entre normas promulgadas, legislación territorial o delegada, instrumentos procedimentales, compilaciones oficiales de uso administrativo, proyectos recopiladores y recopilaciones efectivamente sancionadas como corpus. Cada entrada enlaza la mejor fuente primaria, edición pública o referencia institucional localizada, además de historiografía especializada cuando es necesaria para fijar alcance, vigencia o transmisión.",
+      "rule": "Que una compilación haya sido encargada, utilizada o impresa por la Corona no significa que el volumen haya sido promulgado como un nuevo cuerpo legal.",
+      "evidenceTitle": "Grado de evidencia",
+      "evidenceA": "Registro archivístico, facsímil o fuente primaria directamente accesible.",
+      "evidenceB": "Edición documental pública o transmisión suficientemente fuerte, con apoyo historiográfico.",
+      "evidenceC": "Reconstrucción apoyada principalmente en historiografía o cedularios, con la fuente primaria directa aún por localizar.",
+      "search": "Buscar",
+      "searchPlaceholder": "Norma, persona, materia, institución…",
+      "category": "Categoría jurídica",
+      "allCategories": "Todas las categorías",
+      "theme": "Materia",
+      "allThemes": "Todas las materias",
+      "results": "hitos visibles",
+      "timelineKicker": "Evolución normativa",
+      "timelineTitle": "Línea del tiempo",
+      "contrast": "como contraste",
+      "noResults": "No hay hitos que coincidan con los filtros actuales.",
+      "form": "Forma documental",
+      "authority": "Autoridad",
+      "scope": "Ámbito",
+      "sanction": "Estatus / sanción",
+      "interpretation": "Lectura historiográfica",
+      "archivalNote": "Nota documental",
+      "sources": "Fuentes y bibliografía",
+      "evidence": "Evidencia",
+      "sourcePrimary": "Fuente primaria o registro archivístico",
+      "sourceEdition": "Edición, facsímil o transcripción",
+      "sourceHistoriography": "Historiografía",
+      "sourceReference": "Repertorio o referencia institucional",
+      "historiographyKicker": "Marco interpretativo",
+      "historiographyTitle": "Historiografía básica",
+      "historiographyBody": "Estas obras ayudan a distinguir la forma diplomática de los documentos, su fuerza jurídica, la historia de la recopilación y los problemas de vigencia, recepción y transmisión del derecho indiano.",
+      "scopeNoteTitle": "Alcance:",
+      "scopeNoteBody": "el recurso reúne los principales hitos generales y compilatorios localizados para el siglo XVI, con 1680–1681 como contraste. No pretende todavía inventariar todas las reales cédulas expedidas en el siglo; seguirá ampliándose por materias y territorios."
+    }
   }
 }
