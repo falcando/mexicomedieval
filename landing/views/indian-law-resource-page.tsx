@@ -107,17 +107,20 @@ function TimelineEventCard({
   const archival = event.archivalNote?.[locale];
 
   return (
-    <article
-      className="relative grid gap-4 md:grid-cols-[8.5rem_minmax(0,1fr)]"
-      style={{ ["--event-color" as string]: category.color }}
-    >
+    <article className="relative grid gap-4 md:grid-cols-[8.5rem_minmax(0,1fr)]">
       <div className="relative md:text-right">
-        <div\n          className="sticky top-24 inline-flex items-center rounded-full border-2 bg-background px-3 py-1.5 font-label text-xs font-bold tracking-wide text-on-surface"\n          style={{ borderColor: category.color }}\n        >
+        <div
+          className="sticky top-24 inline-flex items-center rounded-full border-2 bg-background px-3 py-1.5 font-label text-xs font-bold tracking-wide text-on-surface"
+          style={{ borderColor: category.color }}
+        >
           {event.year}
         </div>
       </div>
 
-      <div\n        className="relative border-l-4 bg-white p-6 shadow-sm ring-1 ring-outline-variant/20 md:p-7"\n        style={{ borderLeftColor: category.color }}\n      >
+      <div
+        className="relative border-l-4 bg-white p-6 shadow-sm ring-1 ring-outline-variant/20 md:p-7"
+        style={{ borderLeftColor: category.color }}
+      >
         <div className="mb-4 flex flex-wrap items-center gap-2">
           <span
             className="rounded-full px-2.5 py-1 font-label text-[10px] font-bold tracking-wider uppercase"
