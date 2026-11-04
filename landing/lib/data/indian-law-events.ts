@@ -376,8 +376,8 @@ export const INDIAN_LAW_EVENTS: IndianLawEvent[] = [
       "The Crown revoked controversial provisions of the New Laws concerning encomiendas and restored certain aspects of the previous regime. This did not erase the entire programme of 1542.",
     ),
     interpretation: bi(
-      "El caso obliga a registrar la unidad normativa afectada: hablar de "revocación de las Leyes Nuevas" sin especificar capítulos y materias exagera el alcance de la medida.",
-      "The case requires identifying the precise normative unit affected: speaking of a "repeal of the New Laws" without specifying chapters and subjects exaggerates the measure's reach.",
+      "El caso obliga a registrar la unidad normativa afectada: hablar de revocación de las Leyes Nuevas sin especificar capítulos y materias exagera el alcance de la medida.",
+      "The case requires identifying the precise normative unit affected: speaking of a repeal of the New Laws without specifying chapters and subjects exaggerates the measure's reach.",
     ),
     sources: ["malinas_unm", "malinas_unam", "garcia_gallo"],
   },
@@ -406,8 +406,8 @@ export const INDIAN_LAW_EVENTS: IndianLawEvent[] = [
       "The Mexican printing of 1548 combines governing ordinances with compilation. Its legal value cannot be inferred from the volume as a whole: the authority of territorial commands must be distinguished from the reproduction or ordering of earlier law.",
     ),
     interpretation: bi(
-      "Es un buen ejemplo de por qué la categoría "compilación" no determina por sí sola fuerza normativa: el mismo objeto puede contener disposiciones con estatutos jurídicos diferentes.",
-      "It is a useful example of why the category "compilation" does not by itself determine legal force: the same object can contain provisions with different legal statuses.",
+      "Es un buen ejemplo de por qué la categoría compilación no determina por sí sola fuerza normativa: el mismo objeto puede contener disposiciones con estatutos jurídicos diferentes.",
+      "It is a useful example of why the category compilation does not by itself determine legal force: the same object can contain provisions with different legal statuses.",
     ),
     sources: ["mendoza_ministerio", "mendoza_cdiex", "instituciones_boe"],
   },
@@ -494,8 +494,8 @@ export const INDIAN_LAW_EVENTS: IndianLawEvent[] = [
       "In 1560 Philip II ordered a compilation of provisions preserved in the viceregal archive; Puga completed and printed the repertory in 1563. The cédulas and provisions reproduced retained authority from their original enactment, not because the book enacted them again.",
     ),
     interpretation: bi(
-      "Ésta es una distinción central para todo el recurso: "compilación oficial" y "recopilación promulgada" no son equivalentes.",
-      "This is a central distinction for the entire resource: an "official compilation" is not the same thing as an "enacted compilation".",
+      "Ésta es una distinción central para todo el recurso: compilación oficial y recopilación promulgada no son equivalentes.",
+      "This is a central distinction for the entire resource: an official compilation is not the same thing as an enacted compilation.",
     ),
     sources: ["puga_original", "cruz_barney", "puga_muro"],
   },
@@ -645,8 +645,8 @@ export const INDIAN_LAW_EVENTS: IndianLawEvent[] = [
       "The 122 ordinances of 1571 reorganised the Council and consolidated its institutional autonomy. They are a key case of one part of the Ovando project acquiring its own normative force.",
     ),
     interpretation: bi(
-      "No debe extrapolarse esta sanción al "Código Ovandino" entero: el hecho de que un título fuese promulgado no convirtió en ley el proyecto completo.",
-      "This enactment should not be extrapolated to the entire so-called "Ovando Code": the fact that one title was enacted did not turn the whole project into law.",
+      "No debe extrapolarse esta sanción al llamado Código Ovandino entero: el hecho de que un título fuese promulgado no convirtió en ley el proyecto completo.",
+      "This enactment should not be extrapolated to the entire so-called Ovando Code: the fact that one title was enacted did not turn the whole project into law.",
     ),
     sources: ["ordenanzas_1571_open", "ordenanzas_1571_csic", "encinas_estudio", "garcia_gallo"],
   },
