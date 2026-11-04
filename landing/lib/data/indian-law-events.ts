@@ -1,4 +1,4 @@
-import type { IndianLawCategoryKey } from "@/lib/data/indian-law-sources";
+import { INDIAN_LAW_THEMES, type IndianLawCategoryKey } from "@/lib/data/indian-law-sources";
 
 export type LocalizedText = {
   es: string;
@@ -11,7 +11,7 @@ export type IndianLawEvent = {
   year: string;
   start: number;
   cat: IndianLawCategoryKey;
-  theme: keyof typeof import("@/lib/data/indian-law-sources").INDIAN_LAW_THEMES;
+  theme: keyof typeof INDIAN_LAW_THEMES;
   title: LocalizedText;
   form: LocalizedText;
   authority: string;
