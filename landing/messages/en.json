@@ -14,7 +14,7 @@
     "articles": "Articles",
     "podcast": "Podcast",
     "events": "Events",
-    "papers": "Papers",
+    "papers": "Papers & resources",
     "about": "About",
     "menu": "Menu",
     "search": "Search",
@@ -110,9 +110,9 @@
     "eventsDesc": "Courses, fairs, festivals, and other surprises for discovering and enjoying history and the Middle Ages inside and outside the classroom.",
     "eventsCta": "View events",
     "eventThumbAlt": "Cathedral arches texture",
-    "papersTitle": "Papers",
-    "papersDesc": "Academic presentations at conferences and events, and papers in academic repositories.",
-    "papersCta": "Explore papers",
+    "papersTitle": "Papers & resources",
+    "papersDesc": "Academic papers, digital research resources, and presentations at conferences and events.",
+    "papersCta": "Explore papers & resources",
     "partnershipKicker": "Publishing partnership",
     "partnershipDescription": "México Medieval has established a publishing partnership with Anabasis Project, a publishing house specialising in history, essays, and historical literature, with a presence in Mexico and France.",
     "partnershipCta": "Discover Anabasis Project",
@@ -255,9 +255,9 @@
     "sectionDiasGarraBody": "Conversations with Dr Jabón / Hervin Fernández on Días con La Garra y Ale Garibay about history, culture, curiosities from Mexico and, since we are already here, the rest of humanity."
   },
   "papers": {
-    "pretitle": "Work-in-progress papers",
-    "title": "Papers & presentations",
-    "subtitle": "Academic presentations at conferences and events, and papers in academic repositories.",
+    "pretitle": "Research portal",
+    "title": "Papers & resources",
+    "subtitle": "Academic papers, digital research resources, and presentations at conferences and events.",
     "researchPortal": "Research portal",
     "academicPapers": "Academic papers",
     "viewPaper": "View paper",
@@ -337,8 +337,8 @@
     "linkArticlesHint": "Peer-reviewed research",
     "linkPodcast": "Podcast",
     "linkPodcastHint": "México Medieval and collaborations",
-    "linkPapers": "Papers",
-    "linkPapersHint": "Presentations and repositories"
+    "linkPapers": "Papers & resources",
+    "linkPapersHint": "Papers, digital resources, and presentations"
   },
   "newsletter": {
     "title": "The Archivist's Circle",
@@ -347,7 +347,7 @@
     "submit": "Join the Circle"
   },
   "presentation": {
-    "backLink": "Back to papers & presentations",
+    "backLink": "Back to papers & resources",
     "presenter": "Presenter",
     "date": "Date",
     "event": "Event",
