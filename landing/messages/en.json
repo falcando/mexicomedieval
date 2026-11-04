@@ -408,7 +408,11 @@
       "historiographyTitle": "Core historiography",
       "historiographyBody": "These works help distinguish documentary form, legal force, the history of compilation, and problems of validity, reception, and transmission in Indian law.",
       "scopeNoteTitle": "Scope:",
-      "scopeNoteBody": "this resource gathers the principal general and compilation milestones identified for the sixteenth century, with 1680–1681 as a contrast. It does not yet claim to inventory every royal cédula issued during the century; it will continue to expand by subject and territory."
+      "scopeNoteBody": "this resource gathers the principal general and compilation milestones identified for the sixteenth century, with 1680–1681 as a contrast. It does not yet claim to inventory every royal cédula issued during the century; it will continue to expand by subject and territory.",
+      "downloadsTitle": "Reusable data",
+      "downloadsBody": "Download the structured dataset to work with it outside the site.",
+      "downloadCsv": "Download CSV",
+      "downloadJson": "Download JSON"
     }
   }
 }
