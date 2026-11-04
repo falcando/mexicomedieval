@@ -8,6 +8,7 @@ import {
   usePresentationsPageQuery,
 } from "@/lib/queries/papers";
 import { totalPagesFromTotal } from "@/lib/pagination";
+import { RESEARCH_RESOURCES } from "@/lib/data/research-resources";
 import Link from "next/link";
 import { useMemo, useState, type ReactNode } from "react";
 import PageContainer from "@/components/layout/PageContainer";
@@ -392,6 +393,65 @@ export function PapersPage() {
             ofLabel={t("papers.of")}
           />
         ) : null}
+      </section>
+
+      <section id="research-resources" className="mt-24 scroll-mt-28">
+        <div className="mb-12 flex items-center gap-4">
+          <div className="flex items-center justify-center rounded-full bg-secondary-container/30 p-3">
+            <span className="material-symbols-outlined text-3xl text-primary">
+              account_tree
+            </span>
+          </div>
+          <div>
+            <span className="font-label text-xs font-bold tracking-widest text-tertiary-fixed-dim uppercase">
+              {t("papers.resourcesKicker")}
+            </span>
+            <h2 className="font-headline text-3xl font-bold text-primary">
+              {t("papers.resourcesTitle")}
+            </h2>
+            <p className="mt-1 max-w-3xl text-sm text-on-surface-variant">
+              {t("papers.resourcesDescription")}
+            </p>
+          </div>
+          <div className="ml-8 hidden h-px min-w-0 grow bg-outline-variant/30 md:block" />
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {RESEARCH_RESOURCES.map((resource) => (
+            <article
+              key={resource.slug}
+              className="group flex h-full flex-col border border-outline-variant/20 bg-white p-7 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary-container/20">
+                  <span className="material-symbols-outlined text-3xl text-primary">
+                    {resource.icon}
+                  </span>
+                </div>
+                <div className="min-w-0">
+                  <span className="font-label text-[10px] font-bold tracking-widest text-tertiary-fixed-dim uppercase">
+                    {resource.kicker[locale]}
+                  </span>
+                  <h3 className="font-headline mt-2 text-2xl font-bold leading-snug text-primary">
+                    {resource.title[locale]}
+                  </h3>
+                </div>
+              </div>
+              <p className="mt-5 grow text-sm leading-6 text-on-surface-variant">
+                {resource.description[locale]}
+              </p>
+              <Link
+                href={resource.href}
+                className="mt-7 inline-flex items-center gap-2 self-start rounded-md bg-primary px-5 py-3 text-sm font-medium text-on-primary transition-colors hover:bg-primary-container"
+              >
+                {t("papers.exploreResource")}
+                <span className="material-symbols-outlined text-sm">
+                  arrow_forward
+                </span>
+              </Link>
+            </article>
+          ))}
+        </div>
       </section>
 
       <NewsletterSubscribeCard className="mt-24" />
