@@ -39,12 +39,10 @@ function SourceList({
   const grouped = sourceKindOrder
     .map((kind) => ({
       kind,
-      items: sourceIds
-        .map((id) => ({ id, source: INDIAN_LAW_SOURCES[id] }))
-        .filter(
-          (item): item is { id: string; source: NonNullable<typeof item.source> } =>
-            Boolean(item.source) && item.source.kind === kind,
-        ),
+      items: sourceIds.flatMap((id) => {
+        const source = INDIAN_LAW_SOURCES[id];
+        return source?.kind === kind ? [{ id, source }] : [];
+      }),
     }))
     .filter((group) => group.items.length > 0);
 
@@ -307,6 +305,7 @@ export function IndianLawResourcePage() {
             <div className="mt-4 flex flex-wrap gap-2">
               <a
                 href="/api/resources/indian-law/csv"
+                download="legislacion-indiana-siglo-xvi.csv"
                 className="inline-flex items-center gap-2 border border-primary px-3 py-2 text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-on-primary"
               >
                 <span className="material-symbols-outlined text-base" aria-hidden="true">
@@ -316,6 +315,7 @@ export function IndianLawResourcePage() {
               </a>
               <a
                 href="/api/resources/indian-law/json"
+                download="legislacion-indiana-siglo-xvi.json"
                 className="inline-flex items-center gap-2 border border-primary px-3 py-2 text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-on-primary"
               >
                 <span className="material-symbols-outlined text-base" aria-hidden="true">
