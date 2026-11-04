@@ -162,6 +162,170 @@ export function PapersPage() {
 
   return (
     <PageContainer pretitle={t("papers.pretitle")} title={t("papers.title")} subtitle={t("papers.subtitle")}>
+      <section id="academic-papers" className="scroll-mt-28">
+        <div className="mb-12 flex items-center gap-4">
+          <div className="flex items-center justify-center rounded-full bg-primary-container/20 p-3">
+            <span className="material-symbols-outlined text-3xl text-primary">
+              auto_stories
+            </span>
+          </div>
+          <div>
+            <span className="font-label text-xs font-bold tracking-widest text-tertiary-fixed-dim uppercase">
+              {t("papers.researchPortal")}
+            </span>
+            <h2 className="font-headline text-3xl font-bold text-primary">
+              {t("papers.academicPapers")}
+            </h2>
+          </div>
+          <div className="ml-8 hidden h-px min-w-0 grow bg-outline-variant/30 md:block" />
+        </div>
+
+        {academicQuery.isPending && !academicQuery.data && (
+          <p className="mb-6 text-center text-on-surface-variant">
+            {t("papers.listLoading")}
+          </p>
+        )}
+        {academicQuery.isError && (
+          <p className="mb-6 text-center text-primary" role="alert">
+            {t("papers.listLoadError")}
+          </p>
+        )}
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
+          {HIGHLIGHTED?.documentType === "paper" ? (
+            <div className="group relative overflow-hidden border border-outline-variant/20 bg-white p-8 shadow-sm transition-shadow hover:shadow-md md:col-span-7">
+              <div className="relative z-10">
+                <span className="font-label text-xs font-bold text-tertiary-fixed-dim uppercase">
+                  {HIGHLIGHTED.year}
+                </span>
+                <h3 className="font-headline mt-3 mb-4 text-2xl leading-snug text-primary">
+                  {HIGHLIGHTED.title}
+                </h3>
+                <p className="font-body mb-8 text-sm text-on-surface-variant italic">
+                  {localizedContext(HIGHLIGHTED)}
+                </p>
+                <ExternalLink
+                  href={HIGHLIGHTED.href}
+                  className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-on-primary transition-colors hover:bg-primary-container"
+                >
+                  {t("papers.viewPaper")}
+                  <span className="material-symbols-outlined text-sm">
+                    open_in_new
+                  </span>
+                </ExternalLink>
+              </div>
+            </div>
+          ) : null}
+
+          <div
+            className={`flex flex-col gap-6 ${HIGHLIGHTED?.documentType === "paper" ? "md:col-span-5" : "md:col-span-12 md:flex-row md:flex-wrap"}`}
+            aria-busy={academicQuery.isFetching}
+          >
+            {academicPapers.map((item) => (
+              <div
+                key={item.href}
+                className={`border border-outline-variant/20 bg-white p-6 shadow-sm transition-colors hover:bg-surface-container-lowest ${HIGHLIGHTED?.documentType === "paper" ? "" : "md:min-w-[280px] md:flex-1"}`}
+              >
+                <span className="font-label text-xs font-bold text-on-surface-variant/60 uppercase">
+                  {item.year}
+                </span>
+                <h3 className="font-headline mt-2 mb-2 text-xl text-primary">
+                  {item.title}
+                </h3>
+                <p className="font-body mb-6 text-sm text-on-surface-variant">
+                  {localizedContext(item)}
+                </p>
+                <ExternalLink
+                  href={item.href}
+                  className="flex items-center gap-1 text-sm font-bold text-primary decoration-tertiary-fixed underline-offset-4 hover:underline"
+                >
+                  {t("papers.viewPaper")}{" "}
+                  <span className="material-symbols-outlined text-xs">
+                    arrow_forward
+                  </span>
+                </ExternalLink>
+              </div>
+            ))}
+          </div>
+        </div>
+        {academicTotalPages > 1 ? (
+          <PaginationFolio
+            page={pageAcademic}
+            totalPages={academicTotalPages}
+            isFetching={academicQuery.isFetching}
+            onPrev={() => setPageAcademic((p) => Math.max(1, p - 1))}
+            onNext={() =>
+              setPageAcademic((p) => Math.min(academicTotalPages, p + 1))
+            }
+            prevLabel={t("papers.prev")}
+            nextLabel={t("papers.next")}
+            folioLabel={t("papers.folio")}
+            ofLabel={t("papers.of")}
+          />
+        ) : null}
+      </section>
+
+
+      <section id="research-resources" className="mt-24 scroll-mt-28">
+        <div className="mb-12 flex items-center gap-4">
+          <div className="flex items-center justify-center rounded-full bg-secondary-container/30 p-3">
+            <span className="material-symbols-outlined text-3xl text-primary">
+              account_tree
+            </span>
+          </div>
+          <div>
+            <span className="font-label text-xs font-bold tracking-widest text-tertiary-fixed-dim uppercase">
+              {t("papers.resourcesKicker")}
+            </span>
+            <h2 className="font-headline text-3xl font-bold text-primary">
+              {t("papers.resourcesTitle")}
+            </h2>
+            <p className="mt-1 max-w-3xl text-sm text-on-surface-variant">
+              {t("papers.resourcesDescription")}
+            </p>
+          </div>
+          <div className="ml-8 hidden h-px min-w-0 grow bg-outline-variant/30 md:block" />
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {RESEARCH_RESOURCES.map((resource) => (
+            <article
+              key={resource.slug}
+              className="group flex h-full flex-col border border-outline-variant/20 bg-white p-7 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary-container/20">
+                  <span className="material-symbols-outlined text-3xl text-primary">
+                    {resource.icon}
+                  </span>
+                </div>
+                <div className="min-w-0">
+                  <span className="font-label text-[10px] font-bold tracking-widest text-tertiary-fixed-dim uppercase">
+                    {resource.kicker[locale]}
+                  </span>
+                  <h3 className="font-headline mt-2 text-2xl font-bold leading-snug text-primary">
+                    {resource.title[locale]}
+                  </h3>
+                </div>
+              </div>
+              <p className="mt-5 grow text-sm leading-6 text-on-surface-variant">
+                {resource.description[locale]}
+              </p>
+              <Link
+                href={resource.href}
+                className="mt-7 inline-flex items-center gap-2 self-start rounded-md bg-primary px-5 py-3 text-sm font-medium text-on-primary transition-colors hover:bg-primary-container"
+              >
+                {t("papers.exploreResource")}
+                <span className="material-symbols-outlined text-sm">
+                  arrow_forward
+                </span>
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+
       <section id="speaker-presentations" className="mb-32 scroll-mt-28">
         <div className="mb-12 flex items-center gap-4">
           <div className="flex items-center justify-center rounded-full bg-tertiary-fixed/30 p-3">
@@ -290,168 +454,6 @@ export function PapersPage() {
             ofLabel={t("papers.of")}
           />
         ) : null}
-      </section>
-
-      <section id="academic-papers" className="scroll-mt-28">
-        <div className="mb-12 flex items-center gap-4">
-          <div className="flex items-center justify-center rounded-full bg-primary-container/20 p-3">
-            <span className="material-symbols-outlined text-3xl text-primary">
-              auto_stories
-            </span>
-          </div>
-          <div>
-            <span className="font-label text-xs font-bold tracking-widest text-tertiary-fixed-dim uppercase">
-              {t("papers.researchPortal")}
-            </span>
-            <h2 className="font-headline text-3xl font-bold text-primary">
-              {t("papers.academicPapers")}
-            </h2>
-          </div>
-          <div className="ml-8 hidden h-px min-w-0 grow bg-outline-variant/30 md:block" />
-        </div>
-
-        {academicQuery.isPending && !academicQuery.data && (
-          <p className="mb-6 text-center text-on-surface-variant">
-            {t("papers.listLoading")}
-          </p>
-        )}
-        {academicQuery.isError && (
-          <p className="mb-6 text-center text-primary" role="alert">
-            {t("papers.listLoadError")}
-          </p>
-        )}
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
-          {HIGHLIGHTED?.documentType === "paper" ? (
-            <div className="group relative overflow-hidden border border-outline-variant/20 bg-white p-8 shadow-sm transition-shadow hover:shadow-md md:col-span-7">
-              <div className="relative z-10">
-                <span className="font-label text-xs font-bold text-tertiary-fixed-dim uppercase">
-                  {HIGHLIGHTED.year}
-                </span>
-                <h3 className="font-headline mt-3 mb-4 text-2xl leading-snug text-primary">
-                  {HIGHLIGHTED.title}
-                </h3>
-                <p className="font-body mb-8 text-sm text-on-surface-variant italic">
-                  {localizedContext(HIGHLIGHTED)}
-                </p>
-                <ExternalLink
-                  href={HIGHLIGHTED.href}
-                  className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-on-primary transition-colors hover:bg-primary-container"
-                >
-                  {t("papers.viewPaper")}
-                  <span className="material-symbols-outlined text-sm">
-                    open_in_new
-                  </span>
-                </ExternalLink>
-              </div>
-            </div>
-          ) : null}
-
-          <div
-            className={`flex flex-col gap-6 ${HIGHLIGHTED?.documentType === "paper" ? "md:col-span-5" : "md:col-span-12 md:flex-row md:flex-wrap"}`}
-            aria-busy={academicQuery.isFetching}
-          >
-            {academicPapers.map((item) => (
-              <div
-                key={item.href}
-                className={`border border-outline-variant/20 bg-white p-6 shadow-sm transition-colors hover:bg-surface-container-lowest ${HIGHLIGHTED?.documentType === "paper" ? "" : "md:min-w-[280px] md:flex-1"}`}
-              >
-                <span className="font-label text-xs font-bold text-on-surface-variant/60 uppercase">
-                  {item.year}
-                </span>
-                <h3 className="font-headline mt-2 mb-2 text-xl text-primary">
-                  {item.title}
-                </h3>
-                <p className="font-body mb-6 text-sm text-on-surface-variant">
-                  {localizedContext(item)}
-                </p>
-                <ExternalLink
-                  href={item.href}
-                  className="flex items-center gap-1 text-sm font-bold text-primary decoration-tertiary-fixed underline-offset-4 hover:underline"
-                >
-                  {t("papers.viewPaper")}{" "}
-                  <span className="material-symbols-outlined text-xs">
-                    arrow_forward
-                  </span>
-                </ExternalLink>
-              </div>
-            ))}
-          </div>
-        </div>
-        {academicTotalPages > 1 ? (
-          <PaginationFolio
-            page={pageAcademic}
-            totalPages={academicTotalPages}
-            isFetching={academicQuery.isFetching}
-            onPrev={() => setPageAcademic((p) => Math.max(1, p - 1))}
-            onNext={() =>
-              setPageAcademic((p) => Math.min(academicTotalPages, p + 1))
-            }
-            prevLabel={t("papers.prev")}
-            nextLabel={t("papers.next")}
-            folioLabel={t("papers.folio")}
-            ofLabel={t("papers.of")}
-          />
-        ) : null}
-      </section>
-
-      <section id="research-resources" className="mt-24 scroll-mt-28">
-        <div className="mb-12 flex items-center gap-4">
-          <div className="flex items-center justify-center rounded-full bg-secondary-container/30 p-3">
-            <span className="material-symbols-outlined text-3xl text-primary">
-              account_tree
-            </span>
-          </div>
-          <div>
-            <span className="font-label text-xs font-bold tracking-widest text-tertiary-fixed-dim uppercase">
-              {t("papers.resourcesKicker")}
-            </span>
-            <h2 className="font-headline text-3xl font-bold text-primary">
-              {t("papers.resourcesTitle")}
-            </h2>
-            <p className="mt-1 max-w-3xl text-sm text-on-surface-variant">
-              {t("papers.resourcesDescription")}
-            </p>
-          </div>
-          <div className="ml-8 hidden h-px min-w-0 grow bg-outline-variant/30 md:block" />
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          {RESEARCH_RESOURCES.map((resource) => (
-            <article
-              key={resource.slug}
-              className="group flex h-full flex-col border border-outline-variant/20 bg-white p-7 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary-container/20">
-                  <span className="material-symbols-outlined text-3xl text-primary">
-                    {resource.icon}
-                  </span>
-                </div>
-                <div className="min-w-0">
-                  <span className="font-label text-[10px] font-bold tracking-widest text-tertiary-fixed-dim uppercase">
-                    {resource.kicker[locale]}
-                  </span>
-                  <h3 className="font-headline mt-2 text-2xl font-bold leading-snug text-primary">
-                    {resource.title[locale]}
-                  </h3>
-                </div>
-              </div>
-              <p className="mt-5 grow text-sm leading-6 text-on-surface-variant">
-                {resource.description[locale]}
-              </p>
-              <Link
-                href={resource.href}
-                className="mt-7 inline-flex items-center gap-2 self-start rounded-md bg-primary px-5 py-3 text-sm font-medium text-on-primary transition-colors hover:bg-primary-container"
-              >
-                {t("papers.exploreResource")}
-                <span className="material-symbols-outlined text-sm">
-                  arrow_forward
-                </span>
-              </Link>
-            </article>
-          ))}
-        </div>
       </section>
 
       <NewsletterSubscribeCard className="mt-24" />
