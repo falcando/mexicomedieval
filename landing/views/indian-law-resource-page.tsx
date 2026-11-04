@@ -112,12 +112,12 @@ function TimelineEventCard({
       style={{ ["--event-color" as string]: category.color }}
     >
       <div className="relative md:text-right">
-        <div className="sticky top-24 inline-flex items-center rounded-full border-2 border-[var(--event-color)] bg-background px-3 py-1.5 font-label text-xs font-bold tracking-wide text-on-surface">
+        <div\n          className="sticky top-24 inline-flex items-center rounded-full border-2 bg-background px-3 py-1.5 font-label text-xs font-bold tracking-wide text-on-surface"\n          style={{ borderColor: category.color }}\n        >
           {event.year}
         </div>
       </div>
 
-      <div className="relative border-l-4 border-[var(--event-color)] bg-white p-6 shadow-sm ring-1 ring-outline-variant/20 md:p-7">
+      <div\n        className="relative border-l-4 bg-white p-6 shadow-sm ring-1 ring-outline-variant/20 md:p-7"\n        style={{ borderLeftColor: category.color }}\n      >
         <div className="mb-4 flex flex-wrap items-center gap-2">
           <span
             className="rounded-full px-2.5 py-1 font-label text-[10px] font-bold tracking-wider uppercase"
