@@ -404,7 +404,11 @@
       "historiographyTitle": "Historiografía básica",
       "historiographyBody": "Estas obras ayudan a distinguir la forma diplomática de los documentos, su fuerza jurídica, la historia de la recopilación y los problemas de vigencia, recepción y transmisión del derecho indiano.",
       "scopeNoteTitle": "Alcance:",
-      "scopeNoteBody": "el recurso reúne los principales hitos generales y compilatorios localizados para el siglo XVI, con 1680–1681 como contraste. No pretende todavía inventariar todas las reales cédulas expedidas en el siglo; seguirá ampliándose por materias y territorios."
+      "scopeNoteBody": "el recurso reúne los principales hitos generales y compilatorios localizados para el siglo XVI, con 1680–1681 como contraste. No pretende todavía inventariar todas las reales cédulas expedidas en el siglo; seguirá ampliándose por materias y territorios.",
+      "downloadsTitle": "Datos reutilizables",
+      "downloadsBody": "Descarga la base estructurada del recurso para trabajarla fuera del sitio.",
+      "downloadCsv": "Descargar CSV",
+      "downloadJson": "Descargar JSON"
     }
   }
 }
