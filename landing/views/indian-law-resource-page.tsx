@@ -428,36 +428,6 @@ export function IndianLawResourcePage() {
             <p><strong className="text-on-surface">C</strong> · {t("resources.indianLaw.evidenceC")}</p>
           </div>
 
-          <div className="mt-6 border-t border-outline-variant/30 pt-5">
-            <h3 className="font-headline text-lg font-bold text-primary">
-              {t("resources.indianLaw.downloadsTitle")}
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-on-surface-variant">
-              {t("resources.indianLaw.downloadsBody")}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <a
-                href="/api/resources/indian-law/csv"
-                download="legislacion-indiana-siglo-xvi.csv"
-                className="inline-flex items-center gap-2 border border-primary px-3 py-2 text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-on-primary"
-              >
-                <span className="material-symbols-outlined text-base" aria-hidden="true">
-                  table_view
-                </span>
-                {t("resources.indianLaw.downloadCsv")}
-              </a>
-              <a
-                href="/api/resources/indian-law/json"
-                download="legislacion-indiana-siglo-xvi.json"
-                className="inline-flex items-center gap-2 border border-primary px-3 py-2 text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-on-primary"
-              >
-                <span className="material-symbols-outlined text-base" aria-hidden="true">
-                  data_object
-                </span>
-                {t("resources.indianLaw.downloadJson")}
-              </a>
-            </div>
-          </div>
         </aside>
       </section>
 
