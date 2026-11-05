@@ -1,0 +1,1480 @@
+{
+  "categories": {
+    "R1": {
+      "label": {
+        "es": "Norma regia promulgada",
+        "en": "Enacted royal norm"
+      },
+      "color": "#155e75"
+    },
+    "R2": {
+      "label": {
+        "es": "Norma territorial o delegada",
+        "en": "Territorial or delegated norm"
+      },
+      "color": "#2f855a"
+    },
+    "I1": {
+      "label": {
+        "es": "Instrumento jurídico-procedimental",
+        "en": "Legal-procedural instrument"
+      },
+      "color": "#9a3412"
+    },
+    "C1": {
+      "label": {
+        "es": "Compilación oficial de uso administrativo",
+        "en": "Official administrative compilation"
+      },
+      "color": "#6d28d9"
+    },
+    "P1": {
+      "label": {
+        "es": "Proyecto oficial o instrumento preparatorio",
+        "en": "Official project or preparatory instrument"
+      },
+      "color": "#b45309"
+    },
+    "P2": {
+      "label": {
+        "es": "Compilación o proyecto no promulgado",
+        "en": "Unenacted compilation or project"
+      },
+      "color": "#9d174d"
+    },
+    "RC": {
+      "label": {
+        "es": "Recopilación promulgada como corpus",
+        "en": "Compilation enacted as a legal corpus"
+      },
+      "color": "#374151"
+    },
+    "INST": {
+      "label": {
+        "es": "Hito institucional",
+        "en": "Institutional milestone"
+      },
+      "color": "#475569"
+    }
+  },
+  "sources": {
+    "garcia_gallo": {
+      "kind": "hist",
+      "label": "Alfonso García-Gallo, \"La Ley como fuente del Derecho en Indias en el siglo XVI\" (AHDE)",
+      "url": "https://www.boe.es/biblioteca_juridica/anuarios_derecho/articulo.php?id=ANU-H-1951-10060700730"
+    },
+    "dougnac_manual": {
+      "kind": "hist",
+      "label": "Antonio Dougnac Rodríguez, Manual de historia del derecho indiano (UNAM)",
+      "url": "https://repositorio.unam.mx/contenidos/5009046"
+    },
+    "cruz_barney": {
+      "kind": "hist",
+      "label": "Oscar Cruz Barney, \"Carlos V y el derecho indiano\" (UNAM)",
+      "url": "https://revistas.juridicas.unam.mx/index.php/historia-derecho/article/download/17674/18211"
+    },
+    "perez_copulata": {
+      "kind": "hist",
+      "label": "Leticia Pérez Puente, \"Releer la Copulata de las leyes y provisiones de indias\" (UNAM)",
+      "url": "https://revistas.juridicas.unam.mx/index.php/historia-derecho/article/view/18529"
+    },
+    "perez_iglesia": {
+      "kind": "hist",
+      "label": "Leticia Pérez Puente, La Iglesia del rey. El patronato indiano y el libro De la gobernación espiritual (UNAM)",
+      "url": "https://www.iisue.unam.mx/publicaciones/libros/la-iglesia-del-rey-el-patronato-indiano-y-el-libro-de-la-gobernacion-espiritual"
+    },
+    "burgos_pares": {
+      "kind": "primary",
+      "label": "PARES: Ordenanzas para el tratamiento de los indios (copia de las Leyes de Burgos), AGI, INDIFERENTE,419,L.4,F.83R-96V",
+      "url": "https://pares.cultura.gob.es/ParesBusquedas20/catalogo/description/246509"
+    },
+    "valladolid_pares": {
+      "kind": "primary",
+      "label": "PARES: documentos de 1513 sobre buen tratamiento; AGI, PATRONATO,174,R.1",
+      "url": "https://pares.cultura.gob.es/ParesBusquedas20/catalogo/description/124766"
+    },
+    "burgos_bne": {
+      "kind": "edition",
+      "label": "BNE: facsímil y estudio de las Leyes de Burgos (1512) y Valladolid (1513)",
+      "url": "https://datos.bne.es/edicion/bimo0000274045.html"
+    },
+    "burgos_revision": {
+      "kind": "hist",
+      "label": "José Sánchez-Arcilla Bernal, revisión histórico-jurídica de las Leyes de Burgos (UCM)",
+      "url": "https://revistas.ucm.es/index.php/CUHD/article/view/77969"
+    },
+    "ovando_pares": {
+      "kind": "primary",
+      "label": "PARES: Juan de Ovando, registro de autoridad y trayectoria en el Consejo de Indias",
+      "url": "https://pares.cultura.gob.es/ParesBusquedas20/catalogo/autoridad/62194"
+    },
+    "rah_docleg_5": {
+      "kind": "edition",
+      "label": "Real Academia de la Historia, Colección de documentos inéditos, Documentos legislativos I (edición histórica digital)",
+      "url": "https://readingroo.ms/5/6/4/5/56452/56452-h/56452-h.htm"
+    },
+    "inah_1500": {
+      "kind": "hist",
+      "label": "INAH: estudio con referencias al AGI y ediciones de la cédula de 20 de junio de 1500",
+      "url": "https://investigacion.inah.gob.mx/_flysystem/fedora/2024-07/mmtria-por-la-senda-de-la-libertad-hispana-ideologia.pdf"
+    },
+    "requerimiento_pares": {
+      "kind": "primary",
+      "label": "PARES: registro de autoridad del Requerimiento (1512-1542)",
+      "url": "https://pares.cultura.gob.es/ParesBusquedas20/catalogo/autoridad/155788"
+    },
+    "requerimiento_cervantes": {
+      "kind": "edition",
+      "label": "Biblioteca Virtual Miguel de Cervantes: transcripción del Requerimiento en versiones de Nueva España, Tierra Firme y Perú",
+      "url": "https://www.cervantesvirtual.com/obra/requerimiento-que-ha-de-hacerse-a-los-indios-para-que-se-sometan-para-nueva-espana-en-1518-y-1523-tierra-firme-1526-y-peru-1533-fragmento-1259446/"
+    },
+    "requerimiento_hist": {
+      "kind": "hist",
+      "label": "Fernando Méndez Sánchez, análisis histórico-jurídico del Requerimiento (Hipogrifo)",
+      "url": "https://www.redalyc.org/journal/5175/517569474048/517569474048.pdf"
+    },
+    "consejo_ministerio": {
+      "kind": "reference",
+      "label": "Ministerio de Cultura: Consejo de Indias, funciones y cronología institucional",
+      "url": "https://www.cultura.gob.es/eu/cultura/archivos/difusion/mc-difusion/bicentenarios/contexto-historico/imperio-espanol/organizacion/consejo-de-indias.html"
+    },
+    "rah_docleg_9": {
+      "kind": "edition",
+      "label": "Real Academia de la Historia, Colección de documentos inéditos, Documentos legislativos II: disposiciones de 1526",
+      "url": "https://www.gutenberg.org/cache/epub/60971/pg60971-images.html"
+    },
+    "rah_docleg_10": {
+      "kind": "edition",
+      "label": "Real Academia de la Historia, Colección de documentos inéditos, Documentos legislativos III: cédulas y provisiones de 1530-1534",
+      "url": "https://www.gutenberg.org/cache/epub/66554/pg66554-images.html"
+    },
+    "lillo_esclavitud": {
+      "kind": "hist",
+      "label": "Víctor Lillo Casta, \"La Información en derecho de Vasco de Quiroga...\" (Manuscrits)",
+      "url": "https://revistes.uab.cat/manuscrits/article/view/v44-lillo-2"
+    },
+    "leyes_nuevas_pares": {
+      "kind": "primary",
+      "label": "PARES: Leyes Nuevas (1542), Real Provisión de 20 de noviembre de 1542",
+      "url": "https://pares.cultura.gob.es/ParesBusquedas20/catalogo/autoridad/145917/imprimir"
+    },
+    "leyes_nuevas_doc": {
+      "kind": "primary",
+      "label": "PARES: Real Provisión de las Leyes Nuevas, AGI, INDIFERENTE,423,L.20,F.606V-615R",
+      "url": "https://pares.cultura.gob.es/ParesBusquedas20/catalogo/description/255830/imprimir"
+    },
+    "malinas_unm": {
+      "kind": "reference",
+      "label": "Finding aid del registro AGI, Indiferente General, 427, L.30: provisiones de Malinas, 20 de octubre de 1545",
+      "url": "https://library.unm.edu/cswr/docs/nmarchives/FindingAids/mss841indiferente.pdf"
+    },
+    "malinas_unam": {
+      "kind": "edition",
+      "label": "UNAM: edición/estudio que reproduce la cédula de Malinas de 20 de octubre de 1545",
+      "url": "https://archivos.juridicas.unam.mx/www/bjv/libros/11/5166/41.pdf"
+    },
+    "mendoza_ministerio": {
+      "kind": "reference",
+      "label": "Ministerio de Cultura, Legislación Histórica: compilaciones y Ordenanzas de Antonio de Mendoza (1548)",
+      "url": "https://www.cultura.gob.es/ca/cultura/archivos/bases-de-datos/lhe/fuentes/leyes-hechas-consejo/compilaciones.html"
+    },
+    "mendoza_cdiex": {
+      "kind": "edition",
+      "label": "CDIEx: ficha y facsímil de Ordenanzas y copilación de leyes de Antonio de Mendoza (México, 1548)",
+      "url": "https://cdiex.es/documento/ordenanzas-y-copilacion-de-leyes-por-el-muy-ilustre-senor-don-antonio-de-mendoza"
+    },
+    "instituciones_boe": {
+      "kind": "hist",
+      "label": "BOE, Estudios de Instituciones Hispano-Indianas, tomo I",
+      "url": "https://www.boe.es/biblioteca_juridica/pdf/PUB-DH-2015-79_1.pdf"
+    },
+    "servicio_1549_somoza": {
+      "kind": "edition",
+      "label": "Colección Somoza: cédula de 1 de junio de 1549 contra la carga de indígenas (con referencia AGI)",
+      "url": "https://www.enriquebolanos.org/media/publicacion/coleccionsomoza_tomo15.pdf"
+    },
+    "servicio_zavala": {
+      "kind": "hist",
+      "label": "Silvio Zavala, El servicio personal de los indios en la Nueva España: 1550-1575 (edición OA en JSTOR)",
+      "url": "https://www.jstor.org/stable/j.ctv3dnpvq"
+    },
+    "puga_original": {
+      "kind": "primary",
+      "label": "Primeros Libros de las Américas: Vasco de Puga, Provisiones cédulas instrucciones de su majestad (México, 1563)",
+      "url": "https://primeroslibros.org/spotlight/primeros-libros-de-las-americas/catalog/ebbc4ec8c99efd9e6b30179aec00f6a8?locale=es"
+    },
+    "puga_muro": {
+      "kind": "hist",
+      "label": "Antonio Muro Orejón, estudio sobre el Cedulario de Vasco de Puga (UNAM)",
+      "url": "https://revistas-colaboracion.juridicas.unam.mx/index.php/rev-facultad-derecho-mx/article/view/27024/0"
+    },
+    "audiencias_unam": {
+      "kind": "hist",
+      "label": "Agustín Bermúdez Aznar, \"Las Ordenanzas de Audiencias en la Recopilación de 1680\" (UNAM)",
+      "url": "https://archivos.juridicas.unam.mx/www/bjv/libros/2/820/10.pdf"
+    },
+    "nueva_recop_boe": {
+      "kind": "primary",
+      "label": "BOE: Nueva Recopilación de las Leyes de Castilla, reimpresión digital con estudio",
+      "url": "https://www.boe.es/biblioteca_juridica/publicacion.php?id=PUB-LH-2022-271_NUEVA_RECOPILACI%C3%93N_DE_LAS_LEYES_DE_CASTILLA&modo=1&tipo=L"
+    },
+    "junta_uned": {
+      "kind": "hist",
+      "label": "UNED: investigación sobre la visita de Ovando y la Junta Magna de 1568",
+      "url": "https://portalcientifico.uned.es/documentos/5d1df64c29995204f7667acf?lang=es"
+    },
+    "ordenanzas_1571_open": {
+      "kind": "primary",
+      "label": "Open Library / Internet Archive: Ordenanzas reales del Consejo de las Indias, texto de 1571 en edición antigua",
+      "url": "https://openlibrary.org/works/OL43296509W/Ordenanzas_reales_del_Conseio_de_las_Indias.."
+    },
+    "ordenanzas_1571_csic": {
+      "kind": "hist",
+      "label": "Anuario de Estudios Americanos: estudio sobre las Ordenanzas del Consejo de 1571",
+      "url": "https://estudiosamericanos.revistas.csic.es/index.php/estudiosamericanos/article/download/281/286/286"
+    },
+    "descripciones_cvc": {
+      "kind": "primary",
+      "label": "CVC / Archivo General de Indias: Ordenanzas para la descripción de las Indias, 3 de julio de 1573, AGI, INDIFERENTE,427,L.29,F.5V-66V",
+      "url": "https://cvc.cervantes.es/obref/arnac/indias/indias_01.htm"
+    },
+    "poblacion_bne": {
+      "kind": "edition",
+      "label": "BNE: transcripción facsimilar de las Ordenanzas de descubrimiento, nueva población y pacificación de 13 de julio de 1573",
+      "url": "https://datos.bne.es/resource/a4685996"
+    },
+    "ovando_scielo": {
+      "kind": "hist",
+      "label": "Estudios de Historia Novohispana: reformas ovandinas y su aplicación territorial",
+      "url": "https://www.scielo.org.mx/scielo.php?pid=S0185-25232021000200055&script=sci_arttext"
+    },
+    "encinas_boe": {
+      "kind": "primary",
+      "label": "BOE: Cedulario Indiano de Diego de Encinas, cuatro libros y estudio de García-Gallo",
+      "url": "https://www.boe.es/biblioteca_juridica/publicacion.php?id=PUB-LH-2018-56"
+    },
+    "encinas_estudio": {
+      "kind": "hist",
+      "label": "Alfonso García-Gallo, estudio e índices del Cedulario de Encinas (BOE)",
+      "url": "https://www.boe.es/biblioteca_juridica/abrir_pdf.php?id=PUB-LH-2018-56_5"
+    },
+    "zorita_rb": {
+      "kind": "primary",
+      "label": "Real Biblioteca Digital: manuscrito de Alonso de Zorita, Leyes y ordenanças reales de las Indias del mar océano (1574)",
+      "url": "https://rbdigital.realbiblioteca.es/s/realbiblioteca/item/12710"
+    },
+    "zorita_contexto": {
+      "kind": "hist",
+      "label": "Real Biblioteca Digital: contexto del corpus legislativo de las Audiencias y del manuscrito de Zorita",
+      "url": "https://rbdigital.realbiblioteca.es/s/manuscritos-de-am-rica/page/un-corpus-legislativo-de-las-audiencias-indianas-m-s-all-de-lo-legal"
+    },
+    "nuevo_cuaderno_cervantes": {
+      "kind": "primary",
+      "label": "Biblioteca Virtual Miguel de Cervantes: edición digital de las Nuevas leyes y ordenanzas de minas (1585; ordenanzas de 1584)",
+      "url": "https://www.cervantesvirtual.com/obra/nueuas-leyes-y-ordenancas-sic-hechas-por-su-magestad-del-rey-don-felipe-nuestro-senor-cerca-de-la-forma-que-se-ha-de-tener-enestos-reynos-en-el-descubrimiento-lauor-y-beneficio-delas-minas-de-oro-plata-acogue-y-otros-metales-y-con-la-parte-que-se-ha-de-acudir-a-su-magestad-y-la-que-han-de-auer-los-descubridores-y-beneficiadores-dellas/"
+    },
+    "nuevo_cuaderno_hist": {
+      "kind": "hist",
+      "label": "Antonio Dougnac Rodríguez, estudio sobre las Ordenanzas del Nuevo Cuaderno (Universidad de Chile)",
+      "url": "https://historiadelderecho.uchile.cl/index.php/RCHD/article/view/22129"
+    },
+    "tierras_solano": {
+      "kind": "edition",
+      "label": "Francisco de Solano, Cedulario de tierras. Compilación de legislación agraria colonial (1497-1820), UNAM",
+      "url": "https://repositorio.unam.mx/contenidos/5030732"
+    },
+    "tierras_scielo": {
+      "kind": "hist",
+      "label": "Estudios de Historia Novohispana: composiciones de tierras y cédulas de 1591-1595",
+      "url": "https://www.scielo.org.mx/scielo.php?pid=S0185-25232015000100029&script=sci_arttext"
+    },
+    "tierras_jurado": {
+      "kind": "hist",
+      "label": "María Carolina Jurado, recepción de las Reales Cédulas de 1591 en el Perú (Revista Complutense)",
+      "url": "https://revistas.ucm.es/index.php/RCHA/es/article/view/85518"
+    },
+    "recop1680_loc": {
+      "kind": "primary",
+      "label": "Library of Congress: primera edición oficial impresa de la Recopilación de leyes de los reinos de las Indias (Madrid, 1681)",
+      "url": "https://www.loc.gov/item/31010935/"
+    },
+    "recop1680_boe": {
+      "kind": "edition",
+      "label": "BOE: edición digital de la Recopilación de leyes de los reinos de las Indias",
+      "url": "https://www.boe.es/biblioteca_juridica/publicacion.php?id=PUB-LH-1998-62"
+    },
+    "recop1680_hist": {
+      "kind": "hist",
+      "label": "Concepción García-Gallo, estudio sobre la Recopilación de 1680 (AHDE / BOE)",
+      "url": "https://www.boe.es/biblioteca_juridica/anuarios_derecho/articulo.php?id=ANU-H-1979-10009900120"
+    }
+  },
+  "events": [
+    {
+      "year": "1500",
+      "start": 1500,
+      "cat": "R1",
+      "theme": "Indígenas y esclavitud",
+      "title": {
+        "es": "Cédula a Pedro de Torres: libertad y restitución de indígenas",
+        "en": "Cédula to Pedro de Torres: freedom and restitution of Indigenous people"
+      },
+      "form": {
+        "es": "Real cédula",
+        "en": "Royal cédula"
+      },
+      "authority": "Reyes Católicos",
+      "scope": {
+        "es": "Casos concretos de indígenas llevados y vendidos en Castilla",
+        "en": "Specific cases of Indigenous people taken to and sold in Castile"
+      },
+      "sanction": {
+        "es": "Norma regia expedida",
+        "en": "Issued royal norm"
+      },
+      "evidence": "B",
+      "summary": {
+        "es": "Ordenó poner en libertad y devolver a las Indias a indígenas que habían sido llevados y vendidos por mandato de Colón. No debe convertirse retrospectivamente en una abolición universal y definitiva de toda esclavitud indígena: durante el siglo XVI persistieron excepciones, autorizaciones y cambios de política.",
+        "en": "It ordered the release and return to the Indies of Indigenous people who had been taken to Castile and sold on Columbus's orders. It should not be retrospectively treated as a universal and definitive abolition of Indigenous slavery: exceptions, authorisations, and policy reversals persisted throughout the sixteenth century."
+      },
+      "interpretation": {
+        "es": "El interés historiográfico está en la construcción temprana de la condición libre del indígena, pero la medida de 1500 es concreta y convive después con categorías de cautiverio y guerra.",
+        "en": "Its historiographical importance lies in the early construction of Indigenous legal freedom, but the measure of 1500 was specific and later coexisted with categories of captivity and war."
+      },
+      "sources": [
+        "inah_1500",
+        "garcia_gallo"
+      ],
+      "archivalNote": {
+        "es": "AGI, Contratación, 3249, f. 242, según la edición y bibliografía citadas; no se localizó en esta revisión un enlace PARES directo al ítem.",
+        "en": "AGI, Contratación, 3249, f. 242, according to the cited edition and bibliography; this review did not locate a direct PARES link to the item."
+      }
+    },
+    {
+      "year": "1501–1503",
+      "start": 1501,
+      "cat": "R1",
+      "theme": "Gobierno y población",
+      "title": {
+        "es": "Instrucciones a Nicolás de Ovando",
+        "en": "Instructions to Nicolás de Ovando"
+      },
+      "form": {
+        "es": "Reales cédulas e instrucciones",
+        "en": "Royal cédulas and instructions"
+      },
+      "authority": "Reyes Católicos",
+      "scope": {
+        "es": "Gobernación de las Indias, especialmente La Española",
+        "en": "Government of the Indies, especially Hispaniola"
+      },
+      "sanction": {
+        "es": "Mandatos regios obligatorios para el destinatario",
+        "en": "Royal commands binding on the addressee"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "Las instrucciones a Ovando articulan gobierno, población, evangelización, hospitales, relación con los indígenas y administración. Son un buen ejemplo de norma regia dirigida a un oficio concreto: obligatoria, pero no necesariamente formulada como ley general para todas las Indias.",
+        "en": "The instructions to Ovando combine government, settlement, evangelisation, hospitals, relations with Indigenous communities, and administration. They exemplify a royal norm directed to a specific office: binding, but not necessarily framed as general law for all the Indies."
+      },
+      "interpretation": {
+        "es": "La instrucción debe distinguirse de una recopilación o de unas ordenanzas generales: su fuerza deriva del mandato regio y de su destinatario y ámbito.",
+        "en": "An instruction must be distinguished from a compilation or general ordinances: its force derives from the royal command and from its specific addressee and scope."
+      },
+      "sources": [
+        "ovando_pares",
+        "dougnac_manual",
+        "garcia_gallo"
+      ],
+      "archivalNote": {
+        "es": "AGI, INDIFERENTE,418,L.1, con varias instrucciones de 1501 y 1503.",
+        "en": "AGI, INDIFERENTE,418,L.1, containing several instructions from 1501 and 1503."
+      }
+    },
+    {
+      "year": "20 dic. 1503",
+      "start": 1503.97,
+      "cat": "R1",
+      "theme": "Trabajo indígena",
+      "title": {
+        "es": "Compulsión laboral con salario y condición formal de libertad",
+        "en": "Compulsory labour with wages and formal legal freedom"
+      },
+      "form": {
+        "es": "Real cédula / provisión en la tradición documental",
+        "en": "Royal cédula / provision in the documentary tradition"
+      },
+      "authority": "Corona",
+      "scope": {
+        "es": "La Española",
+        "en": "Hispaniola"
+      },
+      "sanction": {
+        "es": "Norma regia expedida",
+        "en": "Issued royal norm"
+      },
+      "evidence": "B",
+      "summary": {
+        "es": "La Corona permitió compeler a los indígenas a trabajar en minas, edificios y granjerías, fijando salario y repitiendo que debían hacerlo como personas libres y no como siervos. La tensión entre libertad jurídica y trabajo obligatorio aparece aquí de forma especialmente nítida.",
+        "en": "The Crown allowed Indigenous people to be compelled to work in mines, buildings, and agricultural enterprises, while fixing wages and insisting that they were to work as free persons rather than serfs. The tension between legal freedom and compulsory labour is especially clear here."
+      },
+      "interpretation": {
+        "es": "Es un hito estructural para leer después Burgos: la legislación protectora no elimina la coerción laboral, sino que intenta regularla y compatibilizarla con la condición jurídica de libre.",
+        "en": "This is a structural milestone for reading Burgos later: protective legislation did not remove labour coercion, but sought to regulate it and reconcile it with free legal status."
+      },
+      "sources": [
+        "rah_docleg_5",
+        "garcia_gallo"
+      ],
+      "archivalNote": {
+        "es": "AGI, Indiferente General, 418, L.1, ff. 121-122, citado por la bibliografía especializada; enlace directo PARES no localizado en esta revisión.",
+        "en": "AGI, Indiferente General, 418, L.1, ff. 121-122, as cited in the specialist literature; no direct PARES link was located in this review."
+      }
+    },
+    {
+      "year": "27 dic. 1512",
+      "start": 1512.99,
+      "cat": "R1",
+      "theme": "Trabajo indígena",
+      "title": {
+        "es": "Leyes de Burgos",
+        "en": "Laws of Burgos"
+      },
+      "form": {
+        "es": "Reales ordenanzas / Real Provisión en la copia conservada",
+        "en": "Royal ordinances / Royal Provision in the surviving copy"
+      },
+      "authority": "Fernando el Católico",
+      "scope": {
+        "es": "Antillas, con proyección indiana",
+        "en": "Antilles, with broader Indian projection"
+      },
+      "sanction": {
+        "es": "Cuerpo normativo regio",
+        "en": "Royal normative body"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "Treinta y cinco capítulos sobre residencia, trabajo, alimentación, catequesis, descanso, mujeres, menores, caciques y control de los encomenderos. La copia de 1513 conservada en PARES identifica expresamente el original de 27 de diciembre de 1512.",
+        "en": "Thirty-five chapters regulate residence, labour, food, catechesis, rest, women, minors, caciques, and control of encomenderos. The 1513 copy preserved in PARES explicitly identifies the original of 27 December 1512."
+      },
+      "interpretation": {
+        "es": "No conviene describirlas como una abolición general de la esclavitud ni proyectar sobre ellas sin matices categorías modernas de derechos humanos. Jurídicamente intentan ordenar una relación de tutela, evangelización y trabajo compulsivo.",
+        "en": "They should not be described as a general abolition of slavery, nor should modern human-rights categories be projected onto them without qualification. Legally, they sought to regulate a relationship of guardianship, evangelisation, and compulsory labour."
+      },
+      "sources": [
+        "burgos_pares",
+        "burgos_revision",
+        "garcia_gallo"
+      ]
+    },
+    {
+      "year": "28 jul. 1513",
+      "start": 1513.57,
+      "cat": "R1",
+      "theme": "Trabajo indígena",
+      "title": {
+        "es": "Declaración y moderación de Valladolid",
+        "en": "Valladolid declarations and modifications"
+      },
+      "form": {
+        "es": "Declaraciones y adiciones a las ordenanzas",
+        "en": "Declarations and additions to the ordinances"
+      },
+      "authority": "Corona",
+      "scope": {
+        "es": "Régimen iniciado en Burgos",
+        "en": "Regime initiated at Burgos"
+      },
+      "sanction": {
+        "es": "Modificación regia del régimen de 1512",
+        "en": "Royal modification of the 1512 regime"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "Las disposiciones de Valladolid complementan y moderan las ordenanzas de Burgos. Para estudiar vigencia y contenido, es más preciso hablar de un ciclo Burgos–Valladolid, 1512–1513, que tratar el texto de 1512 como un bloque inmutable.",
+        "en": "The Valladolid provisions supplemented and modified the Burgos ordinances. For questions of validity and content, it is more accurate to speak of a Burgos–Valladolid cycle, 1512–1513, than to treat the 1512 text as immutable."
+      },
+      "interpretation": {
+        "es": "Este caso muestra una característica central del derecho indiano: la norma se corrige y declara poco después de su expedición, por lo que la fecha del texto inicial no basta para reconstruir el régimen vigente.",
+        "en": "This case illustrates a central feature of Indian law: a norm could be corrected and clarified soon after issue, so the date of the initial text alone is insufficient to reconstruct the regime in force."
+      },
+      "sources": [
+        "valladolid_pares",
+        "burgos_bne",
+        "garcia_gallo"
+      ]
+    },
+    {
+      "year": "1513 →",
+      "start": 1513.6,
+      "cat": "I1",
+      "theme": "Conquista y legitimación",
+      "title": {
+        "es": "Requerimiento",
+        "en": "Requerimiento"
+      },
+      "form": {
+        "es": "Fórmula jurídico-procedimental",
+        "en": "Legal-procedural formula"
+      },
+      "authority": "Corona / práctica de expediciones",
+      "scope": {
+        "es": "Expediciones de conquista y sometimiento",
+        "en": "Expeditions of conquest and submission"
+      },
+      "sanction": {
+        "es": "Instrumento prescrito, no código general",
+        "en": "Prescribed instrument, not a general code"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "Fórmula que debía comunicar determinadas pretensiones de soberanía, evangelización y obediencia antes de ciertas acciones de guerra o sometimiento. Circuló en distintas versiones y contextos, incluidos Nueva España, Tierra Firme y Perú.",
+        "en": "A formula intended to communicate claims of sovereignty, evangelisation, and obedience before certain acts of war or submission. It circulated in different versions and settings, including New Spain, Tierra Firme, and Peru."
+      },
+      "interpretation": {
+        "es": "Debe tratarse como instrumento procedimental de una política de conquista, no como una recopilación ni como un cuerpo general de legislación. Su eficacia práctica y la inteligibilidad de su lectura a las comunidades indígenas son problemas distintos de su función jurídica formal.",
+        "en": "It should be treated as a procedural instrument within a policy of conquest, not as a compilation or general legislative body. Its practical effectiveness and the intelligibility of its reading to Indigenous communities are separate questions from its formal legal function."
+      },
+      "sources": [
+        "requerimiento_pares",
+        "requerimiento_cervantes",
+        "requerimiento_hist"
+      ]
+    },
+    {
+      "year": "1524",
+      "start": 1524,
+      "cat": "INST",
+      "theme": "Instituciones",
+      "title": {
+        "es": "Consolidación del Consejo de Indias",
+        "en": "Consolidation of the Council of the Indies"
+      },
+      "form": {
+        "es": "Hito institucional",
+        "en": "Institutional milestone"
+      },
+      "authority": "Carlos V",
+      "scope": {
+        "es": "Administración central de las Indias",
+        "en": "Central administration of the Indies"
+      },
+      "sanction": {
+        "es": "No es una ley única; es contexto institucional del circuito normativo",
+        "en": "Not a single law; an institutional context for the normative circuit"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "1524 funciona como fecha convencional de creación o consolidación del Consejo Supremo y Real de Indias, órgano consultivo, judicial y de gobierno. Desde este punto, buena parte de la legislación se prepara mediante consultas, acuerdos y despachos en relación con el monarca.",
+        "en": "1524 functions as the conventional date for the creation or consolidation of the Supreme and Royal Council of the Indies, a consultative, judicial, and governmental body. From this point, much legislation was prepared through consultas, agreements, and royal dispatches."
+      },
+      "interpretation": {
+        "es": "Una consulta del Consejo no debe confundirse con una ley: el Consejo delibera y propone; la decisión regia se expresa después en el despacho correspondiente.",
+        "en": "A Council consulta should not be confused with a law: the Council deliberated and proposed, while the royal decision was subsequently expressed through the appropriate instrument."
+      },
+      "sources": [
+        "consejo_ministerio",
+        "garcia_gallo",
+        "dougnac_manual"
+      ]
+    },
+    {
+      "year": "17 nov. 1526",
+      "start": 1526.88,
+      "cat": "R1",
+      "theme": "Conquista y población",
+      "title": {
+        "es": "Disposiciones sobre descubrimientos y poblaciones",
+        "en": "Provisions on discoveries and settlements"
+      },
+      "form": {
+        "es": "Real cédula y disposiciones conexas según la transmisión",
+        "en": "Royal cédula and related provisions in the documentary transmission"
+      },
+      "authority": "Carlos V",
+      "scope": {
+        "es": "Nuevos descubrimientos y poblaciones",
+        "en": "New discoveries and settlements"
+      },
+      "sanction": {
+        "es": "Normativa regia",
+        "en": "Royal legislation"
+      },
+      "evidence": "B",
+      "summary": {
+        "es": "El ciclo de 1526 reforzó la supervisión de las expediciones: investigación de violencias, presencia de religiosos, trato pacífico inicial, límites al cautiverio y reglas de población. Es un antecedente directo de la gran ordenación filipina de 1573.",
+        "en": "The 1526 cycle strengthened supervision of expeditions through investigation of violence, the presence of religious personnel, initial peaceful treatment, limits on captivity, and settlement rules. It is a direct predecessor of the major Philip II ordinances of 1573."
+      },
+      "interpretation": {
+        "es": "La edición histórica reúne varias piezas de la misma fecha. Conviene evitar convertirlas sin comprobación diplomática en un único documento con un título moderno fijo.",
+        "en": "The historical edition brings together several instruments from the same date. They should not be turned, without diplomatic verification, into a single document bearing a fixed modern title."
+      },
+      "sources": [
+        "rah_docleg_9",
+        "garcia_gallo"
+      ]
+    },
+    {
+      "year": "2 ago. 1530",
+      "start": 1530.59,
+      "cat": "R1",
+      "theme": "Indígenas y esclavitud",
+      "title": {
+        "es": "Prohibición general de esclavizar indígenas",
+        "en": "General prohibition on enslaving Indigenous people"
+      },
+      "form": {
+        "es": "Real cédula / provisión general",
+        "en": "Royal cédula / general provision"
+      },
+      "authority": "Carlos V",
+      "scope": {
+        "es": "Indias",
+        "en": "Indies"
+      },
+      "sanction": {
+        "es": "Norma regia expedida",
+        "en": "Issued royal norm"
+      },
+      "evidence": "B",
+      "summary": {
+        "es": "La disposición de 1530 prohibió hacer esclavos indígenas bajo los supuestos entonces admitidos. La sobrecarta de 1531 conserva e incorpora la referencia expresa a esta provisión general.",
+        "en": "The 1530 measure prohibited the enslavement of Indigenous people under the grounds then accepted. A 1531 sobrecarta preserves and explicitly refers back to this general provision."
+      },
+      "interpretation": {
+        "es": "Su relevancia se entiende mejor junto con 1534: no expresa una política lineal e irreversible, sino un momento de una controversia política y jurídica dentro del gobierno indiano.",
+        "en": "Its significance is best understood alongside 1534: it does not represent a linear and irreversible policy, but one moment in a political and legal controversy within Indian government."
+      },
+      "sources": [
+        "rah_docleg_10",
+        "lillo_esclavitud"
+      ]
+    },
+    {
+      "year": "20 feb. 1534",
+      "start": 1534.14,
+      "cat": "R1",
+      "theme": "Indígenas y esclavitud",
+      "title": {
+        "es": "Revocación parcial de la política antiesclavista de 1530",
+        "en": "Partial reversal of the 1530 anti-slavery policy"
+      },
+      "form": {
+        "es": "Real provisión",
+        "en": "Royal provision"
+      },
+      "authority": "Carlos V",
+      "scope": {
+        "es": "Indias",
+        "en": "Indies"
+      },
+      "sanction": {
+        "es": "Norma regia expedida",
+        "en": "Issued royal norm"
+      },
+      "evidence": "B",
+      "summary": {
+        "es": "La provisión de 1534 dejó sin efecto la prohibición absoluta de 1530 y volvió a admitir cautiverio en determinados supuestos de guerra considerada justa y rescate, bajo condiciones específicas.",
+        "en": "The 1534 provision set aside the absolute prohibition of 1530 and again allowed captivity under specified conditions of supposedly just war and rescate."
+      },
+      "interpretation": {
+        "es": "La secuencia 1530–1534 es un ejemplo especialmente claro de que el derecho indiano debe estudiarse como legislación móvil: promulgación, reacción, revisión y nueva regulación.",
+        "en": "The 1530–1534 sequence is a particularly clear example of why Indian law must be studied as moving legislation: enactment, reaction, revision, and renewed regulation."
+      },
+      "sources": [
+        "rah_docleg_10",
+        "lillo_esclavitud"
+      ]
+    },
+    {
+      "year": "20 nov. 1542",
+      "start": 1542.89,
+      "cat": "R1",
+      "theme": "Encomienda y gobierno",
+      "title": {
+        "es": "Leyes Nuevas",
+        "en": "New Laws"
+      },
+      "form": {
+        "es": "Real Provisión: Leyes y ordenanzas nuevamente hechas...",
+        "en": "Royal Provision: Leyes y ordenanzas nuevamente hechas..."
+      },
+      "authority": "Carlos V",
+      "scope": {
+        "es": "Indias",
+        "en": "Indies"
+      },
+      "sanction": {
+        "es": "Cuerpo normativo regio",
+        "en": "Royal normative body"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "Reforma mayor del gobierno indiano, las Audiencias, la encomienda y el tratamiento de los indígenas. El texto de PARES identifica la Real Provisión de Barcelona de 20 de noviembre de 1542 y su articulado.",
+        "en": "A major reform of Indian government, the Audiencias, encomienda, and treatment of Indigenous people. The PARES record identifies the Barcelona Royal Provision of 20 November 1542 and its articles."
+      },
+      "interpretation": {
+        "es": "La historiografía debe evitar dos simplificaciones: que las Leyes Nuevas abolieron de inmediato la encomienda en la práctica, o que fueron simplemente derogadas en bloque. El régimen fue modificado y parcialmente retraído en los años siguientes.",
+        "en": "Historiography should avoid two simplifications: that the New Laws immediately abolished encomienda in practice, or that they were simply repealed wholesale. The regime was modified and partially rolled back in the following years."
+      },
+      "sources": [
+        "leyes_nuevas_doc",
+        "leyes_nuevas_pares",
+        "cruz_barney",
+        "garcia_gallo"
+      ]
+    },
+    {
+      "year": "26 jun. 1543",
+      "start": 1543.49,
+      "cat": "R1",
+      "theme": "Encomienda y gobierno",
+      "title": {
+        "es": "Disposiciones complementarias a las Leyes Nuevas",
+        "en": "Supplementary provisions to the New Laws"
+      },
+      "form": {
+        "es": "Real Provisión complementaria",
+        "en": "Supplementary Royal Provision"
+      },
+      "authority": "Carlos V",
+      "scope": {
+        "es": "Indias",
+        "en": "Indies"
+      },
+      "sanction": {
+        "es": "Norma regia",
+        "en": "Royal norm"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "La normativa de 1542 fue completada en 1543 mediante nuevas disposiciones y aclaraciones. El propio registro de autoridad de PARES presenta 1542–1543 como un ciclo normativo.",
+        "en": "The 1542 legislation was supplemented in 1543 through further provisions and clarifications. PARES itself presents 1542–1543 as a normative cycle."
+      },
+      "interpretation": {
+        "es": "Separar 1542 y 1543 ayuda a evitar la ficción de un texto único y cerrado cuando la Corona siguió ajustando el régimen tras la promulgación inicial.",
+        "en": "Separating 1542 from 1543 avoids the fiction of a single closed text when the Crown continued to adjust the regime after the initial enactment."
+      },
+      "sources": [
+        "leyes_nuevas_pares",
+        "garcia_gallo"
+      ]
+    },
+    {
+      "year": "20 oct. 1545",
+      "start": 1545.8,
+      "cat": "R1",
+      "theme": "Encomienda y gobierno",
+      "title": {
+        "es": "Provisión de Malinas: modificación de la reforma de encomiendas",
+        "en": "Malines provision: modification of encomienda reform"
+      },
+      "form": {
+        "es": "Real provisión / cédula de Malinas",
+        "en": "Royal provision / cédula of Malines"
+      },
+      "authority": "Carlos V",
+      "scope": {
+        "es": "Indias",
+        "en": "Indies"
+      },
+      "sanction": {
+        "es": "Norma regia; revocación parcial de capítulos concretos",
+        "en": "Royal norm; partial repeal of specific provisions"
+      },
+      "evidence": "B",
+      "summary": {
+        "es": "La Corona revocó disposiciones conflictivas de las Leyes Nuevas en materia de encomiendas y devolvió determinados aspectos al estado anterior. No equivale a borrar todo el programa de 1542.",
+        "en": "The Crown revoked controversial provisions of the New Laws concerning encomiendas and restored certain aspects of the previous regime. This did not erase the entire programme of 1542."
+      },
+      "interpretation": {
+        "es": "El caso obliga a registrar la unidad normativa afectada: hablar de revocación de las Leyes Nuevas sin especificar capítulos y materias exagera el alcance de la medida.",
+        "en": "The case requires identifying the precise normative unit affected: speaking of a repeal of the New Laws without specifying chapters and subjects exaggerates the measure's reach."
+      },
+      "sources": [
+        "malinas_unm",
+        "malinas_unam",
+        "garcia_gallo"
+      ]
+    },
+    {
+      "year": "1548",
+      "start": 1548,
+      "cat": "R2",
+      "theme": "Compilación y administración",
+      "title": {
+        "es": "Ordenanzas y copilación de leyes de Antonio de Mendoza",
+        "en": "Antonio de Mendoza's ordinances and compilation of laws"
+      },
+      "form": {
+        "es": "Ordenanzas territoriales + compilación impresa",
+        "en": "Territorial ordinances + printed compilation"
+      },
+      "authority": "Virrey Antonio de Mendoza",
+      "scope": {
+        "es": "Nueva España",
+        "en": "New Spain"
+      },
+      "sanction": {
+        "es": "Pieza híbrida: normativa territorial y repertorio",
+        "en": "Hybrid object: territorial legislation and repertory"
+      },
+      "evidence": "B",
+      "summary": {
+        "es": "El impreso mexicano de 1548 combina ordenanzas de gobierno con una labor recopiladora. Su valor jurídico no puede deducirse del volumen como un todo: hay que distinguir la autoridad propia de los mandatos territoriales de la mera reproducción u ordenación de derecho previo.",
+        "en": "The Mexican printing of 1548 combines governing ordinances with compilation. Its legal value cannot be inferred from the volume as a whole: the authority of territorial commands must be distinguished from the reproduction or ordering of earlier law."
+      },
+      "interpretation": {
+        "es": "Es un buen ejemplo de por qué la categoría compilación no determina por sí sola fuerza normativa: el mismo objeto puede contener disposiciones con estatutos jurídicos diferentes.",
+        "en": "It is a useful example of why the category compilation does not by itself determine legal force: the same object can contain provisions with different legal statuses."
+      },
+      "sources": [
+        "mendoza_ministerio",
+        "mendoza_cdiex",
+        "instituciones_boe"
+      ]
+    },
+    {
+      "year": "1549",
+      "start": 1549,
+      "cat": "R1",
+      "theme": "Trabajo indígena",
+      "title": {
+        "es": "Reforma de servicios personales y cargas",
+        "en": "Reform of personal services and burdens"
+      },
+      "form": {
+        "es": "Reales cédulas",
+        "en": "Royal cédulas"
+      },
+      "authority": "Carlos V",
+      "scope": {
+        "es": "Indias y Nueva España según cada despacho",
+        "en": "Indies and New Spain, depending on each instrument"
+      },
+      "sanction": {
+        "es": "Normas regias",
+        "en": "Royal norms"
+      },
+      "evidence": "B",
+      "summary": {
+        "es": "En 1549 se reforzó la separación entre tributo de encomienda y servicios personales, y se dictaron prohibiciones contra determinadas formas de carga y trabajo. La aplicación fue desigual y dio paso a otras formas administradas de movilización laboral.",
+        "en": "In 1549 the distinction between encomienda tribute and personal services was reinforced, and prohibitions were issued against certain forms of burden and labour. Application was uneven and other administered forms of labour mobilisation continued."
+      },
+      "interpretation": {
+        "es": "No debe confundirse la prohibición de servicios personales vinculados a la encomienda con la desaparición del trabajo obligatorio indígena. El repartimiento laboral y la mita siguieron trayectorias propias.",
+        "en": "The prohibition of personal services attached to encomienda should not be confused with the disappearance of compulsory Indigenous labour. Labour repartimiento and mita followed their own trajectories."
+      },
+      "sources": [
+        "servicio_1549_somoza",
+        "servicio_zavala",
+        "garcia_gallo"
+      ]
+    },
+    {
+      "year": "1 abr. 1556",
+      "start": 1556.25,
+      "cat": "R1",
+      "theme": "Compilación y administración",
+      "title": {
+        "es": "Orden de recopilar las cédulas de las Audiencias",
+        "en": "Order to compile the cédulas of the Audiencias"
+      },
+      "form": {
+        "es": "Orden regia documentada por la historiografía",
+        "en": "Royal order documented in the historiography"
+      },
+      "authority": "Corona",
+      "scope": {
+        "es": "Audiencias de Indias",
+        "en": "Audiencias of the Indies"
+      },
+      "sanction": {
+        "es": "Mandato de recopilación, no recopilación promulgada",
+        "en": "Compilation mandate, not an enacted compilation"
+      },
+      "evidence": "C",
+      "summary": {
+        "es": "Se ordenó a las Audiencias reunir las cédulas recibidas y remitirlas al Consejo. El mandato no convierte el resultado eventual en un código: es una medida metanormativa destinada a conocer y controlar la legislación dispersa.",
+        "en": "The Audiencias were ordered to gather the cédulas they had received and send them to the Council. The mandate did not turn the eventual result into a code: it was a meta-normative measure intended to identify and control dispersed legislation."
+      },
+      "interpretation": {
+        "es": "Este hito marca el paso del problema de producir normas al problema de localizar, depurar y sistematizar miles de disposiciones acumuladas.",
+        "en": "This milestone marks a shift from the problem of producing norms to the problem of locating, filtering, and systematising thousands of accumulated provisions."
+      },
+      "sources": [
+        "cruz_barney",
+        "garcia_gallo"
+      ],
+      "archivalNote": {
+        "es": "En esta revisión no se localizó un enlace público directo al despacho de 1 de abril de 1556; Cruz Barney lo documenta y remite a la tradición recopiladora.",
+        "en": "This review did not locate a direct public link to the dispatch of 1 April 1556; Cruz Barney documents it within the history of compilation."
+      }
+    },
+    {
+      "year": "1560–1563",
+      "start": 1560,
+      "cat": "C1",
+      "theme": "Compilación y administración",
+      "title": {
+        "es": "Encargo a Luis de Velasco y Cedulario de Vasco de Puga",
+        "en": "Commission to Luis de Velasco and Vasco de Puga's Cedulario"
+      },
+      "form": {
+        "es": "Compilación oficial impresa",
+        "en": "Official printed compilation"
+      },
+      "authority": "Encargo regio; elaboración por Vasco de Puga",
+      "scope": {
+        "es": "Nueva España",
+        "en": "New Spain"
+      },
+      "sanction": {
+        "es": "Oficial en su encargo y uso; no nueva promulgación general de las normas reunidas",
+        "en": "Official in commission and use; not a new general enactment of the gathered norms"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "Felipe II ordenó en 1560 formar una recopilación de las disposiciones conservadas en el archivo virreinal; Puga concluyó e imprimió el repertorio en 1563. Las cédulas y provisiones reproducidas conservan su autoridad por su origen, no porque el libro las vuelva a promulgar.",
+        "en": "In 1560 Philip II ordered a compilation of provisions preserved in the viceregal archive; Puga completed and printed the repertory in 1563. The cédulas and provisions reproduced retained authority from their original enactment, not because the book enacted them again."
+      },
+      "interpretation": {
+        "es": "Ésta es una distinción central para todo el recurso: compilación oficial y recopilación promulgada no son equivalentes.",
+        "en": "This is a central distinction for the entire resource: an official compilation is not the same thing as an enacted compilation."
+      },
+      "sources": [
+        "puga_original",
+        "cruz_barney",
+        "puga_muro"
+      ]
+    },
+    {
+      "year": "4 oct. 1563",
+      "start": 1563.76,
+      "cat": "R1",
+      "theme": "Audiencias y justicia",
+      "title": {
+        "es": "Ordenanzas generales de Audiencias de Monzón",
+        "en": "General Ordinances of the Audiencias of Monzón"
+      },
+      "form": {
+        "es": "Ordenanzas generales / reales provisiones de aplicación a Audiencias",
+        "en": "General ordinances / royal provisions applied to the Audiencias"
+      },
+      "authority": "Felipe II",
+      "scope": {
+        "es": "Audiencias indianas",
+        "en": "Indian Audiencias"
+      },
+      "sanction": {
+        "es": "Normativa regia institucional",
+        "en": "Institutional royal legislation"
+      },
+      "evidence": "B",
+      "summary": {
+        "es": "Las ordenanzas generales de 1563 sistematizaron jurisdicción, gobierno, hacienda, oficiales, indios y procedimiento de las Audiencias. Una gran parte de su contenido fue reutilizada posteriormente en la Recopilación de 1680.",
+        "en": "The general ordinances of 1563 systematised jurisdiction, government, finance, officers, Indigenous affairs, and Audiencia procedure. A substantial portion was later reused in the Recopilación of 1680."
+      },
+      "interpretation": {
+        "es": "Su peso en 1680 no debe hacernos leerlas sólo retrospectivamente: fueron un instrumento normativo de enorme vigencia propia en el siglo XVI.",
+        "en": "Their later weight in 1680 should not lead us to read them only retrospectively: they were a major normative instrument in their own sixteenth-century context."
+      },
+      "sources": [
+        "audiencias_unam",
+        "instituciones_boe",
+        "garcia_gallo"
+      ]
+    },
+    {
+      "year": "14 mar. 1567",
+      "start": 1567.2,
+      "cat": "RC",
+      "theme": "Compilación y administración",
+      "title": {
+        "es": "Nueva Recopilación de las leyes de Castilla",
+        "en": "Nueva Recopilación of the laws of Castile"
+      },
+      "form": {
+        "es": "Recopilación sancionada por pragmática",
+        "en": "Compilation sanctioned by pragmática"
+      },
+      "authority": "Felipe II",
+      "scope": {
+        "es": "Corona de Castilla; derecho supletorio en Indias",
+        "en": "Crown of Castile; subsidiary law in the Indies"
+      },
+      "sanction": {
+        "es": "Recopilación promulgada como cuerpo normativo",
+        "en": "Compilation enacted as a normative body"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "La Nueva Recopilación ofrece el contraste técnico fundamental: aquí el trabajo recopilador recibe sanción y fuerza como corpus. En Indias, el derecho castellano operó además con carácter supletorio.",
+        "en": "The Nueva Recopilación provides the crucial technical contrast: here the work of compilation received sanction and force as a corpus. Castilian law also operated subsidiarily in the Indies."
+      },
+      "interpretation": {
+        "es": "Sirve como control comparativo para no atribuir a Puga, Copulata o Encinas una promulgación que no tuvieron como conjunto.",
+        "en": "It serves as a comparative control against attributing to Puga, the Copulata, or Encinas a general enactment they did not possess."
+      },
+      "sources": [
+        "nueva_recop_boe",
+        "cruz_barney",
+        "dougnac_manual"
+      ]
+    },
+    {
+      "year": "1568",
+      "start": 1568,
+      "cat": "P1",
+      "theme": "Reforma ovandina",
+      "title": {
+        "es": "Visita de Ovando y Junta Magna",
+        "en": "Ovando's visita and the Junta Magna"
+      },
+      "form": {
+        "es": "Proceso de visita y deliberación política",
+        "en": "Visita process and political deliberation"
+      },
+      "authority": "Felipe II / Consejo de Indias",
+      "scope": {
+        "es": "Gobierno general de las Indias",
+        "en": "General government of the Indies"
+      },
+      "sanction": {
+        "es": "Proceso oficial preparatorio; no una ley única",
+        "en": "Official preparatory process; not a single law"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "La visita de Juan de Ovando y la Junta Magna de 1568 impulsaron una revisión general de gobierno, Iglesia, fiscalidad, información y administración. Son un contexto de producción normativa, no un cuerpo legislativo promulgado.",
+        "en": "Juan de Ovando's visita and the Junta Magna of 1568 drove a broad review of government, Church affairs, fiscal policy, information, and administration. They form a context for normative production rather than an enacted legislative body."
+      },
+      "interpretation": {
+        "es": "El programa ovandino debe seguirse en dos niveles: proyectos y balances internos, por un lado, y piezas concretas que sí fueron sancionadas entre 1571 y 1574, por otro.",
+        "en": "The Ovando programme must be followed at two levels: projects and internal assessments on one hand, and specific instruments actually enacted between 1571 and 1574 on the other."
+      },
+      "sources": [
+        "ovando_pares",
+        "junta_uned",
+        "perez_copulata",
+        "perez_iglesia"
+      ]
+    },
+    {
+      "year": "ca. 1570",
+      "start": 1570,
+      "cat": "P1",
+      "theme": "Compilación y administración",
+      "title": {
+        "es": "Copulata de las leyes y provisiones de Indias",
+        "en": "Copulata of the laws and provisions of the Indies"
+      },
+      "form": {
+        "es": "Balance / repertorio preparatorio manuscrito",
+        "en": "Manuscript assessment / preparatory repertory"
+      },
+      "authority": "Consejo de Indias",
+      "scope": {
+        "es": "Normativa indiana de 1508–1570",
+        "en": "Indian legislation from 1508 to 1570"
+      },
+      "sanction": {
+        "es": "Instrumento oficial de trabajo; no promulgado como código",
+        "en": "Official working instrument; not enacted as a code"
+      },
+      "evidence": "C",
+      "summary": {
+        "es": "La Copulata resume y organiza alrededor de 1.100 registros y funciona, según la revisión de Pérez Puente, como balance o estado de la cuestión indiana para apoyar la reforma de Felipe II.",
+        "en": "The Copulata summarises and organises roughly 1,100 records and, in Pérez Puente's reassessment, functions as a review of the state of Indian law in support of Philip II's reform programme."
+      },
+      "interpretation": {
+        "es": "La autoridad de una cédula resumida en la Copulata proviene de la cédula, no del manuscrito recopilador. La oficialidad de la génesis no equivale a fuerza normativa autónoma del conjunto.",
+        "en": "The authority of a cédula summarised in the Copulata comes from the cédula itself, not from the compiling manuscript. Official origin does not amount to autonomous normative force for the compilation as a whole."
+      },
+      "sources": [
+        "perez_copulata",
+        "encinas_estudio"
+      ],
+      "archivalNote": {
+        "es": "No se incorpora aquí un enlace a imágenes del manuscrito de la Copulata: en esta revisión no se localizó una reproducción pública estable equivalente a PARES o Real Biblioteca.",
+        "en": "No link to images of the Copulata manuscript is supplied here: this review did not locate a stable public reproduction comparable to PARES or the Real Biblioteca."
+      }
+    },
+    {
+      "year": "24 sep. 1571",
+      "start": 1571.73,
+      "cat": "R1",
+      "theme": "Reforma ovandina",
+      "title": {
+        "es": "Ordenanzas del Consejo de Indias",
+        "en": "Ordinances of the Council of the Indies"
+      },
+      "form": {
+        "es": "Ordenanzas reales",
+        "en": "Royal ordinances"
+      },
+      "authority": "Felipe II",
+      "scope": {
+        "es": "Consejo Real y Supremo de Indias",
+        "en": "Royal and Supreme Council of the Indies"
+      },
+      "sanction": {
+        "es": "Parte del programa ovandino que sí fue promulgada",
+        "en": "Part of the Ovando programme that was actually enacted"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "Las 122 ordenanzas de 1571 reorganizaron el Consejo y consolidaron su autonomía institucional. Son un caso clave de un fragmento del proyecto ovandino que sí adquirió fuerza normativa propia.",
+        "en": "The 122 ordinances of 1571 reorganised the Council and consolidated its institutional autonomy. They are a key case of one part of the Ovando project acquiring its own normative force."
+      },
+      "interpretation": {
+        "es": "No debe extrapolarse esta sanción al llamado Código Ovandino entero: el hecho de que un título fuese promulgado no convirtió en ley el proyecto completo.",
+        "en": "This enactment should not be extrapolated to the entire so-called Ovando Code: the fact that one title was enacted did not turn the whole project into law."
+      },
+      "sources": [
+        "ordenanzas_1571_open",
+        "ordenanzas_1571_csic",
+        "encinas_estudio",
+        "garcia_gallo"
+      ]
+    },
+    {
+      "year": "3 jul. 1573",
+      "start": 1573.5,
+      "cat": "R1",
+      "theme": "Información y territorio",
+      "title": {
+        "es": "Ordenanzas para la descripción de las Indias",
+        "en": "Ordinances for the description of the Indies"
+      },
+      "form": {
+        "es": "Real Provisión / ordenanzas",
+        "en": "Royal Provision / ordinances"
+      },
+      "authority": "Felipe II",
+      "scope": {
+        "es": "Indias",
+        "en": "Indies"
+      },
+      "sanction": {
+        "es": "Norma regia promulgada",
+        "en": "Enacted royal norm"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "En 135 capítulos, ordenaron averiguar, describir y relacionar territorios, población, recursos e instituciones para mejorar el conocimiento del espacio gobernado.",
+        "en": "Across 135 chapters, they ordered the investigation and description of territories, population, resources, and institutions in order to improve knowledge of governed space."
+      },
+      "interpretation": {
+        "es": "Estas ordenanzas muestran que la producción de información fue parte del gobierno normativo: descripción y administración no son ámbitos separados en el programa ovandino.",
+        "en": "These ordinances show that producing information was itself part of normative government: description and administration were not separate spheres within the Ovando programme."
+      },
+      "sources": [
+        "descripciones_cvc",
+        "encinas_estudio",
+        "perez_copulata"
+      ]
+    },
+    {
+      "year": "13 jul. 1573",
+      "start": 1573.53,
+      "cat": "R1",
+      "theme": "Conquista y población",
+      "title": {
+        "es": "Ordenanzas de descubrimiento, nueva población y pacificación",
+        "en": "Ordinances of discovery, new settlement, and pacification"
+      },
+      "form": {
+        "es": "Ordenanzas regias",
+        "en": "Royal ordinances"
+      },
+      "authority": "Felipe II",
+      "scope": {
+        "es": "Nuevos descubrimientos y fundaciones",
+        "en": "New discoveries and foundations"
+      },
+      "sanction": {
+        "es": "Norma regia promulgada",
+        "en": "Enacted royal norm"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "Regulan autorizaciones, exploración, fundación de poblaciones, trazado urbano, relaciones con los indígenas y el lenguaje político de la pacificación. Son el gran punto de llegada de la regulación iniciada en 1526.",
+        "en": "They regulate authorisation, exploration, the foundation of settlements, urban layout, relations with Indigenous peoples, and the political language of pacification. They are the major culmination of a regulatory trajectory begun in 1526."
+      },
+      "interpretation": {
+        "es": "La historiografía ha destacado su dimensión urbanística, pero su alcance es más amplio: forman parte de una política de control sobre la expansión, la información y la violencia de conquista.",
+        "en": "Historiography has emphasised their urban dimension, but their scope is broader: they formed part of a policy to control expansion, information, and the violence of conquest."
+      },
+      "sources": [
+        "poblacion_bne",
+        "encinas_estudio",
+        "ovando_scielo"
+      ]
+    },
+    {
+      "year": "1 jun. 1574",
+      "start": 1574.42,
+      "cat": "R1",
+      "theme": "Iglesia y Patronato",
+      "title": {
+        "es": "Ordenanza del Patronazgo",
+        "en": "Ordinance of Royal Patronage"
+      },
+      "form": {
+        "es": "Ordenanza regia / título del programa ovandino promulgado separadamente",
+        "en": "Royal ordinance / title of the Ovando programme enacted separately"
+      },
+      "authority": "Felipe II",
+      "scope": {
+        "es": "Iglesia indiana",
+        "en": "Church in the Indies"
+      },
+      "sanction": {
+        "es": "Norma regia promulgada",
+        "en": "Enacted royal norm"
+      },
+      "evidence": "B",
+      "summary": {
+        "es": "Regula la intervención regia en beneficios, presentaciones, doctrinas y organización eclesiástica. Es otra porción del programa ovandino que adquirió fuerza normativa independiente.",
+        "en": "It regulates royal intervention in benefices, presentations, doctrinas, and ecclesiastical organisation. It is another portion of the Ovando programme that acquired independent normative force."
+      },
+      "interpretation": {
+        "es": "Su estudio reciente permite situarla no sólo como prerrogativa eclesiástica, sino como parte de la construcción administrativa de una Iglesia fuertemente integrada en el gobierno regio.",
+        "en": "Recent scholarship places it not merely as an ecclesiastical prerogative, but as part of the administrative construction of a Church deeply integrated into royal government."
+      },
+      "sources": [
+        "encinas_boe",
+        "perez_iglesia",
+        "encinas_estudio"
+      ]
+    },
+    {
+      "year": "1574",
+      "start": 1574.6,
+      "cat": "P2",
+      "theme": "Compilación y administración",
+      "title": {
+        "es": "Alonso de Zorita, Leyes y ordenanças reales de las Indias del mar océano",
+        "en": "Alonso de Zorita, Leyes y ordenanças reales de las Indias del mar océano"
+      },
+      "form": {
+        "es": "Recopilación manuscrita / proyecto de jurista",
+        "en": "Manuscript compilation / jurist's project"
+      },
+      "authority": "Alonso de Zorita",
+      "scope": {
+        "es": "Derecho indiano",
+        "en": "Indian law"
+      },
+      "sanction": {
+        "es": "No promulgado como corpus",
+        "en": "Not enacted as a corpus"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "El manuscrito de 1574 reúne y organiza derecho indiano y formula expresamente la relación subsidiaria con las leyes de Castilla. Su importancia documental no implica que el volumen se convirtiera por sí mismo en legislación.",
+        "en": "The 1574 manuscript gathers and organises Indian law and explicitly formulates its subsidiary relationship with Castilian law. Its documentary importance does not mean that the volume itself became legislation."
+      },
+      "interpretation": {
+        "es": "Zorita es especialmente útil para distinguir autoridad de los textos copiados y autoridad del acto recopilador: las normas pueden ser regias aunque la compilación no sea sancionada como código.",
+        "en": "Zorita is especially useful for separating the authority of copied texts from the authority of the act of compilation: the norms may be royal even when the compilation was not sanctioned as a code."
+      },
+      "sources": [
+        "zorita_rb",
+        "zorita_contexto",
+        "encinas_estudio"
+      ]
+    },
+    {
+      "year": "1581–1596",
+      "start": 1581,
+      "cat": "C1",
+      "theme": "Compilación y administración",
+      "title": {
+        "es": "Encargo y Cedulario de Diego de Encinas",
+        "en": "Commission and Cedulario of Diego de Encinas"
+      },
+      "form": {
+        "es": "Compilación oficial de uso administrativo",
+        "en": "Official compilation for administrative use"
+      },
+      "authority": "Consejo de Indias; trabajo de Diego de Encinas",
+      "scope": {
+        "es": "Consejo de Indias; legislación hasta 1596",
+        "en": "Council of the Indies; legislation through 1596"
+      },
+      "sanction": {
+        "es": "Encargado, aceptado e impreso para uso del Consejo; no promulgado como corpus general",
+        "en": "Commissioned, accepted, and printed for Council use; not enacted as a general corpus"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "El Consejo encargó la compilación a Encinas; tras años de trabajo se imprimió en 1596 en cuatro libros y con circulación muy limitada. Reunió disposiciones consideradas útiles para el Consejo.",
+        "en": "The Council commissioned Encinas to compile the material; after years of work it was printed in 1596 in four books and with very limited circulation. It gathered provisions considered useful for Council business."
+      },
+      "interpretation": {
+        "es": "García-Gallo permite precisar la fórmula: el alto grado de oficialidad administrativa no equivale a una nueva promulgación. La fuerza jurídica reside en las provisiones, cédulas y ordenanzas reproducidas, no en el volumen como código sancionado.",
+        "en": "García-Gallo makes the distinction precise: a high degree of administrative officiality does not amount to a new enactment. Legal force resides in the provisions, cédulas, and ordinances reproduced, not in the volume as a sanctioned code."
+      },
+      "sources": [
+        "encinas_boe",
+        "encinas_estudio",
+        "cruz_barney"
+      ]
+    },
+    {
+      "year": "1584",
+      "start": 1584,
+      "cat": "R1",
+      "theme": "Minería",
+      "title": {
+        "es": "Ordenanzas del Nuevo Cuaderno",
+        "en": "Ordinances of the Nuevo Cuaderno"
+      },
+      "form": {
+        "es": "Ordenanzas regias de minas",
+        "en": "Royal mining ordinances"
+      },
+      "authority": "Felipe II",
+      "scope": {
+        "es": "Monarquía con aplicación indiana",
+        "en": "Monarchy-wide legislation with application in the Indies"
+      },
+      "sanction": {
+        "es": "Normativa regia",
+        "en": "Royal legislation"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "Regulan descubrimiento, registro, labor y beneficio de minas, derechos de descubridores y beneficiadores y participación fiscal de la Corona. Tuvieron una prolongada proyección en el derecho minero americano.",
+        "en": "They regulate discovery, registration, working and processing of mines, the rights of discoverers and operators, and the Crown's fiscal share. They had a long afterlife in American mining law."
+      },
+      "interpretation": {
+        "es": "Para esta versión se conserva sólo el año 1584, porque las fuentes secundarias consultadas presentan discrepancias sobre el día exacto de expedición. El impreso de 1585 permite consultar el texto.",
+        "en": "This version retains only the year 1584 because the secondary sources consulted disagree on the exact day of issue. The 1585 printing provides access to the text."
+      },
+      "sources": [
+        "nuevo_cuaderno_cervantes",
+        "nuevo_cuaderno_hist",
+        "dougnac_manual"
+      ]
+    },
+    {
+      "year": "1 nov. 1591",
+      "start": 1591.83,
+      "cat": "R1",
+      "theme": "Tierra y fiscalidad",
+      "title": {
+        "es": "Reales cédulas de composición de tierras y venta de baldíos",
+        "en": "Royal cédulas on land composition and sale of vacant lands"
+      },
+      "form": {
+        "es": "Conjunto de reales cédulas",
+        "en": "Set of royal cédulas"
+      },
+      "authority": "Felipe II",
+      "scope": {
+        "es": "Indias",
+        "en": "Indies"
+      },
+      "sanction": {
+        "es": "Normas regias",
+        "en": "Royal norms"
+      },
+      "evidence": "B",
+      "summary": {
+        "es": "Las cédulas de El Pardo reforzaron el examen de títulos, la recuperación o regularización de ocupaciones, la venta de baldíos y la composición mediante pago. Forman un punto de inflexión fiscal y jurídico en el régimen de tierras.",
+        "en": "The El Pardo cédulas strengthened scrutiny of titles, recovery or regularisation of occupations, sale of vacant lands, and composition through payment. They mark a fiscal and legal turning point in land tenure."
+      },
+      "interpretation": {
+        "es": "La ejecución fue territorialmente desigual. Conviene estudiar la recepción local y no deducir de la promulgación una aplicación inmediata y uniforme en todos los virreinatos.",
+        "en": "Implementation varied territorially. Local reception must be studied rather than assuming immediate and uniform application across all viceroyalties."
+      },
+      "sources": [
+        "tierras_solano",
+        "tierras_scielo",
+        "tierras_jurado"
+      ]
+    },
+    {
+      "year": "1595",
+      "start": 1595,
+      "cat": "R1",
+      "theme": "Tierra y fiscalidad",
+      "title": {
+        "es": "Corrección sobre tierras necesarias para los pueblos indígenas",
+        "en": "Correction concerning lands necessary for Indigenous communities"
+      },
+      "form": {
+        "es": "Orden regia posterior",
+        "en": "Subsequent royal order"
+      },
+      "authority": "Corona",
+      "scope": {
+        "es": "Tierras indígenas en el contexto de las composiciones",
+        "en": "Indigenous lands in the context of compositions"
+      },
+      "sanction": {
+        "es": "Norma regia documentada por la historiografía y cedularios",
+        "en": "Royal norm documented through historiography and cedularies"
+      },
+      "evidence": "C",
+      "summary": {
+        "es": "La insuficiencia de las cédulas de 1591 respecto de la reserva de tierras indígenas motivó una nueva orden que insistió en restituir o asegurar las tierras útiles para sus sementeras.",
+        "en": "The insufficiency of the 1591 cédulas regarding reserved Indigenous lands led to a further order insisting on the restitution or securing of lands needed for cultivation."
+      },
+      "interpretation": {
+        "es": "La secuencia 1591–1595 muestra nuevamente un patrón de promulgación, problemas de aplicación y corrección posterior.",
+        "en": "The 1591–1595 sequence again shows a pattern of enactment, implementation problems, and subsequent correction."
+      },
+      "sources": [
+        "tierras_solano",
+        "tierras_scielo"
+      ],
+      "archivalNote": {
+        "es": "No se enlaza aquí un registro archivístico directo de la orden de 1595; la medida está reconstruida en el Cedulario de tierras y en la historiografía citada.",
+        "en": "No direct archival record of the 1595 order is linked here; the measure is reconstructed through the Cedulario de tierras and the cited historiography."
+      }
+    },
+    {
+      "year": "1680–1681",
+      "start": 1680,
+      "cat": "RC",
+      "theme": "Compilación y administración",
+      "title": {
+        "es": "Recopilación de leyes de los reinos de las Indias",
+        "en": "Recopilación de leyes de los reinos de las Indias"
+      },
+      "form": {
+        "es": "Recopilación general promulgada",
+        "en": "General enacted compilation"
+      },
+      "authority": "Carlos II",
+      "scope": {
+        "es": "Indias",
+        "en": "Indies"
+      },
+      "sanction": {
+        "es": "Promulgada en 1680; primera edición oficial impresa en 1681",
+        "en": "Enacted in 1680; first official printed edition in 1681"
+      },
+      "evidence": "A",
+      "summary": {
+        "es": "Fuera del siglo XVI, pero indispensable como contraste: aquí el corpus recopilado recibe sanción y mandato de observancia general. Es cualitativamente distinto de Puga, Copulata, Zorita y Encinas.",
+        "en": "Outside the sixteenth century but indispensable as a contrast: here the compiled corpus received sanction and a general command of observance. It is qualitatively different from Puga, the Copulata, Zorita, and Encinas."
+      },
+      "interpretation": {
+        "es": "La Recopilación es una fuente retrospectiva imprescindible, pero no debe utilizarse sin control para reconstruir automáticamente qué estaba vigente y con qué formulación en 1530, 1570 o 1590.",
+        "en": "The Recopilación is an indispensable retrospective source, but it should not be used uncritically to reconstruct automatically what was in force, and in what wording, in 1530, 1570, or 1590."
+      },
+      "sources": [
+        "recop1680_loc",
+        "recop1680_boe",
+        "recop1680_hist",
+        "garcia_gallo"
+      ]
+    }
+  ]
+}
