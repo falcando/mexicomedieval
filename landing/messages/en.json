@@ -412,7 +412,25 @@
       "downloadsTitle": "Reusable data",
       "downloadsBody": "Download the structured dataset to work with it outside the site.",
       "downloadCsv": "Download CSV",
-      "downloadJson": "Download JSON"
+      "downloadJson": "Download JSON",
+      "scholarlyIdentityTitle": "Scholarly identity",
+      "authorLabel": "Author",
+      "affiliationLabel": "Affiliation",
+      "orcidLabel": "ORCID",
+      "versionLabel": "Version",
+      "releaseDateLabel": "Publication date",
+      "licenseLabel": "Data licence",
+      "doiLabel": "DOI",
+      "doiPending": "Pending assignment",
+      "citeLabel": "How to cite this version",
+      "citeText": "Fernández Aceves, Hervin. 2026. Legislation and normative culture in the sixteenth-century Indies: documentary and historiographical dataset, 1500–1600. Version 1.0.0. México Medieval.",
+      "archivedDatasetTitle": "Archived version 1.0.0",
+      "archivedDatasetBody": "Stable, citable snapshot of the dataset, separate from the live interface.",
+      "downloadVersionedCsv": "CSV v1.0.0",
+      "downloadVersionedJson": "JSON v1.0.0",
+      "methodologyFile": "Methodology",
+      "dataDictionaryFile": "Data dictionary",
+      "citationFile": "CITATION.cff"
     }
   }
 }
