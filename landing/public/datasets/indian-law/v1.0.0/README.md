@@ -9,7 +9,7 @@
 **ORCID:** https://orcid.org/0000-0002-9800-5277  
 **Sitio interactivo:** https://www.mexicomedieval.org/recursos/legislacion-indiana  
 **Licencia de los datos:** CC BY 4.0  
-**DOI:** pendiente de asignación en el depósito de la versión 1.0.0
+**DOI:** 10.5281/zenodo.23970204
 
 ## Descripción
 
@@ -40,14 +40,12 @@ La contribución original del recurso consiste en:
 - `CITATION.cff`: metadatos de citación legibles por máquina.
 - `LICENSE.md`: licencia aplicable al dataset.
 - `CHANGELOG.md`: historial de versiones.
-- `ZENODO_DEPOSIT.md`: metadatos preparados para el depósito con DOI.
-- `DATA_PAPER_PLAN.md`: estructura de trabajo para un data paper arbitrado.
 
-## Cita recomendada antes de la asignación del DOI
+## Cita recomendada
 
-Fernández Aceves, Hervin. 2026. *Legislación y cultura normativa de las Indias en el siglo XVI: dataset documental e historiográfico, 1500–1600*. Version 1.0.0. México Medieval. https://www.mexicomedieval.org/recursos/legislacion-indiana
+Fernández Aceves, Hervin. 2026. *Legislación y cultura normativa de las Indias en el siglo XVI: dataset documental e historiográfico, 1500–1600*. Version 1.0.0. Zenodo. https://doi.org/10.5281/zenodo.23970204
 
-Una vez asignado el DOI, éste sustituirá la URL como identificador principal de la versión archivada.
+Identificador persistente de esta versión archivada: https://doi.org/10.5281/zenodo.23970204
 
 ## Versionado
 

@@ -54,4 +54,8 @@ https://github.com/falcando/mexicomedieval
 
 ## DOI
 
-No completar manualmente un DOI inventado. Utilizar el DOI reservado por Zenodo y actualizar los metadatos del repositorio antes de la publicación definitiva.
+DOI reservado para la versión 1.0.0: 10.5281/zenodo.23970204
+
+URL persistente: https://doi.org/10.5281/zenodo.23970204
+
+El DOI fue reservado antes de la publicación definitiva para incorporarlo a la documentación y a la interfaz pública.

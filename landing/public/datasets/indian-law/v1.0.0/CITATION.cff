@@ -9,7 +9,8 @@ authors:
     given-names: "Hervin"
     orcid: "https://orcid.org/0000-0002-9800-5277"
     affiliation: "El Colegio de Jalisco"
-url: "https://www.mexicomedieval.org/recursos/legislacion-indiana"
+doi: "10.5281/zenodo.23970204"
+url: "https://doi.org/10.5281/zenodo.23970204"
 repository-code: "https://github.com/falcando/mexicomedieval"
 license: CC-BY-4.0
 keywords:
