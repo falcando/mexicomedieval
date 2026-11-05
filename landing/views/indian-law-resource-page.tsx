@@ -269,6 +269,132 @@ export function IndianLawResourcePage() {
       title={t("resources.indianLaw.title")}
       subtitle={t("resources.indianLaw.subtitle")}
     >
+      <section className="mb-12 border border-outline-variant/30 bg-white p-7 shadow-sm">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+          <div className="max-w-3xl">
+            <span className="font-label text-xs font-bold tracking-[0.2em] text-tertiary-fixed-dim uppercase">
+              {t("resources.indianLaw.scholarlyIdentityTitle")}
+            </span>
+            <dl className="mt-5 grid gap-x-8 gap-y-4 text-sm sm:grid-cols-2">
+              <div>
+                <dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
+                  {t("resources.indianLaw.authorLabel")}
+                </dt>
+                <dd className="mt-1 text-on-surface">Hervin Fernández Aceves</dd>
+              </div>
+              <div>
+                <dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
+                  {t("resources.indianLaw.affiliationLabel")}
+                </dt>
+                <dd className="mt-1 text-on-surface">El Colegio de Jalisco</dd>
+              </div>
+              <div>
+                <dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
+                  {t("resources.indianLaw.orcidLabel")}
+                </dt>
+                <dd className="mt-1">
+                  <a
+                    href="https://orcid.org/0000-0002-9800-5277"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline decoration-tertiary-fixed/60 underline-offset-4"
+                  >
+                    0000-0002-9800-5277
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
+                  {t("resources.indianLaw.versionLabel")}
+                </dt>
+                <dd className="mt-1 text-on-surface">1.0.0</dd>
+              </div>
+              <div>
+                <dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
+                  {t("resources.indianLaw.releaseDateLabel")}
+                </dt>
+                <dd className="mt-1 text-on-surface">4 November 2026</dd>
+              </div>
+              <div>
+                <dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
+                  {t("resources.indianLaw.licenseLabel")}
+                </dt>
+                <dd className="mt-1">
+                  <a
+                    href="https://creativecommons.org/licenses/by/4.0/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline decoration-tertiary-fixed/60 underline-offset-4"
+                  >
+                    CC BY 4.0
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
+                  {t("resources.indianLaw.doiLabel")}
+                </dt>
+                <dd className="mt-1 text-on-surface-variant">
+                  {t("resources.indianLaw.doiPending")}
+                </dd>
+              </div>
+            </dl>
+
+            <div className="mt-6 border-l-4 border-primary bg-surface-container-low p-5">
+              <p className="font-label text-[10px] font-bold tracking-widest text-primary uppercase">
+                {t("resources.indianLaw.citeLabel")}
+              </p>
+              <p className="mt-2 text-sm leading-6 text-on-surface">
+                {t("resources.indianLaw.citeText")}
+              </p>
+            </div>
+          </div>
+
+          <aside className="w-full shrink-0 border-t border-outline-variant/30 pt-5 lg:w-80 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-6">
+            <h2 className="font-headline text-xl font-bold text-primary">
+              {t("resources.indianLaw.archivedDatasetTitle")}
+            </h2>
+            <p className="mt-2 text-sm leading-6 text-on-surface-variant">
+              {t("resources.indianLaw.archivedDatasetBody")}
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <a
+                href="/datasets/indian-law/v1.0.0/indian-law-v1.0.0.csv"
+                download
+                className="border border-primary px-3 py-2 text-xs font-bold text-primary hover:bg-primary hover:text-on-primary"
+              >
+                {t("resources.indianLaw.downloadVersionedCsv")}
+              </a>
+              <a
+                href="/datasets/indian-law/v1.0.0/indian-law-v1.0.0.json"
+                download
+                className="border border-primary px-3 py-2 text-xs font-bold text-primary hover:bg-primary hover:text-on-primary"
+              >
+                {t("resources.indianLaw.downloadVersionedJson")}
+              </a>
+              <a
+                href="/datasets/indian-law/v1.0.0/METHODOLOGY.md"
+                className="border border-primary px-3 py-2 text-xs font-bold text-primary hover:bg-primary hover:text-on-primary"
+              >
+                {t("resources.indianLaw.methodologyFile")}
+              </a>
+              <a
+                href="/datasets/indian-law/v1.0.0/DATA_DICTIONARY.md"
+                className="border border-primary px-3 py-2 text-xs font-bold text-primary hover:bg-primary hover:text-on-primary"
+              >
+                {t("resources.indianLaw.dataDictionaryFile")}
+              </a>
+              <a
+                href="/datasets/indian-law/v1.0.0/CITATION.cff"
+                className="border border-primary px-3 py-2 text-xs font-bold text-primary hover:bg-primary hover:text-on-primary"
+              >
+                {t("resources.indianLaw.citationFile")}
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
       <section className="mb-12 grid gap-6 lg:grid-cols-[minmax(0,1.55fr)_minmax(18rem,0.75fr)]">
         <div className="border border-outline-variant/25 bg-white p-7 shadow-sm">
           <span className="font-label text-xs font-bold tracking-[0.2em] text-tertiary-fixed-dim uppercase">
