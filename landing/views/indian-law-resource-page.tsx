@@ -334,8 +334,15 @@ export function IndianLawResourcePage() {
                 <dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
                   {t("resources.indianLaw.doiLabel")}
                 </dt>
-                <dd className="mt-1 text-on-surface-variant">
-                  {t("resources.indianLaw.doiPending")}
+                <dd className="mt-1">
+                  <a
+                    href="https://doi.org/10.5281/zenodo.23970204"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline decoration-tertiary-fixed/60 underline-offset-4"
+                  >
+                    {t("resources.indianLaw.doiPending")}
+                  </a>
                 </dd>
               </div>
             </dl>
