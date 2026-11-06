@@ -160,7 +160,7 @@ export const EVENTS: EventSource[] = [
         title: "VI Festival del Libro Medieval 2025",
         category: "Festival",
         format: "VI edición",
-        description: 'Celebrado del 11 al 14 de diciembre de 2025 en la Librería Rosario Castellanos (Ciudad de México), el VI Festival del Libro Medieval fue organizado por el Fondo de Cultura Económica y ARDEMAC. Hervin Fernández Aceves participó en tres actividades: "Mundos y mentalidades medievales en papel", sobre la colección de clásicos medievales de Akal (11 de diciembre, con Verónica Hernández Landa); la mesa "¿Todavía somos medievales?" (13 de diciembre, con Pedro Morales Prado); y el encuentro "Un vikingo y un normando" (14 de diciembre, con Daniel Villegas Trejo).',
+        description: 'Celebrado del 11 al 14 de diciembre de 2025 en la Librería Rosario Castellanos (Ciudad de México), el VI Festival del Libro Medieval fue organizado por el Fondo de Cultura Económica y ARDEMAC. Hervin Fernández Aceves participó en tres actividades: "Mundos y mentalidades medievales en papel", sobre la colección de clásicos medievales de Akal (11 de diciembre, con Verónica Hernández Landa); la mesa "¿Todavía somos medievales?" (13 de diciembre, con Pedro Morales Prado); y el duelo de identidades entre un vikingo y un normando (14 de diciembre, con Daniel Villegas Trejo).',
         institution: "Fondo de Cultura Económica / ARDEMAC / Librería Rosario Castellanos",
         footerNote: "CDMX – 11–14 de diciembre de 2025",
         ctaLabel: "Consultar programa",
