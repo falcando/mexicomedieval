@@ -36,7 +36,10 @@ export const PAPERS: PaperEntry[] = [
     catalogId: "lecturas-florentinas-historias-cronicas-medievales",
     year: "2021",
     title: "Las lecturas florentinas de las historias y crónicas medievales",
-    context: "Conferencia magistral",
+    context:
+      "Conferencia magistral impartida durante el homenaje a Dante Alighieri por el séptimo centenario de su muerte. A partir de la tradición manuscrita de la historia atribuida a Hugo Falcando, examina las lecturas y anotaciones de Zanobi da Strada, Petrarca y Boccaccio, y su relación con los círculos intelectuales florentinos del siglo XIV.",
+    contextEn:
+      "Keynote lecture delivered for the seventh centenary of Dante Alighieri’s death. Drawing on the manuscript tradition of the history attributed to Hugo Falcandus, it examines how Zanobi da Strada, Petrarch and Boccaccio read and annotated the text, and what this reveals about fourteenth-century Florentine intellectual circles.",
     href: "https://www.youtube.com/watch?v=Vp8pryr6I88",
     documentType: "paper",
   },
@@ -44,7 +47,10 @@ export const PAPERS: PaperEntry[] = [
     catalogId: "sociopolitical-structures-sardinian-condaghes",
     year: "2024",
     title: "Sociopolitical structures in the Sardinian Condaghes and Carte volgari",
-    context: "Seminario",
+    context:
+      "Ponencia presentada en el Sardinia Symposium de 2024. Mediante una lectura comparada de los condaghes y las carte volgari, examina cómo donaciones, intercambios, autorizaciones y litigios documentan relaciones de autoridad, propiedad y dependencia en los iudicatos de la Cerdeña medieval.",
+    contextEn:
+      "Paper presented at the 2024 Sardinia Symposium. Through a comparative reading of the condaghes and carte volgari, it explores how donations, exchanges, authorisations and legal disputes reveal relations of authority, property and dependency in medieval Sardinia’s iudicatos.",
     href: "https://www.youtube.com/watch?v=M18BRyEXIXc",
     documentType: "paper",
   },
@@ -52,7 +58,10 @@ export const PAPERS: PaperEntry[] = [
     catalogId: "border-within-borders-abruzzo",
     year: "2017",
     title: "A Border Within Borders: The Abruzzo and the Kingdom of Sicily",
-    context: "Paper académico",
+    context:
+      "Estudia el Abruzzo como territorio fronterizo del reino normando de Sicilia en el siglo XII. Examina la incorporación de antiguos dominios del ducado de Spoleto, la jurisdicción de Manoppello y las evidencias del Catalogus Baronum para explicar cómo la conquista y la anexión configuraron una frontera política de varios niveles.",
+    contextEn:
+      "Examines the Abruzzo as a frontier region of the Norman kingdom of Sicily in the twelfth century. Drawing on the former lands of the duchy of Spoleto, the jurisdiction of Manoppello and the Catalogus Baronum, it considers how conquest and annexation produced overlapping political frontiers.",
     href: "https://www.academia.edu/36800703/A_border_within_borders_the_Abruzzo_and_the_kingdom_of_Sicily_in_the_twelfth_century",
     documentType: "paper",
   },
@@ -60,7 +69,10 @@ export const PAPERS: PaperEntry[] = [
     catalogId: "counts-counties-norman-mezzogiorno",
     year: "2015",
     title: "Counts and Counties in the Norman Mezzogiorno",
-    context: "Paper académico",
+    context:
+      "Ponencia presentada en el International Medieval Congress de Leeds en 2015. Analiza cómo la monarquía de los Hauteville reorganizó la dignidad condal, los señoríos y las redes nobiliarias del Mezzogiorno tras la creación del reino de Sicilia, y cómo estos cambios articularon nuevas formas de autoridad territorial.",
+    contextEn:
+      "Paper presented at the 2015 International Medieval Congress in Leeds. Examines how the Hauteville monarchy reorganised comital rank, lordships and aristocratic networks in the Mezzogiorno after the creation of the kingdom of Sicily, and how these changes shaped new forms of territorial authority.",
     href: "https://www.academia.edu/14145287/Counts_and_Counties_in_the_Norman_Mezzogiorno_The_Arrangement_of_the_Nobility_under_the_Hauteville_Monarchy",
     documentType: "paper",
   },
