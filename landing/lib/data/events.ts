@@ -152,6 +152,33 @@ export const EVENTS: EventSource[] = [
     href: "https://incurso-cnci.com/course/162/alejandro-magno-o-de-como-se-cambia-el-mundo",
   },
   {
+    catalogId: "festival-libro-medieval-2025",
+    active: true,
+    ctaIcon: "external",
+    information: {
+      es: {
+        title: "VI Festival del Libro Medieval 2025",
+        category: "Festival",
+        format: "VI edición",
+        description: 'Celebrado del 11 al 14 de diciembre de 2025 en la Librería Rosario Castellanos (Ciudad de México), el VI Festival del Libro Medieval fue organizado por el Fondo de Cultura Económica y ARDEMAC. Hervin Fernández Aceves participó en tres actividades: "Mundos y mentalidades medievales en papel", sobre la colección de clásicos medievales de Akal (11 de diciembre, con Verónica Hernández Landa); la mesa "¿Todavía somos medievales?" (13 de diciembre, con Pedro Morales Prado); y el encuentro "Un vikingo y un normando" (14 de diciembre, con Daniel Villegas Trejo).',
+        institution: "Fondo de Cultura Económica / ARDEMAC / Librería Rosario Castellanos",
+        footerNote: "CDMX – 11–14 de diciembre de 2025",
+        ctaLabel: "Consultar programa",
+      },
+      en: {
+        title: "Sixth Medieval Book Festival 2025",
+        category: "Festival",
+        format: "Sixth edition",
+        description: 'Held from 11 to 14 December 2025 at the Fondo de Cultura Económica’s Librería Rosario Castellanos in Mexico City, the sixth Medieval Book Festival was organised by the FCE and ARDEMAC. Hervin Fernández Aceves took part in three events: "Medieval worlds and mindsets on paper", a discussion of Akal’s collection of medieval classics (11 December, with Verónica Hernández Landa); "Are we still medieval?" (13 December, with Pedro Morales Prado); and "A Viking and a Norman", a staged historical encounter (14 December, with Daniel Villegas Trejo).',
+        institution: "Fondo de Cultura Económica / ARDEMAC / Librería Rosario Castellanos",
+        footerNote: "Mexico City – 11–14 December 2025",
+        ctaLabel: "View programme",
+      },
+    },
+    ctaKey: "",
+    href: "https://regeneracion.mx/ya-viene-vi-festival-del-libro-medieval-en-el-fce/",
+  },
+  {
     catalogId: "festival-libro-medieval-2023",
     active: true,
     ctaIcon: "external",
