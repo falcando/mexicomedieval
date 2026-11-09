@@ -45,6 +45,9 @@ export function documentTitleForPath(
   if (path === "/papers" || path.startsWith("/papers/")) {
     return formatSectionTitle(m.nav.papers);
   }
+  if (path === "/recursos/invasores-o-invitados") {
+    return formatSectionTitle(locale === "es" ? "¿Invasores o invitados?" : "Invaders or Invitees?");
+  }
   if (path === "/libros") {
     return formatSectionTitle(m.nav.books);
   }
