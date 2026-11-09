@@ -370,9 +370,9 @@
   "resources": {
     "indianLaw": {
       "pretitle": "Digital research resource",
-      "title": "Legislation and normative culture in the sixteenth-century Indies",
+      "title": "Legislation and normative culture in the sixteenth-century Spanish Indies",
       "subtitle": "Norms, projects, cedularies, compilations, and legal transmission, 1500–1600.",
-      "metaDescription": "Documentary and historiographical timeline of sixteenth-century Indian legislation, with primary sources, compilations, projects, and specialised scholarship.",
+      "metaDescription": "Documentary and historiographical timeline of legislation and normative culture in the sixteenth-century Spanish Indies, with primary sources, compilations, projects, and specialised scholarship.",
       "methodKicker": "How to read this resource",
       "methodTitle": "Not every official document had the same legal force",
       "methodBody": "The timeline distinguishes enacted norms, territorial or delegated legislation, procedural instruments, official administrative compilations, compilation projects, and compilations actually sanctioned as legal corpora. Each entry links the best primary source, public edition, or institutional reference located, together with specialist historiography where needed to establish scope, validity, or transmission.",
@@ -419,7 +419,7 @@
       "doiLabel": "DOI",
       "doiPending": "10.5281/zenodo.23970204",
       "citeLabel": "How to cite this version",
-      "citeText": "Fernández Aceves, Hervin. 2026. Legislation and normative culture in the sixteenth-century Indies: documentary and historiographical dataset, 1500–1600. Version 1.0.0. Zenodo. https://doi.org/10.5281/zenodo.23970204",
+      "citeText": "Fernández Aceves, Hervin. 2026. Legislation and normative culture in the sixteenth-century Spanish Indies: documentary and historiographical dataset, 1500–1600. Version 1.0.1. Zenodo. DOI pending assignment.",
       "archivedDatasetTitle": "Archived version 1.0.0",
       "archivedDatasetBody": "Stable, citable snapshot of the dataset, separate from the live interface.",
       "downloadVersionedCsv": "CSV v1.0.0",
