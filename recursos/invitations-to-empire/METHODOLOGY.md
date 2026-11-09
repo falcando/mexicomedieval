@@ -37,16 +37,21 @@ Do not conflate *foedus*, *foederati*, *laeti*, military recruitment, land assig
 6. Add original-language lexical evidence when collating the editions: *recipere*, *suscipere*, *transducere*, *dare*, *petere*, *auxilia*, *foedus*, *invitare* where actually present. Do not retrofit a word to an author.
 7. Preserve editorial correction logs and explicit doubts. Dates and coordinates must not give an illusion of greater certainty than the evidence permits.
 
-## Selected historiography
+## Historiography cited and linked in the public resource
 
-- Burgess, R. W. 1993. *The Chronicle of Hydatius and the Consularia Constantinopolitana*. Oxford: Clarendon Press.
-- Goffart, Walter. 1980. *Barbarians and Romans, A.D. 418–584: The Techniques of Accommodation*. Princeton.
-- Halsall, Guy. 2007. *Barbarian Migrations and the Roman West, 376–568*. Cambridge.
-- Heather, Peter. 1991. *Goths and Romans, 332–489*. Oxford.
-- Mathisen, Ralph W. 2020. “Barbarian Invasions or Civil Wars? Goths as Auxiliary Forces in the Roman Army.” In *Empire in Crisis: Gothic Invasions and Roman Historiography*, 263–286.
-- Rendina, Simone. 2020. “Inviting the Barbarians: Some Episodes of Treason.” *Latomus* 79 (1): 158–183. https://doi.org/10.2143/LAT.79.1.3287980
-- Thompson, E. A. 1956. “The Settlement of the Barbarians in Southern Gaul.” *Journal of Roman Studies* 46: 65–75. https://doi.org/10.2307/297966
-- Wijnendaele, Jeroen. 2015. *The Last of the Romans: Bonifatius, Warlord and Comes Africae*. London.
+The bibliography below is alphabetised by surname in Chicago's bibliography convention. Each item is cited from the interpretative framework and, where applicable, linked from selected event records. These links identify debates to investigate; they do not imply that all pages of restricted-access monographs were collated. No interpretative assertion drawn from an unread page should be presented as a verified quotation.
+
+- Brown, Peter. *The World of Late Antiquity: From Marcus Aurelius to Muhammad*. London: Thames and Hudson, 1971.
+- Brown, Peter. *The Making of Late Antiquity*. Cambridge, MA: Harvard University Press, 1978.
+- Brown, Peter. *Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350–550 AD*. Princeton, NJ: Princeton University Press, 2012.
+- Goffart, Walter. *Barbarians and Romans, A.D. 418–584: The Techniques of Accommodation*. Princeton, NJ: Princeton University Press, 1980.
+- Halsall, Guy. *Barbarian Migrations and the Roman West, 376–568*. Cambridge: Cambridge University Press, 2007.
+- Heather, Peter. *Goths and Romans, 332–489*. Oxford: Clarendon Press, 1991.
+- Mathisen, Ralph W. “Barbarian Invasions or Civil Wars? Goths as Auxiliary Forces in the Roman Army.” In *Empire in Crisis: Gothic Invasions and Roman Historiography*, edited by Fritz Mitthof, Gunther Martin, and Jana Grusková, 263–86. Vienna: Verlag Holzhausen, 2020.
+- Rendina, Simone. “Inviting the Barbarians: Some Episodes of Treason.” *Latomus* 79, no. 1 (2020): 158–83. https://doi.org/10.2143/LAT.79.1.3287980.
+- Wijnendaele, Jeroen W. P. *The Last of the Romans: Bonifatius, Warlord and Comes Africae*. London: Bloomsbury Academic, 2015.
+
+**Functions of the references:** Brown (1971, 1978, 2012) frames social and institutional transformation; Goffart (1980), Halsall (2007), and Heather (1991) raise competing interpretations of settlement, migration, fiscal allocation, and Gothic group formation; Mathisen (2020) concerns auxiliaries and civil wars; Rendina (2020) treats invitation allegations as politically charged accounts; Wijnendaele (2015) concerns Bonifatius' politics. The last two are linked particularly to the 429 and 455 Vandal cases. The 382 peace, the 418 settlement, and Gothic interventions are linked to the specialist debates rather than resolved through generic citations.
 
 ## Integration and publication
 
