@@ -307,13 +307,13 @@ export function IndianLawResourcePage() {
                 <dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
                   {t("resources.indianLaw.versionLabel")}
                 </dt>
-                <dd className="mt-1 text-on-surface">1.0.0</dd>
+                <dd className="mt-1 text-on-surface">1.0.1</dd>
               </div>
               <div>
                 <dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
                   {t("resources.indianLaw.releaseDateLabel")}
                 </dt>
-                <dd className="mt-1 text-on-surface">4 November 2026</dd>
+                <dd className="mt-1 text-on-surface">9 November 2026</dd>
               </div>
               <div>
                 <dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
@@ -334,15 +334,8 @@ export function IndianLawResourcePage() {
                 <dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">
                   {t("resources.indianLaw.doiLabel")}
                 </dt>
-                <dd className="mt-1">
-                  <a
-                    href="https://doi.org/10.5281/zenodo.23970204"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary underline decoration-tertiary-fixed/60 underline-offset-4"
-                  >
-                    {t("resources.indianLaw.doiPending")}
-                  </a>
+                <dd className="mt-1 text-on-surface-variant">
+                  {t("resources.indianLaw.doiPending")}
                 </dd>
               </div>
             </dl>
@@ -366,33 +359,33 @@ export function IndianLawResourcePage() {
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href="/datasets/indian-law/v1.0.0/indian-law-v1.0.0.csv"
+                href="/datasets/indian-law/v1.0.1/indian-law-v1.0.1.csv"
                 download
                 className="border border-primary px-3 py-2 text-xs font-bold text-primary hover:bg-primary hover:text-on-primary"
               >
                 {t("resources.indianLaw.downloadVersionedCsv")}
               </a>
               <a
-                href="/datasets/indian-law/v1.0.0/indian-law-v1.0.0.json"
+                href="/datasets/indian-law/v1.0.1/indian-law-v1.0.1.json"
                 download
                 className="border border-primary px-3 py-2 text-xs font-bold text-primary hover:bg-primary hover:text-on-primary"
               >
                 {t("resources.indianLaw.downloadVersionedJson")}
               </a>
               <a
-                href="/datasets/indian-law/v1.0.0/METHODOLOGY.md"
+                href="/datasets/indian-law/v1.0.1/METHODOLOGY.md"
                 className="border border-primary px-3 py-2 text-xs font-bold text-primary hover:bg-primary hover:text-on-primary"
               >
                 {t("resources.indianLaw.methodologyFile")}
               </a>
               <a
-                href="/datasets/indian-law/v1.0.0/DATA_DICTIONARY.md"
+                href="/datasets/indian-law/v1.0.1/DATA_DICTIONARY.md"
                 className="border border-primary px-3 py-2 text-xs font-bold text-primary hover:bg-primary hover:text-on-primary"
               >
                 {t("resources.indianLaw.dataDictionaryFile")}
               </a>
               <a
-                href="/datasets/indian-law/v1.0.0/CITATION.cff"
+                href="/datasets/indian-law/v1.0.1/CITATION.cff"
                 className="border border-primary px-3 py-2 text-xs font-bold text-primary hover:bg-primary hover:text-on-primary"
               >
                 {t("resources.indianLaw.citationFile")}
