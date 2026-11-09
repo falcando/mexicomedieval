@@ -1,6 +1,8 @@
-# Invitations to Empire: editorial methodology and source review
+# Invaders or Invitees?: editorial methodology and source review
 
-**Version:** 0.1.0 · **Date:** 8 November 2026  
+*Roman Agency and the Movement of Foreign Peoples, ‘Barbarian’ Armies and Foederati into and within the Roman Empire*
+
+**Version:** 0.1.1 · **Date:** 8 November 2026  
 **Status:** Curated research preview. No DOI. Not peer reviewed. Critical-edition collation remains incomplete.
 
 ## Research question
