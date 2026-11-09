@@ -8,10 +8,10 @@
     "place": "Gaul",
     "mechanism": "military assistance",
     "status": "attested",
-    "primary_source": "Caesar, Bellum Gallicum 7.65",
-    "source_url": "https://adfonteslibrary.org/work-caesar-gallic-war",
-    "source_critical_note": "Caesar reports explicitly sending for troops across the Rhine; not a territorial foedus.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "primary_source": "Caesar, Bellum Gallicum 7.65.4–5",
+    "source_url": "https://www.perseus.tufts.edu/hopper/text?doc=Caes.+Gal.+7.65",
+    "source_critical_note": "Caesar reports calling for cavalry and light infantry across the Rhine (arcessit); this is external recruitment, not evidence for a territorial foedus.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete"
   },
   {
     "id": "R002",
@@ -24,8 +24,10 @@
     "status": "attested",
     "primary_source": "Strabo, Geography 4.3.4",
     "source_url": "https://en.wikisource.org/wiki/The_Geography_of_Strabo/Book_4",
-    "source_critical_note": "Transfer is reported with Ubii consent; the exact date is disputed.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Strabo reports Agrippa's relocation of the Ubii with their consent; the exact year is uncertain, and a military treaty is not documented.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete",
+    "date_label_en": "Late first century BCE (approx.)",
+    "date_label_es": "Finales del siglo I a. C."
   },
   {
     "id": "R003",
@@ -38,8 +40,10 @@
     "status": "contested",
     "primary_source": "CIL XIV 3608 = ILS 986",
     "source_url": "https://www.cambridge.org/core/journals/journal-of-roman-studies/article/abs/hunts-pridianum-british-museum-papyrus-2851/D4E63ADB5B60C168250BF7DC9364DE46",
-    "source_critical_note": "Inscription is genuine, but physical relocation versus tribute-protectorate is disputed.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "CIL XIV 3608 = ILS 986 uses transduxit and refers to tribute obligations. Whether it records a physical relocation or another form of Roman control is debated. The linked publication discusses the inscription; it is not the epigraphic edition itself.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete",
+    "date_label_en": "c. 60–67 CE",
+    "date_label_es": "c. 60–67 d. C."
   },
   {
     "id": "R004",
@@ -52,8 +56,8 @@
     "status": "attested",
     "primary_source": "Cassius Dio, Roman History 72[71].16.2",
     "source_url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/72%2A.html",
-    "source_critical_note": "An obligation of 8,000 cavalry is reported, of whom 5,500 were sent to Britain.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Cassius Dio describes a peace obligation of 8,000 Iazyges horsemen, 5,500 sent to Britain. This does not establish voluntary invitation or collective settlement.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete"
   },
   {
     "id": "R005",
@@ -66,8 +70,10 @@
     "status": "attested",
     "primary_source": "Zosimus, New History 1.71.1",
     "source_url": "https://www.livius.org/sources/content/zosimus/zosimus-new-history-1/zosimus-new-history-1.71/",
-    "source_critical_note": "Direct later literary evidence; exact terms are unknown.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Zosimus 1.71.1 reports granting land to Bastarnae in Thrace, but provides no secure exact year or full settlement terms.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete",
+    "date_label_en": "Probus's reign, 276–282 CE",
+    "date_label_es": "Reinado de Probo, 276–282 d. C."
   },
   {
     "id": "R006",
@@ -80,8 +86,10 @@
     "status": "attested",
     "primary_source": "Zosimus, New History 1.71.2",
     "source_url": "https://www.livius.org/sources/content/zosimus/zosimus-new-history-1/zosimus-new-history-1.71/",
-    "source_critical_note": "Franks are described as petitioners; the settlement location is not established.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Zosimus 1.71.2 describes a Frankish petition and grant, followed by a violent departure. The exact year and settlement district are not securely identifiable.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete",
+    "date_label_en": "Probus's reign, 276–282 CE",
+    "date_label_es": "Reinado de Probo, 276–282 d. C."
   },
   {
     "id": "R007",
@@ -92,10 +100,12 @@
     "place": "Thrace",
     "mechanism": "military assistance",
     "status": "attested",
-    "primary_source": "Ammianus, Res Gestae 26.10.3",
+    "primary_source": "Ammianus 26.10.3; 27.5.1; Zosimus 4.7.2",
     "source_url": "https://www.tertullian.org/fathers/ammianus_26_book26.htm",
-    "source_critical_note": "Three thousand Goths reportedly sent by their rulers; a usurper's invitation, not lawful imperial sanction.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Ammianus records 3,000 Goths and a letter attributed to Procopius; Zosimus reports 10,000. These conflicting numerical traditions must not be harmonised silently.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete",
+    "date_label_en": "365–366 CE",
+    "date_label_es": "365–366 d. C."
   },
   {
     "id": "R008",
@@ -106,10 +116,10 @@
     "place": "Thrace",
     "mechanism": "authorised admission",
     "status": "attested",
-    "primary_source": "Ammianus, Res Gestae 31.4",
+    "primary_source": "Ammianus, Res Gestae 31.4.1–13",
     "source_url": "https://www.roger-pearse.com/tertullian/fathers/ammianus_31_book31.htm",
-    "source_critical_note": "Tervingi petitioned and obtained Roman authorisation; the Greuthungi did not receive the same licence.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Ammianus narrates a petition from the Tervingi, Valens's authorisation and the crossing. The Greuthungi were not covered by this authorisation.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete"
   },
   {
     "id": "R009",
@@ -123,21 +133,23 @@
     "primary_source": "Zosimus, New History 4.34.4–5",
     "source_url": "https://www.livius.org/sources/content/zosimus/zosimus-new-history-4/zosimus-new-history-4.34/",
     "source_critical_note": "Reception and funeral attested; not collective permanent settlement.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete"
   },
   {
     "id": "R010",
     "year": 382,
-    "title": "Roman-Gothic accommodation",
+    "title": "Roman-Gothic peace arrangements",
     "roman_actor": "Theodosius I",
     "foreign_party": "Gothic military communities",
     "place": "Thrace",
     "mechanism": "treaty",
     "status": "contested",
-    "primary_source": "Themistius, Oration 16; Zosimus 4.34",
+    "primary_source": "Themistius, Oration 16 (383); other contemporary notices",
     "source_url": "https://www.livius.org/sources/content/zosimus/zosimus-new-history-4/zosimus-new-history-4.34/",
-    "source_critical_note": "Accommodation is accepted; treaty terms and legal status remain contested.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Themistius' ceremonial oration celebrates peace; no surviving treaty specifies the precise legal, fiscal and territorial clauses often ascribed to the 382 settlement.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete",
+    "date_label_en": "382–383 CE",
+    "date_label_es": "382–383 d. C."
   },
   {
     "id": "R011",
@@ -150,8 +162,10 @@
     "status": "attested",
     "primary_source": "Paulinus of Pella, Eucharisticus 343–399",
     "source_url": "https://penelope.uchicago.edu/thayer/l/roman/texts/Paulinus_Pellaeus/Eucharisticus%2A.html",
-    "source_critical_note": "A warband changed sides during siege and defended the city; not a new frontier crossing.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Paulinus of Pella reports negotiation with an Alan king during the siege of Bazas. This was local military realignment, not a new frontier entry; the king's identification is contested.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete",
+    "date_label_en": "c. 414 CE",
+    "date_label_es": "c. 414 d. C."
   },
   {
     "id": "R012",
@@ -162,10 +176,12 @@
     "place": "Hispania and Aquitaine",
     "mechanism": "assistance and settlement",
     "status": "attested",
-    "primary_source": "Orosius 7.43; Prosper, Chronicon s.a. 419",
+    "primary_source": "Orosius, Histories 7.43.10–15; Prosper, Chronicon (critical chronology)",
     "source_url": "https://la.wikisource.org/wiki/Chronicon_Prosperi_Aquitanici",
-    "source_critical_note": "Military service and subsequent land arrangements are separate stages; fiscal terms debated.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Wallia's campaigning in Hispania and subsequent settlement in Aquitaine belong to different stages and testimonies; the land/fiscal arrangements are debated.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete",
+    "date_label_en": "416–418 CE",
+    "date_label_es": "416–418 d. C."
   },
   {
     "id": "R013",
@@ -176,10 +192,10 @@
     "place": "Africa",
     "mechanism": "alleged invitation",
     "status": "allegation",
-    "primary_source": "Procopius, Wars 3.3.22–29",
+    "primary_source": "Procopius, Wars 3.3.14–33; Prosper, Chronicon s.a. 429",
     "source_url": "https://sourcebooks.fordham.edu/ancient/procopius-vandals.asp",
-    "source_critical_note": "Crossing attested; later accusation of Bonifatius' invitation lacks direct near-contemporary corroboration.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Procopius attributes a call for Vandal aid to Bonifatius; the 429 crossing is attested, but Prosper does not identify Bonifatius personally as the inviter.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete"
   },
   {
     "id": "R014",
@@ -192,8 +208,10 @@
     "status": "attested",
     "primary_source": "Gallic Chronicle of 452, 124",
     "source_url": "https://kfhist.awk.nrw.de/text/G7",
-    "source_critical_note": "The surviving chronicle entry does not identify the Roman officer who issued the grant.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "The Gallic Chronicle of 452 (124) records allocation of deserted land in the Valence region to Alans under Sambida. The Roman granting officer is not named.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete",
+    "date_label_en": "c. 440 CE",
+    "date_label_es": "c. 440 d. C."
   },
   {
     "id": "R015",
@@ -206,8 +224,10 @@
     "status": "attested",
     "primary_source": "Gallic Chronicle of 452, 127",
     "source_url": "https://kfhist.awk.nrw.de/text/G7",
-    "source_critical_note": "Roman land allocation and subsequent expulsions are attested, but location uncertain.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Gallic Chronicle of 452 (127) credits Aetius with the grant and reports forceful eviction of resisting landowners; Roman authorisation did not entail local consent.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete",
+    "date_label_en": "c. 442 CE",
+    "date_label_es": "c. 442 d. C."
   },
   {
     "id": "R016",
@@ -220,8 +240,8 @@
     "status": "attested",
     "primary_source": "Gallic Chronicle of 452, 128",
     "source_url": "https://kfhist.awk.nrw.de/text/G7",
-    "source_critical_note": "Clear grant; treaty and tax mechanics are not preserved.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Gallic Chronicle of 452 (128) records Sapaudia being granted to Burgundian survivors for division with its inhabitants; no named Roman grantor or precise treaty clauses survive.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete"
   },
   {
     "id": "R017",
@@ -232,10 +252,10 @@
     "place": "Rome",
     "mechanism": "alleged invitation",
     "status": "allegation",
-    "primary_source": "Hydatius, Chronicle 160; Procopius, Wars 3.4",
+    "primary_source": "Hydatius, Chronicle 167 (Mommsen) = 160 (Burgess); Procopius, Wars 3.4",
     "source_url": "https://kfhist.awk.nrw.de/text/G9",
-    "source_critical_note": "Hydatius records the invitation as a rumour. The Vandal sack is certain; her alleged request is not.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Hydatius explicitly reports the alleged appeal by Eudoxia as rumour (ut mala fama dispergit). The sack of Rome is attested; the alleged invitation is not corroborated.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete"
   },
   {
     "id": "R018",
@@ -246,10 +266,12 @@
     "place": "Italy",
     "mechanism": "commissioned intervention",
     "status": "attested",
-    "primary_source": "Procopius, Wars 5.1.9–11",
+    "primary_source": "Procopius, Wars 5.1.9–13; 6.6.23–26",
     "source_url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Procopius/Wars/5A%2A.html",
-    "source_critical_note": "Imperial encouragement is explicit; constitutional outcomes remain disputed.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Procopius relates Zeno's suggestion that Theoderic displace Odoacer. The constitutional authority of the later Italian regime cannot be deduced solely from this report.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete",
+    "date_label_en": "488–489 CE",
+    "date_label_es": "488–489 d. C."
   },
   {
     "id": "R019",
@@ -262,8 +284,8 @@
     "status": "attested",
     "primary_source": "Procopius, Wars 8.26.5–13",
     "source_url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Procopius/Wars/8H%2A.html",
-    "source_critical_note": "Subsidised treaty assistance; exact numbers are Procopius' reports.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Procopius 8.26 distinguishes the Lombard alliance negotiated with Audoin from Herul participation under their own commanders. Do not combine these into a single foedus.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete"
   },
   {
     "id": "R020",
@@ -274,9 +296,11 @@
     "place": "Italy",
     "mechanism": "commissioned intervention",
     "status": "attested",
-    "primary_source": "Gregory of Tours, Histories 6.42",
+    "primary_source": "Gregory of Tours, Histories 6.42; John of Biclaro s.a. 584",
     "source_url": "https://penelope.uchicago.edu/Thayer/E/Gazetteer/Places/Europe/Italy/_Texts/HODIHI/2d_edition/6/5%2A.html",
-    "source_critical_note": "Repeated campaigns must be checked year by year; linked page is secondary historical discussion.",
-    "editorial_stage": "v0.1 curated preview; edition-level review incomplete"
+    "source_critical_note": "Gregory describes 50,000 solidi received some years previously (ante hos annos) and a Frankish campaign followed by peace with the Lombards. Payment and campaign must not be assigned an identical exact date.",
+    "editorial_stage": "v0.2.1: source-critical notes revised using the 20-case audit; critical-edition and historiographical collation incomplete",
+    "date_label_en": "c. 584 CE (payment earlier)",
+    "date_label_es": "c. 584 d. C. (pago anterior)"
   }
 ]

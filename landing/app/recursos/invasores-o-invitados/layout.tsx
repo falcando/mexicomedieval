@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: spanish ? "¿Invasores o invitados?" : "Invaders or Invitees?",
     description: spanish
-      ? "La agencia romana y el desplazamiento de pueblos extranjeros, ejércitos “bárbaros” y foederati hacia el Imperio romano y en su interior. Recurso de investigación."
+      ? "La agencia romana y el desplazamiento de pueblos extranjeros, ejércitos “bárbaros” y foederati dentro del Imperio Romano. Recurso de investigación."
       : "Roman Agency and the Movement of Foreign Peoples, ‘Barbarian’ Armies and Foederati into and within the Roman Empire. Source-critical research resource.",
     robots: { index: true, follow: true },
   };

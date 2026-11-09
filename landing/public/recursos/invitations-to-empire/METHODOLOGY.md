@@ -2,8 +2,8 @@
 
 *Roman Agency and the Movement of Foreign Peoples, ‘Barbarian’ Armies and Foederati into and within the Roman Empire*
 
-**Version:** 0.1.1 · **Date:** 8 November 2026  
-**Status:** Curated research preview. No DOI. Not peer reviewed. Critical-edition collation remains incomplete.
+**Version:** 0.2.1 · **Date:** 8 November 2026  
+**Status:** Revised source-critical preview. No DOI. Not peer reviewed. Critical-edition collation remains incomplete.
 
 ## Research question
 
@@ -53,3 +53,15 @@ Do not conflate *foedus*, *foederati*, *laeti*, military recruitment, land assig
 The website source is on `dev`, while `main` is automatically generated and serves the public GitHub Pages site. This work is staged on a feature branch to permit review. The source files live in `landing/public/recursos/invitations-to-empire/`; the Next.js static-export workflow must be tested before any merge to `dev`. No DOI should be inserted before an actual authorised deposit.
 
 **Editorial gate before release:** passage-by-passage critical-edition checks, link check, independent historiographical review, suitable open licence, verified authorship/citation, accessibility and build QA. No original-language extracts or modern translations have been reproduced wholesale in this preview.
+
+## Peter Brown and the interpretative framework
+
+Peter Brown, *The World of Late Antiquity: AD 150–750* (1971), provides a foundational framework for investigating the late Roman world as a period of social, institutional and cultural transformations, rather than reducing it to an external-invasion narrative. Brown, *Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350–550 AD* (Princeton University Press, 2012), is also directly relevant to the transformation of late Roman society and resource distribution. These works supply the wider late-antique framework; they do **not** by themselves corroborate the particular calls for foreign armies or settlements in the chronology. Specific evidence belongs with Ammianus, Themistius, the chronicles, inscriptions, Procopius and case-specific historiography. Bibliographic details verified against publisher/library records; page-by-page use awaits consultation of the volumes.
+
+## 9 November 2026 editorial revision
+
+- Spanish subtitle shortened to *La agencia romana y el desplazamiento de pueblos extranjeros, ejércitos “bárbaros” y foederati dentro del Imperio Romano* at the author's direction.
+- Spanish labels changed from *acusación* to the evidentially more neutral *invitación atribuida* / *invitación no corroborada*. The English *allegation* remains a technical descriptor.
+- Named Germanic peoples are italicised in the bilingual rendered detail records, without claiming that all such groups shared a stable ethnic or linguistic identity. Alans and Sarmatians are not automatically treated as Germanic.
+- Corrections from the 20-case critical audit record date ranges, source disagreements (notably 3,000 versus 10,000 troops in the Procopius usurpation), conditional interpretation of the 382 peace, Hydatius' two numbering systems, and distinct Lombard and Herul agreements.
+- A primary-source reference is not evidence that every historiographical controversy has been resolved. Keep cases with different kinds of Roman agency visibly distinguished.
