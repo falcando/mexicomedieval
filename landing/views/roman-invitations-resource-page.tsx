@@ -118,6 +118,7 @@ const ES: Record<string, { title: string; actor: string; party: string; place: s
 
 const HISTORIOGRAPHY = [
   { label: "Peter Brown, The World of Late Antiquity: AD 150–750 (1971).", href: "https://books.google.com/books/about/The_World_of_Late_Antiquity.html?id=eSg4eaLPOMMC" },
+  { label: "Peter Brown, The Making of Late Antiquity (1978).", href: "https://books.google.com/books/about/The_Making_of_Late_Antiquity.html?id=DLtoAAAAMAAJ" },
   { label: "Peter Brown, Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350–550 AD (2012).", href: "https://press.princeton.edu/books/paperback/9780691161778/through-the-eye-of-a-needle" },
   { label: "Walter Goffart, Barbarians and Romans, A.D. 418–584: The Techniques of Accommodation (1980).", href: null },
   { label: "Peter Heather, Goths and Romans, 332–489 (1991).", href: null },
