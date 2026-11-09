@@ -45,9 +45,9 @@ const CONTENT: Record<Locale, {
     source: "Ancient testimony", actor: "Roman authority", party: "Foreign party",
     place: "Location", note: "Source-critical note", version: "Working version",
     author: "Research editor", affiliation: "Affiliation", evidence: "Evidential classification",
-    attested: "Attested", contested: "Contested", allegation: "Alleged, unproven",
+    attested: "Explicit testimony", contested: "Disputed interpretation", allegation: "Uncorroborated allegation",
     selected: "Selected records", dateBce: "BCE", dateCe: "CE",
-    caution: "Critical-edition collation and full historiographical checking remain incomplete. This working preview is not a peer-reviewed edition and has no DOI.",
+    caution: "Editorial status: this is a versioned selection under review, not an exhaustive inventory. Each source reference identifies an ancient testimony; passage-level comparison against critical editions and historiographical disagreements is still being completed. Evidence labels record the kind of testimony, not a statistical measure of historical certainty.",
     none: "No matching cases.", returnResources: "Papers & resources",
     dataLink: "Download the structured source data (JSON)", documentTitle: "Research chronology"
   },
@@ -69,9 +69,9 @@ const CONTENT: Record<Locale, {
     source: "Testimonio antiguo", actor: "Autoridad romana", party: "Contraparte extranjera",
     place: "Espacio", note: "Observación crítica sobre las fuentes", version: "Versión de trabajo",
     author: "Responsable de la investigación", affiliation: "Adscripción", evidence: "Clasificación de la evidencia",
-    attested: "Documentado", contested: "Discutido", allegation: "Acusación no demostrada",
+    attested: "Testimonio explícito", contested: "Interpretación discutida", allegation: "Acusación no corroborada",
     selected: "Casos seleccionados", dateBce: "a. C.", dateCe: "d. C.",
-    caution: "Todavía falta cotejar todos los pasajes con sus ediciones críticas y completar la revisión historiográfica. Esta versión de trabajo no es una edición arbitrada y no tiene DOI.",
+    caution: "Estado editorial: selección documentada y versionada, no inventario exhaustivo. Las referencias identifican testimonios antiguos, mientras continúa el cotejo de pasajes con ediciones críticas y el contraste historiográfico. Las categorías describen la naturaleza de los testimonios, no constituyen una medida estadística de certeza histórica.",
     none: "No hay casos que correspondan a los filtros.", returnResources: "Papers y recursos",
     dataLink: "Descargar datos documentales estructurados (JSON)", documentTitle: "Cronología de investigación"
   }
@@ -181,7 +181,6 @@ export function RomanInvitationsResourcePage() {
       return text.includes(q);
     });
   }, [records, locale, search, status, mechanism]);
-  const statCount = (s:string) => records.filter(e=>e.status===s).length;
 
   return (
     <PageContainer customHeader={
@@ -198,22 +197,10 @@ export function RomanInvitationsResourcePage() {
         <Link href="/papers#research-resources" className="font-bold text-primary underline underline-offset-4">← {m.returnResources}</Link>
         <span>{m.version}: 0.2.0 · {m.author}: Hervin Fernández Aceves · {m.affiliation}: El Colegio de Jalisco</span>
       </div>
-      <section className="mb-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem]">
-        <div>
-          <h2 className="font-headline mb-5 text-3xl font-bold text-primary">{m.introTitle}</h2>
-          <p className="leading-8 text-on-surface">{m.intro}</p>
-          <p className="mt-5 leading-7 text-on-surface-variant">{m.initialQualification}</p>
-        </div>
-        <aside className="h-fit border border-outline-variant/30 bg-white p-6">
-          <p className="font-label text-xs font-bold tracking-widest text-primary uppercase">{m.selected}</p>
-          <p className="mt-2 font-headline text-4xl font-bold text-primary">{records.length}</p>
-          <div className="mt-5 space-y-2 border-t border-outline-variant/30 pt-4 text-sm">
-            <div className="flex justify-between"><span>{m.attested}</span><b>{statCount("attested")}</b></div>
-            <div className="flex justify-between"><span>{m.contested}</span><b>{statCount("contested")}</b></div>
-            <div className="flex justify-between"><span>{m.allegation}</span><b>{statCount("allegation")}</b></div>
-          </div>
-          <p className="mt-5 text-xs leading-5 text-on-surface-variant">{m.caution}</p>
-        </aside>
+      <section className="mb-12 max-w-5xl">
+        <h2 className="font-headline mb-5 text-3xl font-bold text-primary">{m.introTitle}</h2>
+        <p className="leading-8 text-on-surface">{m.intro}</p>
+        <p className="mt-5 leading-7 text-on-surface-variant">{m.initialQualification}</p>
       </section>
 
       <section aria-label={m.search} className="mb-14">
@@ -230,6 +217,7 @@ export function RomanInvitationsResourcePage() {
         <h2 className="font-headline mb-5 text-3xl font-bold text-primary">{m.methodTitle}</h2>
         <p className="max-w-4xl leading-8 text-on-surface">{m.method}</p>
         <p className="mt-5 max-w-4xl leading-8 text-on-surface">{m.methodSecond}</p>
+        <p className="mt-6 max-w-4xl border-l-2 border-outline-variant/70 pl-4 text-sm leading-6 text-on-surface-variant">{m.caution}</p>
         <a href="/recursos/invitations-to-empire/events.json" download className="mt-6 inline-flex border border-primary px-4 py-3 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-on-primary">{m.dataLink}</a>
       </section>
       <section className="mb-20 border-t border-outline-variant/30 pt-10">
