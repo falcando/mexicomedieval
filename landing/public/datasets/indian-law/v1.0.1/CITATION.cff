@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it using the metadata below."
+title: "Legislación y cultura normativa en las Indias hispánicas del siglo XVI: dataset documental e historiográfico, 1500–1600"
+type: dataset
+version: 1.0.1
+date-released: 2026-11-09
+authors:
+  - family-names: "Fernández Aceves"
+    given-names: "Hervin"
+    orcid: "https://orcid.org/0000-0002-9800-5277"
+    affiliation: "El Colegio de Jalisco"
+url: "https://www.mexicomedieval.org/recursos/legislacion-indiana"
+repository-code: "https://github.com/falcando/mexicomedieval"
+license: CC-BY-4.0
+keywords:
+  - derecho indiano
+  - legislación indiana
+  - Indias hispánicas
+  - Spanish Indies
+  - legal history
+  - digital humanities
+  - historical datasets
+  - sixteenth century
