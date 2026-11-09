@@ -20,7 +20,7 @@ type ResearchEvent = {
 const CONTENT: Record<Locale, {
   kicker: string; title: string; subtitleBefore: string; subtitleAfter: string;
   introTitle: string; intro: string; initialQualification: string;
-  methodTitle: string; method: string; methodSecond: string; bibliography: string;
+  methodTitle: string; method: string; methodSecond: string; historiographicalFrame: string; bibliography: string;
   search: string; searchPlaceholder: string; status: string; type: string;
   allStatus: string; allMechanisms: string; shown: string; of: string;
   source: string; actor: string; party: string; place: string; note: string;
@@ -40,6 +40,7 @@ const CONTENT: Record<Locale, {
     methodTitle: "Evidence, categories and historiography",
     method: "Each entry identifies the Roman actor, the foreign party, the location, the mechanism of entry or intervention and an ancient testimony. The labels distinguish an explicitly attested arrangement, a contested interpretation and an unproven allegation. They do not measure the reliability of every detail in the narrative.",
     methodSecond: "Military service, a foedus, land allocation and the continuing presence of foreign armies were not interchangeable arrangements. Nor should a usurper's request, a local urban agreement and an emperor's authorisation be treated as equivalent exercises of authority. The chronology brings these situations into comparison while preserving their differences.",
+    historiographicalFrame: "Peter Brown’s account of Late Antiquity places institutional change, social relations and the reconfiguration of Roman society within a history of transformation, not simply political collapse. His work provides the period’s interpretative context, while the specific claims about invitations, armed groups and settlement must still be examined against the military and documentary evidence.",
     bibliography: "Selected historiographical frame",
     search: "Search the chronology", searchPlaceholder: "Aetius, Vandals, Thrace…",
     status: "Evidential status", type: "Arrangement", allStatus: "All evidence",
@@ -64,6 +65,7 @@ const CONTENT: Record<Locale, {
     methodTitle: "Evidencia, categorías e historiografía",
     method: "Cada registro identifica a la autoridad romana, la contraparte extranjera, el espacio implicado, el mecanismo de entrada o intervención y los testimonios antiguos. Las categorías permiten distinguir entre acuerdos expresamente documentados, interpretaciones discutidas e invitaciones referidas por las fuentes cuya historicidad no está corroborada. No califican por sí mismas la fiabilidad de todos los detalles de cada relato.",
     methodSecond: "El servicio militar, un foedus, la asignación de tierras y la permanencia de contingentes armados no fueron arreglos equivalentes. Tampoco puede equipararse la petición de un usurpador, la negociación emprendida por una comunidad urbana o la autorización de un emperador. La cronología permite comparar estas situaciones sin borrar sus diferencias.",
+    historiographicalFrame: "La obra de Peter Brown sitúa los cambios institucionales, las relaciones sociales y la reorganización del mundo romano en una historia de transformaciones que no puede reducirse al colapso político. Su aportación proporciona un marco para comprender la Antigüedad tardía, pero las invitaciones, los contingentes militares y los asentamientos deben demostrarse mediante sus propios testimonios y la historiografía especializada.",
     bibliography: "Marco historiográfico de referencia",
     search: "Buscar en la cronología", searchPlaceholder: "Aecio, vándalos, Tracia…",
     status: "Estado de la evidencia", type: "Tipo de arreglo", allStatus: "Todas las categorías",
@@ -115,6 +117,8 @@ const ES: Record<string, { title: string; actor: string; party: string; place: s
 };
 
 const HISTORIOGRAPHY = [
+  { label: "Peter Brown, The World of Late Antiquity: AD 150–750 (1971).", href: "https://books.google.com/books/about/The_World_of_Late_Antiquity.html?id=eSg4eaLPOMMC" },
+  { label: "Peter Brown, Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350–550 AD (2012).", href: "https://press.princeton.edu/books/paperback/9780691161778/through-the-eye-of-a-needle" },
   { label: "Walter Goffart, Barbarians and Romans, A.D. 418–584: The Techniques of Accommodation (1980).", href: null },
   { label: "Peter Heather, Goths and Romans, 332–489 (1991).", href: null },
   { label: "Guy Halsall, Barbarian Migrations and the Roman West, 376–568 (2007).", href: null },
@@ -219,6 +223,7 @@ export function RomanInvitationsResourcePage() {
         <h2 className="font-headline mb-5 text-3xl font-bold text-primary">{m.methodTitle}</h2>
         <p className="max-w-4xl leading-8 text-on-surface">{m.method}</p>
         <p className="mt-5 max-w-4xl leading-8 text-on-surface">{m.methodSecond}</p>
+        <p className="mt-5 max-w-4xl leading-8 text-on-surface">{m.historiographicalFrame}</p>
         <p className="mt-6 max-w-4xl border-l-2 border-outline-variant/70 pl-4 text-sm leading-6 text-on-surface-variant">{m.caution}</p>
         <a href="/recursos/invitations-to-empire/events.json" download className="mt-6 inline-flex border border-primary px-4 py-3 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-on-primary">{m.dataLink}</a>
       </section>
