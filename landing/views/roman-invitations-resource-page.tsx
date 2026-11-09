@@ -21,6 +21,8 @@ const CONTENT: Record<Locale, {
   kicker: string; title: string; subtitleBefore: string; subtitleAfter: string;
   introTitle: string; intro: string; initialQualification: string;
   methodTitle: string; method: string; methodSecond: string; historiographicalFrame: string; bibliography: string;
+  historiographyIntro: string; historiographyTransformation: string; historiographySettlement: string; historiographyAgency: string;
+  historiographyNote: string; relevantStudies: string;
   search: string; searchPlaceholder: string; status: string; type: string;
   allStatus: string; allMechanisms: string; shown: string; of: string;
   source: string; actor: string; party: string; place: string; note: string;
@@ -41,7 +43,13 @@ const CONTENT: Record<Locale, {
     method: "Each entry identifies the Roman actor, the foreign party, the location, the mechanism of entry or intervention and an ancient testimony. The labels distinguish an explicitly attested arrangement, a contested interpretation and an unproven allegation. They do not measure the reliability of every detail in the narrative.",
     methodSecond: "Military service, a foedus, land allocation and the continuing presence of foreign armies were not interchangeable arrangements. Nor should a usurper's request, a local urban agreement and an emperor's authorisation be treated as equivalent exercises of authority. The chronology brings these situations into comparison while preserving their differences.",
     historiographicalFrame: "Peter Brown’s account of Late Antiquity places institutional change, social relations and the reconfiguration of Roman society within a history of transformation, not simply political collapse. His work provides the period’s interpretative context, while the specific claims about invitations, armed groups and settlement must still be examined against the military and documentary evidence.",
-    bibliography: "Selected historiographical frame",
+    bibliography: "Cited and comparative historiography",
+    historiographyIntro: "The works below serve distinct interpretative purposes; they do not all document particular invitations. These links identify pertinent scholarship, not a claim to have read every page of each volume.",
+    historiographyTransformation: "Brown frames Late Antiquity as a period of social, religious and institutional transformation, with particular attention to authority and wealth. His work contextualises the period but does not itself corroborate a particular Roman summons to a foreign army.",
+    historiographySettlement: "Goffart puts forward a fiscal interpretation of accommodation; Halsall considers Roman political agency and migration mechanisms; Heather reconstructs Gothic group formation and interaction with Roman authorities. Their approaches offer competing questions for the settlement and admission cases.",
+    historiographyAgency: "Mathisen asks whether some Gothic interventions should be read through Roman auxiliary service and civil wars. Rendina examines the political function of invitation allegations. Wijnendaele reconstructs Bonifatius’ political and military circumstances, which does not by itself establish that he summoned the Vandals.",
+    historiographyNote: "Bibliographical data and relevance are verified, and works are linked from the argument and pertinent records. Full critical reading of some subscription-only books remains pending. No precise passage or page is attributed without consultation.",
+    relevantStudies: "Related scholarship for further verification",
     search: "Search the chronology", searchPlaceholder: "Aetius, Vandals, Thrace…",
     status: "Evidential status", type: "Arrangement", allStatus: "All evidence",
     allMechanisms: "All arrangements", shown: "Showing", of: "of",
@@ -66,7 +74,13 @@ const CONTENT: Record<Locale, {
     method: "Cada registro identifica a la autoridad romana, la contraparte extranjera, el espacio implicado, el mecanismo de entrada o intervención y los testimonios antiguos. Las categorías permiten distinguir entre acuerdos expresamente documentados, interpretaciones discutidas e invitaciones referidas por las fuentes cuya historicidad no está corroborada. No califican por sí mismas la fiabilidad de todos los detalles de cada relato.",
     methodSecond: "El servicio militar, un foedus, la asignación de tierras y la permanencia de contingentes armados no fueron arreglos equivalentes. Tampoco puede equipararse la petición de un usurpador, la negociación emprendida por una comunidad urbana o la autorización de un emperador. La cronología permite comparar estas situaciones sin borrar sus diferencias.",
     historiographicalFrame: "La obra de Peter Brown sitúa los cambios institucionales, las relaciones sociales y la reorganización del mundo romano en una historia de transformaciones que no puede reducirse al colapso político. Su aportación proporciona un marco para comprender la Antigüedad tardía, pero las invitaciones, los contingentes militares y los asentamientos deben demostrarse mediante sus propios testimonios y la historiografía especializada.",
-    bibliography: "Marco historiográfico de referencia",
+    bibliography: "Bibliografía citada y de contraste",
+    historiographyIntro: "Las obras cumplen funciones interpretativas diferentes y no constituyen, todas ellas, pruebas directas de invitaciones concretas. Los enlaces permiten identificar los estudios pertinentes, sin presuponer que se han cotejado íntegramente.",
+    historiographyTransformation: "Brown sitúa la Antigüedad tardía en el contexto de transformaciones sociales, religiosas e institucionales, atendiendo a la autoridad y la riqueza. Estas obras permiten comprender el periodo, pero no corroboran por sí mismas la solicitud romana de un contingente extranjero.",
+    historiographySettlement: "Goffart plantea una interpretación fiscal de la acomodación; Halsall examina la agencia política romana y los mecanismos migratorios; Heather reconstruye la formación de los grupos godos y sus relaciones con las autoridades imperiales. Sus enfoques plantean problemas distintos que deben contrastarse en los casos de asentamiento y admisión.",
+    historiographyAgency: "Mathisen pregunta si determinadas intervenciones godas pueden interpretarse a partir del servicio auxiliar y las guerras civiles romanas. Rendina estudia la función política de los relatos sobre invitaciones. Wijnendaele reconstruye la situación política y militar de Bonifacio, sin que ello demuestre que convocara a los vándalos.",
+    historiographyNote: "Se han verificado los datos bibliográficos y la pertinencia de los estudios. Cada obra está vinculada al argumento y a los casos correspondientes. Sigue pendiente el cotejo íntegro de ciertas monografías de acceso restringido; no se atribuyen páginas o pasajes que no hayamos consultado.",
+    relevantStudies: "Estudios relacionados para cotejo historiográfico",
     search: "Buscar en la cronología", searchPlaceholder: "Aecio, vándalos, Tracia…",
     status: "Estado de la evidencia", type: "Tipo de arreglo", allStatus: "Todas las categorías",
     allMechanisms: "Todos los arreglos", shown: "Se muestran", of: "de",
@@ -116,17 +130,39 @@ const ES: Record<string, { title: string; actor: string; party: string; place: s
   R020: { title: "Mauricio financia una intervención franca en Italia", actor: "Mauricio", party: "Childeberto II y los ejércitos francos", place: "Italia", note: "Gregorio de Tours (Historias 6.42) menciona una transferencia de 50,000 sólidos y la intervención de Childeberto. Es necesario distinguir el pago, las negociaciones y las campañas al fechar el episodio." }
 };
 
-const HISTORIOGRAPHY = [
-  { label: "Peter Brown, The World of Late Antiquity: AD 150–750 (1971).", href: "https://books.google.com/books/about/The_World_of_Late_Antiquity.html?id=eSg4eaLPOMMC" },
-  { label: "Peter Brown, The Making of Late Antiquity (1978).", href: "https://books.google.com/books/about/The_Making_of_Late_Antiquity.html?id=DLtoAAAAMAAJ" },
-  { label: "Peter Brown, Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350–550 AD (2012).", href: "https://press.princeton.edu/books/paperback/9780691161778/through-the-eye-of-a-needle" },
-  { label: "Walter Goffart, Barbarians and Romans, A.D. 418–584: The Techniques of Accommodation (1980).", href: null },
-  { label: "Peter Heather, Goths and Romans, 332–489 (1991).", href: null },
-  { label: "Guy Halsall, Barbarian Migrations and the Roman West, 376–568 (2007).", href: null },
-  { label: "Ralph W. Mathisen, ‘Barbarian Invasions or Civil Wars? Goths as Auxiliary Forces in the Roman Army’ (2020).", href: "https://experts.illinois.edu/en/publications/barbarian-invasions-or-civil-wars-goths-as-auxiliary-forces-in-th/" },
-  { label: "Simone Rendina, ‘Inviting the Barbarians: Some Episodes of Treason’, Latomus 79 (2020), 158–183.", href: "https://doi.org/10.2143/LAT.79.1.3287980" },
-  { label: "Jeroen Wijnendaele, The Last of the Romans: Bonifatius, Warlord and Comes Africae (2015).", href: null }
+type HistoriographyId = "brown-1971" | "brown-1978" | "brown-2012" | "goffart-1980" | "halsall-2007" | "heather-1991" | "mathisen-2020" | "rendina-2020" | "wijnendaele-2015";
+type HistoriographyEntry = {id:HistoriographyId;author:string;year:number;title:string;publication:string;kind:"book"|"chapter"|"article";href:string};
+const HISTORIOGRAPHY: HistoriographyEntry[] = [
+{id:"brown-1971",author:"Brown, Peter",year:1971,title:"The World of Late Antiquity: From Marcus Aurelius to Muhammad",publication:"London: Thames and Hudson, 1971",kind:"book",href:"https://obnb.uk/p9038952-the-world-of-late-antiquity-from-marcus-aurelius-to-muhammad"},
+{id:"brown-1978",author:"Brown, Peter",year:1978,title:"The Making of Late Antiquity",publication:"Cambridge, MA: Harvard University Press, 1978",kind:"book",href:"https://obnb.uk/p11970805-the-making-of-late-antiquity"},
+{id:"brown-2012",author:"Brown, Peter",year:2012,title:"Through the Eye of a Needle: Wealth, the Fall of Rome, and the Making of Christianity in the West, 350–550 AD",publication:"Princeton, NJ: Princeton University Press, 2012",kind:"book",href:"https://history.princeton.edu/about/publications/through-eye-needle-wealth-fall-rome-and-making-christianity-west-350-550-ad"},
+{id:"goffart-1980",author:"Goffart, Walter",year:1980,title:"Barbarians and Romans, A.D. 418–584: The Techniques of Accommodation",publication:"Princeton, NJ: Princeton University Press, 1980",kind:"book",href:"https://doi.org/10.2307/j.ctv131bttm"},
+{id:"halsall-2007",author:"Halsall, Guy",year:2007,title:"Barbarian Migrations and the Roman West, 376–568",publication:"Cambridge: Cambridge University Press, 2007",kind:"book",href:"https://doi.org/10.1017/CBO9780511802393"},
+{id:"heather-1991",author:"Heather, Peter",year:1991,title:"Goths and Romans, 332–489",publication:"Oxford: Clarendon Press, 1991",kind:"book",href:"https://doi.org/10.1093/acprof:oso/9780198205357.001.0001"},
+{id:"mathisen-2020",author:"Mathisen, Ralph W.",year:2020,title:"Barbarian Invasions or Civil Wars? Goths as Auxiliary Forces in the Roman Army",publication:"In *Empire in Crisis: Gothic Invasions and Roman Historiography*, edited by Fritz Mitthof, Gunther Martin, and Jana Grusková, 263–86. Vienna: Verlag Holzhausen, 2020",kind:"chapter",href:"https://experts.illinois.edu/en/publications/barbarian-invasions-or-civil-wars-goths-as-auxiliary-forces-in-th/"},
+{id:"rendina-2020",author:"Rendina, Simone",year:2020,title:"Inviting the Barbarians: Some Episodes of Treason",publication:"*Latomus* 79, no. 1 (2020): 158–83",kind:"article",href:"https://doi.org/10.2143/LAT.79.1.3287980"},
+{id:"wijnendaele-2015",author:"Wijnendaele, Jeroen W. P.",year:2015,title:"The Last of the Romans: Bonifatius, Warlord and Comes Africae",publication:"London: Bloomsbury Academic, 2015",kind:"book",href:"https://biblio.ugent.be/publication/8507164"}
 ];
+const CASE_HISTORIOGRAPHY: Partial<Record<string,HistoriographyId[]>> = {
+ R007:["mathisen-2020","halsall-2007"],R008:["heather-1991","halsall-2007","mathisen-2020"],
+ R010:["halsall-2007","heather-1991","mathisen-2020"],R011:["halsall-2007"],
+ R012:["goffart-1980","halsall-2007","heather-1991"],R013:["wijnendaele-2015","rendina-2020"],
+ R014:["goffart-1980","halsall-2007"],R015:["goffart-1980","halsall-2007"],
+ R016:["goffart-1980","halsall-2007"],R017:["rendina-2020"],
+ R018:["heather-1991","halsall-2007"],R019:["halsall-2007","mathisen-2020"],R020:["halsall-2007"]
+};
+function BibliographyRef({id}:{id:HistoriographyId}) {
+ const item=HISTORIOGRAPHY.find(e=>e.id===id);
+ if(!item)return null;
+ return <a href={"#hist-"+id} className="font-semibold text-primary underline decoration-tertiary-fixed/70 underline-offset-4 hover:decoration-primary">{item.author.split(",")[0]} ({item.year})</a>;
+}
+function BibliographyEntry({item}:{item:HistoriographyEntry}) {
+ return <li id={"hist-"+item.id} className="scroll-mt-28 pl-7 -indent-7 leading-7">
+  {item.author}. {item.kind==="book"?<em>{item.title}</em>:<>‘{item.title}’</>}.{" "}
+  {item.publication.split(/(\*[^*]+\*)/g).map((part,i)=>part.startsWith("*")&&part.endsWith("*")?<em key={i}>{part.slice(1,-1)}</em>:<span key={i}>{part}</span>)}.{" "}
+  <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-primary underline decoration-tertiary-fixed/70 underline-offset-4 hover:decoration-primary">{item.href.startsWith("https://doi.org/")?item.href:"Editorial / catalogue"}</a>
+ </li>;
+}
 
 function ResourceEventCard({ item, locale }: { item: ResearchEvent; locale: Locale }) {
   const m = CONTENT[locale];
@@ -137,6 +173,7 @@ function ResourceEventCard({ item, locale }: { item: ResearchEvent; locale: Loca
   const place = locale === "es" ? es?.place ?? item.place : item.place;
   const note = locale === "es" ? es?.note ?? item.source_critical_note : item.source_critical_note;
   const status = item.status as Status;
+  const relevant = CASE_HISTORIOGRAPHY[item.id] ?? [];
   const label = status === "attested" ? m.attested : status === "contested" ? m.contested : m.allegation;
   const colour = status === "attested" ? "border-emerald-600" : status === "contested" ? "border-amber-600" : "border-rose-700";
   return (
@@ -160,6 +197,7 @@ function ResourceEventCard({ item, locale }: { item: ResearchEvent; locale: Loca
           ))}
         </dl>
         <div className="mt-5 bg-surface-container-low p-5"><h4 className="font-label mb-2 text-xs font-bold tracking-widest text-primary uppercase">{m.note}</h4><p className="text-sm leading-6 text-on-surface-variant"><ItalicEthnonyms text={note}/></p></div>
+        {relevant.length>0?<div className="mt-5 border-t border-outline-variant/25 pt-4"><h4 className="mb-2 font-label text-xs font-bold tracking-widest text-primary uppercase">{m.relevantStudies}</h4><p className="flex flex-wrap gap-x-3 gap-y-1 text-sm">{relevant.map(id=><BibliographyRef key={id} id={id}/>)}</p></div>:null}
         <div className="mt-5"><p className="font-label mb-2 text-xs font-bold tracking-widest text-primary uppercase">{m.source}</p>
           <a href={item.source_url} target="_blank" rel="noopener noreferrer" className="text-sm text-primary underline decoration-tertiary-fixed/60 underline-offset-4 hover:decoration-primary">
           <ItalicEthnonyms text={item.primary_source} /> <span aria-hidden="true">↗</span></a>
@@ -225,14 +263,19 @@ export function RomanInvitationsResourcePage() {
         <p className="max-w-4xl leading-8 text-on-surface">{m.method}</p>
         <p className="mt-5 max-w-4xl leading-8 text-on-surface">{m.methodSecond}</p>
         <p className="mt-5 max-w-4xl leading-8 text-on-surface">{m.historiographicalFrame}</p>
+        <p className="mt-5 max-w-4xl leading-8 text-on-surface-variant">{m.historiographyIntro}</p>
+        <div className="mt-7 max-w-4xl space-y-6 border-l-2 border-outline-variant/60 pl-5">
+         <div><p className="leading-7 text-on-surface">{m.historiographyTransformation}</p><p className="mt-2 flex flex-wrap gap-3 text-sm"><BibliographyRef id="brown-1971"/><BibliographyRef id="brown-1978"/><BibliographyRef id="brown-2012"/></p></div>
+         <div><p className="leading-7 text-on-surface">{m.historiographySettlement}</p><p className="mt-2 flex flex-wrap gap-3 text-sm"><BibliographyRef id="goffart-1980"/><BibliographyRef id="halsall-2007"/><BibliographyRef id="heather-1991"/></p></div>
+         <div><p className="leading-7 text-on-surface">{m.historiographyAgency}</p><p className="mt-2 flex flex-wrap gap-3 text-sm"><BibliographyRef id="mathisen-2020"/><BibliographyRef id="rendina-2020"/><BibliographyRef id="wijnendaele-2015"/></p></div>
+        </div>
         <p className="mt-6 max-w-4xl border-l-2 border-outline-variant/70 pl-4 text-sm leading-6 text-on-surface-variant">{m.caution}</p>
         <a href="/recursos/invitations-to-empire/events.json" download className="mt-6 inline-flex border border-primary px-4 py-3 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-on-primary">{m.dataLink}</a>
       </section>
       <section className="mb-20 border-t border-outline-variant/30 pt-10">
         <h2 className="font-headline mb-5 text-3xl font-bold text-primary">{m.bibliography}</h2>
-        <ol className="list-decimal space-y-3 pl-6 text-sm leading-6 text-on-surface-variant">
-          {HISTORIOGRAPHY.map(x=><li key={x.label}>{x.href ? <a href={x.href} className="text-primary underline underline-offset-4" target="_blank" rel="noopener noreferrer"><ItalicEthnonyms text={x.label}/></a> : <ItalicEthnonyms text={x.label}/>}</li>)}
-        </ol>
+        <p className="mb-6 max-w-4xl text-sm leading-6 text-on-surface-variant">{m.historiographyNote}</p>
+        <ul className="space-y-4 text-sm text-on-surface-variant">{HISTORIOGRAPHY.map(item=><BibliographyEntry key={item.id} item={item}/>)}</ul>
       </section>
     </PageContainer>
   );
