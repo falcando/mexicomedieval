@@ -67,6 +67,6 @@ Peter Brown, *The World of Late Antiquity: AD 150–750* (1971), provides a foun
 
 - Spanish subtitle shortened to *La agencia romana y el desplazamiento de pueblos extranjeros, ejércitos “bárbaros” y foederati dentro del Imperio Romano* at the author's direction.
 - Spanish labels changed from *acusación* to the evidentially more neutral *invitación atribuida* / *invitación no corroborada*. The English *allegation* remains a technical descriptor.
-- Named Germanic peoples are italicised in the bilingual rendered detail records, without claiming that all such groups shared a stable ethnic or linguistic identity. Alans and Sarmatians are not automatically treated as Germanic.
+- Typography revised: only uncommon ethnonyms retained in ancient-source forms (for example *Tervingi*, *Greuthungi*, *Ubii*, *Heruli*, or *Iazyges*) are italicised. Established English or Spanish names such as Goths/godos, Vandals/vándalos, Franks/francos, Lombards/lombardos, and Heruls/hérulos remain in roman type. This is a lexical editorial distinction, not a classification of all those peoples as Germanic (the Iazyges were Sarmatian).
 - Corrections from the 20-case critical audit record date ranges, source disagreements (notably 3,000 versus 10,000 troops in the Procopius usurpation), conditional interpretation of the 382 peace, Hydatius' two numbering systems, and distinct Lombard and Herul agreements.
 - A primary-source reference is not evidence that every historiographical controversy has been resolved. Keep cases with different kinds of Roman agency visibly distinguished.
