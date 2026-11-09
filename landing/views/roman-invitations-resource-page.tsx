@@ -1,6 +1,7 @@
 "use client";
 
 import PageContainer from "@/components/layout/PageContainer";
+import { ItalicEthnonyms } from "@/components/ui/ItalicEthnonyms";
 import { useTranslations } from "@/components/i18n/LocaleProvider";
 import EVENTS from "@/public/recursos/invitations-to-empire/events.json";
 import Link from "next/link";
@@ -12,6 +13,7 @@ type Status = "attested" | "contested" | "allegation";
 type ResearchEvent = {
   id: string; year: number; title: string; roman_actor: string; foreign_party: string;
   place: string; mechanism: string; status: string; primary_source: string;
+  date_label_en?: string; date_label_es?: string;
   source_url: string; source_critical_note: string; editorial_stage: string;
 };
 
@@ -55,12 +57,12 @@ const CONTENT: Record<Locale, {
     kicker: "Recurso documental e historiográfico",
     title: "¿Invasores o invitados?",
     subtitleBefore: "La agencia romana y el desplazamiento de pueblos extranjeros, ejércitos “bárbaros” y ",
-    subtitleAfter: " hacia el Imperio romano y en su interior",
+    subtitleAfter: " dentro del Imperio Romano",
     introTitle: "Cuando Roma abrió sus fronteras",
     intro: "La llegada de pueblos y ejércitos extranjeros a los territorios romanos suele explicarse mediante el relato de las invasiones. Sin embargo, los emperadores, magistrados y mandos militares también autorizaron entradas, reclutaron tropas extranjeras, negociaron asentamientos y solicitaron intervenciones en conflictos del propio Imperio. Esta cronología examina esas decisiones sin presuponer que todas las llegadas fueron pacíficas ni que todas respondieron a una invitación.",
-    initialQualification: "Los veinte casos seleccionados constituyen una primera muestra de trabajo, no un inventario exhaustivo. Una acusación de haber invitado a un ejército extranjero no equivale a una decisión romana históricamente demostrada.",
+    initialQualification: "Los veinte casos seleccionados constituyen una primera muestra de trabajo, no un inventario exhaustivo. La atribución de una invitación en una fuente antigua no demuestra, por sí sola, que haya ocurrido.",
     methodTitle: "Evidencia, categorías e historiografía",
-    method: "Cada registro identifica a la autoridad romana, la contraparte extranjera, el espacio implicado, el mecanismo de entrada o intervención y los testimonios antiguos. Las categorías permiten distinguir entre acuerdos expresamente documentados, interpretaciones discutidas y acusaciones cuya historicidad no se ha demostrado. No califican por sí mismas la fiabilidad de todos los detalles de cada relato.",
+    method: "Cada registro identifica a la autoridad romana, la contraparte extranjera, el espacio implicado, el mecanismo de entrada o intervención y los testimonios antiguos. Las categorías permiten distinguir entre acuerdos expresamente documentados, interpretaciones discutidas e invitaciones referidas por las fuentes cuya historicidad no está corroborada. No califican por sí mismas la fiabilidad de todos los detalles de cada relato.",
     methodSecond: "El servicio militar, un foedus, la asignación de tierras y la permanencia de contingentes armados no fueron arreglos equivalentes. Tampoco puede equipararse la petición de un usurpador, la negociación emprendida por una comunidad urbana o la autorización de un emperador. La cronología permite comparar estas situaciones sin borrar sus diferencias.",
     bibliography: "Marco historiográfico de referencia",
     search: "Buscar en la cronología", searchPlaceholder: "Aecio, vándalos, Tracia…",
@@ -69,7 +71,7 @@ const CONTENT: Record<Locale, {
     source: "Testimonio antiguo", actor: "Autoridad romana", party: "Contraparte extranjera",
     place: "Espacio", note: "Observación crítica sobre las fuentes", version: "Versión de trabajo",
     author: "Responsable de la investigación", affiliation: "Adscripción", evidence: "Clasificación de la evidencia",
-    attested: "Testimonio explícito", contested: "Interpretación discutida", allegation: "Acusación no corroborada",
+    attested: "Testimonio explícito", contested: "Interpretación discutida", allegation: "Invitación no corroborada",
     selected: "Casos seleccionados", dateBce: "a. C.", dateCe: "d. C.",
     caution: "Estado editorial: selección documentada y versionada, no inventario exhaustivo. Las referencias identifican testimonios antiguos, mientras continúa el cotejo de pasajes con ediciones críticas y el contraste historiográfico. Las categorías describen la naturaleza de los testimonios, no constituyen una medida estadística de certeza histórica.",
     none: "No hay casos que correspondan a los filtros.", returnResources: "Papers y recursos",
@@ -85,7 +87,7 @@ const MECHANISMS: Record<string, Bilingual> = {
   "treaty": { en: "Treaty and accommodation", es: "Tratado y acomodación" },
   "local intervention": { en: "Local military intervention", es: "Intervención militar local" },
   "assistance and settlement": { en: "Assistance and settlement", es: "Auxilio y asentamiento" },
-  "alleged invitation": { en: "Alleged invitation", es: "Supuesto llamamiento" },
+  "alleged invitation": { en: "Alleged invitation", es: "Invitación atribuida" },
   "commissioned intervention": { en: "Commissioned intervention", es: "Intervención solicitada" }
 };
 
@@ -136,7 +138,7 @@ function ResourceEventCard({ item, locale }: { item: ResearchEvent; locale: Loca
     <article className="relative grid gap-4 md:grid-cols-[8rem_minmax(0,1fr)]" id={item.id}>
       <div className="relative md:text-right">
         <span className="sticky top-24 inline-flex rounded-full border-2 border-outline-variant bg-background px-3 py-1.5 font-label text-xs font-bold tracking-wide text-primary">
-          {item.year < 0 ? Math.abs(item.year) + " " + m.dateBce : item.year + " " + m.dateCe}
+          {locale === "es" ? item.date_label_es ?? (item.year < 0 ? Math.abs(item.year) + " " + m.dateBce : item.year + " " + m.dateCe) : item.date_label_en ?? (item.year < 0 ? Math.abs(item.year) + " " + m.dateBce : item.year + " " + m.dateCe)}
         </span>
       </div>
       <div className={"border-l-4 bg-white p-6 shadow-sm ring-1 ring-outline-variant/20 md:p-7 " + colour}>
@@ -146,16 +148,16 @@ function ResourceEventCard({ item, locale }: { item: ResearchEvent; locale: Loca
           </span>
           <span className="rounded-full border border-outline-variant px-2.5 py-1 text-[11px] font-semibold text-on-surface-variant">{label}</span>
         </div>
-        <h3 className="mt-4 font-headline text-2xl font-bold leading-snug text-primary">{title}</h3>
+        <h3 className="mt-4 font-headline text-2xl font-bold leading-snug text-primary"><ItalicEthnonyms text={title}/></h3>
         <dl className="mt-5 grid gap-4 border-y border-outline-variant/25 py-5 text-sm sm:grid-cols-2">
           {([["actor",actor],["party",party],["place",place]] as const).map(([k,v])=>(
-            <div key={k}><dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">{m[k]}</dt><dd className="mt-1">{v}</dd></div>
+            <div key={k}><dt className="font-label text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">{m[k]}</dt><dd className="mt-1"><ItalicEthnonyms text={v}/></dd></div>
           ))}
         </dl>
-        <div className="mt-5 bg-surface-container-low p-5"><h4 className="font-label mb-2 text-xs font-bold tracking-widest text-primary uppercase">{m.note}</h4><p className="text-sm leading-6 text-on-surface-variant">{note}</p></div>
+        <div className="mt-5 bg-surface-container-low p-5"><h4 className="font-label mb-2 text-xs font-bold tracking-widest text-primary uppercase">{m.note}</h4><p className="text-sm leading-6 text-on-surface-variant"><ItalicEthnonyms text={note}/></p></div>
         <div className="mt-5"><p className="font-label mb-2 text-xs font-bold tracking-widest text-primary uppercase">{m.source}</p>
           <a href={item.source_url} target="_blank" rel="noopener noreferrer" className="text-sm text-primary underline decoration-tertiary-fixed/60 underline-offset-4 hover:decoration-primary">
-          {item.primary_source} <span aria-hidden="true">↗</span></a>
+          <ItalicEthnonyms text={item.primary_source} /> <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </article>
@@ -199,8 +201,8 @@ export function RomanInvitationsResourcePage() {
       </div>
       <section className="mb-12 max-w-5xl">
         <h2 className="font-headline mb-5 text-3xl font-bold text-primary">{m.introTitle}</h2>
-        <p className="leading-8 text-on-surface">{m.intro}</p>
-        <p className="mt-5 leading-7 text-on-surface-variant">{m.initialQualification}</p>
+        <p className="leading-8 text-on-surface"><ItalicEthnonyms text={m.intro}/></p>
+        <p className="mt-5 leading-7 text-on-surface-variant"><ItalicEthnonyms text={m.initialQualification}/></p>
       </section>
 
       <section aria-label={m.search} className="mb-14">
@@ -223,7 +225,7 @@ export function RomanInvitationsResourcePage() {
       <section className="mb-20 border-t border-outline-variant/30 pt-10">
         <h2 className="font-headline mb-5 text-3xl font-bold text-primary">{m.bibliography}</h2>
         <ol className="list-decimal space-y-3 pl-6 text-sm leading-6 text-on-surface-variant">
-          {HISTORIOGRAPHY.map(x=><li key={x.label}>{x.href ? <a href={x.href} className="text-primary underline underline-offset-4" target="_blank" rel="noopener noreferrer">{x.label}</a> : x.label}</li>)}
+          {HISTORIOGRAPHY.map(x=><li key={x.label}>{x.href ? <a href={x.href} className="text-primary underline underline-offset-4" target="_blank" rel="noopener noreferrer"><ItalicEthnonyms text={x.label}/></a> : <ItalicEthnonyms text={x.label}/>}</li>)}
         </ol>
       </section>
     </PageContainer>
