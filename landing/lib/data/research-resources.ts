@@ -40,8 +40,8 @@ export const RESEARCH_RESOURCES: ResearchResource[] = [
       en: "Documentary and historiographical resource",
     },
     title: {
-      es: "Legislación y cultura normativa de las Indias en el siglo XVI",
-      en: "Legislation and normative culture in the sixteenth-century Indies",
+      es: "Legislación y cultura normativa en las Indias hispánicas del siglo XVI",
+      en: "Legislation and normative culture in the sixteenth-century Spanish Indies",
     },
     description: {
       es: "Línea del tiempo interactiva para distinguir normas promulgadas, legislación territorial, cedularios, proyectos recopiladores y recopilaciones sancionadas, con fuentes primarias e historiografía enlazadas.",

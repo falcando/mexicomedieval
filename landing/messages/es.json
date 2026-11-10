@@ -366,9 +366,9 @@
   "resources": {
     "indianLaw": {
       "pretitle": "Recurso digital de investigación",
-      "title": "Legislación y cultura normativa de las Indias en el siglo XVI",
+      "title": "Legislación y cultura normativa en las Indias hispánicas del siglo XVI",
       "subtitle": "Normas, proyectos, cedularios, recopilaciones y transmisión jurídica, 1500–1600.",
-      "metaDescription": "Línea del tiempo documental e historiográfica de la legislación indiana del siglo XVI, con fuentes primarias, compilaciones, proyectos y estudios especializados.",
+      "metaDescription": "Línea del tiempo documental e historiográfica de la legislación y la cultura normativa en las Indias hispánicas del siglo XVI, con fuentes primarias, compilaciones, proyectos y estudios especializados.",
       "methodKicker": "Cómo leer el recurso",
       "methodTitle": "No todo documento oficial tiene la misma fuerza jurídica",
       "methodBody": "La línea del tiempo distingue entre normas promulgadas, legislación territorial o delegada, instrumentos procedimentales, compilaciones oficiales de uso administrativo, proyectos recopiladores y recopilaciones efectivamente sancionadas como corpus. Cada entrada enlaza la mejor fuente primaria, edición pública o referencia institucional localizada, además de historiografía especializada cuando es necesaria para fijar alcance, vigencia o transmisión.",
@@ -415,7 +415,7 @@
       "doiLabel": "DOI",
       "doiPending": "10.5281/zenodo.23970204",
       "citeLabel": "Cómo citar esta versión",
-      "citeText": "Fernández Aceves, Hervin. 2026. Legislación y cultura normativa de las Indias en el siglo XVI: dataset documental e historiográfico, 1500–1600. Version 1.0.0. Zenodo. https://doi.org/10.5281/zenodo.23970204",
+      "citeText": "Fernández Aceves, Hervin. 2026. Legislación y cultura normativa en las Indias hispánicas del siglo XVI: dataset documental e historiográfico, 1500–1600. Version 1.0.0. Zenodo. https://doi.org/10.5281/zenodo.23970204",
       "archivedDatasetTitle": "Versión 1.0.0 archivada",
       "archivedDatasetBody": "Instantánea estable y citable del dataset, separada de la versión viva de la interfaz.",
       "downloadVersionedCsv": "CSV v1.0.0",
