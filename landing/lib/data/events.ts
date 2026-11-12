@@ -32,6 +32,36 @@ type EventSource = {
 
 export const EVENTS: EventSource[] = [
   {
+    catalogId: "masterclass-pensar-maquinas-2026",
+    active: false,
+    confirmed: true,
+    ctaIcon: "external",
+    information: {
+      es: {
+        title: "Pensar con, sin y a pesar de las máquinas: el giro digital en las humanidades y los desafíos de la inteligencia artificial",
+        category: "Masterclass",
+        format: "Modalidad virtual",
+        description:
+          "Masterclass impartida por el Dr. Hervin Fernández Aceves en el marco de Educación Continua de El Colegio de Jalisco. Una reflexión crítica sobre el giro digital en las humanidades, los desafíos de la inteligencia artificial para la investigación y la producción de conocimiento, y lo que significa pensar con, sin y a pesar de las máquinas.",
+        institution: "El Colegio de Jalisco · Educación Continua",
+        footerNote: "26 de noviembre de 2026 · 18:00 h",
+        ctaLabel: "Registrarse",
+      },
+      en: {
+        title: "Thinking with, without and despite machines: the digital turn in the humanities and the challenges of artificial intelligence",
+        category: "Masterclass",
+        format: "Online",
+        description:
+          "A masterclass delivered by Dr Hervin Fernández Aceves as part of El Colegio de Jalisco's Continuing Education programme. A critical reflection on the digital turn in the humanities, the challenges artificial intelligence poses for research and the production of knowledge, and what it means to think with, without and despite machines.",
+        institution: "El Colegio de Jalisco · Continuing Education",
+        footerNote: "26 November 2026 · 18:00",
+        ctaLabel: "Register",
+      },
+    },
+    ctaKey: "",
+    href: "https://forms.cloud.microsoft/r/rJb5wYN5BJ",
+  },
+  {
     catalogId: "las-cruzadas-divulgacion-2026",
     active: true,
     confirmed: true,
