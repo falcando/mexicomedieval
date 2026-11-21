@@ -37,20 +37,20 @@ export function EventCard({ event }: EventCardProps) {
   const body = (
     <>
       {event.images?.length ? (
-        <div className="mb-5 grid grid-cols-3 gap-2" aria-label={event.title}>
+        <div className={`mb-5 grid gap-2 ${event.images.length === 1 ? "grid-cols-1" : "grid-cols-3"}`} aria-label={event.title}>
           {event.images.map((src) => (
             <a
               key={src}
               href={src}
               target="_blank"
               rel="noopener noreferrer"
-              className="overflow-hidden rounded-sm border border-[#e5ddd3] bg-[#f5efe6] transition-opacity hover:opacity-85"
+              className={`overflow-hidden rounded-sm border border-[#e5ddd3] bg-[#f5efe6] transition-opacity hover:opacity-85 ${event.images!.length === 1 ? "flex h-80 items-center justify-center" : ""}`}
               aria-label={event.title}
             >
               <img
                 src={src}
-                alt=""
-                className="h-36 w-full object-contain md:h-44"
+                alt={`${event.category}: ${event.title}`}
+                className={event.images!.length === 1 ? "h-80 w-full object-contain" : "h-36 w-full object-contain md:h-44"}
                 loading="lazy"
               />
             </a>
