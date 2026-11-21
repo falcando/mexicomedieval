@@ -5,7 +5,6 @@ import type {
   SiteEvent,
   SiteEventCtaIcon,
 } from "@/lib/types/event";
-import { slicePage, totalPagesFromListLength } from "@/lib/pagination";
 
 type EventInformation = {
   title: string;
@@ -22,6 +21,10 @@ type EventSource = {
   spotlightImage?: string;
   spotlightImageAlt?: string;
   images?: string[];
+  date?: string;
+  endDate?: string;
+  startsAt?: string;
+  endsAt?: string;
   active?: boolean;
   confirmed?: boolean;
   ctaIcon?: SiteEventCtaIcon;
@@ -38,6 +41,7 @@ export const EVENTS: EventSource[] = [
     endsAt: "2026-11-29T17:15:00-06:00",
     active: false,
     confirmed: true,
+    images: ["/images/vernacular-sardinia-up-2026.webp"],
     ctaKey: "",
     information: {
       es: {
@@ -45,8 +49,8 @@ export const EVENTS: EventSource[] = [
         category: "Presentación de libro",
         format: "Presencial",
         institution: "Universidad Panamericana · FIL Guadalajara 2026",
-        description: "Presentación del libro Vernacular Documents of Medieval Sardinia: Editions and English Translations of the Carte volgari, the Condaghes of Silki and Bonárcado, and the Carta de Logu of Arborea. Participan el autor, Dr. Hervin Fernández Aceves, y los presentadores Dr. Aristarco Regalado Pinedo y Lic. David Contreras Sánchez. Modera la Dra. Luz María Álvarez Villalobos. Lugar: stand I28 de la Universidad Panamericana, área nacional de la Feria Internacional del Libro de Guadalajara.",
-        footerNote: "Domingo 29 de noviembre de 2026 · 16:00–17:15 h · FIL Guadalajara, stand I28 (área nacional)",
+        description: "Presentación del libro Vernacular Documents of Medieval Sardinia: Editions and English Translations of the Carte volgari, the Condaghes of Silki and Bonárcado, and the Carta de Logu of Arborea. Participan el autor, Dr. Hervin Fernández Aceves, y los presentadores Dr. Aristarco Regalado Pinedo y Lic. David Contreras Sánchez. Modera la Dra. Luz María Álvarez Villalobos. Lugar: estand I28 de la Universidad Panamericana, área nacional de la Feria Internacional del Libro de Guadalajara.",
+        footerNote: "Domingo 29 de noviembre de 2026 · 16:00–17:15 h · FIL Guadalajara, estand I28 de la Universidad Panamericana (área nacional)",
       },
       en: {
         title: "Vernacular Documents of Medieval Sardinia – Book launch at the Guadalajara International Book Fair (Universidad Panamericana)",
@@ -64,6 +68,7 @@ export const EVENTS: EventSource[] = [
     startsAt: "2026-12-04T13:00:00-06:00",
     active: false,
     confirmed: true,
+    images: ["/images/vernacular-sardinia-coljal-2026.webp"],
     ctaKey: "",
     information: {
       es: {
@@ -71,21 +76,23 @@ export const EVENTS: EventSource[] = [
         category: "Presentación de libro",
         format: "Presencial",
         institution: "Derecho a Saber, de El Colegio de Jalisco · FIL Guadalajara 2026",
-        description: "Presentación del libro Vernacular Documents of Medieval Sardinia, de Alex Metcalfe, Hervin Fernández Aceves y Maurizio Virdis. Participan David Contreras Sánchez, Cristóbal Margarito Durán Moncada y Hervin Fernández Aceves. Modera Ixchel Nacdul Ruiz Anguiano. Lugar: estand de Derecho a Saber, de El Colegio de Jalisco (L46), área de editoriales universitarias, Feria Internacional del Libro de Guadalajara.",
-        footerNote: "Viernes 4 de diciembre de 2026 · 13:00 h · FIL Guadalajara, estand de Derecho a Saber, de El Colegio de Jalisco (L46), área de editoriales universitarias",
+        description: "Presentación del libro Vernacular Documents of Medieval Sardinia, de Alex Metcalfe, Hervin Fernández Aceves y Maurizio Virdis. Participan David Contreras Sánchez, Cristóbal Margarito Durán Moncada y Hervin Fernández Aceves. Modera Ixchel Nacdul Ruiz Anguiano. Lugar: estand L46 de Derecho a Saber, de El Colegio de Jalisco, área de editoriales universitarias de la Feria Internacional del Libro de Guadalajara.",
+        footerNote: "Viernes 4 de diciembre de 2026 · 13:00 h · FIL Guadalajara, estand L46 de Derecho a Saber, de El Colegio de Jalisco (área de editoriales universitarias)",
       },
       en: {
         title: "Vernacular Documents of Medieval Sardinia – Book launch at the Guadalajara International Book Fair (Derecho a Saber, El Colegio de Jalisco)",
         category: "Book launch",
         format: "In person",
         institution: "Derecho a Saber, El Colegio de Jalisco · Guadalajara International Book Fair 2026",
-        description: "Presentation of Vernacular Documents of Medieval Sardinia, by Alex Metcalfe, Hervin Fernández Aceves and Maurizio Virdis. With David Contreras Sánchez, Cristóbal Margarito Durán Moncada and Hervin Fernández Aceves; chaired by Ixchel Nacdul Ruiz Anguiano. Venue: Derecho a Saber, El Colegio de Jalisco stand (L46), university publishers' area, Guadalajara International Book Fair.",
-        footerNote: "Friday 4 December 2026 · 13:00 · Guadalajara International Book Fair, Derecho a Saber, El Colegio de Jalisco stand (L46), university publishers' area",
+        description: "Presentation of Vernacular Documents of Medieval Sardinia, by Alex Metcalfe, Hervin Fernández Aceves and Maurizio Virdis. With David Contreras Sánchez, Cristóbal Margarito Durán Moncada and Hervin Fernández Aceves; chaired by Ixchel Nacdul Ruiz Anguiano. Venue: stand L46, Derecho a Saber, El Colegio de Jalisco, university publishers' area, Guadalajara International Book Fair.",
+        footerNote: "Friday 4 December 2026 · 13:00 · Guadalajara International Book Fair, stand L46, Derecho a Saber, El Colegio de Jalisco (university publishers' area)",
       },
     },
   },
   {
     catalogId: "masterclass-pensar-maquinas-2026",
+    date: "2026-11-26",
+    startsAt: "2026-11-26T18:00:00-06:00",
     active: false,
     confirmed: true,
     ctaIcon: "external",
@@ -288,20 +295,18 @@ export const EVENTS: EventSource[] = [
   },
 ];
 
+/** All events are returned in one catalogue so date ordering and sections stay consistent. */
 export function getEventsTotalPages(): number {
-  return totalPagesFromListLength(EVENTS.length);
+  return 1;
 }
 
 export function getEventsPagePayload(
   page: number,
   language: Locale,
 ): EventsPageResponse | null {
-  const pageItems = slicePage(EVENTS, page);
-  if (pageItems === null) {
-    return null;
-  }
+  if (page !== 1) return null;
 
-  const events: SiteEvent[] = pageItems.map((item) => {
+  const events: SiteEvent[] = EVENTS.map((item) => {
     const { information, active: activeFlag, ctaIcon, catalogId, ...rest } = item;
     const info = information[language];
     return {
@@ -320,6 +325,6 @@ export function getEventsPagePayload(
 
   return {
     events,
-    pagination: { total: EVENTS.length },
+    pagination: { total: events.length },
   };
 }
