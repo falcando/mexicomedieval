@@ -32,6 +32,54 @@ type EventSource = {
 
 export const EVENTS: EventSource[] = [
   {
+    catalogId: "vernacular-sardinia-fil-up-2026",
+    active: false,
+    confirmed: true,
+    ctaKey: "",
+    information: {
+      es: {
+        title: "Presentación de Vernacular Documents of Medieval Sardinia en la FIL Guadalajara – Universidad Panamericana",
+        category: "Presentación de libro",
+        format: "Presencial",
+        institution: "Universidad Panamericana · FIL Guadalajara 2026",
+        description: "Presentación del libro Vernacular Documents of Medieval Sardinia: Editions and English Translations of the Carte volgari, the Condaghes of Silki and Bonárcado, and the Carta de Logu of Arborea. Participan el autor, Dr. Hervin Fernández Aceves, y los presentadores Dr. Aristarco Regalado Pinedo y Lic. David Contreras Sánchez. Modera la Dra. Luz María Álvarez Villalobos. Lugar: stand I28 de la Universidad Panamericana, área nacional de la Feria Internacional del Libro de Guadalajara.",
+        footerNote: "Domingo 29 de noviembre de 2026 · 16:00–17:15 h · FIL Guadalajara, stand I28 (área nacional)",
+      },
+      en: {
+        title: "Vernacular Documents of Medieval Sardinia – Book launch at the Guadalajara International Book Fair (Universidad Panamericana)",
+        category: "Book launch",
+        format: "In person",
+        institution: "Universidad Panamericana · Guadalajara International Book Fair 2026",
+        description: "Presentation of Vernacular Documents of Medieval Sardinia: Editions and English Translations of the Carte volgari, the Condaghes of Silki and Bonárcado, and the Carta de Logu of Arborea. Featuring author Dr Hervin Fernández Aceves and discussants Dr Aristarco Regalado Pinedo and David Contreras Sánchez; chaired by Dr Luz María Álvarez Villalobos. Venue: Universidad Panamericana stand I28, national exhibition area, Guadalajara International Book Fair.",
+        footerNote: "Sunday 29 November 2026 · 16:00–17:15 · Guadalajara International Book Fair, stand I28 (national area)",
+      },
+    },
+  },
+  {
+    catalogId: "vernacular-sardinia-derecho-saber-2026",
+    active: false,
+    confirmed: true,
+    ctaKey: "",
+    information: {
+      es: {
+        title: "Presentación de Vernacular Documents of Medieval Sardinia – El Derecho a Saber",
+        category: "Presentación de libro",
+        format: "Presencial",
+        institution: "El Derecho a Saber · FIL Guadalajara 2026",
+        description: "Presentación del libro Vernacular Documents of Medieval Sardinia, de Alex Metcalfe, Hervin Fernández Aceves y Maurizio Virdis. Participan David Contreras Sánchez, Cristóbal Margarito Durán Moncada y Hervin Fernández Aceves. Modera Ixchel Nacdul Ruiz Anguiano. Lugar: stand L46, área de editoriales universitarias, Feria Internacional del Libro de Guadalajara.",
+        footerNote: "Viernes 4 de diciembre de 2026 · 13:00 h · FIL Guadalajara, stand L46 (editoriales universitarias)",
+      },
+      en: {
+        title: "Vernacular Documents of Medieval Sardinia – Book launch with El Derecho a Saber",
+        category: "Book launch",
+        format: "In person",
+        institution: "El Derecho a Saber · Guadalajara International Book Fair 2026",
+        description: "Presentation of Vernacular Documents of Medieval Sardinia, by Alex Metcalfe, Hervin Fernández Aceves and Maurizio Virdis. With David Contreras Sánchez, Cristóbal Margarito Durán Moncada and Hervin Fernández Aceves; chaired by Ixchel Nacdul Ruiz Anguiano. Venue: stand L46, university publishers' area, Guadalajara International Book Fair.",
+        footerNote: "Friday 4 December 2026 · 13:00 · Guadalajara International Book Fair, stand L46 (university publishers' area)",
+      },
+    },
+  },
+  {
     catalogId: "masterclass-pensar-maquinas-2026",
     active: false,
     confirmed: true,
