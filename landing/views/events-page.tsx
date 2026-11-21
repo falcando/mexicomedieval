@@ -3,21 +3,15 @@
 import { useTranslations } from "@/components/i18n/LocaleProvider";
 import { NewsletterSubscribeCard } from "@/components/sections/NewsletterSubscribeCard";
 import { useEventsPageQuery } from "@/lib/queries/events";
-import { totalPagesFromTotal } from "@/lib/pagination";
-import { useState } from "react";
 import PageContainer from "@/components/layout/PageContainer";
 import { EventCard } from "@/components/sections/EventCard";
 
 export function EventsPage() {
   const { t } = useTranslations();
-  const [page, setPage] = useState(1);
-  const { data, isPending, isError, isFetching } = useEventsPageQuery(page);
+  const { data, isPending, isError, isFetching } = useEventsPageQuery(1);
 
   const total = data?.pagination.total ?? 0;
   const hasEvents = total > 0;
-  const totalPages = totalPagesFromTotal(total);
-  const hasPreviousPage = page > 1;
-  const hasNextPage = page < totalPages;
 
   const events = data?.events ?? [];
 
@@ -26,15 +20,29 @@ export function EventsPage() {
     return category.includes("curso") || category.includes("course");
   };
 
-  const upcomingEvents = events.filter((event) => !event.active);
-
-  const courseEvents = events.filter(
-    (event) => event.active && isCourseEvent(event),
-  );
-
-  const pastEvents = events.filter(
-    (event) => event.active && !isCourseEvent(event),
-  );
+  // Dates with no stated end time last until the end of that day in Guadalajara.
+  const eventEnd = (event: (typeof events)[number]) => {
+    if (event.endsAt) return new Date(event.endsAt).getTime();
+    const day = event.endDate ?? event.date;
+    return day ? new Date(`${day}T23:59:59-06:00`).getTime() : null;
+  };
+  const eventStart = (event: (typeof events)[number]) => {
+    const start = event.startsAt ?? (event.date ? `${event.date}T00:00:00-06:00` : null);
+    return start ? new Date(start).getTime() : null;
+  };
+  const now = Date.now();
+  const isPast = (event: (typeof events)[number]) => {
+    const end = eventEnd(event);
+    return end == null ? event.active : end < now;
+  };
+  // Dated events first, nearest date first. Undated announcements last.
+  const upcomingEvents = events
+    .filter((event) => !isCourseEvent(event) && !isPast(event))
+    .sort((a, b) => (eventStart(a) ?? Infinity) - (eventStart(b) ?? Infinity));
+  const courseEvents = events.filter(isCourseEvent);
+  const pastEvents = events
+    .filter((event) => !isCourseEvent(event) && isPast(event))
+    .sort((a, b) => (eventEnd(b) ?? 0) - (eventEnd(a) ?? 0));
 
   const renderEventSection = (
     title: string,
@@ -84,46 +92,7 @@ export function EventsPage() {
               {renderEventSection(t("events.pastEventsHeading"), pastEvents)}
             </div>
 
-            {totalPages > 1 ? (
-              <div className="mt-16 flex flex-col items-center gap-6">
-                <div className="manuscript-divider mb-4 w-16" />
-                <div className="flex items-center gap-12 font-label text-xs tracking-[0.4em] text-on-surface-variant uppercase">
-                  <button
-                    type="button"
-                    disabled={!hasPreviousPage || isFetching}
-                    onClick={() => setPage((p) => Math.max(1, p - 1))}
-                    className={`flex items-center gap-2 transition-colors ${
-                      hasPreviousPage && !isFetching
-                        ? "hover:text-primary"
-                        : "cursor-not-allowed opacity-30"
-                    }`}
-                  >
-                    <span className="material-symbols-outlined text-lg">chevron_left</span>
-                    {t("events.prev")}
-                  </button>
 
-                  <span className="font-bold text-primary">
-                    {t("events.folio")}{" "}
-                    <span className="font-headline mx-2 text-lg italic">{page}</span>{" "}
-                    {t("events.of")} {totalPages}
-                  </span>
-
-                  <button
-                    type="button"
-                    disabled={!hasNextPage || isFetching}
-                    onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                    className={`flex items-center gap-2 transition-colors ${
-                      hasNextPage && !isFetching
-                        ? "hover:text-primary"
-                        : "cursor-not-allowed opacity-30"
-                    }`}
-                  >
-                    {t("events.next")}
-                    <span className="material-symbols-outlined text-lg">chevron_right</span>
-                  </button>
-                </div>
-              </div>
-            ) : null}
           </>
         ) : (
           !isPending &&
