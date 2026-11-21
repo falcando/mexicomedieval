@@ -12,7 +12,15 @@ export type SiteEvent = {
   institution?: string;
   /** Optional event artwork/posters shown on the event card. */
   images?: string[];
-  /** `false` places the card in the upcoming-events section. */
+  /** Calendar date (YYYY-MM-DD) of the event in Guadalajara. */
+  date?: string;
+  /** Last calendar date for multi-day events (inclusive). */
+  endDate?: string;
+  /** Precise event start, with explicit UTC offset, when published. */
+  startsAt?: string;
+  /** Precise end, with explicit UTC offset, when published. */
+  endsAt?: string;
+  /** Presentation flag; dated events are automatically reclassified by the events page. */
   active: boolean;
   /** True for a confirmed future event that should keep solid styling and a normal CTA. */
   confirmed?: boolean;
