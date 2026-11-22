@@ -21,6 +21,7 @@ type EventSource = {
   spotlightImage?: string;
   spotlightImageAlt?: string;
   images?: string[];
+  originalImages?: string[];
   date?: string;
   endDate?: string;
   startsAt?: string;
@@ -43,7 +44,6 @@ export const EVENTS: EventSource[] = [
     confirmed: true,
     images: ["/images/vernacular-sardinia-up-2026.webp"],
     originalImages: ["/images/vernacular-sardinia-up-2026-original.png"],
-    originalImages: ["https://drive.google.com/file/d/1_vO6maps6xmWQBgvfBntbQK_s5wYhFO0/view"],
     ctaKey: "",
     information: {
       es: {
@@ -72,7 +72,6 @@ export const EVENTS: EventSource[] = [
     confirmed: true,
     images: ["/images/vernacular-sardinia-coljal-2026.webp"],
     originalImages: ["/images/vernacular-sardinia-coljal-2026-original.jpg"],
-    originalImages: ["https://drive.google.com/file/d/1XIr7rNcUJRRXYPUfuq1daaf-efFr-P0n/view"],
     ctaKey: "",
     information: {
       es: {
