@@ -12,6 +12,8 @@ export type SiteEvent = {
   institution?: string;
   /** Optional event artwork/posters shown on the event card. */
   images?: string[];
+  /** Full-resolution source files, indexed to images; never link to optimised previews when originals exist. */
+  originalImages?: string[];
   /** Calendar date (YYYY-MM-DD) of the event in Guadalajara. */
   date?: string;
   /** Last calendar date for multi-day events (inclusive). */
