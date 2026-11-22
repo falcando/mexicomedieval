@@ -38,19 +38,19 @@ export function EventCard({ event }: EventCardProps) {
     <>
       {event.images?.length ? (
         <div className={`mb-5 grid gap-2 ${event.images.length === 1 ? "grid-cols-1" : "grid-cols-3"}`} aria-label={event.title}>
-          {event.images.map((src) => (
+          {event.images.map((src, index) => (
             <a
               key={src}
-              href={src}
+              href={event.originalImages?.[index] ?? src}
               target="_blank"
               rel="noopener noreferrer"
-              className={`overflow-hidden rounded-sm border border-[#e5ddd3] bg-[#f5efe6] transition-opacity hover:opacity-85 ${event.images!.length === 1 ? "flex h-80 items-center justify-center" : ""}`}
+              className={`flex items-center justify-center overflow-hidden rounded-sm border border-[#e5ddd3] bg-[#f5efe6] p-3 transition-opacity hover:opacity-85 ${event.images!.length === 1 ? "min-h-56" : ""}`}
               aria-label={event.title}
             >
               <img
                 src={src}
                 alt={`${event.category}: ${event.title}`}
-                className={event.images!.length === 1 ? "h-80 w-full object-contain" : "h-36 w-full object-contain md:h-44"}
+                className={event.images!.length === 1 ? "h-auto max-h-72 w-auto max-w-full object-contain" : "h-auto max-h-44 w-auto max-w-full object-contain"}
                 loading="lazy"
               />
             </a>
