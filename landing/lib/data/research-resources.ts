@@ -67,7 +67,6 @@ export const RESEARCH_RESOURCES: ResearchResource[] = [
     },
     references: [
       { href: "https://www.epoch-magazine.com/post/what-can-we-learn-from-the-semantic-web-to-revamp-our-historical-research", label: { es: "Artículo en EPOCH (2020)", en: "EPOCH article (2020)" } },
-      { href: "https://scripta.up.edu.mx/handle/20.500.12552/13222", label: { es: "Ficha del artículo en Scripta", en: "Article record in Scripta" } },
       { href: "https://www.academia.edu/24429003/The_Uncharted_Networks_of_a_Chartered_Territory_Diplomatic_Evidence_and_Relational_Sociology_for_the_Norman_Kingdom_of_Sicily", label: { es: "Presentación del modelo relacional", en: "Relational model presentation" } },
       { href: "https://www.dissinet.cz/news/events-calendar/616919u-online-lecture-an-adapted-ontology-for-a-prosopography-of-medieval-sardinia-rdf-schemes-owl-and-an-open-linked-database", label: { es: "Conferencia sobre la ontología (2022)", en: "Ontology lecture (2022)" } },
     ],
