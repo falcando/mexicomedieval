@@ -10,6 +10,7 @@ export type ResearchResource = {
   kicker: LocalizedText;
   title: LocalizedText;
   description: LocalizedText;
+  references?: { href: string; label: LocalizedText }[];
 };
 
 export const RESEARCH_RESOURCES: ResearchResource[] = [
@@ -61,9 +62,15 @@ export const RESEARCH_RESOURCES: ResearchResource[] = [
       en: "Relational Factoid Ontology (RFO)",
     },
     description: {
-      es: "Modelo de prosopografía relacional desarrollado por Hervin Fernández Aceves y formalizado en RDF/OWL a partir de la ontología FPO de John Bradley. Incluye código, documentación y ejemplos de uso en GitHub. Versión de trabajo 0.1.",
-      en: "A relational prosopographical model developed by Hervin Fernández Aceves and formalised in RDF/OWL as an extension of John Bradley's FPO. Source code, documentation and examples are available on GitHub. Working version 0.1.",
+      es: "Modelo de prosopografía relacional de Hervin Fernández Aceves, formalizado en RDF/OWL a partir de la FPO de John Bradley. Sus antecedentes están documentados en un artículo de EPOCH (2020) y en presentaciones académicas enlazadas. Versión de trabajo 0.1.",
+      en: "Hervin Fernández Aceves's relational prosopographical model, formalised in RDF/OWL as an extension of John Bradley's FPO. Its background is documented in an EPOCH article (2020) and linked academic presentations. Working version 0.1.",
     },
+    references: [
+      { href: "https://www.epoch-magazine.com/post/what-can-we-learn-from-the-semantic-web-to-revamp-our-historical-research", label: { es: "Artículo en EPOCH (2020)", en: "EPOCH article (2020)" } },
+      { href: "https://scripta.up.edu.mx/handle/20.500.12552/13222", label: { es: "Ficha del artículo en Scripta", en: "Article record in Scripta" } },
+      { href: "https://www.academia.edu/24429003/The_Uncharted_Networks_of_a_Chartered_Territory_Diplomatic_Evidence_and_Relational_Sociology_for_the_Norman_Kingdom_of_Sicily", label: { es: "Presentación del modelo relacional", en: "Relational model presentation" } },
+      { href: "https://www.dissinet.cz/news/events-calendar/616919u-online-lecture-an-adapted-ontology-for-a-prosopography-of-medieval-sardinia-rdf-schemes-owl-and-an-open-linked-database", label: { es: "Conferencia sobre la ontología (2022)", en: "Ontology lecture (2022)" } },
+    ],
   },
 
 ];

@@ -311,6 +311,25 @@ export function PapersPage() {
               <p className="mt-5 grow text-sm leading-6 text-on-surface-variant">
                 {resource.description[locale]}
               </p>
+              {resource.references?.length ? (
+                <nav
+                  aria-label={locale === "es" ? "Publicaciones y presentaciones relacionadas" : "Related publications and presentations"}
+                  className="mt-4 flex flex-wrap gap-x-4 gap-y-2"
+                >
+                  {resource.references.map((reference) => (
+                    <a
+                      key={reference.href}
+                      href={reference.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-medium leading-5 text-primary underline decoration-tertiary-fixed/60 underline-offset-4 hover:decoration-primary"
+                    >
+                      {reference.label[locale]}
+                      <span className="material-symbols-outlined text-xs" aria-hidden="true">open_in_new</span>
+                    </a>
+                  ))}
+                </nav>
+              ) : null}
               <Link
                 href={resource.href}
                 className="mt-7 inline-flex items-center gap-2 self-start rounded-md bg-primary px-5 py-3 text-sm font-medium text-on-primary transition-colors hover:bg-primary-container"
