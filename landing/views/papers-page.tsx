@@ -345,7 +345,7 @@ export function PapersPage() {
       </section>
 
 
-      <section id="speaker-presentations" className="mb-32 scroll-mt-28">
+      <section id="speaker-presentations" className="mt-20 mb-32 scroll-mt-28 md:mt-28">
         <div className="mb-12 flex items-center gap-4">
           <div className="flex items-center justify-center rounded-full bg-tertiary-fixed/30 p-3">
             <span className="material-symbols-outlined text-3xl text-primary">
