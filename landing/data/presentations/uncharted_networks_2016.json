@@ -8,10 +8,6 @@
     "dateLabel": "14 April 2016",
     "venue": "Entangled Worlds, Austrian Academy of Sciences, Vienna"
   },
-  "heroImage": {
-    "src": "/images/presentation-hero-fallback.jpg",
-    "alt": "Imagen de archivo de México Medieval, no una diapositiva de la presentación original"
-  },
   "summary": "Ponencia sobre la construcción de datos relacionales a partir de diplomas del reino normando de Sicilia. Examina cómo las fuentes diplomáticas, tratadas mediante crítica documental y prosopografía, permiten representar relaciones de autoridad, concurrencias, vínculos jurídicos y parentesco. La presentación distingue los factoids atributivos de los relacionales e ilustra el uso de sociomatrices.",
   "summaryBullets": [
     "Prosopografía relacional y posibilidades de la crítica diplomática digital",
