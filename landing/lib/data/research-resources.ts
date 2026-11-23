@@ -58,12 +58,12 @@ export const RESEARCH_RESOURCES: ResearchResource[] = [
       en: "Digital humanities research resource",
     },
     title: {
-      es: "Ontología relacional de factoids (RFO)",
-      en: "Relational Factoid Ontology (RFO)",
+      es: "Ontología de Prosopografía Relacional basada en Factoids (RFPO)",
+      en: "Relational Factoid Prosopography Ontology (RFPO)",
     },
     description: {
-      es: "Modelo de prosopografía relacional de Hervin Fernández Aceves, formalizado en RDF/OWL a partir de la FPO de John Bradley. Sus antecedentes están documentados en un artículo de EPOCH (2020) y en presentaciones académicas enlazadas. Versión de trabajo 0.1.",
-      en: "Hervin Fernández Aceves's relational prosopographical model, formalised in RDF/OWL as an extension of John Bradley's FPO. Its background is documented in an EPOCH article (2020) and linked academic presentations. Working version 0.1.",
+      es: "La Relational Factoid Prosopography Ontology (RFPO) formaliza en RDF/OWL el modelo de prosopografía relacional desarrollado por Hervin Fernández Aceves a partir de la FPO de John Bradley. Sus antecedentes están documentados en un artículo de EPOCH (2020) y en presentaciones académicas enlazadas. Versión de trabajo 0.1.",
+      en: "The Relational Factoid Prosopography Ontology (RFPO) formalises Hervin Fernández Aceves's model of relational prosopography in RDF/OWL as an extension of John Bradley's FPO. Its background is documented in an EPOCH article (2020) and linked academic presentations. Working version 0.1.",
     },
     references: [
       { href: "https://www.epoch-magazine.com/post/what-can-we-learn-from-the-semantic-web-to-revamp-our-historical-research", label: { es: "Artículo en EPOCH (2020)", en: "EPOCH article (2020)" } },

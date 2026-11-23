@@ -65,8 +65,8 @@
     },
     {
       "roman": "III",
-      "titleLine": "Relational Factoid Ontology (RFO)",
-      "description": "A later (2026) RDF/OWL formalisation of the relational factoid model. This repository is a subsequent development, not part of the original 2016 talk.",
+      "titleLine": "Relational Factoid Prosopography Ontology (RFPO)",
+      "description": "The Relational Factoid Prosopography Ontology (RFPO), a later (2026) RDF/OWL formalisation of the relational factoid model. This repository is a subsequent development, not part of the original 2016 talk.",
       "linkLabel": "GitHub project",
       "href": "https://github.com/falcando/relational-factoid-ontology"
     }
