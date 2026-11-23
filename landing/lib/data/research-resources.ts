@@ -48,6 +48,24 @@ export const RESEARCH_RESOURCES: ResearchResource[] = [
       en: "An interactive timeline distinguishing enacted royal norms, territorial legislation, cedularies, compilation projects, and sanctioned compilations, with linked primary sources and historiography.",
     },
   },
+  {
+    slug: "ontologia-relacional-factoids",
+    href: "/recursos/ontologia-relacional-factoids",
+    icon: "account_tree",
+    kicker: {
+      es: "Recurso metodológico de humanidades digitales",
+      en: "Digital humanities research resource",
+    },
+    title: {
+      es: "Ontología relacional de factoids (RFO)",
+      en: "Relational Factoid Ontology (RFO)",
+    },
+    description: {
+      es: "Modelo de prosopografía relacional desarrollado por Hervin Fernández Aceves y formalizado en RDF/OWL a partir de la ontología FPO de John Bradley. Incluye código, documentación y ejemplos de uso en GitHub. Versión de trabajo 0.1.",
+      en: "A relational prosopographical model developed by Hervin Fernández Aceves and formalised in RDF/OWL as an extension of John Bradley's FPO. Source code, documentation and examples are available on GitHub. Working version 0.1.",
+    },
+  },
+
 ];
 
 export function getResearchResource(slug: string): ResearchResource | undefined {
