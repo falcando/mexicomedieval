@@ -39,7 +39,6 @@ const DATA = {
     presentation: "Presentación académica del modelo relacional",
     lecture: "Conferencia sobre la ontología para la Cerdeña medieval (2022)",
     scripta: "Registro institucional del artículo de EPOCH en Scripta",
-    scholarlySources: "Publicaciones y presentaciones",
     statusTitle: "Estado del proyecto",
     status: "Esta es una versión inicial de trabajo. La estructura y los ejemplos están disponibles para consulta y revisión, pero todavía requieren contrastarse sistemáticamente con documentos históricos y someterse a validación formal de la ontología combinada. Los cambios posteriores quedarán registrados en GitHub.",
     back: "Volver a Papers y recursos",
@@ -73,7 +72,6 @@ const DATA = {
     presentation: "Academic presentation of the relational model",
     lecture: "Lecture on the ontology for medieval Sardinia (2022)",
     scripta: "Institutional record of the EPOCH article in Scripta",
-    scholarlySources: "Publications and presentations",
     statusTitle: "Current status",
     status: "This is an initial working version. Its structure and examples are available for consultation and review, but the model has yet to be tested systematically against historical documents and validated through full reasoning over the combined ontology. Subsequent changes will be documented on GitHub.",
     back: "Back to Papers & resources",
@@ -154,15 +152,6 @@ export function RelationalFactoidResourcePage() {
           <section>
             <h2 className="font-headline mb-5 text-2xl font-bold text-primary md:text-3xl">{c.openingTitle}</h2>
             <p className="text-base leading-8 text-on-surface">{c.opening}</p>
-            <div className="mt-6 border-t border-outline-variant/30 pt-4">
-              <p className="font-label text-xs font-bold tracking-wide text-on-surface-variant uppercase">{c.scholarlySources}</p>
-              <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-                <a href={EPOCH} target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-4">{c.epoch}</a>
-                <a href={PRESENTATION} target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-4">{c.presentation}</a>
-                <a href={DISSINET} target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-4">{c.lecture}</a>
-                <a href={SCRIPTA} target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-4">{c.scripta}</a>
-              </div>
-            </div>
           </section>
 
           <section>
