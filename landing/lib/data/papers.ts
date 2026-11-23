@@ -76,6 +76,19 @@ export const PAPERS: PaperEntry[] = [
     href: "https://www.academia.edu/14145287/Counts_and_Counties_in_the_Norman_Mezzogiorno_The_Arrangement_of_the_Nobility_under_the_Hauteville_Monarchy",
     documentType: "paper",
   },
+  {
+    catalogId: "uncharted-networks-chartered-territory-2016",
+    year: "2016",
+    title:
+      "The Uncharted Networks of a 'Chartered' Territory: Diplomatic Evidence and Relational Sociology for the Norman Kingdom of Sicily",
+    context:
+      "Ponencia presentada el 14 de abril de 2016 en Entangled Worlds, Academia Austriaca de Ciencias, Viena. Prosopografía relacional y sociomatrices a partir de cartas y diplomas de la Italia normanda.",
+    contextEn:
+      "Paper presented on 14 April 2016 at Entangled Worlds, Austrian Academy of Sciences, Vienna. Relational prosopography and sociomatrices drawn from Italo-Norman charters.",
+    href: "https://www.academia.edu/24429003/The_Uncharted_Networks_of_a_Chartered_Territory_Diplomatic_Evidence_and_Relational_Sociology_for_the_Norman_Kingdom_of_Sicily",
+    documentType: "presentation",
+    presentationSlug: "uncharted_networks_2016",
+  },
 ];
 
 const byYearDesc = <T extends { year: string }>(items: T[]) =>

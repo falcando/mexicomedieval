@@ -1,4 +1,5 @@
 import servosOtrasHistorias from "@/data/presentations/servos_otrashistorias.json";
+import unchartedNetworks from "@/data/presentations/uncharted_networks_2016.json";
 
 export type PresentationSection = {
   order: number;
@@ -37,7 +38,7 @@ export type PresentationDetail = {
   additionalResources: {
     title: string;
     body: string;
-    pdf: { label: string; href: string };
+    pdf: { label: string; href: string; icon?: string };
   };
   researcherNote: {
     title: string;
@@ -51,6 +52,7 @@ export type PresentationDetail = {
 
 const registry: Record<string, PresentationDetail> = {
   servos_otrashistorias: servosOtrasHistorias as PresentationDetail,
+  uncharted_networks_2016: unchartedNetworks as PresentationDetail,
 };
 
 export function getPresentationBySlug(slug: string): PresentationDetail | null {

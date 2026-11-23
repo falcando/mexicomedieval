@@ -207,7 +207,7 @@ export function PresentationDetailsView({
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-tertiary-fixed px-4 py-3 font-label text-sm font-semibold tracking-wide text-on-tertiary-fixed transition-opacity hover:opacity-90"
               >
                 <span className="material-symbols-outlined text-lg">
-                  download
+                  {data.additionalResources.pdf.icon ?? "download"}
                 </span>
                 {data.additionalResources.pdf.label}
               </a>
