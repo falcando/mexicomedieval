@@ -239,7 +239,7 @@ export const EVENTS: EventSource[] = [
         category: "Presentación de libro",
         format: "Presencial",
         institution: "Fondo de Cultura Económica / ARDEMAC · Librería Rosario Castellanos",
-        description: "Presentación de Vernacular Documents of Medieval Sardinia, de Alex Metcalfe, Hervin Fernández Aceves y Maurizio Virdis (Brill). Comentan Aristarco Regalado Pinedo y Adrián Rodríguez Avila. La actividad forma parte del Festival del Libro Medieval 2026.",
+        description: "Presentación de Vernacular Documents of Medieval Sardinia, de Alex Metcalfe, Hervin Fernández Aceves y Maurizio Virdis (Brill). Comentan Aristarco Regalado Pinedo y Adrián Rodríguez Avila. Actividad del Festival del Libro Medieval 2026.",
         footerNote: "Sábado 19 de diciembre de 2026 · 16:00 h · Librería Rosario Castellanos, Ciudad de México",
       },
       en: {
@@ -295,7 +295,7 @@ export const EVENTS: EventSource[] = [
         category: "Presentación editorial",
         format: "Presencial",
         institution: "Anabasis Project · Fondo de Cultura Económica / ARDEMAC",
-        description: "Presentación de Camino al Valhalla, de Jorge L. Estrada, en el marco de Anabasis Project. Participan Jorge L. Estrada, autor, y Aristarco Regalado Pinedo, director del proyecto. Modera Hervin Fernández Aceves. Actividad del Festival del Libro Medieval 2026.",
+        description: "Presentación de Camino al Valhalla, de Jorge L. Estrada, una publicación de Anabasis Project. Presentan Aristarco Regalado Pinedo, director del proyecto, y Hervin Fernández Aceves. Actividad del Festival del Libro Medieval 2026.",
         footerNote: "Domingo 20 de diciembre de 2026 · 16:00 h · Librería Rosario Castellanos, Ciudad de México",
       },
       en: {
@@ -303,7 +303,7 @@ export const EVENTS: EventSource[] = [
         category: "Book presentation",
         format: "In person",
         institution: "Anabasis Project · Fondo de Cultura Económica / ARDEMAC",
-        description: "Presentation of Camino al Valhalla by Jorge L. Estrada, published under Anabasis Project. Featuring the author and Aristarco Regalado Pinedo, the project's director. Chaired by Hervin Fernández Aceves. Part of the 2026 Medieval Book Festival.",
+        description: "Presentation of Camino al Valhalla by Jorge L. Estrada, published by Anabasis Project. Presented by Aristarco Regalado Pinedo, the project director, and Hervin Fernández Aceves. Part of the 2026 Medieval Book Festival.",
         footerNote: "Sunday 20 December 2026 · 16:00 · Librería Rosario Castellanos, Mexico City",
       },
     },
