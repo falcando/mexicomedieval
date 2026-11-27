@@ -152,13 +152,7 @@ export function PapersPage() {
       : 1;
 
   const academicPapers = academicQuery.data?.papers ?? [];
-  const speakerPresentations = useMemo(() => {
-    const raw = presentationsQuery.data?.presentations ?? [];
-    if (HIGHLIGHTED?.documentType === "presentation") {
-      return raw.filter((p) => p.href !== HIGHLIGHTED.href);
-    }
-    return raw;
-  }, [presentationsQuery.data?.presentations, HIGHLIGHTED]);
+  const speakerPresentations = presentationsQuery.data?.presentations ?? [];
 
   return (
     <PageContainer pretitle={t("papers.pretitle")} title={t("papers.title")} subtitle={t("papers.subtitle")}>
@@ -375,46 +369,6 @@ export function PapersPage() {
         )}
 
         <div className="space-y-6" aria-busy={presentationsQuery.isFetching}>
-          {HIGHLIGHTED?.documentType === "presentation" ? (
-            <div className="group flex flex-col items-center gap-8 border border-outline-variant/20 bg-white p-8 shadow-sm transition-all hover:shadow-md md:flex-row">
-              <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-tertiary-fixed/20">
-                <span className="material-symbols-outlined text-5xl text-primary">
-                  mic
-                </span>
-              </div>
-              <div className="min-w-0 grow text-center md:text-left">
-                <div className="mb-2 flex flex-wrap items-center justify-center gap-3 md:justify-start">
-                  <span className="bg-tertiary-fixed px-3 py-1 text-[10px] font-bold tracking-widest text-on-tertiary-fixed uppercase">
-                    {HIGHLIGHTED.year}
-                  </span>
-                  <span className="text-xs text-on-surface-variant">
-                    {t("papers.colloquium")}
-                  </span>
-                </div>
-                <h3 className="font-headline mb-1 text-2xl font-bold text-primary">
-                  {HIGHLIGHTED.title}
-                </h3>
-                <p className="text-sm text-on-surface-variant">
-                  {localizedContext(HIGHLIGHTED)}
-                </p>
-              </div>
-              <div className="w-full shrink-0 md:w-auto">
-                <PresentationDetailsLink
-                  slug={HIGHLIGHTED.presentationSlug}
-                  href={HIGHLIGHTED.href}
-                  className="flex w-full items-center justify-center gap-2 border border-primary bg-transparent px-8 py-3 text-sm font-medium text-primary transition-all hover:bg-primary hover:text-on-primary md:w-auto"
-                >
-                  {t("papers.viewDetails")}
-                  <span className="material-symbols-outlined text-sm">
-                    {HIGHLIGHTED.presentationSlug
-                      ? "arrow_forward"
-                      : "open_in_new"}
-                  </span>
-                </PresentationDetailsLink>
-              </div>
-            </div>
-          ) : null}
-
           {speakerPresentations.map((item) => (
             <div
               key={item.href}
