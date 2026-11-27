@@ -10,6 +10,15 @@ const SITE_ORIGIN = "https://www.mexicomedieval.org";
 /** Sourced from static-html/papers.html (Paper 1–3). */
 export const PAPERS: PaperEntry[] = [
   {
+    "catalogId": "masterclass-pensar-maquinas-2026",
+    "year": "2026",
+    "title": "Pensar con, sin y a pesar de las máquinas: el giro digital en las humanidades y los desafíos de la inteligencia artificial",
+    "context": "Masterclass impartida el 26 de noviembre de 2026 en el marco de Educación Continua de El Colegio de Jalisco. Examina la representación digital de las fuentes históricas, la modelización de estructuras y relaciones, y las implicaciones metodológicas y epistemológicas de la inteligencia artificial en la investigación humanística.",
+    "contextEn": "Masterclass delivered on 26 November 2026 as part of El Colegio de Jalisco’s Continuing Education programme. Examines the digital representation of historical sources, the modelling of structures and relationships, and the methodological and epistemological implications of artificial intelligence for research in the humanities.",
+    "href": "https://www.mexicomedieval.org/presentations/humanidades-digitales-e-inteligencia-artificial-2026.pdf",
+    "documentType": "presentation"
+  },
+  {
     catalogId: "archivo-fantasma-cabildo-guadalajara",
     year: "2026",
     title:
